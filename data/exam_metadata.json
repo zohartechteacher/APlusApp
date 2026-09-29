@@ -1,0 +1,34 @@
+{
+  "220-1201": {
+    "official_weights": {
+      "Mobile Devices": 13,
+      "Networking": 23,
+      "Hardware": 25,
+      "Virtualization and Cloud": 11,
+      "Troubleshooting": 28
+    },
+    "objective_domains": [
+      "Mobile Devices",
+      "Networking",
+      "Hardware",
+      "Virtualization and Cloud",
+      "Troubleshooting"
+    ],
+    "pass_threshold": 675
+  },
+  "220-1202": {
+    "official_weights": {
+      "Operating Systems": 28,
+      "Security": 28,
+      "Software Troubleshooting": 23,
+      "Operational Procedures": 21
+    },
+    "objective_domains": [
+      "Operating Systems",
+      "Security",
+      "Software Troubleshooting",
+      "Operational Procedures"
+    ],
+    "pass_threshold": 700
+  }
+}
