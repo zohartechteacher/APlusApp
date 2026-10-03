@@ -1,4 +1,4 @@
-('c:\\Users\\zohar.net\\Documents\\APlus1200\\build\\APlusPracticeExam\\PYZ-00.pyz',
+('C:\\Users\\zohar.net\\Documents\\APlus1200\\build\\APlusPracticeExam\\PYZ-00.pyz',
  [('PIL',
    'C:\\Users\\zohar.net\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\PIL\\__init__.py',
    'PYMODULE'),

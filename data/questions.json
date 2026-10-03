@@ -12,6 +12,27 @@
   },
   "questions": [
     {
+      "id": "1201-5.1-999",
+      "exam": "220-1201",
+      "domain": "5.0 Hardware and Network Troubleshooting",
+      "objective": "5.1 Troubleshoot common hardware issues",
+      "question": "A technician is troubleshooting a desktop PC that is plugged into a UPS. The PC loses the system date/time after every power outage. Which of the following should the technician do to resolve the issue? (Choose two.)",
+      "options": [
+        "A) Run a BIOS update.",
+        "B) Swap out the RAM.",
+        "C) Disable NTP in the OS.",
+        "D) Repair the backup power source.",
+        "E) Replace the CMOS battery.",
+        "F) Install a surge protector."
+      ],
+      "answer": [
+        "D",
+        "E"
+      ],
+      "multi_select": true,
+      "explanation": "The system date/time resetting after power outages usually means the PC is losing CMOS power, which is commonly caused by a failing CMOS battery or a faulty UPS/backup power source. Repairing the UPS and replacing the CMOS battery restores stable system clock retention."
+    },
+    {
       "id": "1201-1.1-001",
       "exam": "220-1201",
       "domain": "1.0 Mobile Devices",

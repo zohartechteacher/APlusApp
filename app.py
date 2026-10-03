@@ -3,6 +3,8 @@ import random
 import re
 import sys
 import time
+import ctypes
+from ctypes import wintypes
 from pathlib import Path
 
 import customtkinter as ctk
@@ -67,7 +69,7 @@ def normalize_domain_name(domain: str) -> str:
 
 class ExamSession:
     def __init__(self, questions, timer_mode: str, study_mode: bool = False):
-        self.questions = questions
+        self.questions = [self.shuffle_question_options(question) for question in questions]
         self.timer_mode = timer_mode
         self.study_mode = study_mode
         self.current_index = 0
@@ -76,6 +78,44 @@ class ExamSession:
         self.started_at = time.time()
         self.time_limit = self._resolve_time_limit(timer_mode)
         self.remaining_seconds = self.time_limit
+
+    @staticmethod
+    def shuffle_question_options(question):
+        shuffled_question = dict(question)
+        options = question.get("options")
+        if not isinstance(options, list) or len(options) < 2:
+            return shuffled_question
+
+        parsed_options = []
+        original_labels = set()
+        for option in options:
+            match = re.match(r"^\s*([A-Z])\)\s*(.*)$", str(option))
+            if match is None or match.group(1) in original_labels:
+                return shuffled_question
+            original_labels.add(match.group(1))
+            parsed_options.append((match.group(1), match.group(2)))
+
+        if question.get("multi_select"):
+            correct_labels = ExamSession.normalize_answer_set(question.get("answer"))
+        else:
+            answer = ExamSession.answer_letter(question.get("answer"))
+            correct_labels = {answer} if answer else set()
+        if not correct_labels or not correct_labels.issubset(original_labels):
+            return shuffled_question
+
+        random.shuffle(parsed_options)
+        remapped_labels = {}
+        shuffled_question["options"] = []
+        for index, (original_label, option_text) in enumerate(parsed_options):
+            new_label = chr(ord("A") + index)
+            remapped_labels[original_label] = new_label
+            shuffled_question["options"].append(f"{new_label}) {option_text}")
+
+        if question.get("multi_select"):
+            shuffled_question["answer"] = sorted(remapped_labels[label] for label in correct_labels)
+        else:
+            shuffled_question["answer"] = remapped_labels[next(iter(correct_labels))]
+        return shuffled_question
 
     @staticmethod
     def _resolve_time_limit(timer_mode: str) -> int:
@@ -96,12 +136,40 @@ class ExamSession:
         return self.questions[self.current_index]
 
     @staticmethod
-    def answer_letter(answer: str) -> str:
-        if not answer:
+    def answer_letter(answer):
+        if answer is None:
             return ""
-        return answer.split(")", 1)[0].strip().upper()
+        if isinstance(answer, (list, tuple, set)):
+            return "|".join(sorted(str(item).split(")", 1)[0].strip().upper() for item in answer if item))
+        value = str(answer).strip()
+        if not value:
+            return ""
+        return value.split(")", 1)[0].strip().upper()
 
-    def record_answer(self, answer: str):
+    @staticmethod
+    def normalize_answer_set(answer):
+        if answer is None:
+            return set()
+        if isinstance(answer, str):
+            if "," in answer:
+                raw_values = [part.strip() for part in answer.split(",") if part.strip()]
+            else:
+                raw_values = [answer]
+        elif isinstance(answer, (list, tuple, set)):
+            raw_values = list(answer)
+        else:
+            raw_values = [answer]
+
+        normalized = set()
+        for value in raw_values:
+            if value is None:
+                continue
+            letter = ExamSession.answer_letter(value)
+            if letter:
+                normalized.add(letter)
+        return normalized
+
+    def record_answer(self, answer):
         self.answers[str(self.current_index)] = answer
 
     def mark_flagged(self, value: bool):
@@ -125,7 +193,10 @@ class ExamSession:
 
         for index, question in enumerate(self.questions):
             chosen = self.answers.get(str(index), "")
-            correct_flag = self.answer_letter(chosen) == self.answer_letter(question["answer"])
+            if question.get("multi_select"):
+                correct_flag = self.normalize_answer_set(chosen) == self.normalize_answer_set(question["answer"])
+            else:
+                correct_flag = self.answer_letter(chosen) == self.answer_letter(question["answer"])
             if correct_flag:
                 correct += 1
 
@@ -165,19 +236,21 @@ class ExamSession:
 
 class APlusPracticeApp(ctk.CTk):
     def __init__(self):
-        super().__init__()
-        icon_path = get_app_icon_path()
-        if icon_path is not None:
+        if sys.platform == "win32":
             try:
-                self.iconbitmap(str(icon_path))
+                ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(
+                    "Zohar.APlusPracticePrep"
+                )
             except Exception:
                 pass
+        super().__init__()
         ctk.set_appearance_mode("dark")
         ctk.set_default_color_theme("dark-blue")
         self.title(APP_TITLE)
         self.geometry("1280x860")
         self.minsize(1100, 700)
         self.configure(fg_color="#0F172A")
+        self.after_idle(self.set_taskbar_icon)
 
         self.base_dir = get_base_dir()
         self.data_dir = self.base_dir / "data"
@@ -200,6 +273,52 @@ class APlusPracticeApp(ctk.CTk):
 
         self.setup_frames()
         self.show_setup_screen()
+
+    def set_taskbar_icon(self):
+        icon_path = get_app_icon_path()
+        if icon_path is None:
+            return
+
+        try:
+            self.iconbitmap(str(icon_path))
+        except Exception:
+            pass
+
+        if sys.platform != "win32":
+            return
+
+        try:
+            user32 = ctypes.WinDLL("user32", use_last_error=True)
+            load_image = user32.LoadImageW
+            load_image.argtypes = (
+                wintypes.HINSTANCE,
+                wintypes.LPCWSTR,
+                wintypes.UINT,
+                ctypes.c_int,
+                ctypes.c_int,
+                wintypes.UINT,
+            )
+            load_image.restype = wintypes.HANDLE
+            icon_handle = load_image(
+                None, str(icon_path), 1, 0, 0, 0x10 | 0x40
+            )
+            if not icon_handle:
+                return
+
+            send_message = user32.SendMessageW
+            send_message.argtypes = (
+                wintypes.HWND,
+                wintypes.UINT,
+                wintypes.WPARAM,
+                wintypes.LPARAM,
+            )
+            send_message.restype = ctypes.c_ssize_t
+            window_handle = self.winfo_id()
+            send_message(window_handle, 0x0080, 0, icon_handle)
+            send_message(window_handle, 0x0080, 1, icon_handle)
+            self._taskbar_icon_handle = icon_handle
+        except Exception:
+            pass
 
     def setup_frames(self):
         self.root_container = ctk.CTkFrame(self, fg_color="transparent")
@@ -600,21 +719,37 @@ class APlusPracticeApp(ctk.CTk):
             child.destroy()
         self.option_buttons = []
         selected_answer = self.current_session.answers.get(str(self.current_session.current_index), "")
-        self.option_var = ctk.StringVar(value=selected_answer)
+        is_multi = bool(question.get("multi_select"))
+        self.option_var = ctk.StringVar(value=selected_answer if not is_multi else "")
 
-        for option in question["options"]:
-            radio = ctk.CTkRadioButton(
-                self.options_frame,
-                text=option,
-                variable=self.option_var,
-                value=option,
-                command=lambda selected=option: self.answer_current(selected),
-                font=ctk.CTkFont(size=14),
-            )
-            radio.pack(anchor="w", pady=6, padx=4)
-            self.option_buttons.append(radio)
+        if is_multi:
+            selected_set = ExamSession.normalize_answer_set(selected_answer)
+            for option in question["options"]:
+                option_letter = ExamSession.answer_letter(option)
+                variable = ctk.BooleanVar(value=option_letter in selected_set)
+                checkbox = ctk.CTkCheckBox(
+                    self.options_frame,
+                    text=option,
+                    variable=variable,
+                    command=lambda selected_option=option: self.answer_current(self.get_selected_multi_answers()),
+                    font=ctk.CTkFont(size=14),
+                )
+                checkbox.pack(anchor="w", pady=6, padx=4)
+                self.option_buttons.append(checkbox)
+        else:
+            for option in question["options"]:
+                radio = ctk.CTkRadioButton(
+                    self.options_frame,
+                    text=option,
+                    variable=self.option_var,
+                    value=option,
+                    command=lambda selected=option: self.answer_current(selected),
+                    font=ctk.CTkFont(size=14),
+                )
+                radio.pack(anchor="w", pady=6, padx=4)
+                self.option_buttons.append(radio)
 
-        if selected_answer:
+        if not is_multi and selected_answer:
             self.option_var.set(selected_answer)
 
         if self.current_session.study_mode and selected_answer:
@@ -626,15 +761,42 @@ class APlusPracticeApp(ctk.CTk):
         self.update_palette()
         self.update_timer_display()
 
+    def get_selected_multi_answers(self):
+        if self.current_session is None:
+            return []
+        question = self.current_session.current_question()
+        if not question or not question.get("multi_select"):
+            return []
+        selected = []
+        for button in self.option_buttons:
+            if getattr(button, "get", lambda: 0)() == 1:
+                selected.append(ExamSession.answer_letter(button.cget("text")))
+        return selected
+
     def answer_current(self, value):
-        self.current_session.record_answer(value)
+        if self.current_session is None:
+            return
+        question = self.current_session.current_question()
+        if question and question.get("multi_select"):
+            if value is None:
+                value = self.get_selected_multi_answers()
+            self.current_session.record_answer(value)
+        else:
+            self.current_session.record_answer(value)
         if self.current_session.study_mode:
-            self.show_study_feedback(self.current_session.current_question(), value)
+            self.show_study_feedback(self.current_session.current_question(), self.current_session.answers.get(str(self.current_session.current_index), ""))
         self.update_palette()
 
     def show_study_feedback(self, question, selected):
-        is_correct = ExamSession.answer_letter(selected) == ExamSession.answer_letter(question["answer"])
-        result = "Correct" if is_correct else f"Incorrect. Correct answer: {question['answer']}"
+        if question.get("multi_select"):
+            correct_answers = ExamSession.normalize_answer_set(question["answer"])
+            chosen_answers = ExamSession.normalize_answer_set(selected)
+            is_correct = chosen_answers == correct_answers
+            expected_label = ", ".join(sorted(correct_answers)) if correct_answers else "None"
+            result = "Correct" if is_correct else f"Incorrect. Correct answer(s): {expected_label}"
+        else:
+            is_correct = ExamSession.answer_letter(selected) == ExamSession.answer_letter(question["answer"])
+            result = "Correct" if is_correct else f"Incorrect. Correct answer: {question['answer']}"
         color = "#86EFAC" if is_correct else "#FCA5A5"
         self.feedback_label.configure(text=f"{result}\n{question['explanation']}", text_color=color)
         for button in self.option_buttons:

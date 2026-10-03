@@ -32,6 +32,71 @@ def test_domain_names_are_normalized_between_metadata_and_questions():
     assert normalize_domain_name("Operating Systems") == "Operating Systems"
 
 
+def test_multi_select_questions_are_scored_with_set_matching():
+    questions = [
+        {
+            "domain": "Hardware",
+            "objective": "3.5 Install power supply",
+            "answer": ["A", "C"],
+            "multi_select": True,
+            "question": "Select all valid power-supply steps.",
+            "options": ["A) Verify wattage", "B) Delete the bootloader", "C) Check connector compatibility", "D) Reinstall the OS"],
+            "explanation": "Only the valid steps are correct.",
+        }
+    ]
+
+    session = ExamSession(questions, "untimed")
+    correct_answers = session.current_question()["answer"]
+    session.record_answer(correct_answers)
+    assert session.compute_results()["correct"] == 1
+
+    incorrect_answer = next(
+        label for label in "ABCD" if label not in correct_answers
+    )
+    session.record_answer([incorrect_answer])
+    assert session.compute_results()["correct"] == 0
+
+
+def test_exam_session_shuffles_options_and_remaps_single_answer(monkeypatch):
+    question = {
+        "domain": "Hardware",
+        "objective": "3.1 Install processors",
+        "question": "Which option is correct?",
+        "options": ["A) Alpha", "B) Beta", "C) Gamma", "D) Delta"],
+        "answer": "A",
+    }
+    monkeypatch.setattr("app.random.shuffle", lambda options: options.reverse())
+
+    session = ExamSession([question], "untimed")
+    shuffled_question = session.current_question()
+
+    assert shuffled_question["options"] == ["A) Delta", "B) Gamma", "C) Beta", "D) Alpha"]
+    assert shuffled_question["answer"] == "D"
+    session.record_answer("D")
+    assert session.compute_results()["correct"] == 1
+    assert question["options"][0] == "A) Alpha"
+    assert question["answer"] == "A"
+
+
+def test_exam_session_remaps_multi_select_answers_after_shuffling(monkeypatch):
+    question = {
+        "domain": "Hardware",
+        "objective": "3.2 Install storage devices",
+        "question": "Which options are correct?",
+        "options": ["A) Alpha", "B) Beta", "C) Gamma", "D) Delta"],
+        "answer": ["A", "D"],
+        "multi_select": True,
+    }
+    monkeypatch.setattr("app.random.shuffle", lambda options: options.reverse())
+
+    session = ExamSession([question], "untimed")
+    shuffled_question = session.current_question()
+
+    assert shuffled_question["answer"] == ["A", "D"]
+    session.record_answer(["A", "D"])
+    assert session.compute_results()["correct"] == 1
+
+
 def test_question_bank_exists_and_has_expected_shape():
     data_path = ROOT / "data" / "questions.json"
     assert data_path.exists(), "Question bank should ship with the application"
