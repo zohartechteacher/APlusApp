@@ -1,9 +1,35 @@
 import json
 from pathlib import Path
 
-from app import ExamSession
+from app import ExamSession, load_question_bank, normalize_domain_name
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_question_bank_loader_accepts_wrapped_question_payloads():
+    payload = {
+        "metadata": {"version": "V15"},
+        "questions": [
+            {
+                "id": "1201-1.1-001",
+                "exam": "220-1201",
+                "domain": "Mobile Devices",
+                "objective": "1.1 Laptop Hardware",
+                "question": "What does the term mean?",
+                "options": ["A) One", "B) Two", "C) Three", "D) Four"],
+                "answer": "A",
+                "explanation": "Test explanation",
+            }
+        ],
+    }
+
+    assert load_question_bank(payload) == payload["questions"]
+
+
+def test_domain_names_are_normalized_between_metadata_and_questions():
+    assert normalize_domain_name("1.0 Mobile Devices") == "Mobile Devices"
+    assert normalize_domain_name("2.0 Networking") == "Networking"
+    assert normalize_domain_name("Operating Systems") == "Operating Systems"
 
 
 def test_question_bank_exists_and_has_expected_shape():
@@ -11,10 +37,10 @@ def test_question_bank_exists_and_has_expected_shape():
     assert data_path.exists(), "Question bank should ship with the application"
 
     with data_path.open("r", encoding="utf-8") as fh:
-        questions = json.load(fh)
+        questions = load_question_bank(json.load(fh))
 
     assert isinstance(questions, list)
-    assert len(questions) >= 12
+    assert len(questions) == 500
     first = questions[0]
     assert {"id", "exam", "domain", "objective", "question", "options", "answer", "explanation"}.issubset(first)
     assert len(first["options"]) >= 2
@@ -23,7 +49,7 @@ def test_question_bank_exists_and_has_expected_shape():
 def test_question_answers_match_their_option_letters():
     data_path = ROOT / "data" / "questions.json"
     with data_path.open("r", encoding="utf-8") as fh:
-        questions = json.load(fh)
+        questions = load_question_bank(json.load(fh))
 
     for question in questions:
         option_letters = {option.split(")", 1)[0] for option in question["options"]}
@@ -35,12 +61,16 @@ def test_question_answers_match_their_option_letters():
 def test_question_prompts_use_memorization_or_troubleshooting_formats():
     data_path = ROOT / "data" / "questions.json"
     with data_path.open("r", encoding="utf-8") as fh:
-        questions = json.load(fh)
+        questions = load_question_bank(json.load(fh))
 
     forbidden = "Which response best follows the correct procedure for"
+    forbidden_memorization = "Which objective is most directly related to this task"
+    forbidden_concept = "Which concept should a technician memorize"
     assert all(forbidden not in question["question"] for question in questions)
+    assert all(forbidden_memorization not in question["question"] for question in questions)
+    assert all(forbidden_concept not in question["question"] for question in questions)
     assert all(
-        question["question"].startswith(("Which objective is most directly related", "A technician is troubleshooting"))
+        question["question"].startswith(("What does the term", "A technician is troubleshooting"))
         for question in questions
     )
 
@@ -58,12 +88,13 @@ def test_official_weighting_structure_is_valid():
     assert sum(weights["220-1202"]["official_weights"].values()) == 100
 
 
-def test_question_bank_has_1000_questions_covering_major_objectives():
+def test_question_bank_has_500_questions_covering_220_1201_objectives():
     data_path = ROOT / "data" / "questions.json"
     with data_path.open("r", encoding="utf-8") as fh:
-        questions = json.load(fh)
+        questions = load_question_bank(json.load(fh))
 
-    assert len(questions) >= 1000, "Question bank should include at least 1,000 total questions"
+    assert len(questions) == 500, "Question bank should include exactly 500 Core 1 questions"
+    assert {question["exam"] for question in questions} == {"220-1201"}
 
     required_objectives = {
         "220-1201": {
@@ -87,22 +118,6 @@ def test_question_bank_has_1000_questions_covering_major_objectives():
             "5.1 Troubleshoot common hardware and network issues.",
             "5.2 Troubleshoot common mobile device and peripheral issues.",
             "5.3 Diagnose and resolve application, OS, and connectivity issues.",
-        },
-        "220-1202": {
-            "1.1 Install and configure operating systems.",
-            "1.2 Configure desktop and system settings.",
-            "1.3 Manage users, groups, and permissions.",
-            "1.4 Troubleshoot operating system start-up and boot issues.",
-            "2.1 Implement common security controls.",
-            "2.2 Manage account security and access control.",
-            "2.3 Explain malware, phishing, and social engineering defenses.",
-            "2.4 Configure encryption and endpoint protection.",
-            "3.1 Diagnose software installation and application issues.",
-            "3.2 Diagnose operating system and network service issues.",
-            "3.3 Troubleshoot application performance and compatibility problems.",
-            "4.1 Follow operational procedures and documentation.",
-            "4.2 Manage change control, incident response, and asset documentation.",
-            "4.3 Implement basic backup, safety, and environmental procedures.",
         },
     }
 

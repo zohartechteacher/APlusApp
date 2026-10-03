@@ -166,7 +166,8 @@ QUESTION_STEMS = {
     ],
 }
 
-QUESTIONS_PER_OBJECTIVE = 30
+TARGET_EXAM = "220-1201"
+QUESTIONS_PER_OBJECTIVE = 25
 LETTERS = ["A", "B", "C", "D"]
 
 
@@ -181,11 +182,12 @@ def make_question(exam: str, domain: str, objective: str, q_num: int) -> dict:
     stem = QUESTION_STEMS[domain][q_num % len(QUESTION_STEMS[domain])]
     answer_index = q_num % 4
     if q_num % 2 == 0:
-        question = f"Which objective is most directly related to this task: {stem}?"
+        vocabulary_term = objective.split(".", 1)[1].strip().rstrip(".")
+        question = f"What does the term \"{vocabulary_term}\" describe?"
         correct_text = objective
         all_objectives = [item for items in OBJECTIVES[exam].values() for item in items]
         distractors = [item for item in all_objectives if item != objective]
-        explanation = f"This task is most closely associated with {objective}."
+        explanation = f"The term refers to the topic covered by {objective}."
     else:
         question = f"A technician is troubleshooting {stem}. What should be done first?"
         correct_text = "Confirm the symptoms, scope, and recent changes before selecting a targeted fix."
@@ -214,6 +216,8 @@ def main() -> None:
     questions = []
     seen = set()
     for exam, domains in OBJECTIVES.items():
+        if exam != TARGET_EXAM:
+            continue
         for domain, objectives in domains.items():
             for objective in objectives:
                 for q_num in range(QUESTIONS_PER_OBJECTIVE):
@@ -223,7 +227,8 @@ def main() -> None:
                     seen.add(item["id"])
                     questions.append(item)
 
-    assert len(questions) >= 1000, f"Expected at least 1000 questions, got {len(questions)}"
+    expected_count = sum(len(objectives) for objectives in OBJECTIVES[TARGET_EXAM].values()) * QUESTIONS_PER_OBJECTIVE
+    assert len(questions) == expected_count, f"Expected {expected_count} questions, got {len(questions)}"
     DATA_DIR.mkdir(exist_ok=True)
     output_path = DATA_DIR / "questions.json"
     output_path.write_text(json.dumps(questions, indent=2, ensure_ascii=False), encoding="utf-8")

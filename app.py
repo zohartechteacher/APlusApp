@@ -1,5 +1,6 @@
 import json
 import random
+import re
 import sys
 import time
 from pathlib import Path
@@ -38,6 +39,30 @@ def get_app_icon_path() -> Path | None:
 def load_json(path: Path):
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
+
+
+def load_question_bank(data):
+    if isinstance(data, list):
+        return data
+    if isinstance(data, dict):
+        for key in ("questions", "items", "data"):
+            value = data.get(key)
+            if isinstance(value, list):
+                return value
+    return []
+
+
+def normalize_domain_name(domain: str) -> str:
+    if not isinstance(domain, str):
+        return str(domain)
+
+    candidate = domain.strip()
+    if not candidate:
+        return candidate
+
+    if re.match(r"^\d+(?:\.\d+)?\s+", candidate):
+        candidate = re.sub(r"^\d+(?:\.\d+)?\s+", "", candidate)
+    return candidate.strip()
 
 
 class ExamSession:
@@ -156,7 +181,7 @@ class APlusPracticeApp(ctk.CTk):
 
         self.base_dir = get_base_dir()
         self.data_dir = self.base_dir / "data"
-        self.bank = load_json(self.data_dir / "questions.json")
+        self.bank = load_question_bank(load_json(self.data_dir / "questions.json"))
         self.metadata = load_json(self.data_dir / "exam_metadata.json")
 
         self.current_session = None
@@ -305,7 +330,7 @@ class APlusPracticeApp(ctk.CTk):
                 exams = [selected_exam]
             for exam in exams:
                 for domain in self.metadata.get(exam, {}).get("objective_domains", []):
-                    labels.append(f"{exam} • {domain}")
+                    labels.append(f"{exam} • {normalize_domain_name(domain)}")
             if not labels:
                 labels = ["No official domains available"]
             for label in labels:
@@ -375,12 +400,12 @@ class APlusPracticeApp(ctk.CTk):
             if question["exam"] not in exams:
                 continue
             if self.objective_mode_var.get() == "official":
-                domain = question["domain"]
-                label_matches = [entry for entry in selected_filters if f"{question['exam']} • {domain}" == entry]
+                normalized_domain = normalize_domain_name(question["domain"])
+                label_matches = [entry for entry in selected_filters if f"{question['exam']} • {normalized_domain}" == entry]
                 if label_matches:
                     filtered.append(question)
             else:
-                label = f"{question['exam']} • {question['domain']} • {question['objective']}"
+                label = f"{question['exam']} • {normalize_domain_name(question['domain'])} • {question['objective']}"
                 if label in selected_filters:
                     filtered.append(question)
         return filtered
@@ -392,7 +417,7 @@ class APlusPracticeApp(ctk.CTk):
 
         domain_buckets = {}
         for question in candidates:
-            domain_label = f"{question['exam']} • {question['domain']}"
+            domain_label = f"{question['exam']} • {normalize_domain_name(question['domain'])}"
             if domain_label in selected_filters:
                 domain_buckets.setdefault(domain_label, []).append(question)
 
@@ -404,7 +429,7 @@ class APlusPracticeApp(ctk.CTk):
             for exam in ("220-1201", "220-1202"):
                 if not label.startswith(f"{exam} • "):
                     continue
-                domain = label.split(" • ", 1)[1]
+                domain = normalize_domain_name(label.split(" • ", 1)[1])
                 weight = self.metadata.get(exam, {}).get("official_weights", {}).get(domain, 0)
                 if weight:
                     weights[label] = weight
