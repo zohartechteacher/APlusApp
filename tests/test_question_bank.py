@@ -1,7 +1,18 @@
 import json
 from pathlib import Path
 
-from app import ExamSession, load_question_bank, normalize_domain_name
+import pytest
+
+from app import (
+    ExamSession,
+    append_question_to_payload,
+    get_question_bank_write_path,
+    load_question_bank,
+    normalize_domain_name,
+    remove_question_from_payload,
+    replace_question_in_payload,
+    save_question_payload,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -24,6 +35,73 @@ def test_question_bank_loader_accepts_wrapped_question_payloads():
     }
 
     assert load_question_bank(payload) == payload["questions"]
+
+
+def test_appending_and_saving_a_question_updates_the_wrapped_bank(tmp_path):
+    payload = {"metadata": {"total_questions": 1}, "questions": [{"id": "existing"}]}
+    question = {"id": "added", "answer": ["A", "C"], "multi_select": True}
+    destination = tmp_path / "questions.json"
+
+    append_question_to_payload(payload, question)
+    save_question_payload(destination, payload)
+
+    with destination.open("r", encoding="utf-8") as handle:
+        saved_payload = json.load(handle)
+    assert saved_payload["metadata"]["total_questions"] == 2
+    assert load_question_bank(saved_payload)[-1] == question
+
+
+def test_editing_a_question_replaces_it_without_duplicating(tmp_path):
+    payload = {
+        "questions": [
+            {"id": "1201-3.2-001", "question": "Before", "answer": "A"}
+        ]
+    }
+    updated = {"id": "1201-3.2-001", "question": "After", "answer": "B"}
+    destination = tmp_path / "questions.json"
+
+    replace_question_in_payload(payload, updated["id"], updated)
+    save_question_payload(destination, payload)
+
+    with destination.open("r", encoding="utf-8") as handle:
+        saved_payload = json.load(handle)
+    assert len(load_question_bank(saved_payload)) == 1
+    assert load_question_bank(saved_payload)[0] == updated
+
+
+def test_deleting_a_question_updates_and_saves_the_wrapped_bank(tmp_path):
+    first = {"id": "1201-3.2-001", "question": "Remove this"}
+    remaining = {"id": "1201-3.2-002", "question": "Keep this"}
+    payload = {"metadata": {"total_questions": 2}, "questions": [first, remaining]}
+    destination = tmp_path / "questions.json"
+
+    removed = remove_question_from_payload(payload, first["id"])
+    save_question_payload(destination, payload)
+
+    with destination.open("r", encoding="utf-8") as handle:
+        saved_payload = json.load(handle)
+    assert removed == first
+    assert saved_payload["metadata"]["total_questions"] == 1
+    assert load_question_bank(saved_payload) == [remaining]
+
+
+def test_deleting_a_missing_question_does_not_change_the_bank():
+    payload = {"questions": [{"id": "existing"}]}
+    original = json.loads(json.dumps(payload))
+
+    with pytest.raises(ValueError, match="not found"):
+        remove_question_from_payload(payload, "missing")
+
+    assert payload == original
+
+
+def test_frozen_question_bank_writes_to_local_app_data(tmp_path, monkeypatch):
+    monkeypatch.setattr("app.sys.frozen", True, raising=False)
+    monkeypatch.setenv("LOCALAPPDATA", str(tmp_path))
+
+    assert get_question_bank_write_path(ROOT) == (
+        tmp_path / "Zohar" / "APlusPracticePrep" / "questions.json"
+    )
 
 
 def test_domain_names_are_normalized_between_metadata_and_questions():

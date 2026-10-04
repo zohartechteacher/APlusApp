@@ -1,4 +1,5 @@
 import json
+import os
 import random
 import re
 import sys
@@ -52,6 +53,80 @@ def load_question_bank(data):
             if isinstance(value, list):
                 return value
     return []
+
+
+def get_question_bank_write_path(base_dir: Path) -> Path:
+    if getattr(sys, "frozen", False):
+        local_app_data = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
+        return local_app_data / "Zohar" / "APlusPracticePrep" / "questions.json"
+    return base_dir / "data" / "questions.json"
+
+
+def append_question_to_payload(payload, question):
+    if isinstance(payload, list):
+        payload.append(question)
+        return
+    if isinstance(payload, dict):
+        for key in ("questions", "items", "data"):
+            if isinstance(payload.get(key), list):
+                payload[key].append(question)
+                metadata = payload.get("metadata")
+                if isinstance(metadata, dict) and "total_questions" in metadata:
+                    metadata["total_questions"] = len(payload[key])
+                return
+    raise ValueError("Question bank must be a list or contain a question list.")
+
+
+def replace_question_in_payload(payload, question_id, replacement):
+    if isinstance(payload, list):
+        questions = payload
+    elif isinstance(payload, dict):
+        questions = next(
+            (payload[key] for key in ("questions", "items", "data") if isinstance(payload.get(key), list)),
+            None,
+        )
+    else:
+        questions = None
+    if questions is None:
+        raise ValueError("Question bank must be a list or contain a question list.")
+
+    for index, question in enumerate(questions):
+        if question.get("id") == question_id:
+            questions[index] = replacement
+            return
+    raise ValueError(f"Question {question_id} was not found in the bank.")
+
+
+def remove_question_from_payload(payload, question_id):
+    if isinstance(payload, list):
+        questions = payload
+    elif isinstance(payload, dict):
+        questions = next(
+            (payload[key] for key in ("questions", "items", "data") if isinstance(payload.get(key), list)),
+            None,
+        )
+    else:
+        questions = None
+    if questions is None:
+        raise ValueError("Question bank must be a list or contain a question list.")
+
+    for index, question in enumerate(questions):
+        if question.get("id") == question_id:
+            removed_question = questions.pop(index)
+            metadata = payload.get("metadata") if isinstance(payload, dict) else None
+            if isinstance(metadata, dict) and "total_questions" in metadata:
+                metadata["total_questions"] = len(questions)
+            return removed_question
+    raise ValueError(f"Question {question_id} was not found in the bank.")
+
+
+def save_question_payload(path: Path, payload):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary_path = path.with_suffix(path.suffix + ".tmp")
+    with temporary_path.open("w", encoding="utf-8") as handle:
+        json.dump(payload, handle, ensure_ascii=False, indent=2)
+        handle.write("\n")
+    temporary_path.replace(path)
 
 
 def normalize_domain_name(domain: str) -> str:
@@ -254,7 +329,14 @@ class APlusPracticeApp(ctk.CTk):
 
         self.base_dir = get_base_dir()
         self.data_dir = self.base_dir / "data"
-        self.bank = load_question_bank(load_json(self.data_dir / "questions.json"))
+        self.question_bank_write_path = get_question_bank_write_path(self.base_dir)
+        question_bank_path = (
+            self.question_bank_write_path
+            if self.question_bank_write_path.exists()
+            else self.data_dir / "questions.json"
+        )
+        self.question_data = load_json(question_bank_path)
+        self.bank = load_question_bank(self.question_data)
         self.metadata = load_json(self.data_dir / "exam_metadata.json")
 
         self.current_session = None
@@ -348,7 +430,7 @@ class APlusPracticeApp(ctk.CTk):
         brand_copy.pack(side="left", fill="both", expand=True, padx=22, pady=18)
         ctk.CTkLabel(
             brand_copy,
-            text="ZOHAR'S  /  CERTIFICATION STUDIO",
+            text="Email: zohartechteacher@gmail.com",
             text_color="#67E8F9",
             font=ctk.CTkFont(family="Aptos Display", size=11, weight="bold"),
         ).pack(anchor="w", pady=(0, 6))
@@ -366,8 +448,11 @@ class APlusPracticeApp(ctk.CTk):
 
         brand_stats = ctk.CTkFrame(brand_header, fg_color="#0C1424", corner_radius=14)
         brand_stats.pack(side="right", padx=18, pady=14)
-        ctk.CTkLabel(brand_stats, text="1,020", text_color="#FCD34D", font=ctk.CTkFont(family="Aptos Display", size=24, weight="bold")).pack(padx=20, pady=(12, 0))
-        ctk.CTkLabel(brand_stats, text="practice questions", text_color="#AFC1D8", font=ctk.CTkFont(size=11)).pack(padx=20, pady=(0, 12))
+        self.bank_count_label = ctk.CTkLabel(brand_stats, text=f"{len(self.bank):,}", text_color="#FCD34D", font=ctk.CTkFont(family="Aptos Display", size=24, weight="bold"))
+        self.bank_count_label.pack(padx=20, pady=(12, 0))
+        ctk.CTkLabel(brand_stats, text="practice questions", text_color="#AFC1D8", font=ctk.CTkFont(size=11)).pack(padx=20, pady=(0, 6))
+        ctk.CTkButton(brand_stats, text="Add question", command=self.open_question_editor, width=150, height=32, fg_color="#0E7490", hover_color="#155E75").pack(padx=12, pady=(0, 12))
+        ctk.CTkButton(brand_stats, text="Edit questions", command=self.open_question_manager, width=150, height=32).pack(padx=12, pady=(0, 12))
 
         main = ctk.CTkFrame(self.setup_frame, fg_color="transparent")
         main.pack(fill="both", expand=True, padx=20, pady=(0, 12))
@@ -433,6 +518,376 @@ class APlusPracticeApp(ctk.CTk):
     def on_exam_selection_changed(self):
         self.populate_objective_options()
         self.update_question_count_limits()
+
+    def open_question_manager(self):
+        dialog = ctk.CTkToplevel(self)
+        dialog.title("Edit questions")
+        dialog.geometry("900x720")
+        dialog.minsize(680, 520)
+        dialog.transient(self)
+        dialog.grab_set()
+
+        ctk.CTkLabel(
+            dialog,
+            text="Edit a question",
+            font=ctk.CTkFont(family="Aptos Display", size=24, weight="bold"),
+        ).pack(anchor="w", padx=22, pady=(18, 3))
+
+        filters = ctk.CTkFrame(dialog, fg_color="transparent")
+        filters.pack(fill="x", padx=22, pady=(8, 6))
+        search_entry = ctk.CTkEntry(
+            filters,
+            placeholder_text="Search question, objective, domain, or ID",
+        )
+        search_entry.pack(side="left", fill="x", expand=True, padx=(0, 10))
+        exam_var = ctk.StringVar(value="All exams")
+        ctk.CTkOptionMenu(
+            filters,
+            values=["All exams", "220-1201", "220-1202"],
+            variable=exam_var,
+            width=150,
+            command=lambda *_: refresh_questions(),
+        ).pack(side="right")
+
+        result_count = ctk.CTkLabel(dialog, text_color="#AFC1D8")
+        result_count.pack(anchor="w", padx=24, pady=(0, 6))
+        results_frame = ctk.CTkScrollableFrame(dialog)
+        results_frame.pack(fill="both", expand=True, padx=20, pady=(0, 14))
+
+        def select_question(question):
+            dialog.destroy()
+            self.open_question_editor(question)
+
+        def delete_question(question):
+            question_id = question.get("id", "No ID")
+            prompt = question.get("question", "")[:220]
+            confirmed = messagebox.askyesno(
+                "Delete question",
+                f"Delete {question_id}?\n\n{prompt}\n\nThis cannot be undone.",
+                parent=dialog,
+            )
+            if not confirmed:
+                return
+
+            question_index = next(
+                (index for index, entry in enumerate(self.bank) if entry.get("id") == question_id),
+                None,
+            )
+            try:
+                removed_question = remove_question_from_payload(self.question_data, question_id)
+                save_question_payload(self.question_bank_write_path, self.question_data)
+            except (OSError, ValueError, TypeError) as error:
+                if question_index is not None and all(
+                    entry.get("id") != question_id for entry in self.bank
+                ):
+                    self.bank.insert(question_index, question)
+                    metadata = self.question_data.get("metadata") if isinstance(self.question_data, dict) else None
+                    if isinstance(metadata, dict) and "total_questions" in metadata:
+                        metadata["total_questions"] = len(self.bank)
+                messagebox.showerror("Could not delete question", str(error), parent=dialog)
+                refresh_questions()
+                return
+
+            self.bank_count_label.configure(text=f"{len(self.bank):,}")
+            self.populate_objective_options()
+            refresh_questions()
+            messagebox.showinfo(
+                "Question deleted",
+                f"Question {removed_question.get('id', question_id)} was deleted.",
+                parent=dialog,
+            )
+
+        def refresh_questions(*_):
+            for child in results_frame.winfo_children():
+                child.destroy()
+            query = search_entry.get().strip().casefold()
+            selected_exam = exam_var.get()
+            matches = [
+                question
+                for question in reversed(self.bank)
+                if (selected_exam == "All exams" or question.get("exam") == selected_exam)
+                and (
+                    not query
+                    or query
+                    in " ".join(
+                        str(question.get(field, ""))
+                        for field in ("id", "exam", "domain", "objective", "question")
+                    ).casefold()
+                )
+            ]
+            result_count.configure(
+                text=f"{len(matches):,} matching questions"
+                + ("; showing the first 100" if len(matches) > 100 else "")
+            )
+            for question in matches[:100]:
+                row = ctk.CTkFrame(results_frame, corner_radius=8)
+                row.pack(fill="x", padx=4, pady=3)
+                ctk.CTkLabel(
+                    row,
+                    text=f"{question.get('id', 'No ID')}  ·  {question.get('exam', '')}  ·  {question.get('objective', '')}",
+                    text_color="#93C5FD",
+                    anchor="w",
+                ).pack(fill="x", padx=12, pady=(8, 2))
+                actions = ctk.CTkFrame(row, fg_color="transparent")
+                actions.pack(fill="x", padx=6, pady=(0, 6))
+                actions.grid_columnconfigure(0, weight=1)
+                ctk.CTkButton(
+                    actions,
+                    text=question.get("question", "")[:180],
+                    anchor="w",
+                    height=38,
+                    fg_color="transparent",
+                    hover_color="#263B5C",
+                    command=lambda selected=question: select_question(selected),
+                ).grid(row=0, column=0, sticky="ew", padx=(0, 8))
+                ctk.CTkButton(
+                    actions,
+                    text="Delete",
+                    width=76,
+                    height=34,
+                    fg_color="#7F1D1D",
+                    hover_color="#991B1B",
+                    command=lambda selected=question: delete_question(selected),
+                ).grid(row=0, column=1, sticky="e")
+            if not matches:
+                ctk.CTkLabel(
+                    results_frame,
+                    text="No questions match those filters.",
+                    text_color="#AFC1D8",
+                ).pack(anchor="w", padx=12, pady=16)
+
+        search_entry.bind("<KeyRelease>", refresh_questions)
+        refresh_questions()
+        ctk.CTkButton(dialog, text="Close", command=dialog.destroy, width=110).pack(
+            anchor="e", padx=22, pady=(0, 18)
+        )
+
+    def open_question_editor(self, existing_question=None):
+        is_editing = existing_question is not None
+        dialog = ctk.CTkToplevel(self)
+        dialog.title("Edit question" if is_editing else "Add a question")
+        dialog.geometry("880x800")
+        dialog.minsize(700, 620)
+        dialog.transient(self)
+        dialog.grab_set()
+
+        ctk.CTkLabel(
+            dialog,
+            text="Edit a practice question" if is_editing else "Add a practice question",
+            font=ctk.CTkFont(family="Aptos Display", size=24, weight="bold"),
+        ).pack(anchor="w", padx=22, pady=(18, 2))
+        ctk.CTkLabel(
+            dialog,
+            text="Questions are saved to your local question bank.",
+            text_color="#AFC1D8",
+        ).pack(anchor="w", padx=22, pady=(0, 12))
+
+        form = ctk.CTkScrollableFrame(dialog, fg_color="transparent")
+        form.pack(fill="both", expand=True, padx=16, pady=(0, 8))
+
+        def add_field_label(text):
+            ctk.CTkLabel(
+                form, text=text, font=ctk.CTkFont(size=13, weight="bold")
+            ).pack(anchor="w", padx=6, pady=(10, 5))
+
+        metadata_exams = [exam for exam in ("220-1201", "220-1202") if exam in self.metadata]
+        if is_editing and existing_question.get("exam") not in metadata_exams:
+            metadata_exams.append(existing_question.get("exam"))
+        if not metadata_exams:
+            metadata_exams = ["220-1201", "220-1202"]
+        initial_exam = existing_question.get("exam") if is_editing else metadata_exams[0]
+        exam_var = ctk.StringVar(value=initial_exam)
+
+        def domains_for_exam(exam):
+            return sorted(
+                {
+                    normalize_domain_name(domain)
+                    for domain in self.metadata.get(exam, {}).get("objective_domains", [])
+                }
+            ) or ["Other"]
+
+        domain_values = domains_for_exam(exam_var.get())
+        initial_domain = existing_question.get("domain") if is_editing else domain_values[0]
+        if initial_domain not in domain_values:
+            domain_values.append(initial_domain)
+        domain_var = ctk.StringVar(value=initial_domain)
+
+        def update_domain_options(exam):
+            values = domains_for_exam(exam)
+            domain_menu.configure(values=values)
+            if domain_var.get() not in values:
+                domain_var.set(values[0])
+
+        add_field_label("Exam")
+        ctk.CTkOptionMenu(
+            form,
+            values=metadata_exams,
+            variable=exam_var,
+            width=220,
+            command=update_domain_options,
+        ).pack(anchor="w", padx=6)
+        add_field_label("Domain")
+        domain_menu = ctk.CTkOptionMenu(form, values=domain_values, variable=domain_var, width=360)
+        domain_menu.pack(anchor="w", padx=6)
+
+        add_field_label("Objective")
+        objective_entry = ctk.CTkEntry(form, placeholder_text="For example: 3.2 Install and configure storage devices")
+        objective_entry.pack(fill="x", padx=6)
+        if is_editing:
+            objective_entry.insert(0, existing_question.get("objective", ""))
+
+        add_field_label("Question")
+        question_box = ctk.CTkTextbox(form, height=105, wrap="word")
+        question_box.pack(fill="x", padx=6)
+        if is_editing:
+            question_box.insert("1.0", existing_question.get("question", ""))
+
+        add_field_label("Answer choices")
+        existing_answer = existing_question.get("answer") if is_editing else None
+        is_multi_select = bool(existing_question.get("multi_select")) if is_editing else False
+        if is_editing and isinstance(existing_answer, (list, tuple, set)):
+            is_multi_select = True
+        correct_letters = (
+            ExamSession.normalize_answer_set(existing_answer)
+            if is_multi_select
+            else {ExamSession.answer_letter(existing_answer)}
+        )
+        multiple_answers_var = ctk.BooleanVar(value=is_multi_select)
+        ctk.CTkCheckBox(
+            form,
+            text="Allow multiple correct answers",
+            variable=multiple_answers_var,
+        ).pack(anchor="w", padx=6, pady=(0, 6))
+        options_frame = ctk.CTkFrame(form, fg_color="transparent")
+        options_frame.pack(fill="x", padx=2)
+        option_rows = []
+
+        existing_options = []
+        if is_editing:
+            for option in existing_question.get("options", []):
+                match = re.match(r"^\s*([A-Z])\)\s*(.*)$", str(option))
+                if match:
+                    existing_options.append((match.group(1), match.group(2)))
+        if not existing_options:
+            existing_options = [(chr(ord("A") + index), "") for index in range(4)]
+        option_limit = max(6, len(existing_options))
+
+        def add_option(value="", is_correct=False):
+            if len(option_rows) >= min(option_limit, 26):
+                return
+            index = len(option_rows)
+            row = ctk.CTkFrame(options_frame, fg_color="transparent")
+            row.pack(fill="x", pady=3)
+            ctk.CTkLabel(row, text=f"{chr(ord('A') + index)})", width=28).pack(side="left")
+            entry = ctk.CTkEntry(row, placeholder_text=f"Choice {chr(ord('A') + index)}")
+            entry.pack(side="left", fill="x", expand=True, padx=(0, 12))
+            if value:
+                entry.insert(0, value)
+            correct_var = ctk.BooleanVar(value=is_correct)
+            ctk.CTkCheckBox(row, text="Correct", variable=correct_var, width=90).pack(side="right")
+            option_rows.append((row, entry, correct_var))
+
+        def remove_option():
+            if len(option_rows) <= 2:
+                return
+            row, _, _ = option_rows.pop()
+            row.destroy()
+
+        for letter, value in existing_options:
+            add_option(value, letter in correct_letters)
+        option_actions = ctk.CTkFrame(form, fg_color="transparent")
+        option_actions.pack(anchor="w", padx=6, pady=(5, 0))
+        ctk.CTkButton(option_actions, text="Add choice", width=110, command=add_option).pack(side="left")
+        ctk.CTkButton(option_actions, text="Remove last", width=110, command=remove_option).pack(side="left", padx=8)
+
+        add_field_label("Explanation (optional)")
+        explanation_box = ctk.CTkTextbox(form, height=80, wrap="word")
+        explanation_box.pack(fill="x", padx=6, pady=(0, 8))
+        if is_editing:
+            explanation_box.insert("1.0", existing_question.get("explanation", ""))
+
+        footer = ctk.CTkFrame(dialog, fg_color="transparent")
+        footer.pack(fill="x", padx=22, pady=(2, 18))
+
+        def save_question():
+            objective = objective_entry.get().strip()
+            prompt = question_box.get("1.0", "end").strip()
+            options = [entry.get().strip() for _, entry, _ in option_rows]
+            correct_indexes = [
+                index for index, (_, _, correct_var) in enumerate(option_rows) if correct_var.get()
+            ]
+            if not objective or not prompt:
+                messagebox.showwarning("Question details needed", "Enter both an objective and a question.", parent=dialog)
+                return
+            if any(not option for option in options):
+                messagebox.showwarning("Incomplete choices", "Fill in every answer choice before saving.", parent=dialog)
+                return
+            if not correct_indexes:
+                messagebox.showwarning("Correct answer needed", "Mark at least one choice as correct.", parent=dialog)
+                return
+            if not multiple_answers_var.get() and len(correct_indexes) != 1:
+                messagebox.showwarning("Choose one answer", "Mark exactly one correct choice, or enable multiple correct answers.", parent=dialog)
+                return
+
+            exam = exam_var.get()
+            answer_letters = [chr(ord("A") + index) for index in correct_indexes]
+            question = {
+                "id": existing_question.get("id") if is_editing else "",
+                "exam": exam,
+                "domain": domain_var.get(),
+                "objective": objective,
+                "question": prompt,
+                "options": [f"{chr(ord('A') + index)}) {option}" for index, option in enumerate(options)],
+                "answer": answer_letters if multiple_answers_var.get() else answer_letters[0],
+                "explanation": explanation_box.get("1.0", "end").strip(),
+            }
+            if multiple_answers_var.get():
+                question["multi_select"] = True
+
+            try:
+                if is_editing:
+                    replace_question_in_payload(
+                        self.question_data, existing_question.get("id"), question
+                    )
+                else:
+                    objective_match = re.match(r"^\s*(\d+(?:\.\d+)?)", objective)
+                    objective_code = objective_match.group(1) if objective_match else "custom"
+                    identifier_prefix = f"{exam[-4:]}-{objective_code}-"
+                    used_ids = {entry.get("id") for entry in self.bank}
+                    sequence = 1
+                    while f"{identifier_prefix}{sequence:03d}" in used_ids:
+                        sequence += 1
+                    question["id"] = f"{identifier_prefix}{sequence:03d}"
+                    append_question_to_payload(self.question_data, question)
+                save_question_payload(self.question_bank_write_path, self.question_data)
+            except (OSError, ValueError, TypeError) as error:
+                if is_editing:
+                    try:
+                        replace_question_in_payload(
+                            self.question_data, existing_question.get("id"), existing_question
+                        )
+                    except ValueError:
+                        pass
+                elif self.bank and self.bank[-1] is question:
+                    self.bank.pop()
+                messagebox.showerror("Could not save question", str(error), parent=dialog)
+                return
+
+            dialog.destroy()
+            self.bank_count_label.configure(text=f"{len(self.bank):,}")
+            self.populate_objective_options()
+            status = "updated" if is_editing else "added"
+            messagebox.showinfo("Question updated" if is_editing else "Question added", f"Question {question['id']} {status}.", parent=self)
+
+        ctk.CTkButton(footer, text="Cancel", command=dialog.destroy, width=110).pack(side="right")
+        ctk.CTkButton(
+            footer,
+            text="Save changes" if is_editing else "Save question",
+            command=save_question,
+            width=150,
+            fg_color="#0E7490",
+            hover_color="#155E75",
+        ).pack(side="right", padx=(0, 10))
 
     def populate_objective_options(self):
         for child in self.objective_options_frame.winfo_children():
