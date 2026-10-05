@@ -6,9 +6,12 @@ import pytest
 from app import (
     ExamSession,
     append_question_to_payload,
+    find_duplicate_question,
     get_question_bank_write_path,
     load_question_bank,
     normalize_domain_name,
+    prepare_questions_for_import,
+    read_question_import_file,
     remove_question_from_payload,
     replace_question_in_payload,
     save_question_payload,
@@ -102,6 +105,115 @@ def test_frozen_question_bank_writes_to_local_app_data(tmp_path, monkeypatch):
     assert get_question_bank_write_path(ROOT) == (
         tmp_path / "Zohar" / "APlusPracticePrep" / "questions.json"
     )
+
+
+def test_question_import_reads_csv_option_columns_and_multi_select_answers(tmp_path):
+    import_path = tmp_path / "questions.csv"
+    import_path.write_text(
+        "exam,domain,objective,question,option_a,option_b,option_c,answer,explanation\n"
+        '220-1201,Hardware,3.2 Storage,Select valid devices,SSD,HDD,Printer,"A,C",Storage media\n',
+        encoding="utf-8",
+    )
+
+    questions = read_question_import_file(import_path)
+
+    assert questions == [
+        {
+            "exam": "220-1201",
+            "domain": "Hardware",
+            "objective": "3.2 Storage",
+            "question": "Select valid devices",
+            "options": ["A) SSD", "B) HDD", "C) Printer"],
+            "answer": ["A", "C"],
+            "explanation": "Storage media",
+            "multi_select": True,
+        }
+    ]
+
+
+def test_question_import_reads_wrapped_json_and_remaps_option_labels(tmp_path):
+    import_path = tmp_path / "questions.json"
+    import_path.write_text(
+        json.dumps(
+            {
+                "questions": [
+                    {
+                        "id": "external-1",
+                        "exam": "220-1202",
+                        "domain": "Security",
+                        "objective": "2.1 Account security",
+                        "question": "Which is secure?",
+                        "options": ["X) Strong password", "Y) Shared password"],
+                        "answer": "X",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    questions = read_question_import_file(import_path)
+
+    assert questions[0]["id"] == "external-1"
+    assert questions[0]["options"] == ["A) Strong password", "B) Shared password"]
+    assert questions[0]["answer"] == "A"
+
+
+def test_duplicate_question_matching_ignores_case_and_whitespace():
+    existing = {
+        "exam": "220-1201",
+        "question": "  Which   device stores data?\n",
+    }
+
+    assert find_duplicate_question(
+        [existing],
+        {"exam": "220-1201", "question": "which device stores data?"},
+    ) is existing
+    assert find_duplicate_question(
+        [existing],
+        {"exam": "220-1201", "question": "which device stores data?"},
+        exclude_question=existing,
+    ) is None
+    assert find_duplicate_question(
+        [existing],
+        {"exam": "220-1202", "question": "which device stores data?"},
+    ) is None
+
+
+def test_import_preparation_skips_question_duplicates_and_assigns_missing_ids():
+    existing = [
+        {
+            "id": "1201-3.2-001",
+            "exam": "220-1201",
+            "objective": "3.2 Storage",
+            "question": "Which device stores data?",
+        }
+    ]
+    imported = [
+        {
+            "id": "imported-duplicate",
+            "exam": "220-1201",
+            "objective": "3.2 Storage",
+            "question": " WHICH   DEVICE STORES DATA? ",
+        },
+        {
+            "exam": "220-1201",
+            "objective": "3.2 Storage",
+            "question": "What does RAM do?",
+        },
+        {
+            "id": "second-copy",
+            "exam": "220-1201",
+            "objective": "3.2 Storage",
+            "question": "What does RAM do?",
+        },
+    ]
+
+    questions_to_add, duplicate_count = prepare_questions_for_import(existing, imported)
+
+    assert duplicate_count == 2
+    assert len(questions_to_add) == 1
+    assert questions_to_add[0]["id"] == "1201-3.2-002"
 
 
 def test_domain_names_are_normalized_between_metadata_and_questions():

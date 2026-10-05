@@ -1,3 +1,4 @@
+import csv
 import json
 import os
 import random
@@ -5,6 +6,7 @@ import re
 import sys
 import time
 import ctypes
+import webbrowser
 from ctypes import wintypes
 from pathlib import Path
 
@@ -12,12 +14,15 @@ import customtkinter as ctk
 
 
 try:
-    from tkinter import messagebox
+    from tkinter import filedialog, messagebox
 except ImportError:  # pragma: no cover
+    filedialog = None
     messagebox = None
 
 
 APP_TITLE = "Zohar's A+ Practice Prep"
+CONTACT_EMAIL = "zohartechteacher@gmail.com"
+LINKEDIN_URL = "https://www.linkedin.com/in/zohar-laor-202772/"
 
 
 def get_base_dir() -> Path:
@@ -127,6 +132,175 @@ def save_question_payload(path: Path, payload):
         json.dump(payload, handle, ensure_ascii=False, indent=2)
         handle.write("\n")
     temporary_path.replace(path)
+
+
+def normalize_import_question(question, row_number: int) -> dict:
+    if not isinstance(question, dict):
+        raise ValueError(f"Row {row_number}: each question must be an object.")
+
+    values = {
+        str(key).strip().lower().replace(" ", "_"): value
+        for key, value in question.items()
+    }
+    prompt = values.get("question", values.get("prompt", ""))
+    exam = str(values.get("exam", "")).strip()
+    domain = str(values.get("domain", "")).strip()
+    objective = str(values.get("objective", "")).strip()
+    if not all((exam, domain, objective, str(prompt).strip())):
+        raise ValueError(
+            f"Row {row_number}: exam, domain, objective, and question are required."
+        )
+    if exam not in {"220-1201", "220-1202"}:
+        raise ValueError(f"Row {row_number}: unsupported exam '{exam}'.")
+
+    options = values.get("options")
+    if isinstance(options, str):
+        try:
+            options = json.loads(options)
+        except json.JSONDecodeError:
+            options = [option.strip() for option in options.split("|") if option.strip()]
+    if not isinstance(options, list) or not options:
+        options = [
+            (values.get(f"option_{letter.lower()}") or "")
+            for letter in "ABCDEF"
+            if (values.get(f"option_{letter.lower()}") or "").strip()
+        ]
+    if not 2 <= len(options) <= 26:
+        raise ValueError(f"Row {row_number}: provide between 2 and 26 options.")
+
+    label_map = {}
+    normalized_options = []
+    for index, option in enumerate(options):
+        option_text = str(option).strip()
+        if not option_text:
+            raise ValueError(f"Row {row_number}: answer options cannot be empty.")
+        match = re.match(r"^\s*([A-Z])\)\s*(.*)$", option_text)
+        original_label = match.group(1) if match else chr(ord("A") + index)
+        text = match.group(2).strip() if match else option_text
+        if original_label in label_map or not text:
+            raise ValueError(f"Row {row_number}: options need unique labels and text.")
+        new_label = chr(ord("A") + index)
+        label_map[original_label] = new_label
+        normalized_options.append(f"{new_label}) {text}")
+
+    answers = values.get("answer", values.get("correct_answer", ""))
+    if isinstance(answers, str):
+        answer_text = answers.strip()
+        if answer_text.startswith("["):
+            try:
+                answers = json.loads(answer_text)
+            except json.JSONDecodeError:
+                answers = answer_text
+        if isinstance(answers, str):
+            answers = [part.strip() for part in re.split(r"[,;|]", answers) if part.strip()]
+    elif not isinstance(answers, (list, tuple, set)):
+        answers = [answers]
+
+    normalized_answers = []
+    for answer in answers:
+        answer_label = str(answer).split(")", 1)[0].strip().upper()
+        if answer_label not in label_map:
+            raise ValueError(f"Row {row_number}: answer '{answer}' does not match an option.")
+        mapped_label = label_map[answer_label]
+        if mapped_label not in normalized_answers:
+            normalized_answers.append(mapped_label)
+    if not normalized_answers:
+        raise ValueError(f"Row {row_number}: provide at least one correct answer.")
+
+    multi_select_value = values.get("multi_select", False)
+    multi_select = (
+        multi_select_value is True
+        or str(multi_select_value).strip().casefold() in {"1", "true", "yes", "y"}
+        or len(normalized_answers) > 1
+    )
+    result = {
+        "exam": exam,
+        "domain": domain,
+        "objective": objective,
+        "question": str(prompt).strip(),
+        "options": normalized_options,
+        "answer": normalized_answers if multi_select else normalized_answers[0],
+        "explanation": str(values.get("explanation", "") or "").strip(),
+    }
+    if values.get("id"):
+        result["id"] = str(values["id"]).strip()
+    if multi_select:
+        result["multi_select"] = True
+    return result
+
+
+def read_question_import_file(path: Path) -> list[dict]:
+    if path.suffix.casefold() == ".json":
+        payload = load_json(path)
+        questions = load_question_bank(payload)
+        if not questions and isinstance(payload, dict) and "question" in payload:
+            questions = [payload]
+    elif path.suffix.casefold() == ".csv":
+        with path.open("r", encoding="utf-8-sig", newline="") as handle:
+            questions = list(csv.DictReader(handle))
+    else:
+        raise ValueError("Choose a .json or .csv question file.")
+
+    if not questions:
+        raise ValueError("The selected file contains no questions.")
+    return [normalize_import_question(question, index) for index, question in enumerate(questions, 1)]
+
+
+def question_content_key(question):
+    exam = str(question.get("exam", "")).strip().casefold()
+    prompt = " ".join(str(question.get("question", "")).split()).casefold()
+    return (exam, prompt) if exam and prompt else None
+
+
+def find_duplicate_question(questions, candidate, exclude_question=None):
+    candidate_key = question_content_key(candidate)
+    if candidate_key is None:
+        return None
+    return next(
+        (
+            question
+            for question in questions
+            if question is not exclude_question
+            and question_content_key(question) == candidate_key
+        ),
+        None,
+    )
+
+
+def prepare_questions_for_import(existing_questions, imported_questions):
+    used_ids = {str(question.get("id", "")).strip() for question in existing_questions}
+    seen_content = {
+        key
+        for question in existing_questions
+        if (key := question_content_key(question)) is not None
+    }
+    questions_to_add = []
+    duplicate_count = 0
+
+    for imported_question in imported_questions:
+        question = dict(imported_question)
+        question_id = str(question.get("id", "") or "").strip()
+        if not question_id:
+            objective_match = re.match(r"^\s*(\d+(?:\.\d+)?)", question["objective"])
+            objective_code = objective_match.group(1) if objective_match else "custom"
+            prefix = f"{question['exam'][-4:]}-{objective_code}-"
+            sequence = 1
+            while f"{prefix}{sequence:03d}" in used_ids:
+                sequence += 1
+            question_id = f"{prefix}{sequence:03d}"
+            question["id"] = question_id
+
+        content_key = question_content_key(question)
+        if question_id in used_ids or (content_key is not None and content_key in seen_content):
+            duplicate_count += 1
+            continue
+
+        used_ids.add(question_id)
+        if content_key is not None:
+            seen_content.add(content_key)
+        questions_to_add.append(question)
+
+    return questions_to_add, duplicate_count
 
 
 def normalize_domain_name(domain: str) -> str:
@@ -428,12 +602,49 @@ class APlusPracticeApp(ctk.CTk):
 
         brand_copy = ctk.CTkFrame(brand_header, fg_color="transparent")
         brand_copy.pack(side="left", fill="both", expand=True, padx=22, pady=18)
-        ctk.CTkLabel(
-            brand_copy,
-            text="Email: zohartechteacher@gmail.com",
+        contact_row = ctk.CTkFrame(brand_copy, fg_color="transparent")
+        contact_row.pack(anchor="w", pady=(0, 6))
+        email_link = ctk.CTkLabel(
+            contact_row,
+            text=f"Email: {CONTACT_EMAIL}",
             text_color="#67E8F9",
             font=ctk.CTkFont(family="Aptos Display", size=11, weight="bold"),
-        ).pack(anchor="w", pady=(0, 6))
+            cursor="hand2",
+        )
+        email_link.pack(side="left")
+        email_link.bind(
+            "<Button-1>",
+            lambda _event: webbrowser.open(f"mailto:{CONTACT_EMAIL}"),
+        )
+        email_link.bind(
+            "<Enter>", lambda _event: email_link.configure(text_color="#A5F3FC")
+        )
+        email_link.bind(
+            "<Leave>", lambda _event: email_link.configure(text_color="#67E8F9")
+        )
+        ctk.CTkLabel(
+            contact_row,
+            text=" | ",
+            text_color="#AFC1D8",
+            font=ctk.CTkFont(family="Aptos Display", size=11, weight="bold"),
+        ).pack(side="left")
+        linkedin_link = ctk.CTkLabel(
+            contact_row,
+            text="LinkedIn",
+            text_color="#67E8F9",
+            font=ctk.CTkFont(family="Aptos Display", size=11, weight="bold"),
+            cursor="hand2",
+        )
+        linkedin_link.pack(side="left")
+        linkedin_link.bind(
+            "<Button-1>", lambda _event: webbrowser.open(LINKEDIN_URL)
+        )
+        linkedin_link.bind(
+            "<Enter>", lambda _event: linkedin_link.configure(text_color="#A5F3FC")
+        )
+        linkedin_link.bind(
+            "<Leave>", lambda _event: linkedin_link.configure(text_color="#67E8F9")
+        )
         ctk.CTkLabel(
             brand_copy,
             text="Zohar's A+ Practice Prep",
@@ -519,6 +730,142 @@ class APlusPracticeApp(ctk.CTk):
         self.populate_objective_options()
         self.update_question_count_limits()
 
+    def import_questions_from_file(self, parent, refresh_callback):
+        if filedialog is None:
+            messagebox.showerror("Import unavailable", "The file picker is not available.", parent=parent)
+            return
+
+        selected_path = filedialog.askopenfilename(
+            parent=parent,
+            title="Import questions",
+            filetypes=[("Question files", "*.json *.csv"), ("JSON files", "*.json"), ("CSV files", "*.csv")],
+        )
+        if not selected_path:
+            return
+
+        try:
+            imported_questions = read_question_import_file(Path(selected_path))
+        except (OSError, UnicodeError, csv.Error, json.JSONDecodeError, ValueError) as error:
+            messagebox.showerror("Could not import questions", str(error), parent=parent)
+            return
+
+        questions_to_add, duplicate_count = prepare_questions_for_import(
+            self.bank, imported_questions
+        )
+
+        if not questions_to_add:
+            messagebox.showinfo(
+                "No new questions",
+                f"The file had no new questions. Skipped {duplicate_count} duplicate question(s).",
+                parent=parent,
+            )
+            return
+
+        confirmation = f"Import {len(questions_to_add)} question(s)?"
+        if duplicate_count:
+            confirmation += f"\n\n{duplicate_count} duplicate question(s) will be skipped."
+        if not messagebox.askyesno("Confirm import", confirmation, parent=parent):
+            return
+
+        appended_ids = []
+        try:
+            for question in questions_to_add:
+                append_question_to_payload(self.question_data, question)
+                appended_ids.append(question["id"])
+            save_question_payload(self.question_bank_write_path, self.question_data)
+        except (OSError, TypeError, ValueError) as error:
+            for question_id in reversed(appended_ids):
+                try:
+                    remove_question_from_payload(self.question_data, question_id)
+                except ValueError:
+                    pass
+            messagebox.showerror("Could not save imported questions", str(error), parent=parent)
+            return
+
+        self.bank_count_label.configure(text=f"{len(self.bank):,}")
+        self.populate_objective_options()
+        refresh_callback()
+        messagebox.showinfo(
+            "Import complete",
+            f"Imported {len(questions_to_add)} question(s)."
+            + (f" Skipped {duplicate_count} duplicate question(s)." if duplicate_count else ""),
+            parent=parent,
+        )
+
+    def show_question_import_format(self, parent):
+        dialog = ctk.CTkToplevel(parent)
+        dialog.title("Question import format")
+        dialog.geometry("820x760")
+        dialog.minsize(680, 600)
+        dialog.transient(parent)
+        dialog.grab_set()
+
+        ctk.CTkLabel(
+            dialog,
+            text="Question import format",
+            font=ctk.CTkFont(family="Aptos Display", size=22, weight="bold"),
+        ).pack(anchor="w", padx=22, pady=(18, 4))
+        ctk.CTkLabel(
+            dialog,
+            text="Required fields: exam, domain, objective, question, options, and answer. IDs and explanations are optional.",
+            text_color="#AFC1D8",
+            wraplength=760,
+            justify="left",
+        ).pack(anchor="w", padx=22, pady=(0, 12))
+
+        examples = ctk.CTkScrollableFrame(dialog, fg_color="transparent")
+        examples.pack(fill="both", expand=True, padx=16, pady=(0, 12))
+
+        csv_text = (
+            "exam,domain,objective,question,option_a,option_b,option_c,answer,explanation\n"
+            '220-1201,Hardware,3.2 Storage,Which is an SSD?,SSD,HDD,Printer,A,Flash storage\n'
+        )
+        json_text = json.dumps(
+            {
+                "questions": [
+                    {
+                        "exam": "220-1201",
+                        "domain": "Hardware",
+                        "objective": "3.2 Storage",
+                        "question": "Which are storage devices?",
+                        "options": ["A) SSD", "B) HDD", "C) Printer"],
+                        "answer": ["A", "B"],
+                        "multi_select": True,
+                        "explanation": "SSDs and HDDs store data.",
+                    }
+                ]
+            },
+            indent=2,
+        )
+
+        def add_example(title, content, copy_label):
+            ctk.CTkLabel(
+                examples,
+                text=title,
+                font=ctk.CTkFont(size=14, weight="bold"),
+            ).pack(anchor="w", padx=6, pady=(10, 4))
+            code_box = ctk.CTkTextbox(examples, height=110 if title == "CSV" else 310, wrap="none")
+            code_box.pack(fill="x", padx=6)
+            code_box.insert("1.0", content)
+            code_box.configure(state="disabled")
+
+            def copy_example():
+                dialog.clipboard_clear()
+                dialog.clipboard_append(content)
+
+            ctk.CTkButton(
+                examples,
+                text=copy_label,
+                width=130,
+                command=copy_example,
+            ).pack(anchor="e", padx=6, pady=(5, 2))
+
+        add_example("CSV", csv_text, "Copy CSV example")
+        add_example("JSON", json_text, "Copy JSON example")
+        ctk.CTkButton(dialog, text="Close", command=dialog.destroy, width=100).pack(
+            anchor="e", padx=22, pady=(0, 18)
+        )
+
     def open_question_manager(self):
         dialog = ctk.CTkToplevel(self)
         dialog.title("Edit questions")
@@ -548,6 +895,29 @@ class APlusPracticeApp(ctk.CTk):
             width=150,
             command=lambda *_: refresh_questions(),
         ).pack(side="right")
+        ctk.CTkButton(
+            filters,
+            text="Import",
+            width=100,
+            command=lambda: self.import_questions_from_file(dialog, refresh_questions),
+        ).pack(side="right", padx=(0, 8))
+        format_link = ctk.CTkLabel(
+            filters,
+            text="Format",
+            text_color="#67E8F9",
+            font=ctk.CTkFont(family="Aptos Display", size=12, underline=True),
+            cursor="hand2",
+        )
+        format_link.pack(side="right", padx=(0, 10))
+        format_link.bind(
+            "<Button-1>", lambda _event: self.show_question_import_format(dialog)
+        )
+        format_link.bind(
+            "<Enter>", lambda _event: format_link.configure(text_color="#A5F3FC")
+        )
+        format_link.bind(
+            "<Leave>", lambda _event: format_link.configure(text_color="#67E8F9")
+        )
 
         result_count = ctk.CTkLabel(dialog, text_color="#AFC1D8")
         result_count.pack(anchor="w", padx=24, pady=(0, 6))
@@ -555,8 +925,12 @@ class APlusPracticeApp(ctk.CTk):
         results_frame.pack(fill="both", expand=True, padx=20, pady=(0, 14))
 
         def select_question(question):
-            dialog.destroy()
-            self.open_question_editor(question)
+            dialog.withdraw()
+            self.open_question_editor(
+                question,
+                return_to_manager=dialog,
+                on_return=refresh_questions,
+            )
 
         def delete_question(question):
             question_id = question.get("id", "No ID")
@@ -662,7 +1036,9 @@ class APlusPracticeApp(ctk.CTk):
             anchor="e", padx=22, pady=(0, 18)
         )
 
-    def open_question_editor(self, existing_question=None):
+    def open_question_editor(
+        self, existing_question=None, return_to_manager=None, on_return=None
+    ):
         is_editing = existing_question is not None
         dialog = ctk.CTkToplevel(self)
         dialog.title("Edit question" if is_editing else "Add a question")
@@ -809,6 +1185,16 @@ class APlusPracticeApp(ctk.CTk):
         footer = ctk.CTkFrame(dialog, fg_color="transparent")
         footer.pack(fill="x", padx=22, pady=(2, 18))
 
+        def close_editor():
+            dialog.destroy()
+            if return_to_manager is not None:
+                return_to_manager.deiconify()
+                return_to_manager.grab_set()
+                if on_return is not None:
+                    on_return()
+
+        dialog.protocol("WM_DELETE_WINDOW", close_editor)
+
         def save_question():
             objective = objective_entry.get().strip()
             prompt = question_box.get("1.0", "end").strip()
@@ -844,6 +1230,20 @@ class APlusPracticeApp(ctk.CTk):
             if multiple_answers_var.get():
                 question["multi_select"] = True
 
+            duplicate = find_duplicate_question(
+                self.bank,
+                question,
+                exclude_question=existing_question if is_editing else None,
+            )
+            if duplicate is not None:
+                duplicate_id = duplicate.get("id", "an existing question")
+                messagebox.showwarning(
+                    "Duplicate question",
+                    f"This prompt already exists for {exam} (ID: {duplicate_id}).",
+                    parent=dialog,
+                )
+                return
+
             try:
                 if is_editing:
                     replace_question_in_payload(
@@ -873,13 +1273,17 @@ class APlusPracticeApp(ctk.CTk):
                 messagebox.showerror("Could not save question", str(error), parent=dialog)
                 return
 
-            dialog.destroy()
+            close_editor()
             self.bank_count_label.configure(text=f"{len(self.bank):,}")
             self.populate_objective_options()
             status = "updated" if is_editing else "added"
-            messagebox.showinfo("Question updated" if is_editing else "Question added", f"Question {question['id']} {status}.", parent=self)
+            messagebox.showinfo(
+                "Question updated" if is_editing else "Question added",
+                f"Question {question['id']} {status}.",
+                parent=return_to_manager or self,
+            )
 
-        ctk.CTkButton(footer, text="Cancel", command=dialog.destroy, width=110).pack(side="right")
+        ctk.CTkButton(footer, text="Cancel", command=close_editor, width=110).pack(side="right")
         ctk.CTkButton(
             footer,
             text="Save changes" if is_editing else "Save question",
