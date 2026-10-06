@@ -6,7 +6,7 @@
       "220-1201",
       "220-1202"
     ],
-    "total_questions": 1000,
+    "total_questions": 1031,
     "schema_version": "1.0",
     "description": "Comprehensive 1,000-question seed database mapped accurately to CompTIA A+ 220-1201 and 220-1202 domains and percentage distributions."
   },
@@ -1998,49 +1998,49 @@
       "explanation": "Based on CompTIA A+ troubleshooting methodology for 2.0 Networking, verifying system diagnostics, checking configurations, and isolating the component (laptop) resolves the issue safely."
     },
     {
-      "id": "1201-2.3-132",
+      "id": "1201-2.6-132",
       "exam": "220-1201",
       "domain": "2.0 Networking",
-      "objective": "2.3 IP Addressing",
-      "question": "An administrator needs to configure hypervisor to support manage storage partitions securely and efficiently. Which action should be taken?",
+      "objective": "2.6 Given a scenario, configure basic wired/wireless small office/home office (SOHO) networks",
+      "question": "A technician is troubleshooting a connectivity issue on a network computer. The technician runs ipconfig in a command prompt and receives the following IP address: 169.254.0.6. Which of the following is most likely the type of IP address being assigned?",
       "options": [
-        "A) Enable encryption and verify protocol bindings",
-        "B) Disable firewall rules and reset factory defaults",
-        "C) Format the primary partition using FAT32",
-        "D) Assign a static APIPA address"
+        "A) DHCP reservation assignment",
+        "B) Dynamic assignment",
+        "C) Self-assignment",
+        "D) Static assignment"
       ],
-      "answer": "A",
-      "explanation": "Based on CompTIA A+ troubleshooting methodology for 2.0 Networking, verifying system diagnostics, checking configurations, and isolating the component (hypervisor) resolves the issue safely."
+      "answer": "C",
+      "explanation": "An IP address starting with169.254.x.xis aself-assigned address(also calledAPIPA- Automatic Private IP Addressing). It's used when a client device cannot contact a DHCP server. This address allows limited communication on the local network segment but no internet access."
     },
     {
-      "id": "1201-2.3-133",
+      "id": "1201-3.8-133",
       "exam": "220-1201",
-      "domain": "2.0 Networking",
-      "objective": "2.3 IP Addressing",
-      "question": "An administrator needs to configure router to support establish secure remote access securely and efficiently. Which action should be taken?",
+      "domain": "3.0 Hardware",
+      "objective": "3.8 Given a scenario, perform appropriate printer maintenance",
+      "question": "A recently installed printer is incorrectly aligning printed documents Which of the following should the technician do first to fix this issue?",
       "options": [
-        "A) Enable encryption and verify protocol bindings",
-        "B) Disable firewall rules and reset factory defaults",
-        "C) Format the primary partition using FAT32",
-        "D) Assign a static APIPA address"
+        "A) Run the maintenance application.",
+        "B) Clean the rollers",
+        "C) Upgrade the firmware",
+        "D) Reinstall the drivers"
       ],
       "answer": "A",
-      "explanation": "Based on CompTIA A+ troubleshooting methodology for 2.0 Networking, verifying system diagnostics, checking configurations, and isolating the component (router) resolves the issue safely."
+      "explanation": "Most modern printers include a built-in maintenance application that can calibrate the print heads and correct alignment issues. Running this tool is the first step to address misalignment."
     },
     {
-      "id": "1201-2.3-134",
+      "id": "1201-2.2-134",
       "exam": "220-1201",
       "domain": "2.0 Networking",
-      "objective": "2.3 IP Addressing",
-      "question": "A technician is troubleshooting a switch that is experiencing intermittent packet loss. Which of the following is the most likely cause?",
+      "objective": "2.2 Explain wireless networking technologies",
+      "question": "An IT specialist compares Bluetooth and NFC technologies for mobile device connectivity. Which of the following statements accurately describes a key difference between the two?",
       "options": [
-        "A) Driver corruption or outdated firmware",
-        "B) Physical disconnection or loose cabling",
-        "C) Incorrect power wattage supply",
-        "D) BIOS/UEFI configuration error"
+        "A) NFC is faster than Bluetooth when transferring large files between devices.",
+        "B) NFC consumes more power than Bluetooth, making it less suitable for devices in which battery conservation is crucial",
+        "C) NFC requires pairing with the receiving host, whereas Bluetooth just needs the available connection.",
+        "D) NFC works best within a few centimeters, but Bluetooth can connect devices that are up to 32ft (10m) apart."
       ],
-      "answer": "A",
-      "explanation": "Based on CompTIA A+ troubleshooting methodology for 2.0 Networking, verifying system diagnostics, checking configurations, and isolating the component (switch) resolves the issue safely."
+      "answer": "D",
+      "explanation": "NFC (Near-Field Communication)operates atvery short ranges - usually less than 4cm, and is ideal for quick, secure transactions like contactless payments.Bluetoothsupportslonger ranges (up to 10 meters or 32 feet)and is suited for ongoing connections like wireless headsets or file transfers."
     },
     {
       "id": "1201-2.3-135",
@@ -15031,6 +15031,452 @@
       ],
       "answer": "A",
       "explanation": "Based on CompTIA A+ troubleshooting methodology for 4.0 Operational Procedures, verifying system diagnostics, checking configurations, and isolating the component (workstation) resolves the issue safely."
+    },
+    {
+      "id": "1201-3.8-001",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.8 Given a scenario, perform appropriate printer maintenance",
+      "question": "A technician is troubleshooting an all-in-one laser printer that prints a vertical line when making copies and scans. When users print or receive faxes, the output from the printer is correct. Which of the following should the technician examine to determine the cause of the issue?",
+      "options": [
+        "A) The pickup rollers",
+        "B) The corona wire",
+        "C) The document feeder",
+        "D) The drum assembly"
+      ],
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "id": "1201-4.2-001",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "4.2 Summarize cloud computing concepts",
+      "question": "Which of the following is an advantage of using a hybrid cloud instead of a public cloud?",
+      "options": [
+        "A) Ability to reduce management overhead",
+        "B) Ability to use cross-platform virtualization",
+        "C) Ability to meet data residency requirements",
+        "D) Ability to leverage IaaS and PaaS"
+      ],
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "id": "1201-5.1-001",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Given a scenario, troubleshoot motherboards, RAM, CPUs, and power",
+      "question": "A technician is troubleshooting a desktop PC that is plugged into a UPS. The PC loses the system date/time after every power outage. Which of the following should the technician do to resolve the issue? (Choose two.)",
+      "options": [
+        "A) Run a BIOS update",
+        "B) Swap out the RAM",
+        "C) Disable NTP in the OS",
+        "D) Repair the backup power source",
+        "E) Replace the CMOS battery",
+        "F) Install a surge protector"
+      ],
+      "answer": [
+        "D",
+        "E"
+      ],
+      "explanation": "",
+      "multi_select": true
+    },
+    {
+      "id": "1201-3.7-001",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.7 Given a scenario, deploy and configure multifunction devices/printers and settings",
+      "question": "A network administrator must ensure that a printer will still be assigned a specific IP address even if all addresses are depleted. Which of the following network configuration concepts is this describing?",
+      "options": [
+        "A) VLAN",
+        "B) Lease",
+        "C) Reservation",
+        "D) Exclusion"
+      ],
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "id": "1201-1.2-001",
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.2 Compare and contrast accessories and connectivity options for mobile devices.",
+      "question": "A user is having issues when charging a device with a Lightning cable. The cable is not recognized when it is plugged into the device. This issue is usually resolved by flipping the cable over. This issue does not occur with other devices of the same type. Which of the following would most likely cause the issue?",
+      "options": [
+        "A) The device needs to be restarted",
+        "B) The battery may be swelling and needs inspection",
+        "C) The cable is failing and needs to be replaced",
+        "D) The charging port is dirty or damaged"
+      ],
+      "answer": "D",
+      "explanation": ""
+    },
+    {
+      "id": "1201-2.3-001",
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.3 Summarize services provided by networked hosts",
+      "question": "Which of the following servers is used to collect data and information about events from a network-connected host?",
+      "options": [
+        "A) DNS",
+        "B) Mail",
+        "C) Print",
+        "D) Syslog"
+      ],
+      "answer": "D",
+      "explanation": ""
+    },
+    {
+      "id": "1201-1.1-016",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "1.1 Given a scenario, monitor mobile device hardware and use appropriate replacement\ntechniques.",
+      "question": "A technician observes slow startup times on a laptop. Which of the following is most likely causing the issue?",
+      "options": [
+        "A) HDD",
+        "B) RAM",
+        "C) NIC",
+        "D) BIOS"
+      ],
+      "answer": "A",
+      "explanation": ""
+    },
+    {
+      "id": "1201-1.1-017",
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.1 Given a scenario, monitor mobile device hardware and use appropriate replacement\ntechniques",
+      "question": "A customer reports their tablet was recently dropped on the ground. The tablet has a small crack in one corner of the display, and it does not charge when plugged in. Which of the following should a technician do first?",
+      "options": [
+        "A) Perform a hard restart.",
+        "B) Replace the battery",
+        "C) Inspect the USB-C port for damage",
+        "D) Run diagnostics on the digitizer"
+      ],
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "id": "1201-3.6-001",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Fiven a scenario, install the appropriate power supply",
+      "question": "A technician needs to select PC components with a minimal number of visible internal cables. Which of the following should the technician use?",
+      "options": [
+        "A) SATA drive connections",
+        "B) Liquid cooling",
+        "C) Modular power supply",
+        "D) Wireless NIC"
+      ],
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "id": "1201-1.3-001",
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.3 Given a scenario, configure basic mobile device network connectivity and provide\napplication support",
+      "question": "A user is traveling internationally. They can make and receive phone calls but cannot send or receive email. Which of the following would most likely resolve this issue?",
+      "options": [
+        "A) Disabling the GPS",
+        "B) Enabling data roaming",
+        "C) Configuring 4G usage only",
+        "D) Connecting using a hotspot"
+      ],
+      "answer": "B",
+      "explanation": ""
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What is the maximum data transfer rate of SATA III?",
+      "options": [
+        "A) 1.5 Gbps",
+        "B) 3.0 Gbps",
+        "C) 6.0 Gbps"
+      ],
+      "answer": "C",
+      "explanation": "SATA III (Revision 3.0) supports a maximum transfer rate of 6.0 Gbps.",
+      "id": "1201-3.2-001"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which RAID level provides striping with parity, requiring a minimum of 3 drives?",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 5"
+      ],
+      "answer": "C",
+      "explanation": "RAID 5 uses block-level striping with distributed parity, requiring at least 3 drives.",
+      "id": "1201-3.2-002"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which type of storage uses microchips to retain data without moving parts?",
+      "options": [
+        "A) HDD",
+        "B) SSD",
+        "C) Magnetic Tape"
+      ],
+      "answer": "B",
+      "explanation": "Solid State Drives (SSDs) use flash memory chips with no moving parts.",
+      "id": "1201-3.2-003"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What command is used in Windows to optimize and defragment traditional hard drives or send TRIM commands to SSDs?",
+      "options": [
+        "A) chkdsk",
+        "B) defrag",
+        "C) format"
+      ],
+      "answer": "B",
+      "explanation": "The defrag command in Windows optimizes HDDs and manages TRIM for SSDs.",
+      "id": "1201-3.2-004"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which form factor is commonly used by high-performance NVMe solid-state drives?",
+      "options": [
+        "A) DIMM",
+        "B) M.2",
+        "C) PCI"
+      ],
+      "answer": "B",
+      "explanation": "M.2 is a small form factor commonly used for high-speed NVMe SSDs.",
+      "id": "1201-3.2-005"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which RAID level is known as disk mirroring and requires a minimum of 2 drives?",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 10"
+      ],
+      "answer": "B",
+      "explanation": "RAID 1 mirrors data across two or more drives for redundancy.",
+      "id": "1201-3.2-006"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What feature do SSDs use to ensure worn-out flash memory blocks are used evenly?",
+      "options": [
+        "A) TRIM",
+        "B) Wear leveling",
+        "C) SMART"
+      ],
+      "answer": "B",
+      "explanation": "Wear leveling distributes writes evenly across memory cells to prolong SSD lifespan.",
+      "id": "1201-3.2-007"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which storage interface connects directly to the PCI Express bus for significantly higher speeds than SATA?",
+      "options": [
+        "A) NVMe",
+        "B) SCSI",
+        "C) IDE"
+      ],
+      "answer": "A",
+      "explanation": "NVMe (Non-Volatile Memory Express) takes advantage of PCIe bus speeds.",
+      "id": "1201-3.2-008"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What technology is used by hard disk drives to measure drive health and predict failures?",
+      "options": [
+        "A) TRIM",
+        "B) SMART",
+        "C) RAID"
+      ],
+      "answer": "B",
+      "explanation": "S.M.A.R.T. (Self-Monitoring, Analysis, and Reporting Technology) monitors drive reliability.",
+      "id": "1201-3.2-009"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which RAID level combines mirroring and striping, requiring at least 4 drives?",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 5",
+        "C) RAID 10"
+      ],
+      "answer": "C",
+      "explanation": "RAID 10 (or 1+0) combines striping (RAID 0) and mirroring (RAID 1).",
+      "id": "1201-3.2-010"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Given a scenario, install and configure motherboards, central processing units (CPUs), and\nadd-on cards.",
+      "question": "A technician is installing a new Intel processor into a desktop motherboard and notices that the CPU socket features array pins built directly into the socket rather than on the CPU package itself. Which socket type is being installed?",
+      "options": [
+        "A) PGA",
+        "B) LGA",
+        "C) BGA",
+        "D) ZIF"
+      ],
+      "answer": "B",
+      "explanation": "LGA (Land Grid Array) sockets place the pins on the motherboard socket itself, matching with land pads on the bottom of the CPU package to prevent bent CPU pins.",
+      "id": "1201-3.5-001"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Given a scenario, install and configure motherboards, central processing units (CPUs), and\nadd-on cards.",
+      "question": "A system administrator needs to configure full-disk encryption using BitLocker on a corporate Windows workstation. Which motherboard component or chip is required to securely generate and store the cryptographic keys?",
+      "options": [
+        "A) CMOS",
+        "B) UEFI",
+        "C) TPM",
+        "D) HSM"
+      ],
+      "answer": "C",
+      "explanation": "The Trusted Platform Module (TPM) is a dedicated secure cryptoprocessor circuit built into the motherboard or chipset to store encryption keys, certificate credentials, and system integrity measurements.",
+      "id": "1201-3.5-002"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Given a scenario, install and configure motherboards, central processing units (CPUs), and\nadd-on cards.",
+      "question": "A technician is deploying an ultra-small form factor PC designed for a specialized Mobile/Ultra Mobile PC implementation. The motherboard form factor dimensions measure exactly 2.4 inches by 2.4 inches. Which ITX variant is this?",
+      "options": [
+        "A) Mini-ITX",
+        "B) Nano-ITX",
+        "C) Pico-ITX",
+        "D) Mobile-ITX"
+      ],
+      "answer": "D",
+      "explanation": "Mobile-ITX is the smallest form factor in the ITX family, measuring 2.4 in x 2.4 in (60 mm x 60 mm), intended for ultra-mobile and embedded applications.",
+      "id": "1201-3.5-003"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Given a scenario, install and configure motherboards, central processing units (CPUs), and\nadd-on cards.",
+      "question": "A desktop computer powers on, but every time it is completely unplugged from the wall, the date, time, and custom BIOS settings are lost. Which component needs to be replaced?",
+      "options": [
+        "A) CR2032 Lithium Battery",
+        "B) ATX Power Supply unit",
+        "C) Expansion bus crystal",
+        "D) Chassis intrusion switch"
+      ],
+      "answer": "A",
+      "explanation": "The CR2032 3V lithium coin-cell battery powers the CMOS memory that retains custom BIOS/UEFI settings and system time when the PC is disconnected from main power.",
+      "id": "1201-3.5-004"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Given a scenario, install and configure motherboards, central processing units (CPUs), and\nadd-on cards.",
+      "question": "When powering on a workstation, the screen displays a black display with a single white blinking underscore cursor in the top-left corner, and Windows fails to boot. Which BIOS/UEFI setting should the technician check first?",
+      "options": [
+        "A) CPU Fan Threshold",
+        "B) Boot Device Priority",
+        "C) Secure Boot status",
+        "D) SATA Controller Mode"
+      ],
+      "answer": "B",
+      "explanation": "A blinking cursor on a black screen typically indicates that the BIOS/UEFI passed POST but cannot locate a bootable operating system sector, pointing to an incorrect Boot Order or missing boot media.",
+      "id": "1201-3.5-005"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Given a scenario, install and configure motherboards, central processing units (CPUs), and\nadd-on cards.",
+      "question": "A workstation running legacy 32-bit applications requires a RAM upgrade. Given the architecture limitations of 32-bit (x86) processors, what is the maximum amount of RAM the system can address?",
+      "options": [
+        "A) 2 GB",
+        "B) 4 GB",
+        "C) 8 GB",
+        "D) 16 GB"
+      ],
+      "answer": "B",
+      "explanation": "32-bit (x86) processor architecture uses 32-bit memory addressing, limiting total usable physical system memory to 4 GB.",
+      "id": "1201-3.5-006"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Given a scenario, install and configure motherboards, central processing units (CPUs), and\nadd-on cards.",
+      "question": "An IT security technician receives an automated administrative alert indicating that a server enclosure side panel was removed overnight. Which feature on the motherboard enabled this alert?",
+      "options": [
+        "A) TPM logging",
+        "B) Chassis Intrusion Detection",
+        "C) Thermal throttling sensor",
+        "D) Power supply failover switch"
+      ],
+      "answer": "B",
+      "explanation": "Chassis Intrusion Detection utilizes a physical switch on the motherboard connected to the case frame to log and notify system administrators if the computer case has been opened.",
+      "id": "1201-3.5-007"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Given a scenario, install and configure motherboards, central processing units (CPUs), and\nadd-on cards.",
+      "question": "A performance user notices that under heavy video rendering loads, the CPU temperature rises to between 90°C and 100°C, and CPU performance drops significantly as the clock speed automatically lowers. What mechanism is taking place?",
+      "options": [
+        "A) Thermal Shutdown",
+        "B) Wait State delay",
+        "C) Thermal Throttling",
+        "D) Overclocking limit"
+      ],
+      "answer": "C",
+      "explanation": "Thermal Throttling automatically reduces the processor's clock speed when high thermal limits (90–100°C) are reached to reduce heat output and prevent hardware damage.",
+      "id": "1201-3.5-008"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Given a scenario, install and configure motherboards, central processing units (CPUs), and\nadd-on cards.",
+      "question": "Which level of CPU cache is integrated into the processor architecture as the largest in capacity, but also the slowest in speed compared to other cache levels?",
+      "options": [
+        "A) L1 Cache",
+        "B) L2 Cache",
+        "C) L3 Cache",
+        "D) L4 Cache"
+      ],
+      "answer": "C",
+      "explanation": "L3 cache is shared across cores and is the largest and slowest of the primary CPU cache levels (L1 being fastest/smallest, followed by L2 and L3).",
+      "id": "1201-3.5-009"
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Given a scenario, install and configure motherboards, central processing units (CPUs), and\nadd-on cards.",
+      "question": "A user is setting up desktop speakers on a standard analog audio panel on a PC motherboard. Which color-coded 3.5mm jack should the speaker cable be plugged into for stereo line output?",
+      "options": [
+        "A) Pink",
+        "B) Lime Green",
+        "C) Light Blue",
+        "D) Orange"
+      ],
+      "answer": "B",
+      "explanation": "Standard PC color coding uses Lime Green for line out/headphone/stereo speaker connections (Pink is microphone input, Light Blue is line in).",
+      "id": "1201-3.5-010"
     }
   ]
 }
