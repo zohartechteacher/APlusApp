@@ -433,6 +433,28 @@ class ExamSession:
     def is_flagged(self, idx: int) -> bool:
         return idx in self.flagged
 
+    def build_study_report(self, objective_results):
+        report = []
+        for objective, stats in objective_results.items():
+            total = stats.get("total", 0)
+            if not total:
+                continue
+            correct = stats.get("correct", 0)
+            if correct >= total:
+                continue
+            percent = (correct / total) * 100 if total else 0
+            report.append(
+                {
+                    "objective": objective,
+                    "correct": correct,
+                    "total": total,
+                    "percent": percent,
+                }
+            )
+
+        report.sort(key=lambda item: (item["percent"], item["objective"]))
+        return report[:5]
+
     def compute_results(self):
         correct = 0
         detail = []
@@ -472,6 +494,7 @@ class ExamSession:
 
         raw_percent = (correct / total) * 100 if total else 0
         scaled_score = int(round(raw_percent * 9))
+        study_report = self.build_study_report(objective_results)
         return {
             "correct": correct,
             "total": total,
@@ -479,6 +502,7 @@ class ExamSession:
             "scaled_score": scaled_score,
             "objective_scores": objective_scores,
             "objective_results": objective_results,
+            "study_report": study_report,
             "details": detail,
         }
 
@@ -1795,7 +1819,27 @@ class APlusPracticeApp(ctk.CTk):
         self.summary_label.configure(text_color="#86EFAC" if passed else "#FCA5A5")
 
         objective_results = results.get("objective_results", {})
-        if objective_results:
+        study_report = results.get("study_report", [])
+        if study_report:
+            summary_lines = [
+                f"• {entry['objective']}: {entry['correct']} / {entry['total']} correct ({entry['percent']:.1f}%)"
+                for entry in study_report
+            ]
+            primary_objective = study_report[0]["objective"]
+            primary_score = study_report[0]["correct"]
+            primary_total = study_report[0]["total"]
+            primary_percent = study_report[0]["percent"]
+            self.recommendation_label.configure(
+                text=(
+                    f"Recommended focus: {primary_objective}\n"
+                    f"You scored {primary_score} / {primary_total} ({primary_percent:.1f}%).\n"
+                    "Study report:\n"
+                    + "\n".join(summary_lines)
+                    + "\nReview the lowest-scoring objectives above before your next exam."
+                ),
+                text_color="#FCD34D",
+            )
+        elif objective_results:
             weakest_objective, weakest_stats = min(
                 objective_results.items(),
                 key=lambda item: (item[1]["correct"] / item[1]["total"], item[0]),
