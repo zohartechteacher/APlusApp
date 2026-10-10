@@ -9,6 +9,7 @@ from app import (
     find_duplicate_question,
     get_question_bank_write_path,
     load_question_bank,
+    normalize_import_question,
     normalize_domain_name,
     prepare_questions_for_import,
     read_question_import_file,
@@ -157,6 +158,165 @@ def test_question_import_reads_wrapped_json_and_remaps_option_labels(tmp_path):
     assert questions[0]["id"] == "external-1"
     assert questions[0]["options"] == ["A) Strong password", "B) Shared password"]
     assert questions[0]["answer"] == "A"
+
+
+def test_question_import_normalizes_ordering_pbq_and_validates_permutation():
+    question = normalize_import_question(
+        {
+            "exam": "220-1201",
+            "domain": "Hardware",
+            "objective": "3.1 Install processors",
+            "question_type": "ordering",
+            "question": "Order the steps.",
+            "items": ["Connect power", "Install CPU", "Apply thermal paste"],
+            "answer": ["Install CPU", "Apply thermal paste", "Connect power"],
+        },
+        1,
+    )
+
+    assert question["type"] == "ordering"
+    assert question["items"] == [
+        "Connect power",
+        "Install CPU",
+        "Apply thermal paste",
+    ]
+    assert question["answer"] == [
+        "Install CPU",
+        "Apply thermal paste",
+        "Connect power",
+    ]
+
+    with pytest.raises(ValueError, match="each ordering item exactly once"):
+        normalize_import_question(
+            {
+                "exam": "220-1201",
+                "domain": "Hardware",
+                "objective": "3.1 Install processors",
+                "type": "ordering",
+                "question": "Order the steps.",
+                "items": ["Connect power", "Install CPU"],
+                "answer": ["Connect power", "Connect power"],
+            },
+            1,
+        )
+
+
+def test_question_import_normalizes_matching_pbq_from_json_and_csv_pairs():
+    imported = normalize_import_question(
+        {
+            "exam": "220-1202",
+            "domain": "Security",
+            "objective": "2.1 Security",
+            "type": "matching",
+            "question": "Match each control.",
+            "left_items": ["WPA3", "AES"],
+            "right_items": ["Wireless security", "Encryption"],
+            "answer": '{"WPA3": "Wireless security", "AES": "Encryption"}',
+        },
+        1,
+    )
+    csv_pairs = normalize_import_question(
+        {
+            "exam": "220-1202",
+            "domain": "Security",
+            "objective": "2.1 Security",
+            "type": "matching",
+            "question": "Match each control.",
+            "left_items": "WPA3|AES",
+            "right_items": "Wireless security|Encryption",
+            "answer": "WPA3 => Wireless security\nAES => Encryption",
+        },
+        2,
+    )
+
+    assert imported["answer"] == {
+        "WPA3": "Wireless security",
+        "AES": "Encryption",
+    }
+    assert csv_pairs["answer"] == imported["answer"]
+
+    with pytest.raises(ValueError, match="unique right item"):
+        normalize_import_question(
+            {
+                "exam": "220-1202",
+                "domain": "Security",
+                "objective": "2.1 Security",
+                "type": "matching",
+                "question": "Match each control.",
+                "left_items": ["WPA3", "AES"],
+                "right_items": ["Wireless security", "Encryption"],
+                "answer": {"WPA3": "Encryption", "AES": "Encryption"},
+            },
+            3,
+        )
+
+
+def test_question_import_reads_pbq_questions_from_wrapped_json(tmp_path):
+    import_path = tmp_path / "pbq_questions.json"
+    import_path.write_text(
+        json.dumps(
+            {
+                "questions": [
+                    {
+                        "type": "ordering",
+                        "exam": "220-1201",
+                        "domain": "Hardware",
+                        "objective": "3.1 Install processors",
+                        "question": "Order the steps.",
+                        "items": ["Power", "CPU"],
+                        "answer": ["CPU", "Power"],
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    imported = read_question_import_file(import_path)
+
+    assert imported[0]["type"] == "ordering"
+    assert imported[0]["answer"] == ["CPU", "Power"]
+
+
+def test_exam_session_scores_ordering_and_matching_pbqs_all_or_nothing(monkeypatch):
+    questions = [
+        {
+            "type": "ordering",
+            "domain": "Hardware",
+            "objective": "3.1 Install processors",
+            "question": "Order the steps.",
+            "items": ["First", "Second", "Third"],
+            "answer": ["Second", "Third", "First"],
+        },
+        {
+            "type": "matching",
+            "domain": "Networking",
+            "objective": "2.2 Protocols",
+            "question": "Match each item.",
+            "left_items": ["A", "B"],
+            "right_items": ["One", "Two"],
+            "answer": {"A": "One", "B": "Two"},
+        },
+    ]
+    monkeypatch.setattr("app.random.shuffle", lambda items: items.reverse())
+    session = ExamSession(questions, "untimed")
+
+    assert session.questions[0]["items"] == ["Third", "Second", "First"]
+    assert session.questions[1]["right_items"] == ["Two", "One"]
+    session.record_answer(["Second", "Third", "First"])
+    session.current_index = 1
+    session.record_answer({"A": "One", "B": "Two"})
+    assert session.compute_results()["correct"] == 2
+
+    session.current_index = 0
+    session.record_answer(["First", "Second", "Third"])
+    assert session.compute_results()["correct"] == 1
+
+    session.current_index = 0
+    session.record_answer(["Second", "Third", "First"])
+    session.current_index = 1
+    session.record_answer({"A": "One"})
+    assert session.compute_results()["correct"] == 1
 
 
 def test_duplicate_question_matching_ignores_case_and_whitespace():

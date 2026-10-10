@@ -153,6 +153,82 @@ def normalize_import_question(question, row_number: int) -> dict:
     if exam not in {"220-1201", "220-1202"}:
         raise ValueError(f"Row {row_number}: unsupported exam '{exam}'.")
 
+    question_type = str(values.get("type", values.get("question_type", "multiple_choice"))).strip().casefold()
+    if question_type in {"multiple choice", "multiple-choice", "mc"}:
+        question_type = "multiple_choice"
+    if question_type not in {"multiple_choice", "ordering", "matching"}:
+        raise ValueError(f"Row {row_number}: unsupported question type '{question_type}'.")
+
+    if question_type in {"ordering", "matching"}:
+        result = {
+            "exam": exam,
+            "domain": domain,
+            "objective": objective,
+            "question": str(prompt).strip(),
+            "type": question_type,
+            "explanation": str(values.get("explanation", "") or "").strip(),
+        }
+        if values.get("id"):
+            result["id"] = str(values["id"]).strip()
+
+        def read_items(value, field_name, require_unique=True):
+            if isinstance(value, str):
+                text = value.strip()
+                if text.startswith("["):
+                    try:
+                        value = json.loads(text)
+                    except json.JSONDecodeError as error:
+                        raise ValueError(f"Row {row_number}: {field_name} must be a JSON array or pipe-separated list.") from error
+                else:
+                    value = [item.strip() for item in text.split("|") if item.strip()]
+            if not isinstance(value, list):
+                raise ValueError(f"Row {row_number}: {field_name} must be a list.")
+            items = [str(item).strip() for item in value]
+            if len(items) < 2 or any(not item for item in items):
+                raise ValueError(f"Row {row_number}: {field_name} must contain at least two non-empty items.")
+            if require_unique and len({item.casefold() for item in items}) != len(items):
+                raise ValueError(f"Row {row_number}: {field_name} items must be unique.")
+            return items
+
+        if question_type == "ordering":
+            items = read_items(values.get("items"), "items")
+            correct_order = read_items(values.get("answer"), "answer", require_unique=False)
+            if len(correct_order) != len(items) or set(correct_order) != set(items):
+                raise ValueError(f"Row {row_number}: answer must contain each ordering item exactly once.")
+            result["items"] = items
+            result["answer"] = correct_order
+            return result
+
+        left_items = read_items(values.get("left_items"), "left_items")
+        right_items = read_items(values.get("right_items"), "right_items")
+        raw_answer = values.get("answer")
+        if isinstance(raw_answer, str):
+            try:
+                raw_answer = json.loads(raw_answer)
+            except json.JSONDecodeError:
+                pairs = {}
+                for line in raw_answer.splitlines():
+                    if not line.strip():
+                        continue
+                    if "=>" not in line:
+                        raise ValueError(f"Row {row_number}: matching answers must use 'left item => right item' pairs.")
+                    left, right = (part.strip() for part in line.split("=>", 1))
+                    if left in pairs:
+                        raise ValueError(f"Row {row_number}: each matching item can appear only once.")
+                    pairs[left] = right
+                raw_answer = pairs
+        if not isinstance(raw_answer, dict):
+            raise ValueError(f"Row {row_number}: matching answer must be an object mapping left items to right items.")
+        answer = {str(left).strip(): str(right).strip() for left, right in raw_answer.items()}
+        if (
+            set(answer) != set(left_items)
+            or any(right not in right_items for right in answer.values())
+            or len(set(answer.values())) != len(answer)
+        ):
+            raise ValueError(f"Row {row_number}: matching answer must map every left item to a unique right item.")
+        result.update(left_items=left_items, right_items=right_items, answer=answer)
+        return result
+
     options = values.get("options")
     if isinstance(options, str):
         try:
@@ -331,6 +407,15 @@ class ExamSession:
     @staticmethod
     def shuffle_question_options(question):
         shuffled_question = dict(question)
+        if question.get("type") == "ordering":
+            items = list(question.get("items", []))
+            random.shuffle(items)
+            shuffled_question["items"] = items
+            return shuffled_question
+        if question.get("type") == "matching":
+            shuffled_question["right_items"] = list(question.get("right_items", []))
+            random.shuffle(shuffled_question["right_items"])
+            return shuffled_question
         options = question.get("options")
         if not isinstance(options, list) or len(options) < 2:
             return shuffled_question
@@ -418,6 +503,21 @@ class ExamSession:
                 normalized.add(letter)
         return normalized
 
+    @staticmethod
+    def is_response_correct(question, response):
+        question_type = question.get("type", "multiple_choice")
+        if question_type == "ordering":
+            return response == question.get("answer")
+        if question_type == "matching":
+            return response == question.get("answer")
+        if question.get("multi_select"):
+            return ExamSession.normalize_answer_set(response) == ExamSession.normalize_answer_set(
+                question["answer"]
+            )
+        return ExamSession.answer_letter(response) == ExamSession.answer_letter(
+            question["answer"]
+        )
+
     def record_answer(self, answer):
         self.answers[str(self.current_index)] = answer
 
@@ -464,10 +564,7 @@ class ExamSession:
 
         for index, question in enumerate(self.questions):
             chosen = self.answers.get(str(index), "")
-            if question.get("multi_select"):
-                correct_flag = self.normalize_answer_set(chosen) == self.normalize_answer_set(question["answer"])
-            else:
-                correct_flag = self.answer_letter(chosen) == self.answer_letter(question["answer"])
+            correct_flag = self.is_response_correct(question, chosen)
             if correct_flag:
                 correct += 1
 
@@ -831,7 +928,7 @@ class APlusPracticeApp(ctk.CTk):
         ).pack(anchor="w", padx=22, pady=(18, 4))
         ctk.CTkLabel(
             dialog,
-            text="Required fields: exam, domain, objective, question, options, and answer. IDs and explanations are optional.",
+            text="All question types require exam, domain, objective, question, and answer. Multiple-choice questions also need options; PBQs use ordering or matching fields. IDs and explanations are optional.",
             text_color="#AFC1D8",
             wraplength=760,
             justify="left",
@@ -861,6 +958,32 @@ class APlusPracticeApp(ctk.CTk):
             },
             indent=2,
         )
+        pbq_json_text = json.dumps(
+            {
+                "questions": [
+                    {
+                        "type": "ordering",
+                        "exam": "220-1201",
+                        "domain": "Hardware",
+                        "objective": "3.1 Install processors",
+                        "question": "Put these steps in order.",
+                        "items": ["Connect power", "Install the CPU", "Apply thermal paste"],
+                        "answer": ["Install the CPU", "Apply thermal paste", "Connect power"],
+                    },
+                    {
+                        "type": "matching",
+                        "exam": "220-1202",
+                        "domain": "Security",
+                        "objective": "2.1 Security",
+                        "question": "Match each technology to its role.",
+                        "left_items": ["WPA3", "AES"],
+                        "right_items": ["Wireless security", "Encryption"],
+                        "answer": {"WPA3": "Wireless security", "AES": "Encryption"},
+                    },
+                ]
+            },
+            indent=2,
+        )
 
         def add_example(title, content, copy_label):
             ctk.CTkLabel(
@@ -868,7 +991,8 @@ class APlusPracticeApp(ctk.CTk):
                 text=title,
                 font=ctk.CTkFont(size=14, weight="bold"),
             ).pack(anchor="w", padx=6, pady=(10, 4))
-            code_box = ctk.CTkTextbox(examples, height=110 if title == "CSV" else 310, wrap="none")
+            height = 110 if title == "CSV" else 440 if title == "PBQ JSON" else 310
+            code_box = ctk.CTkTextbox(examples, height=height, wrap="none")
             code_box.pack(fill="x", padx=6)
             code_box.insert("1.0", content)
             code_box.configure(state="disabled")
@@ -886,6 +1010,7 @@ class APlusPracticeApp(ctk.CTk):
 
         add_example("CSV", csv_text, "Copy CSV example")
         add_example("JSON", json_text, "Copy JSON example")
+        add_example("PBQ JSON", pbq_json_text, "Copy PBQ examples")
         ctk.CTkButton(dialog, text="Close", command=dialog.destroy, width=100).pack(
             anchor="e", padx=22, pady=(0, 18)
         )
@@ -1142,23 +1267,48 @@ class APlusPracticeApp(ctk.CTk):
         if is_editing:
             question_box.insert("1.0", existing_question.get("question", ""))
 
-        add_field_label("Answer choices")
+        add_field_label("Question type")
+        current_type = existing_question.get("type", "multiple_choice") if is_editing else "multiple_choice"
+        question_type_var = ctk.StringVar(value=current_type)
+        ctk.CTkOptionMenu(
+            form,
+            values=["multiple_choice", "ordering", "matching"],
+            variable=question_type_var,
+        ).pack(anchor="w", padx=6)
+
+        answer_fields = ctk.CTkFrame(form, fg_color="transparent")
+        answer_fields.pack(fill="x")
+        multiple_choice_frame = ctk.CTkFrame(answer_fields, fg_color="transparent")
         existing_answer = existing_question.get("answer") if is_editing else None
-        is_multi_select = bool(existing_question.get("multi_select")) if is_editing else False
-        if is_editing and isinstance(existing_answer, (list, tuple, set)):
-            is_multi_select = True
-        correct_letters = (
-            ExamSession.normalize_answer_set(existing_answer)
-            if is_multi_select
-            else {ExamSession.answer_letter(existing_answer)}
+        is_multi_select = (
+            bool(existing_question.get("multi_select"))
+            if is_editing and current_type == "multiple_choice"
+            else False
         )
+        if (
+            is_editing
+            and current_type == "multiple_choice"
+            and isinstance(existing_answer, (list, tuple, set))
+        ):
+            is_multi_select = True
+        if current_type != "multiple_choice":
+            correct_letters = set()
+        elif is_multi_select:
+            correct_letters = ExamSession.normalize_answer_set(existing_answer)
+        else:
+            correct_letters = {ExamSession.answer_letter(existing_answer)}
         multiple_answers_var = ctk.BooleanVar(value=is_multi_select)
         ctk.CTkCheckBox(
-            form,
+            multiple_choice_frame,
             text="Allow multiple correct answers",
             variable=multiple_answers_var,
         ).pack(anchor="w", padx=6, pady=(0, 6))
-        options_frame = ctk.CTkFrame(form, fg_color="transparent")
+        ctk.CTkLabel(
+            multiple_choice_frame,
+            text="Answer choices",
+            font=ctk.CTkFont(size=13, weight="bold"),
+        ).pack(anchor="w", padx=6, pady=(10, 5))
+        options_frame = ctk.CTkFrame(multiple_choice_frame, fg_color="transparent")
         options_frame.pack(fill="x", padx=2)
         option_rows = []
 
@@ -1195,10 +1345,67 @@ class APlusPracticeApp(ctk.CTk):
 
         for letter, value in existing_options:
             add_option(value, letter in correct_letters)
-        option_actions = ctk.CTkFrame(form, fg_color="transparent")
+        option_actions = ctk.CTkFrame(multiple_choice_frame, fg_color="transparent")
         option_actions.pack(anchor="w", padx=6, pady=(5, 0))
         ctk.CTkButton(option_actions, text="Add choice", width=110, command=add_option).pack(side="left")
         ctk.CTkButton(option_actions, text="Remove last", width=110, command=remove_option).pack(side="left", padx=8)
+
+        pbq_frame = ctk.CTkFrame(answer_fields, fg_color="transparent")
+        ordering_frame = ctk.CTkFrame(pbq_frame, fg_color="transparent")
+        matching_frame = ctk.CTkFrame(pbq_frame, fg_color="transparent")
+
+        def add_pbq_text_field(parent, label, value="", height=105):
+            ctk.CTkLabel(
+                parent, text=label, font=ctk.CTkFont(size=13, weight="bold")
+            ).pack(anchor="w", padx=6, pady=(10, 5))
+            textbox = ctk.CTkTextbox(parent, height=height, wrap="word")
+            textbox.pack(fill="x", padx=6)
+            if value:
+                textbox.insert("1.0", value)
+            return textbox
+
+        ordering_items_value = existing_question.get("items", []) if is_editing else []
+        ordering_answer_value = (
+            existing_answer if current_type == "ordering" and isinstance(existing_answer, list) else []
+        )
+        ordering_items_box = add_pbq_text_field(
+            ordering_frame,
+            "Items (one per line)",
+            "\n".join(ordering_items_value),
+        )
+        ordering_answer_box = add_pbq_text_field(
+            ordering_frame,
+            "Correct order (one item per line)",
+            "\n".join(ordering_answer_value),
+        )
+
+        left_items_value = existing_question.get("left_items", []) if is_editing else []
+        right_items_value = existing_question.get("right_items", []) if is_editing else []
+        matching_answer_value = existing_answer if current_type == "matching" and isinstance(existing_answer, dict) else {}
+        left_items_box = add_pbq_text_field(matching_frame, "Items to match (one per line)", "\n".join(left_items_value))
+        right_items_box = add_pbq_text_field(matching_frame, "Available matches (one per line)", "\n".join(right_items_value))
+        matching_answer_box = add_pbq_text_field(
+            matching_frame,
+            "Correct matches (one 'left item => right item' pair per line)",
+            "\n".join(f"{left} => {right}" for left, right in matching_answer_value.items()),
+        )
+
+        def update_question_type_fields(*_):
+            multiple_choice_frame.pack_forget()
+            pbq_frame.pack_forget()
+            if question_type_var.get() == "multiple_choice":
+                multiple_choice_frame.pack(fill="x")
+            else:
+                pbq_frame.pack(fill="x")
+                if question_type_var.get() == "ordering":
+                    matching_frame.pack_forget()
+                    ordering_frame.pack(fill="x")
+                else:
+                    ordering_frame.pack_forget()
+                    matching_frame.pack(fill="x")
+
+        question_type_var.trace_add("write", update_question_type_fields)
+        update_question_type_fields()
 
         add_field_label("Explanation (optional)")
         explanation_box = ctk.CTkTextbox(form, height=80, wrap="word")
@@ -1222,37 +1429,79 @@ class APlusPracticeApp(ctk.CTk):
         def save_question():
             objective = objective_entry.get().strip()
             prompt = question_box.get("1.0", "end").strip()
-            options = [entry.get().strip() for _, entry, _ in option_rows]
-            correct_indexes = [
-                index for index, (_, _, correct_var) in enumerate(option_rows) if correct_var.get()
-            ]
             if not objective or not prompt:
                 messagebox.showwarning("Question details needed", "Enter both an objective and a question.", parent=dialog)
                 return
-            if any(not option for option in options):
-                messagebox.showwarning("Incomplete choices", "Fill in every answer choice before saving.", parent=dialog)
-                return
-            if not correct_indexes:
-                messagebox.showwarning("Correct answer needed", "Mark at least one choice as correct.", parent=dialog)
-                return
-            if not multiple_answers_var.get() and len(correct_indexes) != 1:
-                messagebox.showwarning("Choose one answer", "Mark exactly one correct choice, or enable multiple correct answers.", parent=dialog)
-                return
-
             exam = exam_var.get()
-            answer_letters = [chr(ord("A") + index) for index in correct_indexes]
             question = {
                 "id": existing_question.get("id") if is_editing else "",
                 "exam": exam,
                 "domain": domain_var.get(),
                 "objective": objective,
                 "question": prompt,
-                "options": [f"{chr(ord('A') + index)}) {option}" for index, option in enumerate(options)],
-                "answer": answer_letters if multiple_answers_var.get() else answer_letters[0],
                 "explanation": explanation_box.get("1.0", "end").strip(),
             }
-            if multiple_answers_var.get():
-                question["multi_select"] = True
+            question_type = question_type_var.get()
+            if question_type == "multiple_choice":
+                options = [entry.get().strip() for _, entry, _ in option_rows]
+                correct_indexes = [
+                    index for index, (_, _, correct_var) in enumerate(option_rows) if correct_var.get()
+                ]
+                if any(not option for option in options):
+                    messagebox.showwarning("Incomplete choices", "Fill in every answer choice before saving.", parent=dialog)
+                    return
+                if not correct_indexes:
+                    messagebox.showwarning("Correct answer needed", "Mark at least one choice as correct.", parent=dialog)
+                    return
+                if not multiple_answers_var.get() and len(correct_indexes) != 1:
+                    messagebox.showwarning("Choose one answer", "Mark exactly one correct choice, or enable multiple correct answers.", parent=dialog)
+                    return
+                answer_letters = [chr(ord("A") + index) for index in correct_indexes]
+                question.update(
+                    options=[
+                        f"{chr(ord('A') + index)}) {option}"
+                        for index, option in enumerate(options)
+                    ],
+                    answer=answer_letters if multiple_answers_var.get() else answer_letters[0],
+                )
+                if multiple_answers_var.get():
+                    question["multi_select"] = True
+            elif question_type == "ordering":
+                question.update(
+                    type="ordering",
+                    items=[
+                        item.strip()
+                        for item in ordering_items_box.get("1.0", "end").splitlines()
+                        if item.strip()
+                    ],
+                    answer=[
+                        item.strip()
+                        for item in ordering_answer_box.get("1.0", "end").splitlines()
+                        if item.strip()
+                    ],
+                )
+            else:
+                question.update(
+                    type="matching",
+                    left_items=[
+                        item.strip()
+                        for item in left_items_box.get("1.0", "end").splitlines()
+                        if item.strip()
+                    ],
+                    right_items=[
+                        item.strip()
+                        for item in right_items_box.get("1.0", "end").splitlines()
+                        if item.strip()
+                    ],
+                    answer=matching_answer_box.get("1.0", "end").strip(),
+                )
+
+            try:
+                question = normalize_import_question(question, 1)
+                question["id"] = existing_question.get("id", "") if is_editing else ""
+            except ValueError as error:
+                messagebox.showwarning("Invalid question", str(error), parent=dialog)
+                return
 
             duplicate = find_duplicate_question(
                 self.bank,
@@ -1602,47 +1851,159 @@ class APlusPracticeApp(ctk.CTk):
             child.destroy()
         self.option_buttons = []
         selected_answer = self.current_session.answers.get(str(self.current_session.current_index), "")
-        is_multi = bool(question.get("multi_select"))
-        self.option_var = ctk.StringVar(value=selected_answer if not is_multi else "")
-
-        if is_multi:
-            selected_set = ExamSession.normalize_answer_set(selected_answer)
-            for option in question["options"]:
-                option_letter = ExamSession.answer_letter(option)
-                variable = ctk.BooleanVar(value=option_letter in selected_set)
-                checkbox = ctk.CTkCheckBox(
-                    self.options_frame,
-                    text=option,
-                    variable=variable,
-                    command=lambda selected_option=option: self.answer_current(self.get_selected_multi_answers()),
-                    font=ctk.CTkFont(size=14),
-                )
-                checkbox.pack(anchor="w", pady=6, padx=4)
-                self.option_buttons.append(checkbox)
+        question_type = question.get("type", "multiple_choice")
+        if question_type == "ordering":
+            self.render_ordering_question(question, selected_answer)
+        elif question_type == "matching":
+            self.render_matching_question(question, selected_answer)
         else:
-            for option in question["options"]:
-                radio = ctk.CTkRadioButton(
-                    self.options_frame,
-                    text=option,
-                    variable=self.option_var,
-                    value=option,
-                    command=lambda selected=option: self.answer_current(selected),
-                    font=ctk.CTkFont(size=14),
-                )
-                radio.pack(anchor="w", pady=6, padx=4)
-                self.option_buttons.append(radio)
+            is_multi = bool(question.get("multi_select"))
+            self.option_var = ctk.StringVar(value=selected_answer if not is_multi else "")
 
-        if not is_multi and selected_answer:
-            self.option_var.set(selected_answer)
+            if is_multi:
+                selected_set = ExamSession.normalize_answer_set(selected_answer)
+                for option in question["options"]:
+                    option_letter = ExamSession.answer_letter(option)
+                    variable = ctk.BooleanVar(value=option_letter in selected_set)
+                    checkbox = ctk.CTkCheckBox(
+                        self.options_frame,
+                        text=option,
+                        variable=variable,
+                        command=lambda selected_option=option: self.answer_current(self.get_selected_multi_answers()),
+                        font=ctk.CTkFont(size=14),
+                    )
+                    checkbox.pack(anchor="w", pady=6, padx=4)
+                    self.option_buttons.append(checkbox)
+            else:
+                for option in question["options"]:
+                    radio = ctk.CTkRadioButton(
+                        self.options_frame,
+                        text=option,
+                        variable=self.option_var,
+                        value=option,
+                        command=lambda selected=option: self.answer_current(selected),
+                        font=ctk.CTkFont(size=14),
+                    )
+                    radio.pack(anchor="w", pady=6, padx=4)
+                    self.option_buttons.append(radio)
+
+            if not is_multi and selected_answer:
+                self.option_var.set(selected_answer)
 
         if self.current_session.study_mode and selected_answer:
-            self.show_study_feedback(question, selected_answer)
+            question_type = question.get("type", "multiple_choice")
+            response_complete = (
+                question_type != "matching"
+                or isinstance(selected_answer, dict)
+                and len(selected_answer) == len(question.get("left_items", []))
+            )
+            if response_complete:
+                self.show_study_feedback(
+                    question,
+                    selected_answer,
+                    disable_controls=question_type == "multiple_choice",
+                )
+            elif self.feedback_label is not None:
+                self.feedback_label.configure(text="")
         elif self.feedback_label is not None:
             self.feedback_label.configure(text="")
 
         self.flag_button.configure(text="Unflag" if self.current_session.is_flagged(self.current_session.current_index) else "Flag for Review")
         self.update_palette()
         self.update_timer_display()
+
+    def render_ordering_question(self, question, selected_answer):
+        ordering = list(selected_answer) if isinstance(selected_answer, list) else list(question["items"])
+        ctk.CTkLabel(
+            self.options_frame,
+            text="Arrange the items in the correct order using the arrow buttons.",
+            text_color="#AFC1D8",
+        ).pack(anchor="w", pady=(0, 8))
+        rows = ctk.CTkFrame(self.options_frame, fg_color="transparent")
+        rows.pack(fill="x")
+
+        def refresh_rows():
+            for child in rows.winfo_children():
+                child.destroy()
+            for index, item in enumerate(ordering):
+                row = ctk.CTkFrame(rows, fg_color="#1F2A3D", corner_radius=8)
+                row.pack(fill="x", pady=3)
+                ctk.CTkLabel(row, text=f"{index + 1}.", width=36).pack(side="left", padx=(8, 2), pady=7)
+                ctk.CTkLabel(row, text=item, anchor="w").pack(side="left", fill="x", expand=True, padx=4, pady=7)
+                ctk.CTkButton(
+                    row,
+                    text="↑",
+                    width=34,
+                    state="disabled" if index == 0 else "normal",
+                    command=lambda selected=index: move_item(selected, -1),
+                ).pack(side="right", padx=(2, 5), pady=4)
+                ctk.CTkButton(
+                    row,
+                    text="↓",
+                    width=34,
+                    state="disabled" if index == len(ordering) - 1 else "normal",
+                    command=lambda selected=index: move_item(selected, 1),
+                ).pack(side="right", padx=2, pady=4)
+
+        def move_item(index, offset):
+            target = index + offset
+            if not 0 <= target < len(ordering):
+                return
+            ordering[index], ordering[target] = ordering[target], ordering[index]
+            self.current_session.record_answer(list(ordering))
+            refresh_rows()
+            if self.current_session.study_mode:
+                self.show_study_feedback(question, ordering, disable_controls=False)
+            self.update_palette()
+
+        refresh_rows()
+
+    def render_matching_question(self, question, selected_answer):
+        matches = dict(selected_answer) if isinstance(selected_answer, dict) else {}
+        matching_controls = []
+        ctk.CTkLabel(
+            self.options_frame,
+            text="Match each item on the left with one item on the right.",
+            text_color="#AFC1D8",
+        ).pack(anchor="w", pady=(0, 8))
+        for left_item in question["left_items"]:
+            row = ctk.CTkFrame(self.options_frame, fg_color="transparent")
+            row.pack(fill="x", pady=4)
+            ctk.CTkLabel(row, text=left_item, anchor="w", width=230).pack(side="left", padx=(4, 12))
+            chosen = matches.get(left_item, "")
+            variable = ctk.StringVar(value=chosen or "Choose a match")
+            menu = ctk.CTkOptionMenu(
+                row,
+                values=["Choose a match", *question["right_items"]],
+                variable=variable,
+                command=lambda value, selected=left_item: record_match(selected, value),
+                width=280,
+            )
+            menu.pack(side="left")
+            matching_controls.append((left_item, menu, variable))
+        self.option_buttons.extend(menu for _, menu, _ in matching_controls)
+
+        def record_match(left_item, right_item):
+            if right_item == "Choose a match":
+                matches.pop(left_item, None)
+            else:
+                matches[left_item] = right_item
+            used_by_others = set(matches.values())
+            for selected_left, menu, variable in matching_controls:
+                available = [
+                    item
+                    for item in question["right_items"]
+                    if item not in used_by_others or item == matches.get(selected_left)
+                ]
+                menu.configure(values=["Choose a match", *available])
+                if not variable.get() or variable.get() not in available:
+                    variable.set("Choose a match")
+            self.current_session.record_answer(dict(matches))
+            if self.current_session.study_mode and len(matches) == len(question["left_items"]):
+                self.show_study_feedback(question, matches, disable_controls=False)
+            elif self.feedback_label is not None:
+                self.feedback_label.configure(text="")
+            self.update_palette()
 
     def get_selected_multi_answers(self):
         if self.current_session is None:
@@ -1670,8 +2031,21 @@ class APlusPracticeApp(ctk.CTk):
             self.show_study_feedback(self.current_session.current_question(), self.current_session.answers.get(str(self.current_session.current_index), ""))
         self.update_palette()
 
-    def show_study_feedback(self, question, selected):
-        if question.get("multi_select"):
+    def show_study_feedback(self, question, selected, disable_controls=True):
+        question_type = question.get("type", "multiple_choice")
+        if question_type == "ordering":
+            is_correct = ExamSession.is_response_correct(question, selected)
+            expected = "\n".join(
+                f"{index + 1}. {item}" for index, item in enumerate(question["answer"])
+            )
+            result = "Correct" if is_correct else f"Incorrect. Correct order:\n{expected}"
+        elif question_type == "matching":
+            is_correct = ExamSession.is_response_correct(question, selected)
+            expected = "\n".join(
+                f"{left} → {right}" for left, right in question["answer"].items()
+            )
+            result = "Correct" if is_correct else f"Incorrect. Correct matches:\n{expected}"
+        elif question.get("multi_select"):
             correct_answers = ExamSession.normalize_answer_set(question["answer"])
             chosen_answers = ExamSession.normalize_answer_set(selected)
             is_correct = chosen_answers == correct_answers
@@ -1682,8 +2056,9 @@ class APlusPracticeApp(ctk.CTk):
             result = "Correct" if is_correct else f"Incorrect. Correct answer: {question['answer']}"
         color = "#86EFAC" if is_correct else "#FCA5A5"
         self.feedback_label.configure(text=f"{result}\n{question['explanation']}", text_color=color)
-        for button in self.option_buttons:
-            button.configure(state="disabled")
+        if disable_controls:
+            for button in self.option_buttons:
+                button.configure(state="disabled")
 
     def toggle_flag(self):
         if self.current_session is None:
@@ -1882,8 +2257,8 @@ class APlusPracticeApp(ctk.CTk):
         ctk.CTkLabel(review_frame, text="Review Answers", font=ctk.CTkFont(size=16, weight="bold")).pack(anchor="w", padx=12, pady=(10, 8))
         for index, item in enumerate(results["details"], start=1):
             q = item["question"]
-            selected = item["selected"] or "No answer selected"
-            correct = item["correct"]
+            selected = self.format_review_response(q, item["selected"])
+            correct = self.format_review_response(q, item["correct"])
             status = "Correct" if item["is_correct"] else "Incorrect"
             card = ctk.CTkFrame(review_frame, corner_radius=12, border_width=1, fg_color="#0F172A")
             card.pack(fill="x", padx=12, pady=8)
@@ -1893,6 +2268,21 @@ class APlusPracticeApp(ctk.CTk):
                 justify="left",
                 wraplength=1000,
             ).pack(anchor="w", padx=12, pady=12)
+
+    @staticmethod
+    def format_review_response(question, response):
+        if response in (None, "", [], {}):
+            return "No answer selected"
+        question_type = question.get("type", "multiple_choice")
+        if question_type == "ordering":
+            return "\n".join(
+                f"{index + 1}. {item}" for index, item in enumerate(response)
+            )
+        if question_type == "matching":
+            return "\n".join(f"{left} → {right}" for left, right in response.items())
+        if isinstance(response, (list, tuple, set)):
+            return ", ".join(str(item) for item in response)
+        return str(response)
 
 
 def main():

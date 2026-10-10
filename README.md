@@ -10,6 +10,7 @@ This project creates a desktop practice exam for CompTIA A+ Core 1 (220-1201) an
 - Review palette, flagging, next/previous navigation, and auto-submit on timeout
 - Results dashboard with pass/fail indicator and domain breakdowns
 - Detailed review explanations for each question
+- Interactive PBQs for ordering and one-to-one matching, scored all-or-nothing
 
 ## Running the app
 
@@ -29,7 +30,7 @@ The packaged executable is written to the `dist` folder.
 
 ## Data model
 
-Questions are stored in `data/questions.json` using this schema:
+Questions are stored in `data/questions.json`. Existing questions without a `type` field remain multiple-choice questions. Multiple-choice questions use this schema:
 
 ```json
 {
@@ -43,6 +44,34 @@ Questions are stored in `data/questions.json` using this schema:
   "explanation": "..."
 }
 ```
+
+Ordering PBQs use a list of items and the correct item order:
+
+```json
+{
+  "type": "ordering",
+  "question": "Put these steps in order.",
+  "items": ["Connect power", "Install the CPU", "Apply thermal paste"],
+  "answer": ["Install the CPU", "Apply thermal paste", "Connect power"]
+}
+```
+
+Matching PBQs use left/right item lists and an answer object mapping each left item to a unique right item:
+
+```json
+{
+  "type": "matching",
+  "question": "Match each technology to its role.",
+  "left_items": ["WPA3", "AES"],
+  "right_items": ["Wireless security", "Encryption"],
+  "answer": {
+    "WPA3": "Wireless security",
+    "AES": "Encryption"
+  }
+}
+```
+
+PBQ answers are all-or-nothing: the full order or every match must be correct. PBQs can be created in the question editor or imported from JSON/CSV. For CSV imports, list fields may use pipe-separated items; matching answers use one `left item => right item` pair per line.
 
 ## Notes
 
