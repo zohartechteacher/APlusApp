@@ -20,7 +20,7 @@ except ImportError:  # pragma: no cover
     messagebox = None
 
 
-APP_TITLE = "Zohar's A+ Practice Prep"
+APP_TITLE = "Zohar's A+ Practice Prep - BETA"
 CONTACT_EMAIL = "zohartechteacher@gmail.com"
 LINKEDIN_URL = "https://www.linkedin.com/in/zohar-laor-202772/"
 
@@ -768,7 +768,7 @@ class APlusPracticeApp(ctk.CTk):
         )
         ctk.CTkLabel(
             brand_copy,
-            text="Zohar's A+ Practice Prep",
+            text="Zohar's A+ Practice Prep - BETA",
             font=ctk.CTkFont(family="Aptos Display", size=30, weight="bold"),
         ).pack(anchor="w")
         ctk.CTkLabel(
@@ -1768,7 +1768,7 @@ class APlusPracticeApp(ctk.CTk):
         top_bar = ctk.CTkFrame(self.exam_frame, fg_color="transparent")
         top_bar.pack(fill="x", padx=18, pady=(18, 12))
 
-        self.exam_title = ctk.CTkLabel(top_bar, text="Zohar's A+ Practice Prep  /  Practice Room", font=ctk.CTkFont(size=22, weight="bold"))
+        self.exam_title = ctk.CTkLabel(top_bar, text="Zohar's A+ Practice Prep  - BETA /  Practice Room", font=ctk.CTkFont(size=22, weight="bold"))
         self.exam_title.pack(side="left")
 
         self.timer_label = ctk.CTkLabel(top_bar, text="--:--", font=ctk.CTkFont(size=18, weight="bold"), text_color="#FCD34D")
@@ -1813,7 +1813,7 @@ class APlusPracticeApp(ctk.CTk):
         ctk.CTkButton(bottom_bar, text="Submit Exam", command=self.submit_exam, width=140).pack(side="right", padx=(0, 12))
 
     def build_results_screen(self):
-        title = ctk.CTkLabel(self.results_frame, text="Zohar's A+ Practice Prep  /  Progress Review", font=ctk.CTkFont(size=26, weight="bold"))
+        title = ctk.CTkLabel(self.results_frame, text="Zohar's A+ Practice Prep - BETA  /  Progress Review", font=ctk.CTkFont(size=26, weight="bold"))
         title.pack(anchor="w", padx=20, pady=(18, 8))
 
         summary = ctk.CTkFrame(self.results_frame, corner_radius=16, border_width=1)
