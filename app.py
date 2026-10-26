@@ -701,7 +701,9 @@ class APlusPracticeApp(ctk.CTk):
         self.root_container = ctk.CTkFrame(self, fg_color="transparent")
         self.root_container.pack(fill="both", expand=True, padx=18, pady=18)
 
-        self.setup_frame = ctk.CTkFrame(self.root_container, corner_radius=18, border_width=1)
+        self.setup_frame = ctk.CTkScrollableFrame(
+            self.root_container, corner_radius=18, border_width=1
+        )
         self.exam_frame = ctk.CTkFrame(self.root_container, corner_radius=18, border_width=1)
         self.results_frame = ctk.CTkFrame(self.root_container, corner_radius=18, border_width=1)
 
@@ -1794,13 +1796,19 @@ class APlusPracticeApp(ctk.CTk):
         self.domain_label = ctk.CTkLabel(main_card, text="Domain: ", font=ctk.CTkFont(size=14, weight="bold"), text_color="#93C5FD")
         self.domain_label.pack(anchor="w", padx=18, pady=(0, 12))
 
-        self.question_label = ctk.CTkLabel(main_card, text="Question text…", justify="left", wraplength=700, font=ctk.CTkFont(size=18, weight="bold"))
+        self.question_content_frame = ctk.CTkScrollableFrame(
+            main_card,
+            fg_color="transparent",
+        )
+        self.question_content_frame.pack(fill="both", expand=True, padx=12)
+
+        self.question_label = ctk.CTkLabel(self.question_content_frame, text="Question text…", justify="left", wraplength=700, font=ctk.CTkFont(size=18, weight="bold"))
         self.question_label.pack(anchor="w", padx=18, pady=(0, 20))
 
-        self.options_frame = ctk.CTkFrame(main_card, fg_color="transparent")
+        self.options_frame = ctk.CTkFrame(self.question_content_frame, fg_color="transparent")
         self.options_frame.pack(fill="x", padx=18)
 
-        self.feedback_label = ctk.CTkLabel(main_card, text="", justify="left", wraplength=760, font=ctk.CTkFont(size=14, weight="bold"))
+        self.feedback_label = ctk.CTkLabel(self.question_content_frame, text="", justify="left", wraplength=760, font=ctk.CTkFont(size=14, weight="bold"))
         self.feedback_label.pack(anchor="w", padx=18, pady=(10, 0))
 
         bottom_bar = ctk.CTkFrame(main_card, fg_color="transparent")
@@ -1843,6 +1851,7 @@ class APlusPracticeApp(ctk.CTk):
         if question is None:
             return
 
+        self.question_content_frame._parent_canvas.yview_moveto(0)
         self.progress_label.configure(text=f"Question {self.current_session.current_index + 1} of {self.current_session.total_questions}")
         self.domain_label.configure(text=f"Domain: {question['domain']} • {question['objective']}")
         self.question_label.configure(text=question["question"], width=680)
