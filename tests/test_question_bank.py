@@ -251,6 +251,61 @@ def test_question_import_normalizes_matching_pbq_from_json_and_csv_pairs():
         )
 
 
+def test_question_import_normalizes_drag_drop_pbq_and_validates_assignments():
+    question = normalize_import_question(
+        {
+            "exam": "220-1201",
+            "domain": "Networking",
+            "objective": "2.1 Configure wired and wireless networks",
+            "type": "drag-and-drop",
+            "question": "Match each cable to its maximum segment length.",
+            "items": ["Cat 5e", "Fiber optic"],
+            "targets": ["100 meters", "2 kilometers"],
+            "answer": {
+                "Cat 5e": "100 meters",
+                "Fiber optic": "2 kilometers",
+            },
+        },
+        1,
+    )
+    csv_question = normalize_import_question(
+        {
+            "exam": "220-1201",
+            "domain": "Networking",
+            "objective": "2.1 Configure wired and wireless networks",
+            "type": "drag_drop",
+            "question": "Match each cable to its maximum segment length.",
+            "items": "Cat 5e|Fiber optic",
+            "targets": "100 meters|2 kilometers",
+            "answer": "Cat 5e => 100 meters\nFiber optic => 2 kilometers",
+        },
+        2,
+    )
+
+    expected_answer = {
+        "Cat 5e": "100 meters",
+        "Fiber optic": "2 kilometers",
+    }
+    assert question["type"] == "drag_drop"
+    assert question["answer"] == expected_answer
+    assert csv_question["answer"] == expected_answer
+
+    with pytest.raises(ValueError, match="assign every item to a valid target"):
+        normalize_import_question(
+            {
+                "exam": "220-1201",
+                "domain": "Networking",
+                "objective": "2.1 Configure wired and wireless networks",
+                "type": "drag_drop",
+                "question": "Match each cable.",
+                "items": ["Cat 5e", "Fiber optic"],
+                "targets": ["100 meters", "2 kilometers"],
+                "answer": {"Cat 5e": "100 meters"},
+            },
+            3,
+        )
+
+
 def test_question_import_reads_pbq_questions_from_wrapped_json(tmp_path):
     import_path = tmp_path / "pbq_questions.json"
     import_path.write_text(
@@ -276,6 +331,37 @@ def test_question_import_reads_pbq_questions_from_wrapped_json(tmp_path):
 
     assert imported[0]["type"] == "ordering"
     assert imported[0]["answer"] == ["CPU", "Power"]
+
+
+def test_question_import_reads_drag_drop_pbqs_from_wrapped_json(tmp_path):
+    import_path = tmp_path / "drag_drop_questions.json"
+    import_path.write_text(
+        json.dumps(
+            {
+                "questions": [
+                    {
+                        "type": "drag_drop",
+                        "exam": "220-1201",
+                        "domain": "Networking",
+                        "objective": "2.1 Configure wired and wireless networks",
+                        "question": "Match each cable.",
+                        "items": ["Cat 5e", "Fiber optic"],
+                        "targets": ["100 meters", "2 kilometers"],
+                        "answer": {
+                            "Cat 5e": "100 meters",
+                            "Fiber optic": "2 kilometers",
+                        },
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    imported = read_question_import_file(import_path)
+
+    assert imported[0]["type"] == "drag_drop"
+    assert imported[0]["answer"]["Fiber optic"] == "2 kilometers"
 
 
 def test_exam_session_scores_ordering_and_matching_pbqs_all_or_nothing(monkeypatch):
@@ -317,6 +403,35 @@ def test_exam_session_scores_ordering_and_matching_pbqs_all_or_nothing(monkeypat
     session.current_index = 1
     session.record_answer({"A": "One"})
     assert session.compute_results()["correct"] == 1
+
+
+def test_exam_session_shuffles_and_scores_drag_drop_pbqs_all_or_nothing(monkeypatch):
+    question = {
+        "type": "drag_drop",
+        "domain": "Networking",
+        "objective": "2.1 Configure wired and wireless networks",
+        "question": "Match each cable.",
+        "items": ["Cat 5e", "Fiber optic"],
+        "targets": ["100 meters", "2 kilometers"],
+        "answer": {
+            "Cat 5e": "100 meters",
+            "Fiber optic": "2 kilometers",
+        },
+    }
+    monkeypatch.setattr("app.random.shuffle", lambda values: values.reverse())
+
+    session = ExamSession([question], "untimed")
+    shuffled_question = session.current_question()
+    assert shuffled_question["items"] == ["Fiber optic", "Cat 5e"]
+    assert shuffled_question["targets"] == ["2 kilometers", "100 meters"]
+
+    session.record_answer(
+        {"Cat 5e": "100 meters", "Fiber optic": "2 kilometers"}
+    )
+    assert session.compute_results()["correct"] == 1
+
+    session.record_answer({"Cat 5e": "2 kilometers"})
+    assert session.compute_results()["correct"] == 0
 
 
 def test_duplicate_question_matching_ignores_case_and_whitespace():

@@ -156,10 +156,12 @@ def normalize_import_question(question, row_number: int) -> dict:
     question_type = str(values.get("type", values.get("question_type", "multiple_choice"))).strip().casefold()
     if question_type in {"multiple choice", "multiple-choice", "mc"}:
         question_type = "multiple_choice"
-    if question_type not in {"multiple_choice", "ordering", "matching"}:
+    if question_type in {"drag-and-drop", "drag and drop"}:
+        question_type = "drag_drop"
+    if question_type not in {"multiple_choice", "ordering", "matching", "drag_drop"}:
         raise ValueError(f"Row {row_number}: unsupported question type '{question_type}'.")
 
-    if question_type in {"ordering", "matching"}:
+    if question_type in {"ordering", "matching", "drag_drop"}:
         result = {
             "exam": exam,
             "domain": domain,
@@ -197,6 +199,47 @@ def normalize_import_question(question, row_number: int) -> dict:
                 raise ValueError(f"Row {row_number}: answer must contain each ordering item exactly once.")
             result["items"] = items
             result["answer"] = correct_order
+            return result
+
+        if question_type == "drag_drop":
+            items = read_items(values.get("items"), "items")
+            targets = read_items(values.get("targets"), "targets")
+            raw_answer = values.get("answer")
+            if isinstance(raw_answer, str):
+                try:
+                    raw_answer = json.loads(raw_answer)
+                except json.JSONDecodeError:
+                    assignments = {}
+                    for line in raw_answer.splitlines():
+                        if not line.strip():
+                            continue
+                        if "=>" not in line:
+                            raise ValueError(
+                                f"Row {row_number}: drag-and-drop answers must use 'item => target' pairs."
+                            )
+                        item, target = (part.strip() for part in line.split("=>", 1))
+                        if item in assignments:
+                            raise ValueError(
+                                f"Row {row_number}: each draggable item can appear only once."
+                            )
+                        assignments[item] = target
+                    raw_answer = assignments
+            if not isinstance(raw_answer, dict):
+                raise ValueError(
+                    f"Row {row_number}: drag-and-drop answer must map every item to a target."
+                )
+            answer = {
+                str(item).strip(): str(target).strip()
+                for item, target in raw_answer.items()
+            }
+            if (
+                set(answer) != set(items)
+                or any(target not in targets for target in answer.values())
+            ):
+                raise ValueError(
+                    f"Row {row_number}: drag-and-drop answer must assign every item to a valid target."
+                )
+            result.update(items=items, targets=targets, answer=answer)
             return result
 
         left_items = read_items(values.get("left_items"), "left_items")
@@ -416,6 +459,12 @@ class ExamSession:
             shuffled_question["right_items"] = list(question.get("right_items", []))
             random.shuffle(shuffled_question["right_items"])
             return shuffled_question
+        if question.get("type") == "drag_drop":
+            shuffled_question["items"] = list(question.get("items", []))
+            random.shuffle(shuffled_question["items"])
+            shuffled_question["targets"] = list(question.get("targets", []))
+            random.shuffle(shuffled_question["targets"])
+            return shuffled_question
         options = question.get("options")
         if not isinstance(options, list) or len(options) < 2:
             return shuffled_question
@@ -509,6 +558,8 @@ class ExamSession:
         if question_type == "ordering":
             return response == question.get("answer")
         if question_type == "matching":
+            return response == question.get("answer")
+        if question_type == "drag_drop":
             return response == question.get("answer")
         if question.get("multi_select"):
             return ExamSession.normalize_answer_set(response) == ExamSession.normalize_answer_set(
@@ -930,7 +981,7 @@ class APlusPracticeApp(ctk.CTk):
         ).pack(anchor="w", padx=22, pady=(18, 4))
         ctk.CTkLabel(
             dialog,
-            text="All question types require exam, domain, objective, question, and answer. Multiple-choice questions also need options; PBQs use ordering or matching fields. IDs and explanations are optional.",
+            text="All question types require exam, domain, objective, question, and answer. Multiple-choice questions also need options; PBQs use ordering, matching, or drag-and-drop fields. IDs and explanations are optional.",
             text_color="#AFC1D8",
             wraplength=760,
             justify="left",
@@ -982,6 +1033,16 @@ class APlusPracticeApp(ctk.CTk):
                         "right_items": ["Wireless security", "Encryption"],
                         "answer": {"WPA3": "Wireless security", "AES": "Encryption"},
                     },
+                    {
+                        "type": "drag_drop",
+                        "exam": "220-1201",
+                        "domain": "Networking",
+                        "objective": "2.1 Configure wired and wireless networks",
+                        "question": "Drag each cable type to its maximum Ethernet segment length.",
+                        "items": ["Cat 5e", "Fiber optic"],
+                        "targets": ["100 meters", "2 kilometers"],
+                        "answer": {"Cat 5e": "100 meters", "Fiber optic": "2 kilometers"},
+                    },
                 ]
             },
             indent=2,
@@ -993,7 +1054,7 @@ class APlusPracticeApp(ctk.CTk):
                 text=title,
                 font=ctk.CTkFont(size=14, weight="bold"),
             ).pack(anchor="w", padx=6, pady=(10, 4))
-            height = 110 if title == "CSV" else 440 if title == "PBQ JSON" else 310
+            height = 110 if title == "CSV" else 520 if title == "PBQ JSON" else 310
             code_box = ctk.CTkTextbox(examples, height=height, wrap="none")
             code_box.pack(fill="x", padx=6)
             code_box.insert("1.0", content)
@@ -1274,7 +1335,7 @@ class APlusPracticeApp(ctk.CTk):
         question_type_var = ctk.StringVar(value=current_type)
         ctk.CTkOptionMenu(
             form,
-            values=["multiple_choice", "ordering", "matching"],
+            values=["multiple_choice", "ordering", "matching", "drag_drop"],
             variable=question_type_var,
         ).pack(anchor="w", padx=6)
 
@@ -1355,6 +1416,7 @@ class APlusPracticeApp(ctk.CTk):
         pbq_frame = ctk.CTkFrame(answer_fields, fg_color="transparent")
         ordering_frame = ctk.CTkFrame(pbq_frame, fg_color="transparent")
         matching_frame = ctk.CTkFrame(pbq_frame, fg_color="transparent")
+        drag_drop_frame = ctk.CTkFrame(pbq_frame, fg_color="transparent")
 
         def add_pbq_text_field(parent, label, value="", height=105):
             ctk.CTkLabel(
@@ -1392,19 +1454,43 @@ class APlusPracticeApp(ctk.CTk):
             "\n".join(f"{left} => {right}" for left, right in matching_answer_value.items()),
         )
 
+        drag_drop_items_value = existing_question.get("items", []) if is_editing else []
+        drag_drop_targets_value = existing_question.get("targets", []) if is_editing else []
+        drag_drop_answer_value = (
+            existing_answer if current_type == "drag_drop" and isinstance(existing_answer, dict) else {}
+        )
+        drag_drop_items_box = add_pbq_text_field(
+            drag_drop_frame,
+            "Draggable items (one per line)",
+            "\n".join(drag_drop_items_value),
+        )
+        drag_drop_targets_box = add_pbq_text_field(
+            drag_drop_frame,
+            "Drop targets (one per line)",
+            "\n".join(drag_drop_targets_value),
+        )
+        drag_drop_answer_box = add_pbq_text_field(
+            drag_drop_frame,
+            "Correct assignments (one 'item => target' pair per line)",
+            "\n".join(f"{item} => {target}" for item, target in drag_drop_answer_value.items()),
+        )
+
         def update_question_type_fields(*_):
             multiple_choice_frame.pack_forget()
             pbq_frame.pack_forget()
+            ordering_frame.pack_forget()
+            matching_frame.pack_forget()
+            drag_drop_frame.pack_forget()
             if question_type_var.get() == "multiple_choice":
                 multiple_choice_frame.pack(fill="x")
             else:
                 pbq_frame.pack(fill="x")
                 if question_type_var.get() == "ordering":
-                    matching_frame.pack_forget()
                     ordering_frame.pack(fill="x")
-                else:
-                    ordering_frame.pack_forget()
+                elif question_type_var.get() == "matching":
                     matching_frame.pack(fill="x")
+                else:
+                    drag_drop_frame.pack(fill="x")
 
         question_type_var.trace_add("write", update_question_type_fields)
         update_question_type_fields()
@@ -1482,7 +1568,7 @@ class APlusPracticeApp(ctk.CTk):
                         if item.strip()
                     ],
                 )
-            else:
+            elif question_type == "matching":
                 question.update(
                     type="matching",
                     left_items=[
@@ -1496,6 +1582,21 @@ class APlusPracticeApp(ctk.CTk):
                         if item.strip()
                     ],
                     answer=matching_answer_box.get("1.0", "end").strip(),
+                )
+            else:
+                question.update(
+                    type="drag_drop",
+                    items=[
+                        item.strip()
+                        for item in drag_drop_items_box.get("1.0", "end").splitlines()
+                        if item.strip()
+                    ],
+                    targets=[
+                        target.strip()
+                        for target in drag_drop_targets_box.get("1.0", "end").splitlines()
+                        if target.strip()
+                    ],
+                    answer=drag_drop_answer_box.get("1.0", "end").strip(),
                 )
 
             try:
@@ -1865,6 +1966,8 @@ class APlusPracticeApp(ctk.CTk):
             self.render_ordering_question(question, selected_answer)
         elif question_type == "matching":
             self.render_matching_question(question, selected_answer)
+        elif question_type == "drag_drop":
+            self.render_drag_drop_question(question, selected_answer)
         else:
             is_multi = bool(question.get("multi_select"))
             self.option_var = ctk.StringVar(value=selected_answer if not is_multi else "")
@@ -1902,9 +2005,15 @@ class APlusPracticeApp(ctk.CTk):
         if self.current_session.study_mode and selected_answer:
             question_type = question.get("type", "multiple_choice")
             response_complete = (
-                question_type != "matching"
+                question_type not in {"matching", "drag_drop"}
                 or isinstance(selected_answer, dict)
-                and len(selected_answer) == len(question.get("left_items", []))
+                and len(selected_answer)
+                == len(
+                    question.get(
+                        "left_items" if question_type == "matching" else "items",
+                        [],
+                    )
+                )
             )
             if response_complete:
                 self.show_study_feedback(
@@ -2014,6 +2123,154 @@ class APlusPracticeApp(ctk.CTk):
                 self.feedback_label.configure(text="")
             self.update_palette()
 
+    def render_drag_drop_question(self, question, selected_answer):
+        assignments = dict(selected_answer) if isinstance(selected_answer, dict) else {}
+        ctk.CTkLabel(
+            self.options_frame,
+            text="Drag each item into its target. Drag an item back to Available items to undo.",
+            text_color="#AFC1D8",
+            justify="left",
+        ).pack(anchor="w", pady=(0, 8))
+        drag_status = ctk.CTkLabel(
+            self.options_frame,
+            text="",
+            text_color="#93C5FD",
+            justify="left",
+        )
+        drag_status.pack(anchor="w", pady=(0, 8))
+
+        columns = ctk.CTkFrame(self.options_frame, fg_color="transparent")
+        columns.pack(fill="both", expand=True)
+        columns.grid_columnconfigure(0, weight=1, uniform="drag-drop")
+        columns.grid_columnconfigure(1, weight=1, uniform="drag-drop")
+
+        zone_frames = {}
+        available_zone = ctk.CTkFrame(
+            columns,
+            corner_radius=10,
+            border_width=1,
+            border_color="#475569",
+            fg_color="#111827",
+        )
+        available_zone.grid(row=0, column=0, sticky="nsew", padx=(0, 8), pady=4)
+        zone_frames[None] = available_zone
+        ctk.CTkLabel(
+            available_zone,
+            text="Available items",
+            font=ctk.CTkFont(size=14, weight="bold"),
+        ).pack(anchor="w", padx=10, pady=(8, 4))
+
+        target_column = ctk.CTkFrame(columns, fg_color="transparent")
+        target_column.grid(row=0, column=1, sticky="nsew", padx=(8, 0), pady=0)
+        for target in question["targets"]:
+            target_zone = ctk.CTkFrame(
+                target_column,
+                corner_radius=10,
+                border_width=1,
+                border_color="#475569",
+                fg_color="#111827",
+            )
+            target_zone.pack(fill="x", pady=4)
+            zone_frames[target] = target_zone
+            ctk.CTkLabel(
+                target_zone,
+                text=target,
+                font=ctk.CTkFont(size=14, weight="bold"),
+                anchor="w",
+            ).pack(anchor="w", padx=10, pady=(8, 4))
+
+        outside_zones = object()
+
+        def find_drop_zone(x_root, y_root):
+            for target, zone in zone_frames.items():
+                left = zone.winfo_rootx()
+                top = zone.winfo_rooty()
+                if (
+                    left <= x_root <= left + zone.winfo_width()
+                    and top <= y_root <= top + zone.winfo_height()
+                ):
+                    return target
+            return outside_zones
+
+        drag_state = {"item": None}
+        item_cards = []
+
+        def refresh_items():
+            for card in item_cards:
+                card.destroy()
+            item_cards.clear()
+
+            for item in question["items"]:
+                target = assignments.get(item)
+                parent = zone_frames[target]
+                card = ctk.CTkLabel(
+                    parent,
+                    text=item,
+                    anchor="w",
+                    justify="left",
+                    wraplength=310,
+                    corner_radius=6,
+                    fg_color="#1F2A3D",
+                )
+                item_cards.append(card)
+                card.pack(fill="x", padx=8, pady=(3, 5))
+
+                def start_drag(event, selected=item):
+                    drag_state["item"] = selected
+                    drag_status.configure(text=f"Dragging: {selected}")
+                    event.widget.configure(fg_color="#2563EB")
+
+                def move_drag(event):
+                    selected_target = find_drop_zone(event.x_root, event.y_root)
+                    for target, zone in zone_frames.items():
+                        zone.configure(
+                            border_color="#38BDF8" if target == selected_target else "#475569"
+                        )
+                    selected = drag_state["item"]
+                    if selected_target is outside_zones:
+                        drag_status.configure(text=f"Dragging: {selected}")
+                    elif selected_target is None:
+                        drag_status.configure(text=f"Drop {selected} back into Available items")
+                    else:
+                        drag_status.configure(text=f"Drop {selected} into {selected_target}")
+
+                def finish_drag(event, selected=item):
+                    target = find_drop_zone(event.x_root, event.y_root)
+                    drag_state["item"] = None
+                    for zone in zone_frames.values():
+                        zone.configure(border_color="#475569")
+                    if target is not outside_zones:
+                        if target is None:
+                            assignments.pop(selected, None)
+                        else:
+                            assignments[selected] = target
+                        if assignments:
+                            self.current_session.record_answer(dict(assignments))
+                        else:
+                            self.current_session.answers.pop(
+                                str(self.current_session.current_index), None
+                            )
+                        refresh_items()
+                        if (
+                            self.current_session.study_mode
+                            and len(assignments) == len(question["items"])
+                        ):
+                            self.show_study_feedback(
+                                question, assignments, disable_controls=False
+                            )
+                        elif self.feedback_label is not None:
+                            self.feedback_label.configure(text="")
+                        self.update_palette()
+                    else:
+                        event.widget.configure(fg_color="#1F2A3D")
+                    drag_status.configure(text="")
+
+                card.bind("<ButtonPress-1>", start_drag)
+                card.bind("<B1-Motion>", move_drag)
+                card.bind("<ButtonRelease-1>", finish_drag)
+
+        refresh_items()
+
     def get_selected_multi_answers(self):
         if self.current_session is None:
             return []
@@ -2054,6 +2311,12 @@ class APlusPracticeApp(ctk.CTk):
                 f"{left} → {right}" for left, right in question["answer"].items()
             )
             result = "Correct" if is_correct else f"Incorrect. Correct matches:\n{expected}"
+        elif question_type == "drag_drop":
+            is_correct = ExamSession.is_response_correct(question, selected)
+            expected = "\n".join(
+                f"{item} → {target}" for item, target in question["answer"].items()
+            )
+            result = "Correct" if is_correct else f"Incorrect. Correct assignments:\n{expected}"
         elif question.get("multi_select"):
             correct_answers = ExamSession.normalize_answer_set(question["answer"])
             chosen_answers = ExamSession.normalize_answer_set(selected)
@@ -2289,6 +2552,8 @@ class APlusPracticeApp(ctk.CTk):
             )
         if question_type == "matching":
             return "\n".join(f"{left} → {right}" for left, right in response.items())
+        if question_type == "drag_drop":
+            return "\n".join(f"{item} → {target}" for item, target in response.items())
         if isinstance(response, (list, tuple, set)):
             return ", ".join(str(item) for item in response)
         return str(response)
