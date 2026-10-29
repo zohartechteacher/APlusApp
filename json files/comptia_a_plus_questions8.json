@@ -1,0 +1,265 @@
+{
+  "questions": [
+    {
+      "exam": "220-1202",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A technician receives a ticket indicating the user cannot resolve external web pages However, specific IP addresses are working. Which of the following does the technician MOST likely need to change on the workstation to resolve the issue?",
+      "options": [
+        "A) Default gateway",
+        "B) Host address",
+        "C) Name server",
+        "D) Subnet mask"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Failure to resolve domain names while direct IP addresses function properly points to an incorrect or unreachable name server (DNS) configuration."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user is having phone issues after installing a new application that claims to optimize performance. The user downloaded the application directly from the vendor's website and is now experiencing high network utilization and is receiving repeated security warnings. Which of the following should the technician perform FIRST to mitigate the issue?",
+      "options": [
+        "A) Reset the phone to factory settings",
+        "B) Uninstall the fraudulent application",
+        "C) Increase the data plan limits",
+        "D) Disable the mobile hotspot."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Removing the newly installed fraudulent application is the immediate first step to stop malicious behavior."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operational Procedures",
+      "objective": "4.1 Ticketing and Documentation",
+      "question": "When a user calls in to report an issue, a technician submits a ticket on the user's behalf. Which of the following practices should the technician use to make sure the ticket is associated with the correct user?",
+      "options": [
+        "A) Have the user provide a callback phone number to be added to the ticket",
+        "B) Assign the ticket to the department's power user",
+        "C) Register the ticket with a unique user identifier",
+        "D) Provide the user with a unique ticket number that can be referenced on subsequent calls."
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Providing a unique ticket number enables efficient tracking and referencing on follow-up calls."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operating Systems",
+      "objective": "1.2 Operating System Features and Tools",
+      "question": "Once weekly a user needs Linux to run a specific open-source application that is not available for the currently installed Windows platform. The user has limited bandwidth throughout the day. Which of the following solutions would be the MOST efficient, allowing for parallel execution of the Linux application and Windows applications?",
+      "options": [
+        "A) Install and run Linux and the required application in a PaaS cloud environment",
+        "B) Install and run Linux and the required application as a virtual machine installed under the Windows OS",
+        "C) Use a swappable drive bay for the boot drive and install each OS with applications on its own drive Swap the drives as needed",
+        "D) Set up a dual boot system by selecting the option to install Linux alongside Windows"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Running Linux as a virtual machine inside Windows allows both environments to run concurrently without heavy network bandwidth usage."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operational Procedures",
+      "objective": "4.3 Change Management",
+      "question": "A change advisory board just approved a change request. Which of the following is the MOST likely next step in the change process?",
+      "options": [
+        "A) End user acceptance",
+        "B) Perform risk analysis",
+        "C) Communicate to stakeholders",
+        "D) Sandbox testing"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Sandbox testing or pre-implementation testing is typically performed after approval before full rollout."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Common Threats and Vulnerabilities",
+      "question": "Someone who is fraudulently claiming to be from a reputable bank calls a company employee. Which of the following describes this incident?",
+      "options": [
+        "A) Pretexting",
+        "B) Spoofing",
+        "C) Vishing",
+        "D) Scareware"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Voice phishing (vishing) occurs when an attacker uses telephone communication to impersonate trusted entities."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operational Procedures",
+      "objective": "4.1 Professionalism and Communication",
+      "question": "A call center technician receives a call from a user asking how to update Windows. Which of the following describes what the technician should do?",
+      "options": [
+        "A) Have the user consider using an iPad if the user is unable to complete updates",
+        "B) Have the user text the user's password to the technician.",
+        "C) Ask the user to click in the Search field, type Check for Updates, and then press the Enter key",
+        "D) Advise the user to wait for an upcoming, automatic patch"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Providing clear, step-by-step guidance on how to navigate the operating system update menu is professional and effective."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operating Systems",
+      "objective": "1.3 Command Line Tools",
+      "question": "The command cat comptia.txt was issued on a Linux terminal. Which of the following results should be expected?",
+      "options": [
+        "A) The contents of the text comptia.txt would be copied to another file",
+        "B) The contents of the text comptia.txt would be displayed.",
+        "C) The contents of the text comptia.txt would be categorized in alphabetical order.",
+        "D) The contents of the text comptia.txt will be replaced with a new blank document"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The cat command in Linux is used to concatenate and display file contents on the terminal screen."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Networking",
+      "objective": "Wireless Security and Configuration",
+      "question": "A wireless network is set up, but it is experiencing some interference from other nearby SSIDs. Which of the following can BEST resolve the interference?",
+      "options": [
+        "A) Changing channels",
+        "B) Changing the access point name",
+        "C) Modifying the wireless security",
+        "D) Disabling the SSID broadcast"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Changing to a non-overlapping wireless channel reduces co-channel interference from nearby networks."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Hardware",
+      "objective": "Safety and Best Practices",
+      "question": "A technician is replacing the processor in a desktop computer. Prior to opening the computer, the technician wants to ensure the internal components are protected. Which of the following safety procedures would BEST protect the components in the PC? (Choose two.)",
+      "options": [
+        "A) Utilizing an ESD strap.",
+        "B) Disconnecting the computer from the power source.",
+        "C) Placing the PSU in an antistatic bag.",
+        "D) Ensuring proper ventilation.",
+        "E) Removing dust from the ventilation fans.",
+        "F) Ensuring equipment is grounded."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Using an ESD wrist strap prevents electrostatic discharge, and disconnecting the power source ensures electrical safety during hardware maintenance."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A technician is investigating an employee's smartphone that has the following symptoms: The device is hot even when it is not in use, applications crash, and certain applications are in portrait mode when they should be in landscape mode. Which of the following can the technician do to MOST likely resolve these issues with minimal impact? (Choose two.)",
+      "options": [
+        "A) Turn on autorotation.",
+        "B) Activate airplane mode.",
+        "C) Close unnecessary applications.",
+        "D) Perform a factory reset.",
+        "E) Update the device's operating system.",
+        "F) Reinstall the applications that have crashed."
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "Closing background applications reduces processor load and heat, while checking/toggling autorotation resolves orientation display problems."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.3 Malware Remediation",
+      "question": "A user reports that antivirus software indicates a computer is infected with viruses. The user thinks this happened while browsing the internet. The technician does not recognize the interface with which the antivirus message is presented. Which of the following is the NEXT step the technician should take?",
+      "options": [
+        "A) Shut down the infected computer and swap it with another computer.",
+        "B) Investigate what the interface is and what triggered it to pop up.",
+        "C) Proceed with initiating a full scan and removal of the viruses using the presented interface.",
+        "D) Call the phone number displayed in the interface of the antivirus removal tool."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Unrecognized antivirus pop-ups are often scareware tactics; investigating the interface helps determine if it's legitimate security software or a browser alert."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operating Systems",
+      "objective": "1.1 Operating System Installation and Upgrade",
+      "question": "A technician is unable to join a Windows 10 laptop to a domain. Which of the following is the MOST likely reason?",
+      "options": [
+        "A) The domain's processor compatibility is not met.",
+        "B) The laptop has Windows 10 Home installed.",
+        "C) The laptop does not have an onboard Ethernet adapter.",
+        "D) The laptop does not have all current Windows updates installed."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Windows Home editions do not support domain joining; Windows Pro or Enterprise editions are required."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operating Systems",
+      "objective": "1.2 Storage and File Systems",
+      "question": "A technician needs to format a USB drive to transfer 20GB of data from a Linux computer to a Windows computer. Which of the following filesystems will the technician MOST likely use?",
+      "options": [
+        "A) FAT32",
+        "B) ext4",
+        "C) NTFS",
+        "D) exFAT"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "exFAT supports files larger than 4GB (needed for a 20GB transfer) and has native cross-platform support across Windows, macOS, and Linux."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.5 Incident Response and Forensics",
+      "question": "An incident handler needs to preserve evidence for possible litigation. Which of the following will the incident handler MOST likely do to preserve the evidence?",
+      "options": [
+        "A) Encrypt the files.",
+        "B) Clone any impacted hard drives.",
+        "C) Contact the cyber insurance company.",
+        "D) Inform law enforcement."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Creating a bit-level forensic image (clone) of impacted drives preserves data integrity and chain of custody for legal proceedings."
+    }
+  ]
+}

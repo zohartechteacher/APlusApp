@@ -1,0 +1,342 @@
+{
+  "questions": [
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.4 Malware Removal",
+      "question": "Match each suspicious process observed in Windows Task Manager to its corresponding threat description: (1) svchost.exe running from AppData\\Local\\Temp, (2) lsass.exe consuming 99% CPU with no digital signature, (3) powershell.exe executing encoded base64 commands at startup.",
+      "options": [
+        "A) 1 - C, 2 - A, 3 - B",
+        "B) 1 - A, 2 - C, 3 - B",
+        "C) 1 - B, 2 - A, 3 - C",
+        "D) 1 - C, 2 - B, 3 - A"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Legitimate svchost.exe runs strictly from C:\\Windows\\System32; running from AppData indicates malware. lsass.exe without a Microsoft signature abusing CPU is process spoofing. Encoded PowerShell commands signify fileless malicious script execution."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operating Systems",
+      "objective": "1.4 Windows OS Features and Tools",
+      "question": "Match the Windows management utility or location to its correct startup configuration function: (1) Task Manager (Startup Tab), (2) Services.msc, (3) Registry (HKCU\\...\\Run).",
+      "options": [
+        "A) 1 - C, 2 - A, 3 - B",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - B, 2 - C, 3 - A",
+        "D) 1 - C, 2 - B, 3 - A"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Task Manager Startup tab manages user application startup impact; Services.msc controls service startup behavior; HKCU Run registry keys hold per-user automatic execution paths."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Match the Windows Defender Firewall rule parameter to its intended security outcome: (1) Block Inbound TCP Port 445, (2) Block Outbound TCP Port 25, (3) Allow Inbound TCP Port 3389.",
+      "options": [
+        "A) 1 - B, 2 - C, 3 - A",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - C, 2 - B, 3 - A",
+        "D) 1 - B, 2 - A, 3 - C"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Port 445 controls SMB (ransomware mitigation); Port 25 controls outbound SMTP (spam mitigation); Port 3389 allows RDP connections."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.4 Malware Removal",
+      "question": "Match the Task Manager column indicator to its diagnostic role when evaluating suspicious malware behavior: (1) Image Path Name / File Location, (2) Digital Signature / Publisher, (3) Command Line Column.",
+      "options": [
+        "A) 1 - C, 2 - A, 3 - B",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - B, 2 - C, 3 - A",
+        "D) 1 - C, 2 - B, 3 - A"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "File Location checks system paths vs temp paths; Digital Signature verifies authenticity; Command Line reveals hidden switches/scripts."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.4 Malware Removal",
+      "question": "Match the suspicious startup persistence mechanism to the appropriate tool used to inspect and disable it: (1) Scheduled Tasks running unknown scripts at logon, (2) Malicious Windows Service set to start automatically, (3) Unknown browser extension launching on startup.",
+      "options": [
+        "A) 1 - C, 2 - A, 3 - B",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - B, 2 - C, 3 - A",
+        "D) 1 - C, 2 - B, 3 - A"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Task Scheduler manages scheduled triggers; Services snap-in manages background system services; Browser extensions are controlled in web browser settings."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Match the firewall profile type in Windows Defender Firewall with Advanced Security to its corresponding network environment: (1) Domain Profile, (2) Private Profile, (3) Public Profile.",
+      "options": [
+        "A) 1 - B, 2 - C, 3 - A",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - C, 2 - A, 3 - B",
+        "D) 1 - B, 2 - A, 3 - C"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Domain profile activates on AD networks; Private profile is for trusted home/work networks; Public profile enforces maximum protection on untrusted public Wi-Fi."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.4 Malware Removal",
+      "question": "Match each process status in Task Manager to the correct administrative remediation response: (1) Process status 'Not Responding' during malware activity, (2) Unsigned binary running from C:\\Users\\Public\\Update.exe, (3) Legitimate Windows system process utilizing elevated CPU under normal load.",
+      "options": [
+        "A) 1 - B, 2 - A, 3 - C",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - C, 2 - A, 3 - B",
+        "D) 1 - B, 2 - C, 3 - A"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Frozen/hung processes require End Task; executable binaries in public directories require isolation and deletion; normal system processes should be allowed to run."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operating Systems",
+      "objective": "1.4 Windows OS Features and Tools",
+      "question": "Match the command-line utility switch to its process termination task: (1) taskkill /IM malicious.exe /F, (2) taskkill /PID 4512 /F, (3) tasklist /FI \"STATUS eq NOT RESPONDING\".",
+      "options": [
+        "A) 1 - C, 2 - A, 3 - B",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - B, 2 - C, 3 - A",
+        "D) 1 - C, 2 - B, 3 - A"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "/IM specifies image name; /PID specifies process ID number; /FI applies filters such as status."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Match the Windows Defender Firewall Action setting to its behavior when matching traffic occurs: (1) Allow the connection, (2) Allow the connection if it is secure, (3) Block the connection.",
+      "options": [
+        "A) 1 - B, 2 - C, 3 - A",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - C, 2 - B, 3 - A",
+        "D) 1 - B, 2 - A, 3 - C"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "'Allow' permits standard packets; 'Allow if secure' requires IPsec security association; 'Block' drops matching packets."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.4 Malware Removal",
+      "question": "Match the process anomaly visible in Task Manager Details tab to the corresponding type of attack: (1) Multiple duplicate instances of conhost.exe running under a standard user account, (2) High network utilization by an unknown background process to remote IP addresses on Port 6667, (3) Constant high CPU/GPU utilization by an idle desktop system.",
+      "options": [
+        "A) 1 - C, 2 - A, 3 - B",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - B, 2 - C, 3 - A",
+        "D) 1 - C, 2 - B, 3 - A"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Multiple unexpected conhost processes indicate shell spawning; Port 6667 traffic indicates IRC botnet beaconing; 100% idle system utilization signals unauthorized cryptomining."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.4 Malware Removal",
+      "question": "Match the step of the CompTIA 7-step Malware Removal Procedure to its correct action during process isolation: (1) Step 2: Isolate the infected system, (2) Step 3: Disable System Restore, (3) Step 4: Remediate the infected system.",
+      "options": [
+        "A) 1 - A, 2 - C, 3 - B",
+        "B) 1 - B, 2 - A, 3 - C",
+        "C) 1 - C, 2 - B, 3 - A",
+        "D) 1 - A, 2 - B, 3 - C"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Step 2 is Isolation (disconnect network); Step 3 is Disabling System Restore; Step 4 is Remediation (malware removal and cleanup)."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operating Systems",
+      "objective": "1.4 Windows OS Features and Tools",
+      "question": "Match the Task Manager tab to its diagnostic function when investigating computer performance and security: (1) Details Tab, (2) Services Tab, (3) Startup App Tab.",
+      "options": [
+        "A) 1 - B, 2 - A, 3 - C",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - C, 2 - A, 3 - B",
+        "D) 1 - B, 2 - C, 3 - A"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Details tab shows process execution parameters (PID, user, memory); Services tab lists system services; Startup App tab manages auto-start applications."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Match the Windows Defender Firewall Rule type to the criteria used for filtering network traffic: (1) Program Rule, (2) Port Rule, (3) Custom Rule.",
+      "options": [
+        "A) 1 - B, 2 - A, 3 - C",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - C, 2 - B, 3 - A",
+        "D) 1 - B, 2 - C, 3 - A"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Program rules filter by executable path; Port rules filter by TCP/UDP ports; Custom rules combine multiple parameters including IP ranges and protocols."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.4 Malware Removal",
+      "question": "Match the registry run key location to its persistence behavior for startup programs: (1) HKEY_LOCAL_MACHINE\\...\\Run, (2) HKEY_CURRENT_USER\\...\\Run, (3) HKEY_LOCAL_MACHINE\\...\\RunOnce.",
+      "options": [
+        "A) 1 - C, 2 - A, 3 - B",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - B, 2 - C, 3 - A",
+        "D) 1 - C, 2 - B, 3 - A"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "HKLM Run applies to all system users; HKCU Run applies only to the active user; RunOnce executes a single time and self-deletes."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Match the firewall configuration goal to the appropriate administrative tool: (1) Quick toggle to enable/disable firewall across public/private profiles, (2) Granular creation of inbound/outbound rules based on IP address ranges, (3) Command-line script to reset firewall rules to installation defaults.",
+      "options": [
+        "A) 1 - B, 2 - C, 3 - A",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - C, 2 - B, 3 - A",
+        "D) 1 - B, 2 - A, 3 - C"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Basic Control Panel applet provides simple toggles; wf.msc allows complex custom rule creation; netsh CLI resets firewall defaults."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.4 Malware Removal",
+      "question": "Match each suspicious process name anomaly to its correct detection analysis: (1) csrsss.exe running alongside csrss.exe, (2) System Idle Process consuming 95% CPU, (3) explorer.exe running under system user account 'SYSTEM'.",
+      "options": [
+        "A) 1 - B, 2 - A, 3 - C",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - C, 2 - A, 3 - B",
+        "D) 1 - B, 2 - C, 3 - A"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "csrsss.exe (extra 's') is typosquatting; System Idle Process CPU usage represents unused capacity; Windows Explorer running as SYSTEM indicates privilege escalation or spoofing."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operating Systems",
+      "objective": "1.4 Windows OS Features and Tools",
+      "question": "Match the Task Manager startup impact rating to its operational definition: (1) High Impact, (2) Low Impact, (3) Disabled.",
+      "options": [
+        "A) 1 - A, 2 - C, 3 - B",
+        "B) 1 - B, 2 - A, 3 - C",
+        "C) 1 - C, 2 - B, 3 - A",
+        "D) 1 - A, 2 - B, 3 - C"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "High Impact delays boot noticeably; Low Impact has minimal resource usage; Disabled prevents automatic boot execution."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Match the netsh command to its firewall management function: (1) netsh advfirewall set allprofiles state off, (2) netsh advfirewall set allprofiles state on, (3) netsh advfirewall show allprofiles.",
+      "options": [
+        "A) 1 - C, 2 - A, 3 - B",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - B, 2 - C, 3 - A",
+        "D) 1 - C, 2 - B, 3 - A"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "'state off' disables firewall; 'state on' enables firewall; 'show allprofiles' displays current operational status."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.4 Malware Removal",
+      "question": "Match the persistence method used by malware to its recommended remediation step: (1) Malicious DLL injected into a legitimate system process, (2) Unauthorized scheduled task configured to execute every 60 minutes, (3) Rogue Windows Service set to Automatic startup.",
+      "options": [
+        "A) 1 - C, 2 - A, 3 - B",
+        "B) 1 - A, 2 - B, 3 - C",
+        "C) 1 - B, 2 - C, 3 - A",
+        "D) 1 - C, 2 - B, 3 - A"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Injected DLLs require terminating host process and scanning in Safe Mode; malicious tasks are deleted in Task Scheduler; rogue services are disabled in services.msc."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Match the host firewall rule direction to the network scenario requiring it: (1) Inbound Rule, (2) Outbound Rule.",
+      "options": [
+        "A) 1 - B, 2 - A",
+        "B) 1 - A, 2 - B"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Inbound rules filter incoming connections initiated outside the computer; Outbound rules filter outgoing connections originating from the local host."
+    }
+  ]
+}

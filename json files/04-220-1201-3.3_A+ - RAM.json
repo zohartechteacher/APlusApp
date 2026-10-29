@@ -1,0 +1,906 @@
+{
+  "questions": [
+    {
+      "id": "1201-3.3-001",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Which of the following terms best describes Random Access Memory (RAM) regarding data retention when power is lost?",
+      "options": [
+        "A) Non-volatile",
+        "B) Volatile",
+        "C) Static",
+        "D) Persistent"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "RAM is volatile memory, meaning its contents are temporary and require a constant electric charge; otherwise, everything stored in it is erased[cite: 8, 9]."
+    },
+    {
+      "id": "1201-3.3-002",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "How is the speed of RAM typically measured in basic specifications?",
+      "options": [
+        "A) Gigahertz (GHz)",
+        "B) Nanoseconds (ns)",
+        "C) Revolutions per minute (RPM)",
+        "D) Milliamps (mA)"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "RAM speed is measured in nanoseconds (ns), which are one-billionth of a second[cite: 8]."
+    },
+    {
+      "id": "1201-3.3-003",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What does SDRAM stand for in computer hardware architecture?",
+      "options": [
+        "A) Serial Dynamic Random Access Memory",
+        "B) Synchronous Dynamic Random Access Memory",
+        "C) Static Dual Random Access Memory",
+        "D) System Data Random Access Memory"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "SDRAM stands for Synchronous Dynamic RAM, which is synchronized with the system clock[cite: 9]."
+    },
+    {
+      "id": "1201-3.3-004",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Which type of SDRAM represents single data rate memory that is considered legacy?",
+      "options": [
+        "A) SDR SDRAM",
+        "B) DDR SDRAM",
+        "C) DDR4 SDRAM",
+        "D) DDR5 SDRAM"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "SDR SDRAM stands for Single Data Rate SDRAM and is considered legacy technology[cite: 9]."
+    },
+    {
+      "id": "1201-3.3-005",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What memory form factor is primarily used in desktop computers?",
+      "options": [
+        "A) SODIMM",
+        "B) Micro-DIMM",
+        "C) DIMM",
+        "D) SIMM"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "DIMM (Dual Inline Memory Module) is the form factor used in desktop computers[cite: 9]."
+    },
+    {
+      "id": "1201-3.3-006",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Which memory form factor is designed specifically for use in laptops and mobile computers?",
+      "options": [
+        "A) DIMM",
+        "B) SODIMM",
+        "C) RIMM",
+        "D) SIMM"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "SODIMM (Small Outline DIMM) is the form factor used in laptops[cite: 9]."
+    },
+    {
+      "id": "1201-3.3-007",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "According to exam guidelines, why is SDRAM considered faster and more expensive than standard DRAM, and where is it typically utilized?",
+      "options": [
+        "A) It does not require continuous refreshing and is used inside the CPU",
+        "B) It uses optical lasers instead of copper traces and sits on expansion cards",
+        "C) It provides quadruple data rates directly to the power supply unit",
+        "D) It integrates flash memory chips to replace hard disk drives"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "SDRAM is static/more efficient because memory does not have to be continuously refreshed like DRAM; it is faster, more expensive, and used inside the CPU[cite: 10]."
+    },
+    {
+      "id": "1201-3.3-008",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "How many signals per clock cycle does Double Data Rate (DDR) memory transmit?",
+      "options": [
+        "A) 1 signal per clock cycle",
+        "B) 2 signals per clock cycle",
+        "C) 4 signals per clock cycle",
+        "D) 8 signals per clock cycle"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "DDR transmits 2 signals per clock cycle (Double Data Rate), whereas SDR transmits 1 and QDR transmits 4[cite: 11]."
+    },
+    {
+      "id": "1201-3.3-009",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What term describes how many times data can be transmitted on each clock cycle?",
+      "options": [
+        "A) Memory pumping",
+        "B) Clock multiplier",
+        "C) Bus throttling",
+        "D) Data mirroring"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Computer pumping refers to how many times data can be transmitted on each clock cycle (e.g., SDR, DDR, QDR)[cite: 11]."
+    },
+    {
+      "id": "1201-3.3-010",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What does the 'CL' rating stand for on a RAM module specification label?",
+      "options": [
+        "A) Clock Level",
+        "B) CAS Latency",
+        "C) Current Load",
+        "D) Core Limit"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The number after 'CL' represents the RAM kit's Column Address Strobe or Signal (CAS) latency[cite: 13]."
+    },
+    {
+      "id": "1201-3.3-011",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Which of the following statements best defines CAS Latency (CL)?",
+      "options": [
+        "A) The total gigabyte capacity available on the memory stick",
+        "B) The voltage required to power the memory module safely",
+        "C) The number of clock cycles it takes for RAM to access and output specific data",
+        "D) The maximum data transfer rate in megabytes per second"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "CAS latency is how many clock cycles it takes for the RAM module to access a specific set of data in a column and make it available on output pins[cite: 13]."
+    },
+    {
+      "id": "1201-3.3-012",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "When evaluating CAS Latency (CL) values for RAM performance, which rule applies?",
+      "options": [
+        "A) The higher the CL value, the better the performance",
+        "B) The lower the CL value, the better the performance",
+        "C) CL values do not impact system performance",
+        "D) CL must always match the exact voltage of the CPU"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "When looking at CAS latency, lower values are better because it takes fewer clock cycles to complete the task[cite: 13]."
+    },
+    {
+      "id": "1201-3.3-013",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What is the transfer rate associated with DDR4-2133?",
+      "options": [
+        "A) 17,066 MB/s",
+        "B) 19,200 MB/s",
+        "C) 21,333 MB/s",
+        "D) 25,600 MB/s"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The transfer rate of DDR4-2133 is 17,066 MB/s (also known as PC4-17000)[cite: 26, 27]."
+    },
+    {
+      "id": "1201-3.3-014",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Which transfer rate corresponds to DDR4-2666 (PC4-21333)?",
+      "options": [
+        "A) 17,066 MB/s",
+        "B) 19,200 MB/s",
+        "C) 21,333 MB/s",
+        "D) 25,600 MB/s"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "DDR4-2666 corresponds to a transfer rate of 21,333 MB/s (PC4-21333)[cite: 27]."
+    },
+    {
+      "id": "1201-3.3-015",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "How many pins are featured on a standard DDR3 memory module DIMM?",
+      "options": [
+        "A) 184 pins",
+        "B) 200 pins",
+        "C) 240 pins",
+        "D) 288 pins"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "A DDR3 memory module has 240 pins (whereas DDR1 has 184, SODIMM has 200, and DDR4/DDR5 have 288)[cite: 30, 31]."
+    },
+    {
+      "id": "1201-3.3-016",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "How many pins are featured on a standard DDR4 or DDR5 desktop memory module?",
+      "options": [
+        "A) 184",
+        "B) 240",
+        "C) 288",
+        "D) 300"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "DDR4 and newer desktop modules feature 288 pins[cite: 30, 31, 36]."
+    },
+    {
+      "id": "1201-3.3-017",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What voltage range is typically associated with DDR4 DIMMs?",
+      "options": [
+        "A) 1.5 V",
+        "B) Between 1.2 V and 1.35 V",
+        "C) 1.1 V",
+        "D) 1.8 V"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "DDR4 DIMMs operate between 1.2 V and 1.35 V (while DDR3 uses 1.2 V or 1.5 V, and DDR5 uses 1.1 V)[cite: 36, 37]."
+    },
+    {
+      "id": "1201-3.3-018",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What voltage is standard for DDR5 memory modules?",
+      "options": [
+        "A) 1.5 V",
+        "B) 1.35 V",
+        "C) 1.2 V",
+        "D) 1.1 V"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "DDR5 DIMMs operate at 1.1 V[cite: 36]."
+    },
+    {
+      "id": "1201-3.3-019",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Which memory channel architecture utilizes modules accessed individually in a single sequence?",
+      "options": [
+        "A) Single-channel",
+        "B) Dual-channel",
+        "C) Triple-channel",
+        "D) Quad-channel"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "In single-channel architecture, each memory module is addressed individually[cite: 14]."
+    },
+    {
+      "id": "1201-3.3-020",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "How many sticks of RAM are required at minimum to implement dual-channel architecture on a compatible motherboard?",
+      "options": [
+        "A) One stick",
+        "B) Two identical sticks",
+        "C) Three matched sticks",
+        "D) Four identical sticks"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Dual-channel architecture uses two identical sticks of SDRAM together in paired slots of the same color to increase throughput[cite: 14, 15]."
+    },
+    {
+      "id": "1201-3.3-021",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What bus width is supported by triple-channel memory architecture accessing three modules simultaneously?",
+      "options": [
+        "A) 64-bit bus",
+        "B) 128-bit bus",
+        "C) 192-bit bus",
+        "D) 256-bit bus"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Triple-channel architecture accesses three modules at the same time using a 192-bit bus[cite: 16]."
+    },
+    {
+      "id": "1201-3.3-022",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Which of the following memory architectures allows for a 256-bit wide bus?",
+      "options": [
+        "A) ECC",
+        "B) Quad-channel",
+        "C) Parity",
+        "D) DDR2"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Quadruple-channel (quad-channel) architecture utilizes four modules together, creating a wider data path (256-bit bus) to increase throughput[cite: 32, 33]."
+    },
+    {
+      "id": "1201-3.3-023",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What happens automatically if a technician installs only three RAM modules into a quad-channel motherboard designed for four modules?",
+      "options": [
+        "A) The system refuses to boot up",
+        "B) The architecture automatically downgrades to triple-channel",
+        "C) The system operates in single-channel mode only",
+        "D) Memory frequency is halved to compensate"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "If only three modules are installed in a quad-channel setup, the architecture automatically downgrades to triple-channel (and to dual-channel if two are used)[cite: 17]."
+    },
+    {
+      "id": "1201-3.3-024",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "When populating memory slots on a motherboard for multi-channel performance, how should slots of the same color be filled?",
+      "options": [
+        "A) With modules of completely different capacities",
+        "B) With identical modules / matched pairs",
+        "C) With alternating DDR3 and DDR4 sticks",
+        "D) With non-ECC mixed with ECC memory"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "RAM slots of the same color on a motherboard should be filled with identical modules (matched pairs with the same speed and CL value)[cite: 14]."
+    },
+    {
+      "id": "1201-3.3-025",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What is the primary function of Error Correction Code (ECC) in RAM?",
+      "options": [
+        "A) To overclock memory clock speeds automatically",
+        "B) To detect and correct memory errors in real time",
+        "C) To convert dynamic RAM into static cache memory",
+        "D) To reduce the physical voltage required by the memory controller"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "ECC in RAM can detect and correct errors, preventing data loss and potential system crashes[cite: 23, 25]."
+    },
+    {
+      "id": "1201-3.3-026",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Which letter or designation is commonly used to identify DDR ECC memory modules on their specification labels?",
+      "options": [
+        "A) R",
+        "B) E or ECC",
+        "C) X",
+        "D) L"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "DDR ECC modules are identified with either the letter E or ECC (e.g., PC3-10600E)[cite: 24]."
+    },
+    {
+      "id": "1201-3.3-027",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "How does DDR5 handle error correction natively on the module itself?",
+      "options": [
+        "A) It requires an external parity controller card on the motherboard",
+        "B) It stores 8 bits of ECC data for every 128 bits of main data using on-die ECC",
+        "C) It refreshes twice as often as DDR4 to prevent bit-flip corruption",
+        "D) It mirrors all transaction blocks across two separate DIMM slots"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "DDR5 has on-die ECC where for every 128 bits of data, it stores 8 bits for ECC, enabling it to repair single-bit errors right away[cite: 24]."
+    },
+    {
+      "id": "1201-3.3-028",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Why is traditional ECC RAM considered the slowest and most expensive type of consumer memory?",
+      "options": [
+        "A) Because it operates at half the system bus clock frequency",
+        "B) Because additional information needs to be stored and processed, using more resources",
+        "C) Because it requires liquid cooling blocks on every chip",
+        "D) Because it can only function in single-channel mode"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "ECC RAM requires additional information to be stored, uses more system resources, and is consequently slower and more expensive[cite: 23]."
+    },
+    {
+      "id": "1201-3.3-029",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "When installing a DIMM module into a motherboard socket, what should a technician verify regarding the locking tabs first?",
+      "options": [
+        "A) That they are locked inward before inserting the module",
+        "B) That the locking tabs on the socket are swiveled to the outside (open) position",
+        "C) That they are coated in thermal paste",
+        "D) That they are removed completely to save space"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Before inserting a DIMM, verify that the locking tabs on the socket are swiveled to the outside (open) position[cite: 20]."
+    },
+    {
+      "id": "1201-3.3-030",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What physical action ensures a DIMM module is fully and correctly seated in its motherboard slot?",
+      "options": [
+        "A) Tightening small screws on each corner of the chip package",
+        "B) Pushing the module straight down until the swivel locks on each end snap into place",
+        "C) Sliding the module horizontally from left to right until it clicks",
+        "D) Soldering the gold pins directly to the motherboard traces"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Push the module straight down into the socket until the swivel locks on each end snap into place at the top corners of the module[cite: 20]."
+    },
+    {
+      "id": "1201-3.3-031",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "After installing additional RAM into a Windows workstation, how can a technician verify the total installed amount via Task Manager? (Choose the correct navigation steps.)",
+      "options": [
+        "A) Right-click Start > Device Manager > Memory",
+        "B) Press Windows+R, type taskmgr, go to Performance tab > Memory section",
+        "C) Open Command Prompt and run 'ipconfig /all'",
+        "D) Open Control Panel > Device Security > RAM Properties"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "To verify RAM in Task Manager, use the shortcut Windows+R, type taskmgr, and look under the Performance Tab in the Memory section[cite: 21]."
+    },
+    {
+      "id": "1201-3.3-032",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Which alternative path in Windows allows a technician to verify total installed RAM besides Task Manager?",
+      "options": [
+        "A) Settings > System > About (or Control Panel > System)",
+        "B) Network and Sharing Center > Adapter Settings",
+        "C) Computer Management > Disk Management",
+        "D) Windows Update > Advanced Options"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "RAM can be verified via Control Panel > System > Total RAM or through Settings > System > About[cite: 21, 34, 35]."
+    },
+    {
+      "id": "1201-3.3-033",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "A technician has just installed additional RAM into a workstation to meet demanding application requirements. What are the two best steps the technician should take next to ensure the RAM is correctly installed and working properly? (Select two.)",
+      "options": [
+        "A) Increase the size of the paging file",
+        "B) Test the RAM",
+        "C) Go to Settings > System > About",
+        "D) Press down with both thumbs until the ears lock"
+      ],
+      "answer": [
+        "B",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "To ensure correct installation and operation after adding RAM, the technician should test the RAM and check Settings > System > About[cite: 34, 35]."
+    },
+    {
+      "id": "1201-3.3-034",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "A technician attempts to install a DDR5 memory module into a motherboard, but it does not appear to fit. Which of the following are possible reasons for this? (Select two.)",
+      "options": [
+        "A) The motherboard doesn't allow DDR5 memory",
+        "B) Windows doesn't allow DDR5 memory",
+        "C) The RAM stick is being installed backwards",
+        "D) The BIOS/UEFI hasn't been updated"
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "Physical fit issues occur if the motherboard doesn't support that memory type or if the RAM stick is being inserted backwards (keyed slot mismatch)[cite: 28, 29]."
+    },
+    {
+      "id": "1201-3.3-035",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Which role does mass storage play relative to RAM during execution, as illustrated in system architecture concepts?",
+      "options": [
+        "A) Mass storage holds programs, but programs need to run in RAM",
+        "B) Mass storage executes program code directly without loading it into RAM",
+        "C) RAM permanently stores application files while mass storage acts as volatile cache",
+        "D) Mass storage and RAM share an identical volatile data structure"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Mass storage holds programs, but programs need to run in RAM; program code is copied from your hard drive into RAM before execution[cite: 7]."
+    },
+    {
+      "id": "1201-3.3-036",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "When a card game application like Solitaire is executed in Windows, what happens to its program code?",
+      "options": [
+        "A) It remains exclusively on the hard drive and executes from sectors without copying",
+        "B) A copy of the program code gets loaded from the hard drive into RAM",
+        "C) It is compiled directly into CPU registers without touching system memory",
+        "D) It is mirrored onto the network interface card buffer"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "When a program is run, a copy of the program code gets loaded from the hard drive into RAM[cite: 7]."
+    },
+    {
+      "id": "1201-3.3-037",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What physical feature on a RAM module and motherboard slot prevents an incorrect memory generation (such as DDR3 into a DDR4 slot) from being inserted?",
+      "options": [
+        "A) Voltage regulator jumpers",
+        "B) The physical notch (key)",
+        "C) Thermal sensor leads",
+        "D) Locking tab colors"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The physical notch or key on the RAM module prevents incompatible memory types from being inserted into mismatched motherboard slots."
+    },
+    {
+      "id": "1201-3.3-038",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Which of the following characteristics is true regarding Dynamic RAM (DRAM)?",
+      "options": [
+        "A) It retains data indefinitely without power",
+        "B) It requires a constant electric charge and periodic refreshing to avoid data loss",
+        "C) It is built directly inside the CPU die as L1 cache",
+        "D) It never experiences volatility or memory leaks"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Dynamic RAM (DRAM) requires a constant electric charge and periodic refresh cycles, otherwise its contents are erased (volatile)[cite: 8, 9]."
+    },
+    {
+      "id": "1201-3.3-039",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "When upgrading a desktop PC's memory, what factors should a technician consider when choosing memory? (Select the best combination based on course guidelines.)",
+      "options": [
+        "A) Form factor (e.g., DDR3, DDR4, DDR5 SODIMM), memory speed, and CAS latency value",
+        "B) Hard drive RPM, thermal paste color, and power supply wattage",
+        "C) Monitor refresh rate, keyboard layout, and case fan size",
+        "D) Optical drive read speed and printer queue configuration"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Key factors for choosing memory include form factor (DDR3, DDR4, DDR5, SODIMM), memory speed, and memory timing (CAS value), often verified using vendor upgrade tools[cite: 12]."
+    },
+    {
+      "id": "1201-3.3-040",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What is recommended to ensure correct compatibility when selecting and purchasing replacement or upgrade memory modules?",
+      "options": [
+        "A) Guess the pin count based on the motherboard color",
+        "B) Use interactive memory upgrade tools on third-party memory vendors' websites and check specifications",
+        "C) Modify the BIOS hex code to accept any arbitrary RAM stick",
+        "D) Remove the CPU heat sink to check memory bus traces"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Technicians should use interactive memory upgrade tools on third-party memory vendors' websites and check vendors' memory specifications[cite: 12]."
+    },
+    {
+      "id": "1201-3.3-041",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "A technician installs dual-inline memory modules that each feature 288 pins and operate at 1.1 V. What kind of RAM has the technician installed?",
+      "options": [
+        "A) DDR4 DIMMs",
+        "B) DDR3 DIMMs",
+        "C) DDR4 SODIMMs",
+        "D) DDR5 DIMMs"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "DDR5 DIMMs feature 288 pins and operate at 1.1 V (whereas DDR4 operates at 1.2–1.35 V and DDR3 at 1.5 V)[cite: 36, 37]."
+    },
+    {
+      "id": "1201-3.3-042",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What is the primary operational advantage of Quad Data Rate (QDR) architecture over SDR and DDR?",
+      "options": [
+        "A) It transmits 4 signals per clock cycle",
+        "B) It requires zero electrical power to maintain data states",
+        "C) It eliminates the need for a motherboard chipset",
+        "D) It operates exclusively inside mechanical hard drives"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Quad Data Rate (QDR) transmits 4 signals per clock cycle[cite: 11]."
+    },
+    {
+      "id": "1201-3.3-043",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Why is ECC RAM particularly valued in server environments or real-time applications?",
+      "options": [
+        "A) It increases gaming frame rates by bypassing the OS kernel",
+        "B) It can detect and correct memory errors in real time to prevent crashes and data loss",
+        "C) It consumes significantly less battery power on mobile devices",
+        "D) It allows non-matching RAM sticks of different sizes to run in quad-channel mode"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Real-time applications and servers use ECC because it can detect and correct errors, preventing data loss and potential system crashes[cite: 23, 25]."
+    },
+    {
+      "id": "1201-3.3-044",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "When installing matched pairs for optimal dual-channel performance, what attribute besides speed and CAS value must be identical?",
+      "options": [
+        "A) The brand sticker color",
+        "B) The memory technology/slots used (paired slots of the same color)",
+        "C) The operating system serial number",
+        "D) The CPU cache size"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Dual-channel DDR requires identical sticks of DDR that snap into paired slots of the same color on the motherboard[cite: 14, 15]."
+    },
+    {
+      "id": "1201-3.3-045",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Which of the following describes the correct initial alignment step when installing a DIMM into a memory slot?",
+      "options": [
+        "A) Line up the module's connectors and notch with the socket key",
+        "B) Insert the module at a 90-degree angle from the top",
+        "C) Place the module flat against the motherboard surface",
+        "D) Force the module in regardless of slot orientation"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Step 1 of installing a DIMM module is to line up the module's connectors (and key notch) with the socket[cite: 20]."
+    },
+    {
+      "id": "1201-3.3-046",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What does a memory module label showing 'PC3-10600' or 'DDR3-1333' indicate?",
+      "options": [
+        "A) A DDR3 module with a peak transfer rate of approximately 10,600 MB/s running at 1333 MHz",
+        "B) A legacy SDR module running at 10.6 GHz",
+        "C) A cache chip with 106 gigabytes of non-volatile storage",
+        "D) A mobile SODIMM operating at 1.1 V"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Labels like PC3-10600 denote DDR3 memory with a bandwidth rating of ~10,600 MB/s, corresponding to DDR3-1333 speed[cite: 13]."
+    },
+    {
+      "id": "1201-3.3-047",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "What is a primary risk if a computer running critical enterprise data uses non-ECC memory instead of ECC memory during a transient hardware fault?",
+      "options": [
+        "A) A single-bit error could cause data corruption or a system crash without detection",
+        "B) The monitor will display inverted colors",
+        "C) The hard drive will automatically reformat its partitions",
+        "D) The CPU clock multiplier will lock at minimum speed"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Without ECC, memory errors can lead to uncorrected data corruption and potential system crashes[cite: 25]."
+    },
+    {
+      "id": "1201-3.3-048",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Which component manages the interleaved mode data access across multiple memory modules in dual-, triple-, or quad-channel configurations?",
+      "options": [
+        "A) The memory controller",
+        "B) The hard disk controller",
+        "C) The graphics processing unit",
+        "D) The power supply regulator"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The memory controller accesses the modules in interleaved mode for faster access across multi-channel architectures[cite: 14]."
+    },
+    {
+      "id": "1201-3.3-049",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "How are module speeds usually designated on modern DDR4 memory labels (e.g., DDR4-2133 vs PC4-17000)?",
+      "options": [
+        "A) By clock frequency speed in MHz and total peak transfer bandwidth in MB/s",
+        "B) By physical length in millimeters and weight in grams",
+        "C) By thermal design power in watts",
+        "D) By bus voltage and pin diameter"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "RAM labels designate speed by their transfer frequency (e.g., DDR4-2133) and corresponding maximum bandwidth rating (e.g., PC4-17000)[cite: 13, 27]."
+    },
+    {
+      "id": "1201-3.3-050",
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 RAM Types",
+      "question": "Which of the following core attributes correctly differentiates SDRAM from asynchronous DRAM types?",
+      "options": [
+        "A) SDRAM is synchronized with the system clock for better coordination with the CPU",
+        "B) SDRAM is non-volatile and retains data when the computer is powered off",
+        "C) SDRAM operates entirely without electrical power",
+        "D) SDRAM uses magnetic platter storage instead of semiconductor circuits"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Synchronous Dynamic RAM (SDRAM) is synchronized directly with the system clock, allowing it to coordinate operations more efficiently with the processor[cite: 9]."
+    }
+  ]
+}

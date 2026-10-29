@@ -1,0 +1,858 @@
+{
+"questions": [
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A technician powers on a desktop PC. The system turns on, fans spin at maximum speed, but no video output appears on the screen, and the motherboard emits a series of continuous short beep codes. What is the most likely cause of this symptom?",
+"options": [
+"A) Faulty or improperly seated system RAM",
+"B) Corrupted operating system boot partition",
+"C) S.M.A.R.T. hard drive error",
+"D) Disconnected CPU cooling fan"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Continuous short beep codes during POST prior to video initialization typically indicate a failure or unseated memory module (RAM)."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A user reports that their desktop PC powers off unexpectedly after roughly 15 minutes of heavy processor usage. The system cannot be turned back on immediately, but after waiting 10 minutes, it boots normally. What is the primary cause of this behavior?",
+"options": [
+"A) CPU thermal thermal shutdown protection",
+"B) Failed power supply unit capacitor",
+"C) Corrupted BIOS firmware",
+"D) Defective SATA controller channel"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Modern CPUs automatically shut down when temperatures exceed safety thresholds. The delay before restarting allows the CPU temperature to drop back below the startup limit."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "An administrator receives a notification that a RAID 5 array consisting of four 2 TB drives is operating in a 'Degraded' state after one drive experienced a mechanical failure. What is the correct remediation process?",
+"options": [
+"A) Replace the failed physical drive and execute an array rebuild",
+"B) Reformat the entire volume using NTFS and restore from cloud backup",
+"C) Convert the array to RAID 0 to regain full capacity",
+"D) Replace all four drives simultaneously to avoid sector drift"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "RAID 5 provides single-drive fault tolerance using parity across remaining drives. Replacing the failed physical drive and initiating a parity rebuild restores full redundancy."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A user notices a faint burning plastic smell emitting from their computer case. Shortly after, the machine completely loses power and refuses to turn back on. No status LEDs illuminate on the motherboard. What component should be tested and replaced first?",
+"options": [
+"A) Power Supply Unit (PSU)",
+"B) Central Processing Unit (CPU)",
+"C) Solid State Drive (SSD)",
+"D) Network Interface Card (NIC)"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "A burning smell followed by immediate total loss of electrical power with no standby motherboard LEDs strongly indicates a failed power supply unit."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A newly built PC shuts down within 5 seconds of pressing the power button. Physical inspection reveals that the heatsink fan is connected, but the thermal paste protective film was left on the heatsink base plate. What symptom does this cause?",
+"options": [
+"A) Extreme CPU thermal spike triggering thermal shutdown",
+"B) Short circuit on the 12V motherboard rail",
+"C) Incorrect voltage delivery from the PSU",
+"D) POST failure due to invalid RAM timing"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Leaving protective plastic film on a heatsink blocks thermal transfer from the CPU, causing an instantaneous spike in core temperature that triggers thermal shutdown."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "Which RAID configuration suffers total volume failure and complete data loss if a single physical drive in the array fails?",
+"options": [
+"A) RAID 0",
+"B) RAID 1",
+"C) RAID 5",
+"D) RAID 10"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "RAID 0 stripes data across drives without parity or redundancy; if any single drive in a RAID 0 volume fails, all data across the array is lost."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A computer generates 1 long beep followed by 2 short beeps during POST startup. The screen remains blank. What hardware component does this standard diagnostic code indicate is failing or unseated?",
+"options": [
+"A) Display Card / Video Adapter",
+"B) System CMOS Battery",
+"C) CPU Cooling Fan",
+"D) Keyboard Controller"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "1 long beep followed by 2 or 3 short beeps is the universal POST diagnostic code signaling a GPU/video display adapter detection failure."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A technician tests a suspicious 24-pin ATX power supply connector with a multimeter. The 12V rail measures +9.1V DC. What action should the technician take?",
+"options": [
+"A) Replace the power supply unit",
+"B) Increase the voltage using BIOS calibration software",
+"C) Reseat the 4-pin CPU power cable",
+"D) Replace the system motherboard"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "ATX voltage specifications require output rails to remain within ±5% tolerance (+11.4V to +12.6V). A reading of +9.1V represents severe voltage sag, requiring PSU replacement."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "An administrator reviews S.M.A.R.T. telemetry for a mechanical hard disk. Which metrics indicate impending hardware failure? (Select TWO)",
+"options": [
+"A) Reallocated Sectors Count",
+"B) Current Pending Sector Count",
+"C) Partition Alignment Offset",
+"D) File System Cluster Size",
+"E) Drive Letter Assignment Path"
+],
+"answer": [
+"A",
+"B"
+],
+"multi_select": true,
+"explanation": "Elevated 'Reallocated Sectors Count' and 'Current Pending Sector Count' indicate physical disk degradation and bad sectors on magnetic drive platters."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A custom workstation equipped with a high-end graphics card reboots instantly whenever 3D rendering tasks start, but functions normally during basic web browsing. What is the most likely root cause?",
+"options": [
+"A) The Power Supply Unit (PSU) wattage rating is insufficient for peak GPU load",
+"B) The motherboard CMOS battery is completely discharged",
+"C) The primary hard drive contains bad sectors in boot sectors",
+"D) The CPU thermal paste has dried out"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Instant reboots specifically under heavy graphics or CPU workloads indicate that power demands exceed the PSU wattage capacity or trigger PSU over-current protection (OCP)."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "A technician receives a ticket regarding a server configured with RAID 1 mirroring. Disk 1 has failed completely. What happens to system operations, and what is the required fix?",
+"options": [
+"A) System continues operating normally; replace Disk 1 and mirror data from Disk 0",
+"B) System halts instantly; replace both Disk 0 and Disk 1 simultaneously",
+"C) All stored data is corrupted; restore from tape backup",
+"D) System converts Disk 0 to RAID 0 automatically"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "RAID 1 mirrors data identically across two drives. If one drive fails, the surviving drive maintains operations while the failed drive is replaced and resynchronized."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A motherboard inspection shows several electrolytic capacitors on the board with swollen tops and dried crusty leakage around their bases. What system symptoms are associated with this failure?",
+"options": [
+"A) Intermittent spontaneous system reboots and boot failure",
+"B) Automatic encryption of system volumes",
+"C) Sudden increase in hard drive fan noise",
+"D) Inability to receive DHCP IP addresses"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Distorted or leaking ('distended') capacitors fail to regulate power filtering on motherboards, causing voltage instability, system freezing, and intermittent boot failures."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.3 Troubleshooting Laptops",
+"question": "A laptop user reports that the bottom chassis becomes uncomfortably hot to the touch, and the cooling fan runs continuously at high speeds. Diagnostic software shows CPU temperatures exceeding 90°C. What is the first non-invasive remediation step?",
+"options": [
+"A) Use compressed air to clean dust blockages from heat sink exhaust vents",
+"B) Replace the laptop motherboard",
+"C) Flash the system UEFI firmware",
+"D) Replace the laptop lithium-ion battery"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Accumulated dust obstructing laptop air vents prevents heat dissipation, causing fans to run at maximum speed and CPU temperatures to rise."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "When pressing the power button on a desktop computer, the power LED turns on, but no POST beep occurs, fans do not turn, and the system shows no signs of startup. A technician suspects a power supply issue. Which tool quickly verifies raw PSU output without installing it in another machine?",
+"options": [
+"A) Power Supply Tester / Multimeter",
+"B) Loopback Plug",
+"C) Wi-Fi Analyzer",
+"D) Cable Crimper"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "A standalone ATX power supply tester or a digital multimeter measures voltage levels across ATX power leads to confirm PSU functionality."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "A user hears a loud, rhythmic 'clicking' sound coming from inside their desktop chassis whenever opening files. Shortly after, the OS displays an I/O read error. What is the immediate remediation?",
+"options": [
+"A) Immediately back up critical data and replace the mechanical hard drive",
+"B) Run disk defragmenter to align platters",
+"C) Clean dust off the memory modules using isopropyl alcohol",
+"D) Update the storage controller firmware"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The 'click of death' indicates physical mechanical failure of a hard drive's actuator arm assembly hitting platter stops. Immediate backup and replacement are required."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "Every time a desktop PC is completely disconnected from wall AC power, the system date and time reset to January 1st, 2000, and BIOS settings revert to default upon boot. What component needs replacement?",
+"options": [
+"A) CR2032 CMOS battery",
+"B) Main ATX 24-pin power cable",
+"C) System RAM module",
+"D) CPU heatsink thermal pad"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The CR2032 coin-cell CMOS battery powers the real-time clock (RTC) and maintains volatile BIOS/UEFI settings when the system lacks wall AC power."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "A server uses RAID 10 requiring a minimum of four physical disks. What level of drive failure fault tolerance does RAID 10 provide?",
+"options": [
+"A) Can lose one drive per mirrored pair without data loss",
+"B) Can lose all drives simultaneously with no data loss",
+"C) Zero drive failure tolerance",
+"D) Requires at least two drives to fail before rebuilding"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "RAID 10 (1+0) combines mirroring and striping. It can tolerate the loss of one drive in each mirrored set without data loss."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A desktop computer shuts down after 30 seconds of execution every time it is turned on. Monitoring the hardware monitor screen in UEFI shows the CPU temperature rapidly rising from 35°C to 100°C within seconds. Which item is misconfigured or broken?",
+"options": [
+"A) Liquid cooling pump failure or unseated CPU heatsink",
+"B) Defective GPU display driver",
+"C) Mismatched RAM clock speeds",
+"D) Damaged SATA data interface cable"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Rapid thermal runaway within seconds of startup indicates total lack of heat transfer, typically caused by an unseated heatsink, dried thermal paste, or a dead liquid cooling pump."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A technician powers on a server PC. The system emits no POST beep, display monitor indicator lights stay orange (no signal), and fans run constantly at 100% speed. What core diagnostic steps should be performed first? (Select TWO)",
+"options": [
+"A) Reseat CPU, RAM, and GPU expansion cards",
+"B) Perform a CMOS reset / clear jumper",
+"C) Replace the network patch cable",
+"D) Format the primary C: partition",
+"E) Update the graphics driver in Windows"
+],
+"answer": [
+"A",
+"B"
+],
+"multi_select": true,
+"explanation": "A 'No POST / No Display' state points to core hardware seating issues or corrupt CMOS configurations. Reseating fundamental hardware (RAM/CPU/GPU) and resetting CMOS are primary troubleshooting steps."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "A technician receives a hardware error log stating that a RAID 6 array is operating in a degraded status. How many physical drive failures can RAID 6 sustain while maintaining full volume availability?",
+"options": [
+"A) Up to two physical drive failures",
+"B) Exactly one physical drive failure",
+"C) Up to three physical drive failures",
+"D) Zero drive failures"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "RAID 6 utilizes dual distributed parity blocks across all array disks, allowing it to tolerate up to two simultaneous drive failures."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A computer user reports that their PC suddenly shuts off whenever they plug a USB flash drive into the front panel USB ports. What is the likely hardware issue?",
+"options": [
+"A) A physical short circuit in the front USB port triggering PSU electrical protection",
+"B) An outdated USB controller device driver",
+"C) Overheating of the NVMe storage drive",
+"D) Discharged CMOS clock battery"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Damaged or shorted front USB port pins grounding out against the chassis trip the short-circuit protection (SCP) inside the power supply, instantly cutting system power."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.3 Troubleshooting Laptops",
+"question": "A laptop battery shows a status of 'Plugged in, not charging' in Windows. The battery charge level is stuck at 0%, and the laptop shuts off instantly when the AC power adapter is disconnected. What is the required remediation?",
+"options": [
+"A) Replace the laptop internal battery",
+"B) Calibrate the display brightness settings",
+"C) Reinstall the graphics card drivers",
+"D) Replace the thermal paste under the CPU"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "A battery that holds 0% charge and cannot operate off AC power has reached end-of-life or experienced internal cell failure, requiring replacement."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "During startup, a computer displays the diagnostic message: 'RAID Controller Memory Error - Working in Non-Cached Mode'. What component on the hardware RAID controller card has failed or lost backup power?",
+"options": [
+"A) Controller onboard cache RAM or memory backup battery",
+"B) Primary PCIe slot retention clip",
+"C) System motherboard CMOS chip",
+"D) CPU cooling fan header"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Hardware RAID controllers utilize battery-backed cache memory. If the controller cache memory or backup battery fails, write-caching is disabled to prevent data corruption."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A technician is troubleshooting a PC that turns on, but displays garbage text characters and colored vertical lines across the monitor screen during POST before freezing. What hardware failure does this indicate?",
+"options": [
+"A) Failing VRAM or overheating GPU video processor",
+"B) Corrupted Windows boot sector",
+"C) Damaged network interface controller",
+"D) Defective ATX power button cable"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Visual artifacts (garbage characters, visual patterns, lines) appearing on screen during POST indicate failing video memory (VRAM) or an overheating graphics processing unit."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "What is the primary indicator that an SSD (Solid State Drive) is nearing its Write Endurance limit and experiencing hardware degradation?",
+"options": [
+"A) Drive converts to Read-Only mode to protect existing data",
+"B) Drive emits loud high-pitched mechanical clicking sounds",
+"C) Drive partition automatically resizes to half capacity",
+"D) Drive spins down platters during idle cycles"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "When NAND flash memory reaches its total bytes written (TBW) wear limit, SSD controllers lock the drive into a read-only state to allow users to recover existing data."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A desktop computer powers on, but the user notices the system clock constantly loses time while the system is running under high load. What is the cause?",
+"options": [
+"A) Unstable system clock generator caused by a failing motherboard/CMOS battery",
+"B) The monitor display refresh rate is set too high",
+"C) Hard drive write caching is disabled",
+"D) The operating system lacks network domain permissions"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "A failing CMOS battery or unstable motherboard clock crystal causes real-time clock skew, leading to system time falling behind."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A technician plugs a modular power supply cable into a newly installed graphics card. When turning on the system, a loud pop occurs, and the PC instantly shuts off. What caused this failure?",
+"options": [
+"A) Plugging an incorrect cable pinout (e.g., EPS 8-pin CPU cable into PCIe 8-pin slot)",
+"B) Installing mismatched DDR4 and DDR5 memory modules",
+"C) Setting the monitor input selector to HDMI instead of DisplayPort",
+"D) Using a standard SATA cable on an NVMe SSD"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "EPS 12V CPU cables and PCIe power cables have reversed polarity pinouts. Forcing an incorrect cable shorts the +12V rail directly to ground, causing component destruction."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "A server administrator receives an alarm indicating 'RAID Array - Redundancy Lost'. Inspection reveals that two drives in a four-drive RAID 5 array have suffered hardware failure. What is the status of the volume data?",
+"options": [
+"A) The array data is lost and must be restored from backup media",
+"B) The volume operates normally without performance degradation",
+"C) The data is preserved on the remaining two operational drives",
+"D) The array automatically rebuilds using hot-spare reserve"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "RAID 5 can only survive a single drive failure. Losing two drives in a RAID 5 array destroys parity data integrity, resulting in complete volume failure."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A user's desktop computer emits 3 short beep codes during POST and fails to display video. After replacing the RAM, the same 3 short beep codes occur. What should the technician troubleshoot next?",
+"options": [
+"A) Motherboard DIMM slots or memory controller on the CPU",
+"B) Hard drive SATA interface cables",
+"C) Power supply AC wall outlet switch",
+"D) Operating system boot configuration file"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "If replacing RAM modules does not resolve a memory-related POST beep error, the issue resides in the motherboard memory slots or the CPU's integrated memory controller (IMC)."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.3 Troubleshooting Laptops",
+"question": "A laptop user notices that the trackpad surface is bulging upward and the lower aluminum enclosure seams are splitting open. What immediate action must the technician take?",
+"options": [
+"A) Disconnect AC power, power down laptop, isolate the unit, and replace swollen lithium battery",
+"B) Tighten chassis screws on bottom case",
+"C) Calibrate trackpad sensitivity in Control Panel",
+"D) Place laptop on a cooling pad"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "A bulging trackpad indicates a swollen lithium-ion battery. Swollen batteries pose a severe thermal runway and fire hazard and must be isolated and safely replaced immediately."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A technician observes that a workstation's cooling fans turn on for half a second when pressing the power button, then immediately shut off. Pressing the power button again does nothing until the AC wall plug is removed and reconnected. What failure is being triggered?",
+"options": [
+"A) PSU Short Circuit Protection (SCP) or Over Current Protection (OCP)",
+"B) BIOS Boot Priority error",
+"C) Invalid Windows display settings",
+"D) Network link speed mismatch"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "PSU short-circuit protection latches off power output upon detecting a short to ground, requiring AC power to be completely cycled to reset the protection circuit."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "An administrator notices that a server's hardware RAID rebuild process is taking an unusually long time and generating high latency logs. S.M.A.R.T. testing reveals read errors on one of the surviving drives. What risk is present?",
+"options": [
+"A) Unrecoverable Read Error (URE) causing total rebuild failure",
+"B) Automatic conversion to RAID 0",
+"C) Power supply overload shutoff",
+"D) Overheating of system RAM"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "During a RAID rebuild, surviving drives are heavily stressed. An Unrecoverable Read Error (URE) on a surviving drive can abort the rebuild process and corrupt the array."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A computer system exhibits continuous random Blue Screen of Death (BSOD) crashes with varying memory management error codes (MEMORY_MANAGEMENT, PAGE_FAULT_IN_NONPAGED_AREA). What diagnostic tool should be executed to test hardware stability?",
+"options": [
+"A) Windows Memory Diagnostic / MemTest86",
+"B) Chkdsk /f /r",
+"C) Ipconfig /flushdns",
+"D) Diskpart clean"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Inconsistent memory error codes across BSOD crashes indicate physical system RAM corruption, requiring memory diagnostic tools to isolate defective modules."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "Which symptom is most indicative of a failing PC power supply unit rather than a failing hard drive or RAM module?",
+"options": [
+"A) Spontaneous immediate hard power-offs without BSOD crash logs",
+"B) Slow application loading times",
+"C) Mouse pointer skipping across desktop",
+"D) Missing desktop shortcuts"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Instant shutoffs (black screen power loss) without generating OS dump files indicate total voltage drop or PSU shutdown."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "A technician replaces a failed hard drive in a software-based RAID 1 array configured within Windows Disk Management. What step must be performed to restore disk mirroring?",
+"options": [
+"A) Right-click the surviving volume, select 'Add Mirror', and select the new disk",
+"B) Convert both drives to basic MBR partition style",
+"C) Run the chkdsk /r command on the new drive",
+"D) Reinstall Windows operating system on the new volume"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "In Windows Disk Management, restoring a broken dynamic RAID 1 volume requires selecting 'Add Mirror' to link the newly added drive to the surviving dynamic volume."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A desktop PC powers on, but emits 5 short beep codes on an AMI BIOS system. What core hardware failure does this specific code represent?",
+"options": [
+"A) Processor (CPU) failure",
+"B) Keyboard disconnect error",
+"C) Power supply fan fault",
+"D) Network adapter link fault"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "5 short beep codes on standard AMI BIOS systems signal a Processor (CPU) core or socket initialization failure."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A computer connected to an Uninterruptible Power Supply (UPS) keeps rebooting whenever local building power fluctuates slightly. The UPS displays a 'Replace Battery' status LED. What is happening?",
+"options": [
+"A) The UPS internal battery can no longer sustain load during voltage sags",
+"B) The motherboard graphics adapter is drawing excessive current",
+"C) The building power grid frequency is fluctuating",
+"D) The PC power supply switch is set to 230V"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "A UPS relies on its internal battery to filter under-voltage spikes (brownouts). An expired UPS battery cannot sustain system load, causing PC rebooting during power dips."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "A system administrator notices a storage array performance drop. Monitoring logs show that a RAID 5 array has initiated an automated rebuild to a hot-spare drive. What event triggered this automated action?",
+"options": [
+"A) One of the active member drives in the array failed",
+"B) The controller cache upgraded its firmware",
+"C) The total array storage capacity dropped below 10%",
+"D) A new partition was initialized in Windows"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "When an active member drive in a redundant RAID array fails, hardware RAID controllers automatically utilize designated 'hot-spare' drives to rebuild parity data."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A technician boots a PC that has been sitting unused in a damp warehouse. The PC turns on, but after 1 minute, smoke rolls out of the power supply casing accompanied by a pop. What component failure occurred?",
+"options": [
+"A) Blown electrolytic filter capacitor inside the power supply",
+"B) Thermal breakdown of CPU heatsink copper pipes",
+"C) Short-circuit inside the SATA SSD flash controller",
+"D) Static electricity discharge on DIMM slots"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Moisture or age causes degradation in PSU electrolytic capacitors, leading to dielectric breakdown, pops, and smoke upon application of high voltage."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "What is the result of setting a legacy dual-voltage Power Supply Unit's manual voltage selector switch to 115V while connected to a 230V European power outlet?",
+"options": [
+"A) Catastrophic power supply damage and blown internal fuse",
+"B) PC operates at half speed",
+"C) Power supply delivers twice the output wattage",
+"D) System runs cooler due to lower resistance"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Supplying 230V input to a manual PSU switch set to 115V overvolts the primary side circuitry, instantly destroying internal components and blowing fuses."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "Which combination of RAID levels provides both disk striping performance and double distributed parity for high fault tolerance?",
+"options": [
+"A) RAID 6",
+"B) RAID 0",
+"C) RAID 1",
+"D) RAID 5"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "RAID 6 provides block-level striping while distributing two independent parity schemes across all drives."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A user reports that every afternoon their desktop PC freezes up and displays visual artifacts. A technician opens the chassis and notices a thick layer of dust coating the graphics card heat sink, preventing fan rotation. What is the diagnosis?",
+"options": [
+"A) GPU thermal throttling and overheating failure",
+"B) Memory module frequency mismatch",
+"C) Power supply unit rail degradation",
+"D) Windows display driver file corruption"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Dust accumulation preventing GPU fan rotation leads to severe thermal build-up, causing rendering artifacts, thermal throttling, and system freezes."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A PC boots successfully only when laid horizontally flat on a desk. When stood vertically upright, the PC emits 1 long and 2 short beeps and fails POST. What is the physical issue?",
+"options": [
+"A) Unseated heavy expansion card (GPU) or loose heatsink mounting",
+"B) Defective power button spring",
+"C) Damaged hard drive head alignment",
+"D) Corrupted BIOS image on motherboard"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Positional POST failure indicates gravity pulling unseated or heavy components (like a large GPU or cooler) out of physical contact with PCI slot pins or CPU contacts."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "A technician replaces a failed drive in a hardware RAID 5 array. What indicates that the array has successfully restored fault tolerance?",
+"options": [
+"A) Array status changes from 'Degraded' / 'Rebuilding' to 'Optimal' or 'Healthy'",
+"B) The storage controller LED turns solid amber",
+"C) The OS prompts to format the array with FAT32",
+"D) Drive spin speed increases by 50%"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "An 'Optimal' or 'Healthy' status code in RAID management software confirms that data/parity synchronization is complete and full fault tolerance is re-established."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A technician uses a power supply tester on a non-starting PC's PSU. The tester LCD shows the +5V rail reading +5.1V, the +3.3V rail reading +3.3V, and the PG (Power Good) signal reading 0 ms (blinking error). What does a missing PG signal indicate?",
+"options": [
+"A) The PSU failed internal readiness self-tests and cannot deliver stable power to the motherboard",
+"B) The motherboard needs a firmware update",
+"C) The graphics card is drawing excessive amperage",
+"D) The wall outlet lacks earth ground"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The Power Good (PG) signal indicates that voltages have stabilized and the PSU is safe for motherboard boot. A missing/0ms PG signal signals PSU failure."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.3 Troubleshooting Laptops",
+"question": "A laptop user notices that their machine shuts down when placed on soft surfaces like blankets or pillows, but operates longer on a hard wooden desk. What thermal principle explains this symptom?",
+"options": [
+"A) Soft surfaces block bottom intake airflow vents, causing thermal overload",
+"B) Blankets build up static electricity that resets the CPU",
+"C) Wooden desks act as a liquid cooling agent",
+"D) Soft surfaces interfere with Wi-Fi antenna reception"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Soft surfaces conform to the bottom chassis of laptops, sealing off critical cooling intake/exhaust vents and causing rapid thermal accumulation and emergency shutdown."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A high-performance gaming PC experiences screen tearing during fast motion, but when the user enables 'V-Sync' or 'G-Sync' in software, the tear lines disappear. What symptom was occurring?",
+"options": [
+"A) GPU frame rate output desynchronized from display monitor refresh rate",
+"B) Thermal breakdown of monitor LED backlights",
+"C) Power supply voltage droop on +12V rail",
+"D) Corrupted system page file"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Screen tearing occurs when a GPU sends frame data at a rate out of sync with the display monitor's refresh cycle. Adaptive sync technologies resolve screen tearing."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "A server exhibits extremely slow disk read/write performance. The RAID management interface shows the cache status as 'Write-Through' instead of 'Write-Back' due to a failed cache battery backup unit (BBU). What is the remediation?",
+"options": [
+"A) Replace the RAID controller's battery backup unit (BBU)",
+"B) Reformat the volume using exFAT",
+"C) Convert the array to RAID 0",
+"D) Increase CPU clock frequency"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "To prevent data loss during power outages, RAID controllers drop back from high-speed Write-Back mode to slow Write-Through mode when their cache battery fails."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power and Display",
+"question": "A PC displays a 'CPU Fan Error' prompt during POST startup, forcing the user to press F1 to continue boot. Inspection shows the cooling fan is spinning normally, but plugged into the 'SYS_FAN2' motherboard header. What is the fix?",
+"options": [
+"A) Plug the CPU cooler fan lead directly into the dedicated 'CPU_FAN' header",
+"B) Replace the CPU heatsink entirely",
+"C) Clear motherboard CMOS jumper settings",
+"D) Increase RAM voltage in UEFI"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Motherboard BIOS/UEFI firmware monitors the dedicated 'CPU_FAN' header for RPM tachometer signals. Plugging the CPU fan into a chassis/system header causes a POST fan error."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "An administrator receives an alert: 'NVMe Drive - Thermal Throttling Active'. What physical remediation should be applied to prevent NVMe performance drops?",
+"options": [
+"A) Install an M.2 thermal pad and metal heatsink on the NVMe controller chip",
+"B) Lower the PCIe slot speed in BIOS from Gen4 to Gen3",
+"C) Format the drive using FAT32",
+"D) Reseat the 24-pin ATX power connector"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "High-performance M.2 NVMe SSD controllers generate substantial heat during sustained reads/writes. Applying an M.2 heatsink and thermal pad dissipates heat and prevents thermal throttling."
+}
+]
+}

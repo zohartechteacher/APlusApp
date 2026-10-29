@@ -1,0 +1,854 @@
+{
+  "questions": [
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Motherboards, Processors, and Add-in Cards",
+      "question": "Which motherboard form factor is the largest standard size for desktop computers, offering the most expansion slots and I/O ports?",
+      "options": [
+        "A) Micro-ATX",
+        "B) Mini-ITX",
+        "C) ATX",
+        "D) E-ATX"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "ATX (Advanced Technology Extended) is the standard desktop motherboard form factor balancing size and expansion capability."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Motherboards, Processors, and Add-in Cards",
+      "question": "A customer wants to build a compact Home Theater PC (HTPC) inside a small media cabinet while maintaining standard PCIe expansion slots. Which motherboard form factor should be selected?",
+      "options": [
+        "A) ATX",
+        "B) Micro-ATX",
+        "C) E-ATX",
+        "D) SSI-EEB"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Micro-ATX provides a smaller footprint than full ATX while supporting multiple expansion slots and standard components."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Motherboards, Processors, and Add-in Cards",
+      "question": "What type of CPU socket architecture features hundreds of tiny, delicate spring pins located directly inside the motherboard socket, while the processor chip itself has flat gold contact pads on its underside?",
+      "options": [
+        "A) PGA (Pin Grid Array)",
+        "B) LGA (Land Grid Array)",
+        "C) BGA (Ball Grid Array)",
+        "D) ZIF (Zero Insertion Force)"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "LGA (Land Grid Array) places the connection pins on the motherboard socket rather than on the CPU pins."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Power Supplies",
+      "question": "Which internal computer hardware component is directly responsible for converting high-voltage alternating current (AC) power from a wall outlet into low-voltage direct current (DC) power usable by the PC motherboard and internal devices?",
+      "options": [
+        "A) Inverter",
+        "B) Power Supply Unit (PSU) / Rectifier",
+        "C) Step-down Transformer",
+        "D) CMOS Battery"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The PSU handles AC-to-DC rectification and supplies regulated DC voltages (+12V, +5V, +3.3V) to internal components."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 RAM",
+      "question": "What is the primary function of Error-Correcting Code (ECC) memory in enterprise workstations and servers?",
+      "options": [
+        "A) Increases core clock speeds for gaming performance",
+        "B) Detects and corrects single-bit memory corruption errors to maintain system stability",
+        "C) Automatically defragments virtual hard drives",
+        "D) Supplies auxiliary power during blackouts"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "ECC memory uses extra parity bits to detect and correct single-bit memory errors, preventing data corruption and crashes."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which drive interface and form factor protocol offers the fastest data transfer speeds by interfacing directly over high-speed PCIe bus lanes rather than legacy SATA controllers?",
+      "options": [
+        "A) SATA III 2.5-inch SSD",
+        "B) NVMe PCIe M.2 SSD",
+        "C) 10,000 RPM Mechanical HDD",
+        "D) IDE PATA ribbon drive"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Non-Volatile Memory Express (NVMe) over PCIe M.2 bypasses legacy SATA bottlenecks to achieve ultra-high throughput and low latency."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "An office worker reports that their desktop computer suddenly powers down completely without warning after 15 to 20 minutes of heavy processing. There are no blue screens or error codes; the machine simply goes black. If allowed to cool down, it boots back up normally before repeating the failure. What is the most likely cause?",
+      "options": [
+        "A) Corrupt MBR sector on the hard drive",
+        "B) CPU overheating due to a failed cooling fan or dried thermal paste",
+        "C) Faulty keyboard cable",
+        "D) Expired Windows license key"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Thermal breakdown under processing loads triggers automatic thermal shutdown protection to prevent permanent silicon damage."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "A user states that every single time they turn off their desktop computer for the night, the system time and date reset back to January 1, 2015, when they boot the machine the next morning. Which internal component needs to be replaced?",
+      "options": [
+        "A) The main OS storage drive",
+        "B) The CMOS coin-cell battery",
+        "C) The CPU voltage regulator module",
+        "D) The system RAM modules"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The CMOS battery supplies continuous low-voltage power to the real-time clock (RTC) and BIOS settings when AC power is disconnected."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Motherboards, Processors, and Add-in Cards",
+      "question": "Which motherboard expansion slot standard provides high-speed, serial point-to-point lanes used for modern high-bandwidth graphics cards and 10G network cards?",
+      "options": [
+        "A) PCI",
+        "B) AGP",
+        "C) PCIe (PCI Express)",
+        "D) ISA"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "PCI Express (PCIe) is the modern high-bandwidth serial expansion bus standard replacing legacy parallel expansion slots."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "A technician is troubleshooting a desktop computer that fails to boot. When the power button is pressed, internal fans spin up at maximum speed, but the monitor remains completely black and the motherboard emits a sequence of three short beep sounds. Where should the technician look to decipher this error code?",
+      "options": [
+        "A) Windows Event Viewer logs",
+        "B) Motherboard manufacturer's UEFI/BIOS documentation",
+        "C) Device Manager properties",
+        "D) Hard drive partition table"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "POST (Power-On Self-Test) beep codes are proprietary error indicators documented explicitly by the specific motherboard or BIOS manufacturer."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which RAID level stripes data across at least three physical drives along with distributed parity blocks, allowing the array to survive the failure of a single drive without data loss?",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 5",
+        "D) RAID 10"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 5 requires a minimum of 3 drives and uses distributed parity to tolerate single-drive failures while providing fast read performance."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What is a major advantage of RAID 10 (RAID 1+0) over RAID 5?",
+      "options": [
+        "A) RAID 10 requires only two total disks.",
+        "B) RAID 10 combines mirroring and striping for high performance and faster rebuild times without parity calculation overhead.",
+        "C) RAID 10 uses zero storage overhead.",
+        "D) RAID 10 is cheaper to implement."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 10 pairs disk mirroring and striping, delivering excellent read/write performance and fast fault recovery without parity performance penalties."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 Displays and Laptops",
+      "question": "A technician is troubleshooting a laptop that displays a completely dark screen. When shining a bright flashlight directly at the LCD panel from an angle, the Windows desktop icons become faintly visible. Which component has failed?",
+      "options": [
+        "A) Graphics processing unit (GPU)",
+        "B) LCD backlight or inverter / power supply",
+        "C) Digitizer glass touch layer",
+        "D) System RAM module"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "If an image is faintly visible under direct external light, the LCD panel is rendering images correctly, but its backlight or inverter has failed."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Peripherals and Connectors",
+      "question": "Which interface standard supports high-speed data transfer (up to 40 Gbps), power delivery, multi-display video outputs, and PCIe data tunneling over a single reversible Type-C connector?",
+      "options": [
+        "A) USB 2.0 Type-A",
+        "B) Thunderbolt 4",
+        "C) VGA DE-15",
+        "D) PS/2"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Thunderbolt 4 utilizes the Type-C physical connector to aggregate high-speed data, video, and charging into a single cable."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "A customer states that they plugged a brand new external USB 3.0 hard drive into their computer's front panel port, but the drive clicks repeatedly and fails to mount. When plugged into a rear motherboard USB port, it works perfectly. What is the most likely cause?",
+      "options": [
+        "A) The external hard drive has bad sectors.",
+        "B) The front panel USB internal cable extension cannot supply adequate electrical current (power).",
+        "C) Windows USB drivers need updating.",
+        "D) The front panel USB ports use a different keyboard layout."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Front panel chassis wiring introduces electrical resistance, frequently causing mechanical external drives to experience brownouts due to insufficient power."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Motherboards, Processors, and Add-in Cards",
+      "question": "What is the primary purpose of a pre-installed metal heatsink block over an M.2 NVMe SSD slot on a modern motherboard?",
+      "options": [
+        "A) Electromagnetic interference (EMI) shielding",
+        "B) Thermal pad and passive cooling to dissipate heat generated by high-speed M.2 drives",
+        "C) Structural lock replacing mounting screws",
+        "D) Wi-Fi antenna booster"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "High-performance M.2 NVMe drives generate intense heat during heavy transfers; motherboard metal blocks act as heatsinks to prevent thermal throttling."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "An employee reports that their office desktop computer turns on and internal fans spin, but the system continuously reboots every 5 to 10 seconds before displaying anything. The technician notes the user recently cleaned inside the case with compressed air. What should the technician check FIRST?",
+      "options": [
+        "A) Verify whether RAM modules were loosened or unseated during air dusting.",
+        "B) Replace the CMOS battery.",
+        "C) Reinstall the Windows operating system.",
+        "D) Check the hard drive partition table."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "High-pressure compressed air can dislodge improperly seated hardware components like RAM sticks, causing continuous POST boot loops."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 RAM",
+      "question": "A 3D modeling technician experiences severe performance lag whenever rendering high-polygon assets. Memory capacity is maxed out, and the motherboard supports quad-channel memory but has only one single 32GB RAM stick installed. What should the technician do?",
+      "options": [
+        "A) Replace the single stick with a faster 10,000 RPM mechanical drive.",
+        "B) Install three additional matching 32GB RAM sticks to populate the quad-channel memory bus.",
+        "C) Enable virtual memory paging extensions in BIOS.",
+        "D) Lower the power supply wattage."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Populating multi-channel motherboard layouts with matching memory modules maximizes memory bandwidth and eliminates bottlenecks."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Power Supplies",
+      "question": "A technician is assembling a custom mining rig with four high-power graphics cards (250 Watts each) plus a 150-Watt CPU/motherboard combination. What is the minimum recommended PSU wattage rating, incorporating a safe operational buffer?",
+      "options": [
+        "A) 500 Watts",
+        "B) 750 Watts",
+        "C) 1200 to 1300 Watts",
+        "D) 2000 Watts"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Calculating total peak draw ($4 \\times 250\\text{W} = 1000\\text{W} + 150\\text{W} = 1150\\text{W}$) requires a 1200W–1300W PSU to maintain a safe electrical margin."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "A retail storefront experiences a severe power surge during an electrical storm. A desktop attached to a standard outlet immediately shuts down and will not power back on. Replacing the internal PSU with a known-good unit still results in a completely dead state with no POST codes. Which component was likely destroyed alongside the original PSU?",
+      "options": [
+        "A) The main storage drive",
+        "B) The system RAM modules",
+        "C) The motherboard power regulation circuitry",
+        "D) The CPU cooling fan assembly"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Severe electrical surges bypassing power supplies travel down power rails, destroying the motherboard's main power regulation components."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 Displays and Laptops",
+      "question": "A customer brings in a laptop whose display flickers intensely whenever the lid is moved or adjusted physically. If left at a specific angle, the image is stable. What is the most likely cause?",
+      "options": [
+        "A) Failing GPU",
+        "B) Video ribbon cable passing through the lid hinge is loose, pinched, or damaged",
+        "C) Unseated RAM module",
+        "D) Refresh rate set too low in OS"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Physical display flickering tied directly to lid repositioning indicates internal video ribbon cable wear or damage within the hinge assembly."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Peripherals and Connectors",
+      "question": "Which legacy video connector is a 15-pin, three-row D-subminiature port that transmits analog video signals to older CRT or early LCD monitors?",
+      "options": [
+        "A) HDMI",
+        "B) DisplayPort",
+        "C) DVI-D",
+        "D) VGA (DE-15)"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "The legacy DE-15 (VGA) interface uses a 15-pin layout to carry analog RGB video signals."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "A desktop workstation experiences a hard freeze immediately upon executing heavy 3D rendering tasks. Removing the side panel reveals a thick cake of dust sealing the fins of the CPU's aluminum heatsink. Which thermal transfer method has been blocked?",
+      "options": [
+        "A) Active liquid circulation",
+        "B) Convection and passive air dissipation across heatsink fins",
+        "C) Internal structural radiation",
+        "D) Phase-change condensation"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Solid dust blockages prevent airflow across heatsink fins, choking thermal convection and causing thermal throttling or freezes."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Motherboards, Processors, and Add-in Cards",
+      "question": "What type of memory module is designed specifically for laptops and compact form factor PCs due to its smaller physical dimensions?",
+      "options": [
+        "A) DIMM",
+        "B) SO-DIMM",
+        "C) SIMM",
+        "D) RIMM"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "SO-DIMM (Small Outline Dual In-line Memory Module) provides physical RAM packaging sized for laptops and mini-PCs."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which enterprise storage drive interface natively supports hot-swapping and higher signaling speeds than standard SATA, using a physical connector that combines data and power?",
+      "options": [
+        "A) IDE (PATA)",
+        "B) SAS (Serial Attached SCSI)",
+        "C) Floppy disk cable",
+        "D) PS/2 port"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "SAS drives support enterprise-grade reliability, command queuing, and hot-swapping in server environments."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Peripherals and Connectors",
+      "question": "Which legacy parallel port standard (IEEE 1284) was traditionally used to connect older dot-matrix and laser printers to desktop PCs?",
+      "options": [
+        "A) DB-25 Parallel Port",
+        "B) DE-9 Serial Port",
+        "C) USB 1.1 Type-A",
+        "D) RJ-45 Ethernet"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The DB-25 female parallel port (IEEE 1284) is the legacy interface used for parallel printer connections."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "A field technician is diagnosing a desktop computer that randomly displays a Blue Screen of Death (BSOD) reading MEMORY_MANAGEMENT during everyday operations. Which diagnostic tool should the technician run to isolate faulty RAM?",
+      "options": [
+        "A) chkdsk /f",
+        "B) Windows Memory Diagnostic / MemTest86",
+        "C) Performance Monitor",
+        "D) sfc /scannow"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Memory testing utilities like Windows Memory Diagnostic or MemTest86 cycle bit patterns through RAM modules to uncover defective memory chips."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Motherboards, Processors, and Add-in Cards",
+      "question": "What is the primary function of the chipset on a computer motherboard?",
+      "options": [
+        "A) To store the operating system files permanently.",
+        "B) To manage data flow between the processor, memory, storage, and peripheral expansion buses.",
+        "C) To convert AC power to DC power.",
+        "D) To print documents."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The motherboard chipset controls communication between the CPU and external system components."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What technology is used by solid-state drives (SSDs) to ensure even wear distribution across flash memory cells, preventing premature drive failure?",
+      "options": [
+        "A) Disk defragmentation",
+        "B) Wear leveling",
+        "C) Parity striping",
+        "D) Magnetic head parking"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Wear leveling algorithms distribute write/erase cycles evenly across SSD NAND flash memory blocks to maximize lifespan."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 Displays and Laptops",
+      "question": "A user wants to connect a laptop to an external high-definition display and transmit both uncompressed digital video and multi-channel audio over a single cable. Which interface should be used?",
+      "options": [
+        "A) VGA",
+        "B) HDMI or DisplayPort",
+        "C) PS/2",
+        "D) Serial RS-232"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "HDMI and DisplayPort are modern digital display interfaces carrying high-definition video and audio simultaneously."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "A technician installs a secondary mechanical hard drive into an existing computer. Upon powering on the PC, Windows boots normally, but the new drive does not show up inside File Explorer. What is the FIRST administrative tool the technician should open in Windows?",
+      "options": [
+        "A) Device Manager",
+        "B) Disk Management",
+        "C) System Information",
+        "D) Task Manager"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "New raw physical drives must be initialized, partitioned, and assigned volume letters inside the Windows Disk Management console."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What is the primary difference between mechanical Hard Disk Drives (HDDs) and Solid-State Drives (SSDs)?",
+      "options": [
+        "A) HDDs use spinning magnetic platters and read/write heads, while SSDs use non-volatile flash memory chips with no moving parts.",
+        "B) SSDs use magnetic tape reels.",
+        "C) HDDs are faster than NVMe SSDs.",
+        "D) SSDs require constant battery power to retain data."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "HDDs rely on mechanical spinning platters, whereas SSDs use solid-state flash memory for silent, high-speed data access."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Motherboards, Processors, and Add-in Cards",
+      "question": "What is the purpose of applying thermal paste between a CPU IHS (Integrated Heat Spreader) and a heatsink base?",
+      "options": [
+        "A) To glue the CPU permanently to the motherboard socket",
+        "B) To fill microscopic air gaps between the surfaces and maximize thermal heat transfer efficiency",
+        "C) To conduct electrical power to the CPU cores",
+        "D) To prevent dust accumulation"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Thermal compound fills microscopic imperfections and air voids between the CPU and heatsink, facilitating efficient heat dissipation."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "A technician builds a new gaming PC. When powering it on, all case fans spin and RGB lights glow, but no video signal appears on the monitor, and the CPU fan pulses up and down. What is a common hardware cause to check?",
+      "options": [
+        "A) The 8-pin CPU supplementary power cable from the PSU is unplugged from the motherboard.",
+        "B) The keyboard is unplugged.",
+        "C) The monitor resolution is too high.",
+        "D) The mouse DPI is misconfigured."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Failing to connect the 8-pin EPS/CPU power cable prevents the processor from initializing, resulting in fans spinning with no POST."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What does the acronym SMART stand for in the context of hard drive and SSD health monitoring?",
+      "options": [
+        "A) System Memory Access Recovery Technique",
+        "B) Self-Monitoring, Analysis, and Reporting Technology",
+        "C) Serial Management Architecture Resistance Tool",
+        "D) Simple Master Allocation Recovery Table"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "S.M.A.R.T. monitors drive reliability metrics to predict potential hardware failures before data loss occurs."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Motherboard, Processors, and Add-in Cards",
+      "question": "What is multi-threading (or Hyper-Threading) in modern computer processors?",
+      "options": [
+        "A) Allowing a single physical CPU core to execute two separate execution threads simultaneously.",
+        "B) Connecting multiple power supplies together.",
+        "C) Running multiple monitors off one GPU.",
+        "D) Doubling physical RAM capacity."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Hyper-threading splits physical CPU cores into logical processing threads, improving multitasking efficiency."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "A user reports that their desktop computer randomly freezes or restarts when playing high-end video games. The technician checks CPU and GPU temperatures and notes they exceed 95°C under load. What should the technician inspect and service?",
+      "options": [
+        "A) CPU cooler mounting, thermal paste application, and case dust buildup",
+        "B) Keyboard USB connection",
+        "C) Monitor refresh rate",
+        "D) Hard drive partition letters"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Excessive temperatures under load point directly to cooling failures, requiring heatsink cleaning or thermal paste reapplication."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Peripherals and Connectors",
+      "question": "Which expansion card interface was historically used to connect dedicated legacy hardware accelerators for 3D video games before PCIe existed?",
+      "options": [
+        "A) AGP (Accelerated Graphics Port)",
+        "B) ISA slot",
+        "C) PCI-X",
+        "D) Parallel port"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "AGP was a high-speed point-to-point channel designed specifically for internal graphics cards prior to PCIe adoption."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What is the primary characteristic of volatile memory (like RAM) compared to non-volatile storage (like an SSD)?",
+      "options": [
+        "A) Volatile memory loses all stored data when electrical power is turned off.",
+        "B) Volatile memory retains data permanently without power.",
+        "C) Volatile memory is magnetic.",
+        "D) Volatile memory is slower than mechanical HDDs."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Volatile memory requires continuous electrical power to maintain its data state, unlike non-volatile flash or magnetic storage."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "A technician is troubleshooting a desktop computer that experiences random Blue Screens of Death with varying bug check codes. The technician swaps the RAM and tests the hard drive, but the errors persist. What core hardware component should be suspected next?",
+      "options": [
+        "A) The Power Supply Unit (PSU) delivering unstable voltages across power rails.",
+        "B) The keyboard.",
+        "C) The Ethernet patch cable.",
+        "D) The mouse pad."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Unstable or fluctuating DC voltages from a failing PSU frequently cause random, erratic BSODs across various system components."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Motherboards, Processors, and Add-in Cards",
+      "question": "What is the function of the Unified Extensible Firmware Interface (UEFI) compared to legacy BIOS?",
+      "options": [
+        "A) UEFI supports modern GUI interfaces, mouse input, secure boot, and drives larger than 2.2TB via GPT partitioning.",
+        "B) UEFI only boots from floppy disks.",
+        "C) UEFI operates exclusively in 16-bit real mode.",
+        "D) UEFI cannot initialize hardware."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "UEFI replaced legacy BIOS, offering faster boot times, graphical setup menus, Secure Boot protection, and GPT disk support."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What is the disk partitioning standard required by UEFI to boot from drives larger than 2.2 Terabytes?",
+      "options": [
+        "A) MBR (Master Boot Record)",
+        "B) GPT (GUID Partition Table)",
+        "C) FAT16",
+        "D) CD-FS"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "GPT (GUID Partition Table) supports massive drive capacities exceeding 2.2TB, unlike legacy MBR."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "A user reports that their laptop battery drains completely within 30 minutes. Upon inspection, the battery is a lithium-ion pack. What is the most effective troubleshooting and repair action?",
+      "options": [
+        "A) Replace the degraded internal lithium-ion battery pack.",
+        "B) Clean the screen with water.",
+        "C) Reinstall the graphics card driver.",
+        "D) Update the BIOS date."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Severe loss of charge capacity in lithium-ion batteries due to chemical aging requires physical battery replacement."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Motherboards, Processors, and Add-in Cards",
+      "question": "What is the function of the Northbridge in legacy motherboard architectures (superseded by modern integrated memory controllers)?",
+      "options": [
+        "A) Connected high-speed components like CPU, RAM, and PCIe graphics cards.",
+        "B) Connected slow I/O devices like USB and keyboards.",
+        "C) Supplied AC wall power.",
+        "D) Handled audio recording."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The legacy Northbridge managed high-speed communication between the CPU, RAM, and video subsystem."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Peripherals and Connectors",
+      "question": "Which display port standard uses a small latching connector and was designed primarily for computer monitors, supporting high refresh rates and daisy-chaining?",
+      "options": [
+        "A) VGA",
+        "B) DisplayPort",
+        "C) RCA composite",
+        "D) PS/2"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "DisplayPort is a high-bandwidth digital display standard featuring a secure mechanical latch and multi-stream transport (MST) daisy-chaining."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "A technician turns on a desktop computer, but nothing happens at all—no fans spin, no lights blink, and no sound is emitted. The wall outlet is verified working with a lamp. Using a multimeter or dedicated PSU tester, what should the technician check?",
+      "options": [
+        "A) Internal DC voltage output rails on the power supply unit",
+        "B) Monitor cable continuity",
+        "C) Keyboard key response",
+        "D) Hard drive defragmentation status"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Testing power supply DC output rails confirms whether the PSU is dead or failing to deliver voltage when the power button is pressed."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Motherboards, Processors, and Add-in Cards",
+      "question": "What is the primary function of a Trusted Platform Module (TPM) chip on a modern motherboard?",
+      "options": [
+        "A) To store cryptographic keys securely for hardware-based encryption (such as BitLocker) and authentication.",
+        "B) To accelerate 3D video game rendering.",
+        "C) To cool the CPU processor.",
+        "D) To convert AC power."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "A TPM cryptographic processor secures hardware by storing encryption keys, digital certificates, and platform integrity metrics."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What is a hybrid drive (SSHD)?",
+      "options": [
+        "A) A drive combining a traditional mechanical HDD spinning platter with a small block of high-speed NAND flash cache memory.",
+        "B) A drive that runs exclusively on solar power.",
+        "C) A drive with two separate USB cables.",
+        "D) A cloud storage backup drive."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "SSHDs pair high-capacity mechanical hard drives with fast flash cache to accelerate frequently accessed files."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "A user reports that whenever they plug a USB mouse into their computer, a Windows pop-up warns of a 'USB Device Over Current Status Detected' and the system shuts down immediately. What is the most likely cause?",
+      "options": [
+        "A) A short circuit in the USB port wiring or a damaged peripheral drawing excessive current.",
+        "B) Insufficient hard drive storage space.",
+        "C) Outdated antivirus definitions.",
+        "D) Low printer toner."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "An over-current error indicates a physical short circuit or excessive current draw on the USB bus, triggering motherboard hardware protection."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Motherboards, Processors, and Add-in Cards",
+      "question": "What is the advantage of liquid cooling loops over traditional air heatsinks in high-performance overclocked PCs?",
+      "options": [
+        "A) Liquid coolant absorbs and transfers thermal energy away from the CPU block to a remote radiator more efficiently than air alone.",
+        "B) Liquid cooling eliminates the need for a power supply.",
+        "C) Liquid cooling makes computers completely weightless.",
+        "D) Liquid cooling prevents hard drive crashes."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Liquid cooling systems circulate fluid to transfer heat away from high-power components to large radiator surface areas for superior cooling."
+    }
+  ]
+}

@@ -1,0 +1,854 @@
+{
+  "questions": [
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Which cloud computing deployment model provides infrastructure, storage, and networking resources exclusively to a single organization, managed internally or by a third party?",
+      "options": [
+        "A) Public Cloud",
+        "B) Private Cloud",
+        "C) Community Cloud",
+        "D) Hybrid Cloud"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A private cloud model is dedicated solely to a single organization, offering enhanced security and control over physical or virtual resources."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "Which type of hypervisor (Type 1) runs directly on top of the physical hardware without requiring an underlying host operating system?",
+      "options": [
+        "A) Hosted hypervisor (Type 2)",
+        "B) Bare-metal hypervisor (Type 1)",
+        "C) Container engine",
+        "D) Desktop virtualization emulator"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Type 1 (bare-metal) hypervisors install directly onto physical server hardware, providing high efficiency and performance for enterprise virtualization."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Which cloud service model provides fully managed end-user software applications accessed over the web, requiring zero infrastructure or platform management from the subscriber?",
+      "options": [
+        "A) IaaS (Infrastructure as a Service)",
+        "B) PaaS (Platform as a Service)",
+        "C) SaaS (Software as a Service)",
+        "D) DaaS (Desktop as a Service)"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "SaaS delivers complete software applications via a web browser, relieving the customer from maintaining servers, operating systems, or code."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Which cloud characteristic automatically scales computing resources up or down dynamically based on current load demands to handle sudden traffic spikes?",
+      "options": [
+        "A) Measured service",
+        "B) Rapid elasticity",
+        "C) Resource pooling",
+        "D) Broad network access"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Rapid elasticity allows cloud consumers to automatically provision or release computing resources instantly as workloads fluctuate."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "An administrator wants to run a virtual machine on a Windows desktop workstation for testing purposes using an existing host operating system. Which type of hypervisor should be installed?",
+      "options": [
+        "A) Type 1 (Bare-metal) hypervisor",
+        "B) Type 2 (Hosted) hypervisor",
+        "C) Container runtime",
+        "D) Bare-metal container cluster"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Type 2 (hosted) hypervisors run as an application on top of an existing host operating system, making them ideal for desktop testing and development."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Which cloud service model provides developers with raw computing infrastructure, storage, and networking building blocks, allowing them to install any operating system and application stack?",
+      "options": [
+        "A) SaaS",
+        "B) PaaS",
+        "C) IaaS",
+        "D) DaaS"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "IaaS offers foundational computing infrastructure where clients manage OS installations, network configurations, and storage resources."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "What is the primary purpose of client-side or server-side virtual desktop infrastructure (VDI), also known as Desktop as a Service (DaaS)?",
+      "options": [
+        "A) To host user desktop operating systems and applications on centralized servers accessible from any client device.",
+        "B) To overclock hardware processor speeds inside physical laptops.",
+        "C) To convert dot-matrix printer output into PDF files.",
+        "D) To bypass local Wi-Fi encryption protocols."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "VDI and DaaS host desktop environments on remote servers, streaming the user interface to lightweight client endpoints."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "What cloud computing characteristic describes the ability of a provider to serve multiple distinct clients using shared physical hardware pools while maintaining logical data isolation?",
+      "options": [
+        "A) Measured service",
+        "B) Resource pooling / Multi-tenancy",
+        "C) Rapid elasticity",
+        "D) On-demand self-service"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Resource pooling and multi-tenancy allow cloud providers to dynamically allocate physical hardware resources securely among multiple independent tenants."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "A system administrator notices that running multiple virtual machines concurrently on a physical server is causing severe memory exhaustion and paging lag. Which physical hardware resource should be upgraded?",
+      "options": [
+        "A) Power supply unit",
+        "B) System RAM capacity",
+        "C) Ethernet patch cable",
+        "D) CMOS battery"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Virtual machines consume physical system RAM; running multiple guests requires adequate physical memory capacity to prevent hypervisor paging bottlenecks."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Which cloud service model provides developers with a complete managed framework, database, and programming environment to build and deploy applications without managing underlying servers?",
+      "options": [
+        "A) IaaS",
+        "B) PaaS (Platform as a Service)",
+        "C) SaaS",
+        "D) Network as a Service"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "PaaS delivers an application development platform and runtime environment, allowing developers to focus strictly on code creation."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "What is the primary function of a hypervisor (virtual machine monitor)?",
+      "options": [
+        "A) To create, manage, and allocate physical hardware resources to virtual machines.",
+        "B) To translate domain names into IP addresses.",
+        "C) To assign dynamic IP leases to local network clients.",
+        "D) To encrypt hard drive storage sectors."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The hypervisor abstracts and manages physical hardware resources (CPU, RAM, storage) across multiple virtual machines."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "An enterprise combines an internal private cloud infrastructure with external public cloud resources, allowing data and apps to be shared securely between them. What deployment model is this?",
+      "options": [
+        "A) Public Cloud",
+        "B) Community Cloud",
+        "C) Hybrid Cloud",
+        "D) Standalone Local Area Network"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "A hybrid cloud integrates private and public cloud environments, enabling data and workload portability between them."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "Why is Error-Correcting Code (ECC) RAM strongly recommended for enterprise virtualization servers hosting numerous virtual machines?",
+      "options": [
+        "A) ECC memory detects and corrects single-bit memory corruption errors to prevent hypervisor crashes.",
+        "B) ECC memory increases processor clock speeds by 50%.",
+        "C) ECC memory eliminates the need for power supplies.",
+        "D) ECC memory automatically upgrades physical hard drives."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "ECC memory safeguards system stability in virtualization servers by identifying and correcting single-bit memory errors on the fly."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Which cloud computing characteristic ensures that cloud resource consumption is tracked, metered, and billed based on exact usage metrics (such as storage gigabytes or compute hours)?",
+      "options": [
+        "A) Measured service",
+        "B) Rapid elasticity",
+        "C) Resource pooling",
+        "D) Virtual switch bridging"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Measured service allows cloud providers to monitor, control, and report resource usage transparently for billing and optimization."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "A technician is setting up a virtual machine on a Type 2 hypervisor, but the guest OS fails to start and gives an error about hardware virtualization support. What setting must be enabled in the computer's UEFI/BIOS?",
+      "options": [
+        "A) Intel VT-x / AMD-V (Hardware Virtualization Technology)",
+        "B) Secure Boot compatibility",
+        "C) Wake-on-LAN",
+        "D) Legacy floppy disk controller"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Hardware-assisted virtualization extensions (Intel VT-x or AMD-V) must be enabled in the BIOS/UEFI for hypervisors to function properly."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "What is a community cloud deployment model?",
+      "options": [
+        "A) Cloud infrastructure shared exclusively by multiple organizations with common compliance, security, or mission interests.",
+        "B) A cloud hosted entirely on public internet servers for anyone to use.",
+        "C) A standalone home computer network.",
+        "D) A localized network printer server."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "A community cloud is shared by organizations with specific shared concerns, such as legal or government agencies with identical regulatory requirements."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "What is the primary difference between running a virtual machine (VM) and running an application inside a container (such as Docker)?",
+      "options": [
+        "A) Containers share the host operating system kernel and require fewer resources, whereas VMs run a full guest OS.",
+        "B) Containers require a physical server for each app, while VMs do not.",
+        "C) VMs do not need virtual disk files, but containers do.",
+        "D) Containers can only run on Windows 95."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Containers virtualize at the operating system level, sharing the host OS kernel for lightweight execution, while VMs include a heavy full guest OS."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Which cloud computing characteristic enables consumers to provision computing capabilities, such as server time and network storage, automatically without requiring human interaction with the provider?",
+      "options": [
+        "A) On-demand self-service",
+        "B) Measured service",
+        "C) Resource pooling",
+        "D) Manual IT provisioning"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "On-demand self-service lets users spin up cloud resources instantly through a web portal without interacting with vendor staff."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "A technician troubleshooting a virtual machine performance issue notices that the VM's virtual disk (.vmdk or .vhdx) is severely fragmented and located on a slow mechanical HDD array. What should be done to optimize storage throughput?",
+      "options": [
+        "A) Migrate the virtual disk storage onto a high-performance SSD/NVMe array.",
+        "B) Unplug the network switch.",
+        "C) Replace the server's CMOS battery.",
+        "D) Reinstall the host operating system."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Moving resource-intensive virtual machine storage onto high-speed SSD or NVMe storage eliminates disk I/O bottlenecks and latency."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "What is a major security responsibility of a customer utilizing an IaaS (Infrastructure as a Service) cloud model?",
+      "options": [
+        "A) Patching and maintaining the guest operating systems and application software security.",
+        "B) Building the physical data center walls.",
+        "C) Manufacturing the server processors.",
+        "D) Laying undersea fiber optic internet cables."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Under the shared responsibility model in IaaS, the cloud provider secures the physical infrastructure, while the customer manages guest OS patches and application security."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "What is the function of virtual switches (vSwitches) in a hypervisor environment?",
+      "options": [
+        "A) To connect virtual machines to each other and to physical networks logically.",
+        "B) To switch physical power supplies on and off.",
+        "C) To convert optical fiber signals into copper signals.",
+        "D) To manage printer spool queues."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Virtual switches operate inside hypervisors to handle network traffic bridging and routing between virtual machines and physical network adapters."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Which cloud deployment model refers to a cloud infrastructure owned and operated by a third-party vendor that delivers computing resources over the public internet to multiple organizations?",
+      "options": [
+        "A) Public Cloud",
+        "B) Private Cloud",
+        "C) Community Cloud",
+        "D) Isolated Intranet"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Public clouds are owned by third-party providers (such as AWS, Azure, or Google Cloud) and make services available to the general public over the internet."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "A user running a virtual machine on their laptop reports that USB thumb drives plugged into the physical laptop are not recognized inside the virtual machine guest OS. What should the technician check?",
+      "options": [
+        "A) Hypervisor USB controller passthrough and integration settings.",
+        "B) The printer fuser assembly.",
+        "C) The router's MAC address filter.",
+        "D) The laptop's screen backlight inverter."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Hypervisors require explicit USB controller passthrough or integration tool configurations to map physical USB devices into virtual guest environments."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "What is elastic file storage or scalable object storage in cloud computing primarily designed to achieve?",
+      "options": [
+        "A) To provide virtually limitless, pay-as-you-go data storage capacity that scales automatically.",
+        "B) To compress text files into floppy disks.",
+        "C) To act as a physical CPU processor.",
+        "D) To eliminate all internet network connections."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Cloud object and file storage offer scalable, on-demand capacity that expands or contracts seamlessly based on user storage needs."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "Why is snapshotting a virtual machine useful before performing major software updates or patches?",
+      "options": [
+        "A) It captures the exact state of the VM's disk and memory, allowing instant rollback if the update fails.",
+        "B) It permanently increases physical CPU core speeds.",
+        "C) It encrypts the user's web browser history.",
+        "D) It converts the VM into a physical computer."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "VM snapshots save point-in-time states, providing a reliable recovery checkpoint if patches cause system instability."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Which of the following is a primary security advantage of utilizing cloud backup and disaster recovery solutions?",
+      "options": [
+        "A) Off-site data redundancy protects against local disasters, ransomware, and hardware failure.",
+        "B) It eliminates the need for internet routers.",
+        "C) It prevents physical computer theft entirely.",
+        "D) It guarantees zero network latency."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Cloud backups store encrypted data off-site, ensuring business continuity and recoverability during local site outages or ransomware incidents."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "A virtualization administrator wants to ensure that virtual machines running on a physical server can communicate with external networks via the host's physical network adapter. What type of virtual network connection should be configured?",
+      "options": [
+        "A) Bridged (External) network mode",
+        "B) Host-only network mode",
+        "C) Internal-only network mode",
+        "D) Disconnected loopback mode"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Bridged networking connects virtual machines directly to the physical network through the host's network card, giving VMs their own IP addresses on the LAN."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "What does 'broad network access' mean in the context of cloud computing characteristics?",
+      "options": [
+        "A) Cloud services are available over the network and accessed through standard mechanisms by diverse client platforms (PCs, phones, tablets).",
+        "B) Cloud networks only work over dial-up modems.",
+        "C) Cloud resources require dedicated copper cables run to every user's home.",
+        "D) Cloud services block all wireless connections."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Broad network access ensures cloud capabilities are accessible over the network across various devices like laptops, tablets, and smartphones."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "What is the primary risk of retaining dozens of outdated virtual machine snapshots over a long period?",
+      "options": [
+        "A) Excessive consumption of physical storage space and severe performance degradation.",
+        "B) Increased CPU fan speeds.",
+        "C) Automatic deletion of the host operating system.",
+        "D) Loss of keyboard functionality."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Accumulating old VM snapshots causes delta disk files to grow massive, consuming storage space and degrading disk I/O performance."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Which cloud computing model involves multiple organizations sharing cloud resources specifically tailored to a specific regulated industry or coalition?",
+      "options": [
+        "A) Community Cloud",
+        "B) Public Cloud",
+        "C) Standalone Client Server",
+        "D) Local Area Network"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Community clouds are shared among organizations with specialized shared requirements, such as specific regulatory compliance or security needs."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "A technician configures a virtual machine to use 'Host-Only' networking mode. What is the behavior of this network configuration?",
+      "options": [
+        "A) The VM can communicate with the host computer and other VMs on the host, but has no access to the external physical network or internet.",
+        "B) The VM has full access to the public internet.",
+        "C) The VM is completely isolated with zero network connectivity.",
+        "D) The VM bridges directly to the ISP router."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Host-only networking creates a closed network between the host and its virtual guests, isolating them from external network traffic."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Why is resource elasticity particularly beneficial for e-commerce websites during seasonal holiday shopping surges?",
+      "options": [
+        "A) It allows the business to automatically scale up cloud computing and storage capacity during peak traffic and scale down afterward to save costs.",
+        "B) It eliminates the need for customer service staff.",
+        "C) It prevents physical shipping delays.",
+        "D) It upgrades the user's home computer screen."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Elasticity lets retailers automatically handle massive holiday traffic spikes without permanently purchasing excess server hardware."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "What is 'resource overcommitment' (or overprovisioning) in a virtualized server environment?",
+      "options": [
+        "A) Allocating more virtual CPU cores or memory to VMs than physically exist on the host, relying on dynamic sharing.",
+        "B) Connecting too many network printers.",
+        "C) Installing too many antivirus programs.",
+        "D) Using unshielded network cables."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Overcommitment allocates more virtual resources than physical hardware provides, assuming not all VMs will run at 100% load simultaneously."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Which of the following cloud security practices ensures that sensitive corporate data stored in the cloud cannot be read by unauthorized parties even if storage media is compromised?",
+      "options": [
+        "A) Data encryption at rest and in transit",
+        "B) Disabling the firewall",
+        "C) Using unencrypted HTTP connections",
+        "D) Removing all passwords"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Encrypting data both at rest (storage) and in transit (network transmission) protects sensitive information from unauthorized access."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "A technician needs to export a running virtual machine configuration and its virtual disk into a standardized, portable format that can be imported into a different hypervisor platform. What file format standard is commonly used?",
+      "options": [
+        "A) OVF / OVA (Open Virtualization Format / Appliance)",
+        "B) EXE / MSI",
+        "C) MP4 / AVI",
+        "D) JPEG / PNG"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "OVF and OVA are open-standard package formats used to bundle and export virtual machines between different virtualization platforms."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "What is the primary advantage of PaaS (Platform as a Service) for software development teams?",
+      "options": [
+        "A) Developers can build, test, and deploy applications quickly without spending time configuring underlying operating systems or hardware servers.",
+        "B) It eliminates the need for writing code.",
+        "C) It provides free physical laptops for every developer.",
+        "D) It prevents software bugs completely."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "PaaS accelerates software development by providing ready-to-use runtime environments and databases without infrastructure overhead."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "What is 'nested virtualization'?",
+      "options": [
+        "A) Running a virtual machine inside another virtual machine.",
+        "B) Running physical computers inside a warehouse.",
+        "C) Connecting two routers with a crossover cable.",
+        "D) Storing backup tapes inside a safe."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Nested virtualization enables a hypervisor to run inside a virtual machine, allowing VMs themselves to host guest virtual machines."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Which cloud computing model places the greatest management burden and responsibility on the customer, requiring them to manage applications, data, runtime, middleware, and operating systems?",
+      "options": [
+        "A) IaaS (Infrastructure as a Service)",
+        "B) SaaS (Software as a Service)",
+        "C) PaaS (Platform as a Service)",
+        "D) Serverless computing"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "In IaaS, the provider manages only the physical hardware and virtualization layer, leaving all OS, middleware, and app management to the customer."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "A virtualization administrator notices that a VM's guest operating system clock is drifting significantly behind real-world time. What service should be configured inside the VM to maintain accurate time synchronization?",
+      "options": [
+        "A) NTP (Network Time Protocol) or hypervisor guest integration tools synchronization.",
+        "B) Fuser assembly calibration.",
+        "C) Static IP address assignment.",
+        "D) DNS cache flush."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Virtual machines frequently experience clock drift; installing hypervisor integration tools or configuring NTP syncs guest time accurately."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "What is the primary purpose of identity and access management (IAM) in cloud environments?",
+      "options": [
+        "A) To securely manage user identities, permissions, and multi-factor authentication policies for cloud resources.",
+        "B) To assign IP addresses to physical printers.",
+        "C) To format hard drives.",
+        "D) To test network cable continuity."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "IAM frameworks control user authentication and authorization, ensuring least-privilege access to cloud infrastructure."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "What is the function of a hypervisor's guest integration additions (such as Guest Additions or Integration Services)?",
+      "options": [
+        "A) To enhance VM performance, enable smooth mouse integration, improve video drivers, and synchronize time.",
+        "B) To increase physical power supply wattage.",
+        "C) To convert dot-matrix print jobs.",
+        "D) To replace physical RAM sticks."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Guest integration tools optimize virtual machine drivers and communication between the guest OS and the hypervisor host."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Which cloud computing deployment model offers the absolute highest level of physical security and data isolation because hardware is not shared with any other external tenant?",
+      "options": [
+        "A) Private Cloud",
+        "B) Public Cloud",
+        "C) Multi-tenant SaaS",
+        "D) Shared community hosting"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Private clouds provide dedicated physical hardware infrastructure exclusively to a single organization, maximizing security and isolation."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "A technician is tasked with setting up a virtual machine that requires direct, unmediated access to a specialized hardware PCIe graphics card on the host machine. What virtualization feature should be used?",
+      "options": [
+        "A) PCIe Device Passthrough (SR-IOV / GPU Passthrough)",
+        "B) Host-only virtual switch",
+        "C) Dynamic RAM ballooning",
+        "D) Network address translation"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "PCIe passthrough allows a hypervisor to dedicate a physical hardware device directly to a specific virtual machine for high-performance tasks."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "What is a major advantage of utilizing serverless computing (Function as a Service / FaaS) in cloud architecture?",
+      "options": [
+        "A) Developers only pay for exact compute execution time when functions run, requiring zero server provisioning or idle cost.",
+        "B) Servers run at 100% capacity continuously.",
+        "C) It eliminates the need for internet access.",
+        "D) It requires manual hardware upgrades."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Serverless computing abstracts servers entirely, executing code in response to events and billing strictly down to the millisecond of execution."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "What is the primary function of RAM ballooning in a virtualized host environment?",
+      "options": [
+        "A) A memory management technique where the hypervisor reclaims unused RAM from one VM and allocates it to another VM under pressure.",
+        "B) A method of inflating physical RAM sticks with compressed air.",
+        "C) A tool for testing network cable speed.",
+        "D) A backup routine for mechanical hard drives."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "RAM ballooning allows hypervisors to dynamically redistribute physical memory allocations among active virtual machines based on real-time demand."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Which cloud service model would be most appropriate for a company that wants to build and run custom database applications without managing the underlying operating system patching or database engine setup?",
+      "options": [
+        "A) PaaS (Platform as a Service)",
+        "B) IaaS (Infrastructure as a Service)",
+        "C) Traditional on-premise physical servers",
+        "D) Standalone client workstations"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "PaaS provides managed database and runtime platforms, sparing the organization from OS and database administration overhead."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "A technician creates a virtual machine, but upon booting, the screen remains black and displays a 'No bootable device found' error. What is the most likely cause?",
+      "options": [
+        "A) No operating system has been installed on the virtual disk, or the virtual optical drive is missing the installation ISO file.",
+        "B) The physical power supply unit is under-wattage.",
+        "C) The network patch cable is unplugged.",
+        "D) The CPU thermal paste has dried out."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "A 'no bootable device' error in a VM indicates that no boot sector or OS installation media is attached or installed on the virtual machine."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "What is a hybrid cloud architecture?",
+      "options": [
+        "A) An environment combining private cloud or on-premise infrastructure with public cloud services, allowing data and workload sharing.",
+        "B) A cloud that runs exclusively on solar power.",
+        "C) A network utilizing only wireless routers.",
+        "D) A physical server running two operating systems simultaneously."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Hybrid clouds blend private and public clouds into a unified, integrated architecture for flexible workload deployment."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Summarize Virtualization Concepts",
+      "question": "Why is it important to install hypervisor guest additions or integration services after installing a new operating system inside a virtual machine?",
+      "options": [
+        "A) To install optimized drivers for virtual display, network adapters, and mouse integration.",
+        "B) To upgrade the physical CPU cores.",
+        "C) To increase power supply efficiency.",
+        "D) To format mechanical hard drives."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Guest additions install high-performance synthetic drivers that replace legacy emulated hardware, vastly improving VM responsiveness."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Compare and Contrast Cloud Computing Concepts",
+      "question": "Which of the following best exemplifies a SaaS (Software as a Service) application used commonly in corporate environments?",
+      "options": [
+        "A) Web-based email and enterprise collaboration suites accessed entirely through a browser.",
+        "B) Raw Linux server instances rented on AWS.",
+        "C) A custom Python development framework.",
+        "D) A local physical hard drive."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Web-based email and collaboration software delivered via subscription over the web represent classic SaaS applications."
+    }
+  ]
+}

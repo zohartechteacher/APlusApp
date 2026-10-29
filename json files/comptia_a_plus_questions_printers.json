@@ -1,0 +1,854 @@
+{
+  "questions": [
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "An impact dot-matrix printer produces printouts where the text is uniformly faint, faded, and light across the entire page, though the character formations are complete with no missing lines. What is the most likely cause?",
+      "options": [
+        "A) The print head pins are clogged with debris.",
+        "B) The ink ribbon cartridge has run dry and needs to be replaced.",
+        "C) The print head heating element temperature is too low.",
+        "D) The tractor feed mechanism is misaligned."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Uniformly faint text on an impact printer indicates that the ink ribbon has exhausted its ink supply and must be replaced."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A user reports that printed text from a laser printer easily smudges, smears, and rubs off onto their fingers when touched. The pages do not have paper jams or missing text. Which component has failed?",
+      "options": [
+        "A) Primary corona wire",
+        "B) Transfer roller",
+        "C) Fuser assembly",
+        "D) Laser scanner unit"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "The fuser assembly uses high heat and pressure to melt and bind toner permanently to the paper fibers; failure to reach operational temperature causes smudging."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A laser printer outputs pages containing a persistent, crisp, vertical black line running down the exact same spot on every single printed document. What is the most likely cause?",
+      "options": [
+        "A) A scratch or debris on the photosensitive drum or primary corona wire.",
+        "B) The print spooler service has stalled.",
+        "C) The network cable is disconnected.",
+        "D) The paper tray is overloaded."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "A scratch, groove, or toner buildup on the imaging drum or wiper blade creates a consistent vertical line on printed output."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A thermal printer used at a retail checkout counter prints out completely blank, white receipts even though the paper feeds through properly without error codes. What is the most likely cause?",
+      "options": [
+        "A) The thermal paper roll was installed backward, or non-thermal paper is being used.",
+        "B) The print ribbon has snapped.",
+        "C) The primary corona wire is broken.",
+        "D) The fuser lamp is burned out."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Thermal printers require heat-sensitive chemical paper loaded facing the correct thermal heating elements; backward loading or plain paper results in blank output."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "When printing complex, high-resolution graphic files to a shared network laser printer, the printer fails to print and displays an 'Out of Memory' error code on its LCD panel. What is the permanent solution?",
+      "options": [
+        "A) Restart the print spooler service.",
+        "B) Install additional physical RAM modules into the printer's internal memory slots.",
+        "C) Clean the optical scanner glass.",
+        "D) Replace the toner cartridge."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Complex graphic files exceed the printer's onboard RAM capacity, requiring a physical memory upgrade to process large print jobs permanently."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "Which of the following printer types utilizes tiny piezoelectric or thermal ink-drop nozzles to spray microscopic droplets of liquid ink onto paper?",
+      "options": [
+        "A) Laser printer",
+        "B) Inkjet printer",
+        "C) Thermal printer",
+        "D) Impact dot-matrix printer"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Inkjet printers propel liquid ink droplets via thermal or piezoelectric print head technologies."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "During the laser printing process, what is the primary function of the primary corona (or charge) roller?",
+      "options": [
+        "A) Applies an electrostatic uniform high negative charge across the entire surface of the photosensitive drum.",
+        "B) Melts toner particles into the paper fibers using heat and pressure.",
+        "C) Transfers toner from the drum onto the paper medium.",
+        "D) Erases residual electrostatic charges after printing."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The primary corona or charge roller conditions the photosensitive drum by applying a uniform high electrostatic charge before the laser writes the image."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A flat-bed document scanner produces digital scans with a faint, straight vertical white streak running down every scanned page. What should the technician do first?",
+      "options": [
+        "A) Replace the internal scanning lamp assembly.",
+        "B) Clean the glass scan bed thoroughly to remove dust or smudges on the calibration strip/glass.",
+        "C) Reinstall the TWAIN driver.",
+        "D) Adjust the scanner's motor belt tension."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Dirt, correction fluid, or smudges on the scanner glass block light reflection, creating a vertical line/streak on scanned output."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "Which of the following laser printer components uses a high electrical charge to attract toner particles off the photosensitive drum and onto the paper surface?",
+      "options": [
+        "A) Transfer roller (or transfer corona)",
+        "B) Fuser assembly",
+        "C) Registration roller",
+        "D) Separation pad"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The transfer roller imparts an electrical charge to pull the toner image from the drum onto the passing paper sheet."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A user complains that their inkjet printer is producing pages with faded colors and missing horizontal streaks across text lines. What maintenance procedure should be performed first?",
+      "options": [
+        "A) Replace the printer's internal power supply unit.",
+        "B) Run an automated print head cleaning and nozzle alignment utility.",
+        "C) Replace the fuser assembly.",
+        "D) Vacuum the paper pickup rollers."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Clogged inkjet nozzles cause faded printouts and horizontal streaking, which are resolved via printer head cleaning and nozzle alignment routines."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "What is the correct sequence of the first four steps in the laser printing imaging process?",
+      "options": [
+        "A) Processing, Charging, Exposing (Writing), Developing",
+        "B) Transferring, Fusing, Cleaning, Exposing",
+        "C) Developing, Transferring, Charging, Fusing",
+        "D) Cleaning, Fusing, Exposing, Processing"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The laser printing process starts with Processing (rasterizing the job), Charging (conditioning the drum), Exposing/Writing (laser discharging areas), and Developing (applying toner)."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "An office laser printer continually grabs three sheets of paper at once from the paper tray, leading to frequent multi-feed jams. Which component is worn out and needs replacement?",
+      "options": [
+        "A) Separation pad / pickup rollers",
+        "B) Fuser lamp",
+        "C) Photosensitive drum",
+        "D) Laser diode"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Pickup rollers and separation pads wear down over time, failing to fan individual sheets and pulling multiple pages simultaneously."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "Which type of printer uses pins striking an inked ribbon against paper, making multi-part carbon-copy forms possible?",
+      "options": [
+        "A) Thermal printer",
+        "B) Inkjet printer",
+        "C) Impact dot-matrix printer",
+        "D) 3D printer"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Dot-matrix impact printers use mechanical pins striking an ink ribbon, capable of producing carbon-copy multi-part forms."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A user sends a document to a network printer, but nothing prints. The printer is powered on and online. The technician checks the print queue and sees the job stuck with a 'Spooler Error' status. What should the technician do first to resolve this?",
+      "options": [
+        "A) Replace the printer's motherboard.",
+        "B) Restart the Print Spooler service on the host computer or print server and clear corrupted spool files.",
+        "C) Reinstall the operating system.",
+        "D) Upgrade the RAM in the printer."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Restarting the Windows Print Spooler service and clearing stuck print job files in the PRINTERS folder resolves hung queue errors."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "What is the final step in the laser printer imaging cycle, which removes any leftover toner from the photosensitive drum surface?",
+      "options": [
+        "A) Transfer",
+        "B) Fusing",
+        "C) Cleaning",
+        "D) Charging"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "The cleaning stage uses a cleaning blade and discharge lamp to wipe away residual toner and neutralize charges on the drum before the next print cycle."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A 3D printer fails to extrude filament during a print job, and the user notices plastic grinding inside the print head assembly. What is the most likely cause?",
+      "options": [
+        "A) A clogged or jammed extruder nozzle / cold extrusion temperature.",
+        "B) The network cable is unplugged.",
+        "C) The print spooler service is stopped.",
+        "D) The primary corona wire is dirty."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Clogged extruder nozzles or printing below the required melting temperature cause the drive gear to grind into the plastic filament."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "Which of the following printer languages is a page description language developed by Adobe used widely in professional publishing and high-end laser printers?",
+      "options": [
+        "A) PCL (Printer Command Language)",
+        "B) PostScript",
+        "C) ESC/P",
+        "D) XML"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "PostScript is an advanced page description language designed for high-end graphic and text rendering in professional printing."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A laser printer produces printouts with ghosting, where a faint, faded image of previous text repeats further down the same page. What component is defective?",
+      "options": [
+        "A) Defective cleaning blade or worn photosensitive drum that fails to erase previous toner.",
+        "B) Clogged ink nozzles.",
+        "C) Faulty network interface card.",
+        "D) Empty paper tray."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Ghosting occurs when the cleaning blade or discharge component fails to remove residual toner from the drum, causing the image to repeat."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "Which type of specialized printer uses a ribbon containing panels of cyan, magenta, yellow, and clear protective overcoat to fuse images onto plastic ID cards or glossy photo paper?",
+      "options": [
+        "A) Thermal dye-sublimation printer",
+        "B) Impact dot-matrix printer",
+        "C) LED laser printer",
+        "D) Continuous ink printer"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Dye-sublimation printers heat solid dye ribbons to vaporize pigments directly onto specialized media for photo and ID card printing."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "An administrator wants to configure a network printer so that Mac OS clients can discover and print to it automatically without manually installing driver packages. What protocol must be supported?",
+      "options": [
+        "A) Bonjour / AirPrint",
+        "B) FTP",
+        "C) Telnet",
+        "D) LDAP"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Apple infrastructure relies on Bonjour and AirPrint protocols for driverless zero-configuration network printer discovery."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "What safety precaution must be strictly observed when servicing a laser printer's fuser assembly immediately after heavy printing operations?",
+      "options": [
+        "A) Wear static discharge gloves to protect the processor.",
+        "B) Allow the fuser to cool down completely to avoid severe thermal burns.",
+        "C) Submerge the fuser in isopropyl alcohol.",
+        "D) Disconnect the network cable."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Fuser assemblies operate at extremely high temperatures to melt toner and retain intense heat long after printing stops, posing burn hazards."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "Which of the following describes the correct function of the 'Exposing' (writing) stage in laser printing?",
+      "options": [
+        "A) The laser beam selectively discharges areas of the photosensitive drum to form an electrostatic latent image.",
+        "B) Toner is melted onto the paper.",
+        "C) Paper is fed from the tray using rollers.",
+        "D) Residual charge is wiped from the drum."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The laser scanner unit hits the charged drum with light where the image should be, discharging those areas to create the latent image."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A user reports that paper is jamming repeatedly inside a laser printer right after passing through the fuser unit, and the paper edges appear scorched or wrinkled. What is the likely cause?",
+      "options": [
+        "A) Damaged or failing fuser assembly rollers causing physical obstruction.",
+        "B) Empty cyan ink cartridge.",
+        "C) Corrupt printer driver.",
+        "D) Disconnected Ethernet cable."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "A failing or jammed fuser assembly catches paper incorrectly, causing crinkling, scorching, or repeated jamming."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "What is the primary characteristic of thermal direct printers compared to thermal transfer printers?",
+      "options": [
+        "A) Thermal direct printers use chemically treated heat-sensitive paper and do not require ink ribbons.",
+        "B) Thermal direct printers require wax-based ink ribbons.",
+        "C) Thermal direct printers print exclusively in full multi-color photos.",
+        "D) Thermal direct printers use liquid ink jets."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Direct thermal printers apply heat directly onto chemically treated heat-sensitive paper without using ribbons, commonly used for shipping labels."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A technician sets up a shared network printer on a Windows domain server. Users on the network cannot connect to it by its hostname, but they can connect using its IP address. What service is failing?",
+      "options": [
+        "A) DNS",
+        "B) DHCP",
+        "C) Print Spooler",
+        "D) NTP"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Inability to resolve device hostnames while IP connectivity works points directly to a DNS registration or configuration failure."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "Which of the following maintenance steps is recommended when replacing a used toner cartridge in a laser printer?",
+      "options": [
+        "A) Vacuum spilled toner particles using a standard household vacuum cleaner.",
+        "B) Clean any stray toner using a specialized toner vacuum with a HEPA filter and ESD safety.",
+        "C) Wash the photosensitive drum with water.",
+        "D) Submerge the cartridge in isopropyl alcohol."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Fine toner dust requires specialized toner vacuums with HEPA filters; standard vacuums scatter fine toner and can cause static hazards."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A dot-matrix printer output contains text with horizontal white gaps running across all printed lines. What is the most probable cause?",
+      "options": [
+        "A) A damaged or broken print head pin that fails to strike the ribbon.",
+        "B) The fuser assembly is overheating.",
+        "C) The paper tray is empty.",
+        "D) The IP address is misconfigured."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Broken or stuck print head pins in a dot-matrix printer leave unprinted white lines across character rows."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "Which of the following printer interfaces allows direct connection to a computer via a serial bus protocol supporting high-speed data transfer and daisy-chaining, though rarely used for modern basic office printers?",
+      "options": [
+        "A) IEEE 1284 Parallel Port",
+        "B) USB / Ethernet",
+        "C) DE-15 VGA",
+        "D) PS/2"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Modern printers connect primarily via USB or Ethernet interfaces."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A 3D printer user notices that the first layer of extruded plastic fails to adhere to the print bed surface. What corrective action should be taken?",
+      "options": [
+        "A) Level the print bed and apply an adhesive or heated bed surface.",
+        "B) Replace the laser scanner unit.",
+        "C) Clear the print queue.",
+        "D) Update the Windows network driver."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Proper bed leveling and adhesive application are essential for initial layer adhesion in 3D printing."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "What is the primary function of the developing stage in a laser printer?",
+      "options": [
+        "A) Toner particles with an electrostatic charge are attracted to the latent image on the photosensitive drum.",
+        "B) Paper is fused with heat.",
+        "C) The drum is cleaned of excess toner.",
+        "D) Digital data is converted into a print raster image."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "During developing, toner particles are exposed to the drum, where they cling to the electrostatically discharged areas written by the laser."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A user reports that an inkjet printer is printing skewed, crooked text and alignment lines overlap incorrectly. What maintenance routine should be run?",
+      "options": [
+        "A) Print head alignment utility",
+        "B) Fuser replacement",
+        "C) IP address renewal",
+        "D) Hard drive defragmentation"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Running a print head calibration and alignment utility corrects skewed or misaligned inkjet printing dots."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "Which protocol is commonly used to manage and monitor printer toner levels, device status, and error alerts across an IP network?",
+      "options": [
+        "A) SNMP (Simple Network Management Protocol)",
+        "B) FTP",
+        "C) Telnet",
+        "D) DHCP"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "SNMP queries network-attached printers for consumable levels, page counts, and error statuses."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A laser printer outputs pages with random, scattered speckles and loose toner across the entire page background. What component is most likely malfunctioning?",
+      "options": [
+        "A) Fuser assembly failing to heat properly or defective toner cartridge leakage.",
+        "B) Ethernet cable failure.",
+        "C) Print spooler service.",
+        "D) Scanner glass dirt."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Scattered loose toner speckles indicate a faulty fuser that fails to melt toner properly or a leaking toner cartridge."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "What is the primary advantage of using a network print server rather than sharing a printer directly connected to a single workstation?",
+      "options": [
+        "A) Print queues remain available and managed centrally even if individual client workstations are turned off.",
+        "B) It eliminates the need for toner cartridges.",
+        "C) It increases printing speeds to 100 Gbps.",
+        "D) It prevents paper jams entirely."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Centralized network print servers manage queues independently, ensuring print availability even when user PCs disconnect."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A technician needs to connect an older legacy printer equipped only with a DB-25 female parallel port to a modern laptop that features only USB ports. What hardware solution is required?",
+      "options": [
+        "A) USB-to-Parallel IEEE 1284 converter cable",
+        "B) HDMI-to-VGA adapter",
+        "C) Cat 6 crossover cable",
+        "D) Thunderbolt docking station"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "A USB-to-Parallel adapter bridges legacy IEEE 1284 parallel printer ports to modern USB host connections."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "An office inkjet printer prints blank pages despite having full ink cartridges installed. What is the most likely cause?",
+      "options": [
+        "A) Dried ink clogging the tiny print head nozzles completely.",
+        "B) Fuser lamp burnout.",
+        "C) Broken primary corona wire.",
+        "D) Blown motherboard capacitor."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Completely clogged or dried print head nozzles prevent ink from reaching the paper, resulting in blank output."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "Which of the following describes the function of a thermal transfer printer ribbon?",
+      "options": [
+        "A) A film ribbon coated with wax or resin that is melted onto media by heated print head elements.",
+        "B) An impact ribbon struck by pins.",
+        "C) A liquid ink reservoir tube.",
+        "D) A photosensitive toner belt."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Thermal transfer printers use heat from the print head to melt wax or resin from a ribbon onto the label or paper surface."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A laser printer user complains of repeated paper crumpling and accordion jams right inside the output door. What part should be inspected?",
+      "options": [
+        "A) Fuser assembly and exit rollers",
+        "B) Pickup rollers",
+        "C) Transfer roller",
+        "D) Laser scanner"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Accordion jams near the output door indicate that exit rollers or the fuser assembly are failing to guide paper smoothly."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "When configuring a secure network printer in a corporate environment, why should unencrypted management protocols like HTTP or Telnet be disabled on the printer's embedded web server?",
+      "options": [
+        "A) To prevent attackers from intercepting administrator passwords and configuration data in cleartext.",
+        "B) To increase paper output speed.",
+        "C) To reduce toner consumption.",
+        "D) To prevent paper jams."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Disabling unencrypted management protocols and enforcing HTTPS/SSH prevents credential sniffing on printer management interfaces."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A user notices that color printouts from an inkjet printer have completely incorrect, distorted hues (e.g., photos look overly blue or green). What is the most likely cause?",
+      "options": [
+        "A) A depleted or clogged color ink cartridge nozzle.",
+        "B) Blown fuser lamp.",
+        "C) Defective laser scanner.",
+        "D) Network cable duplex mismatch."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "When one color chamber in a tri-color inkjet cartridge runs dry or clogs, overall color blending is severely distorted."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "Which of the following maintenance tasks is specifically required for dot-matrix impact printers after extensive usage?",
+      "options": [
+        "A) Replacing worn-out ink ribbons and cleaning print head pins.",
+        "B) Replacing the photosensitive drum.",
+        "C) Applying thermal paste to the fuser.",
+        "D) Calibrating the laser beam mirror."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Dot-matrix printers require periodic ribbon replacement and cleaning of mechanical print head pins."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A technician is troubleshooting a network printer that randomly prints garbage characters (symbols and random glyphs) instead of the requested document. What is the most likely cause?",
+      "options": [
+        "A) Corrupt or incorrect printer driver installed on the host computer.",
+        "B) Empty paper tray.",
+        "C) Loose USB power cable.",
+        "D) Fuser assembly overheating."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Incorrect or corrupt printer drivers send unsupported printer command language data, resulting in pages of random garbage symbols."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "What is the primary function of the separation pad in a printer's paper feed mechanism?",
+      "options": [
+        "A) Applies friction to ensure only a single sheet of paper is fed from the stack at a time.",
+        "B) Melts toner to paper.",
+        "C) Cleans excess ink from print heads.",
+        "D) Encrypts print jobs over the network."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The separation pad works alongside the pickup roller to create friction that prevents multiple sheets from feeding simultaneously."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A laser printer outputs completely blank white pages even though the print queue processes successfully and toner is present. Which component is likely at fault?",
+      "options": [
+        "A) High-voltage power supply or primary corona wire failing to charge the drum.",
+        "B) Fuser assembly heating up too fast.",
+        "C) Ethernet cable disconnection.",
+        "D) Scanner glass smudge."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "If the primary corona or high-voltage power supply fails to charge the photosensitive drum, toner is not attracted to the drum or paper, resulting in blank pages."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "Which type of 3D printer technology builds objects by curing liquid photosensitive resin layer-by-layer using ultraviolet (UV) light lasers?",
+      "options": [
+        "A) SLA (Stereolithography) / Resin 3D Printing",
+        "B) FDM (Fused Deposition Modeling)",
+        "C) Dot-matrix impact printing",
+        "D) Thermal transfer printing"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "SLA resin 3D printers use UV lasers to photopolymerize and cure liquid resin layer-by-layer into high-precision objects."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A user wants to share an older USB printer across a small office local area network without buying a dedicated print server PC. What device can be attached to the printer?",
+      "options": [
+        "A) Hardware print server box with an Ethernet port and USB printer port",
+        "B) Ethernet hub",
+        "C) KVM switch",
+        "D) Media converter"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "A hardware print server translates network print traffic into USB signals, allowing USB-only printers to be shared directly on an Ethernet LAN."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "What is the purpose of the cleaning blade in a laser printer cartridge assembly?",
+      "options": [
+        "A) Scrapes residual leftover toner off the photosensitive drum at the end of the imaging cycle.",
+        "B) Cleans paper dust from the fuser rollers.",
+        "C) Wipes ink nozzles on inkjet cartridges.",
+        "D) Polishes the exterior printer casing."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The cleaning blade physically scrapes away any un-transferred toner remaining on the photosensitive drum after the transfer stage."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A network technician configures a static IP address on a shared office laser printer. Shortly after, users report they can no longer print. What should the technician verify first?",
+      "options": [
+        "A) Verify that the printer's IP configuration matches the correct subnet mask, default gateway, and is not conflicting with another device.",
+        "B) Replace the toner cartridge.",
+        "C) Reinstall Windows.",
+        "D) Clean the laser scanner optics."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Verifying IP settings, subnet masks, gateways, and checking for IP address duplication is the primary troubleshooting step after static IP changes."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "Which of the following printer maintenance actions helps prevent paper jams caused by dust and paper debris buildup inside the paper feed path?",
+      "options": [
+        "A) Cleaning pickup rollers with isopropyl alcohol and removing paper dust debris.",
+        "B) Submerging print heads in water.",
+        "C) Applying heavy grease to the fuser lamp.",
+        "D) Replacing the network switch."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Cleaning rubber pickup rollers with isopropyl alcohol removes paper dust and restores grip to prevent feeding jams."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A laser printer user notices vertical dark smudges or repeating toner marks down the page at regular intervals matching the exact circumference of the photosensitive drum. What is the cause?",
+      "options": [
+        "A) A scratch, dent, or toner buildup on the photosensitive drum surface.",
+        "B) Empty paper tray.",
+        "C) Faulty print spooler.",
+        "D) Disconnected Ethernet cable."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Defects on the photosensitive drum repeat at intervals equal to the drum's circumference, requiring drum or cartridge replacement."
+    }
+  ]
+}

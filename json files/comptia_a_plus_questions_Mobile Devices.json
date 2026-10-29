@@ -1,0 +1,856 @@
+{
+  "questions": [
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.1 Mobile Devices",
+      "question": "Which of the following is true regarding eSIM profiles on modern smartphones?",
+      "options": [
+        "A) They require a physical nano-SIM card tray to be inserted.",
+        "B) They are loaded over the air via network data profiles without a physical card.",
+        "C) They can only be configured using legacy serial cables.",
+        "D) They are permanently locked to a single carrier for the life of the device."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "eSIM profiles are embedded digital SIMs loaded over the air via network data profiles, eliminating the need for a physical SIM tray[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user's smartphone works perfectly when plugged into a wall charger, but the moment the charging cable is disconnected, the device instantly shuts down, even though the battery indicator showed 100% charge. Which component is the source of this failure?",
+      "options": [
+        "A) The charging port assembly",
+        "B) The internal lithium-ion battery",
+        "C) The glass digitizer array",
+        "D) The ambient light sensor"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A degraded lithium-ion battery that can no longer hold a chemical charge will drop system current instantly when disconnected from external power[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A smartphone screen is completely unresponsive to touch inputs, but the physical power and volume buttons work normally. There is no visible physical damage or cracking on the glass. What should the technician attempt first?",
+      "options": [
+        "A) Replace the internal battery assembly",
+        "B) Perform a hard restart of the device using the physical hardware buttons",
+        "C) Open the chassis to clean the motherboard contacts",
+        "D) Order a replacement LCD assembly"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A hard reboot clears software freezes causing localized input locking before assuming underlying hardware component failure[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.3 Mobile Device Security",
+      "question": "A user enabled a mobile device's screen lock function with pattern unlock and is concerned someone could access the phone by repeatedly attempting random patterns. Which feature best addresses this concern?",
+      "options": [
+        "A) Remote wipe",
+        "B) Failed login restrictions / account lockout",
+        "C) Device encryption",
+        "D) GPS geo-tracking"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Failed login restrictions lock or wipe a mobile device after a specified number of consecutive incorrect unlock attempts."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "An employee reports that their smartphone runs excessively hot even when not in use, applications crash frequently, and certain apps are stuck in portrait mode incorrectly. Which troubleshooting steps should the technician perform to resolve these issues with minimal impact? (Choose two)",
+      "options": [
+        "A) Close unnecessary background applications",
+        "B) Update the device's operating system",
+        "C) Reformat the internal flash storage completely",
+        "D) Toggle or check autorotation settings",
+        "E) Replace the motherboard logic board"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Closing resource-heavy background tasks and updating the OS resolves thermal runaway and stability issues caused by runaway applications."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.1 Mobile Devices",
+      "question": "What type of connection allows a business traveler to share their smartphone's cellular data plan securely with a laptop in an area with no public Wi-Fi?",
+      "options": [
+        "A) Cellular hotspot tethering",
+        "B) Bluetooth file transfer synchronization",
+        "C) Infrared beaming",
+        "D) Local area network bridging"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Cellular hotspot tethering securely routes a client machine's internet data through a personal mobile data allocation plan[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "Upon physical inspection of a tablet, a technician notes that the screen assembly is visibly lifting up and bowing outward from the center of the frame. What immediate safety action should be taken?",
+      "options": [
+        "A) Apply heavy-duty electronic adhesive and clamp the screen back down",
+        "B) Place the device into a fire-safe container and prepare it for safe lithium-ion battery disposal",
+        "C) Plug the tablet into a high-wattage fast charger to drain excess voltage",
+        "D) Clean the screen with isopropyl alcohol"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A swollen, bowing battery chassis indicates dangerous gas buildup and poses an imminent thermal runaway/fire risk requiring immediate isolation[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A mobile user notes that when they place their smartphone against their ear during an active voice call, the screen remains fully lit, causing their cheek to accidentally press onscreen buttons. Which sensor is malfunctioning?",
+      "options": [
+        "A) Accelerometer",
+        "B) Gyroscope",
+        "C) Proximity sensor",
+        "D) Magnetometer"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "The proximity sensor detects when an object (like a face or ear) is close to the screen during a call and disables touch input accordingly[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user reports that their smartphone's touchscreen glass is physically intact, but the display looks entirely distorted, showing vertical multicolored lines and bleeding black ink splotches. Which internal component has sustained damage?",
+      "options": [
+        "A) The digitizer glass panel",
+        "B) The LCD/OLED panel substrate",
+        "C) The ambient light sensor",
+        "D) The cellular baseband antenna"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Vertical color banding, ink bleeding, and distorted pixels indicate physical damage to the underlying LCD or OLED panel substrate[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.2 Hardware and Data Configuration",
+      "question": "During the disassembly of an ultra-thin mobile tablet to replace a cracked screen, which tool should be used to safely soften the internal industrial adhesive?",
+      "options": [
+        "A) High-power industrial flame torch",
+        "B) Specialized electronic heating pad / heat bag (e.g., iOpener)",
+        "C) Isopropyl alcohol immersion bath",
+        "D) Metal chisel pry bar"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Specialized electronic heating pads apply controlled thermal distribution safely without risking component melting or battery puncture[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A mobile user notices that when they walk into a dark room, their smartphone screen brightness drops to near zero, making it hard to read. When stepping outside into bright sunlight, it flares up to maximum brightness. What sensor controls this behavior?",
+      "options": [
+        "A) Proximity sensor",
+        "B) Ambient light sensor",
+        "C) Gyroscope",
+        "D) GPS receiver"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The ambient light sensor detects surrounding lumen levels to dynamically adjust display backlighting metrics[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.3 Mobile Device Security",
+      "question": "A technician is configuring a brand new corporate smartphone. The user wants to log into their device simply by scanning their fingerprint or facial geometry. What feature framework must the hardware support?",
+      "options": [
+        "A) Multifactor smartcard tokenization",
+        "B) Biometric authentication",
+        "C) Single Sign-On federation",
+        "D) Geofencing tracking"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Biometric authentication relies on unique biological attributes such as fingerprints or facial features to establish verified access control[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A traveler lands internationally and discovers their corporate smartphone (which has no physical SIM tray) has lost all cellular connectivity. What is the first step the technician should take?",
+      "options": [
+        "A) Perform a hard factory reset",
+        "B) Instruct the user to buy a physical nano-SIM card",
+        "C) Push a new profile over Wi-Fi to update the device's eSIM configuration",
+        "D) Reseat the baseband processor chip"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "For devices without a physical SIM tray, cellular carrier profiles are managed and updated via over-the-air eSIM configuration[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user downloaded a performance-optimization app from an unverified website. The phone now experiences high network utilization and repeated security warnings. What should the technician do first?",
+      "options": [
+        "A) Uninstall the fraudulent application",
+        "B) Increase the cellular data plan limits",
+        "C) Disable the mobile hotspot",
+        "D) Replace the internal storage drive"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Removing unauthorized or fraudulent applications immediately stops rogue background processes and malicious network activity."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.2 Hardware and Data Configuration",
+      "question": "Which synchronization method allows a mobile user to seamlessly sync emails, contacts, calendars, and reminders across multiple devices in real-time using open standards like CalDAV and CardDAV?",
+      "options": [
+        "A) Exchange ActiveSync / IMAP cloud synchronization",
+        "B) Manual USB cable file copying",
+        "C) Infrared data exchange",
+        "D) Local serial port dumping"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Cloud-based synchronization protocols keep mobile PIM (Personal Information Manager) data updated across all client devices automatically."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.3 Mobile Device Security",
+      "question": "What enterprise management tool allows an IT administrator to remotely lock, track, audit, and wipe corporate mobile devices in the event of loss or theft?",
+      "options": [
+        "A) MDM (Mobile Device Management) / EMM",
+        "B) DHCP server scope",
+        "C) Active Directory Group Policy Objects",
+        "D) Network switch port security"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "MDM and EMM software solutions provide centralized administration and remote security wiping capabilities for mobile device fleets."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user complains that their smartphone battery drains from 100% to 0% within 45 minutes of minimal use. Upon checking battery health settings, the battery degradation warning is triggered. What is the permanent solution?",
+      "options": [
+        "A) Replace the internal lithium-ion battery",
+        "B) Lower the screen brightness slightly",
+        "C) Turn off Bluetooth",
+        "D) Restart the phone daily"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Severe chemical aging and degraded charge capacity in lithium-ion batteries require physical battery replacement."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.2 Hardware and Data Configuration",
+      "question": "Which wireless technology operates at 13.56 MHz over extremely short ranges (a few centimeters) to support contactless payment systems and device pairing?",
+      "options": [
+        "A) NFC (Near Field Communication)",
+        "B) Bluetooth Low Energy",
+        "C) RFID inventory tags",
+        "D) Cellular 5G NR"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "NFC enables secure, close-proximity radio communication used for mobile wallets and tap-to-pay transactions."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user reports that their mobile device's GPS navigation app is unable to determine their geographic location, though internet browsing over Wi-Fi works fine. What should the technician check first?",
+      "options": [
+        "A) Verify that location services / GPS permissions are enabled in the operating system settings.",
+        "B) Replace the screen digitizer glass.",
+        "C) Reinstall the phone's operating system.",
+        "D) Change the Wi-Fi security protocol from WPA2 to WEP."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Disabling location permissions in OS settings prevents apps from accessing GPS hardware data."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.3 Mobile Device Security",
+      "question": "What security mechanism prevents a stolen Android or iOS device from being easily wiped and reused without entering the original owner's cloud account credentials?",
+      "options": [
+        "A) Activation Lock / Factory Reset Protection (FRP)",
+        "B) WPA3 enterprise encryption",
+        "C) MAC address filtering",
+        "D) Bluetooth pairing keys"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Activation Lock and Factory Reset Protection tie a mobile device to the user's personal cloud account, deterring theft."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.2 Hardware and Data Configuration",
+      "question": "What type of expansion storage card is commonly supported on Android mobile devices to expand user media capacity?",
+      "options": [
+        "A) MicroSD card",
+        "B) SO-DIMM RAM module",
+        "C) PCIe NVMe stick",
+        "D) CompactFlash card"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "MicroSD memory cards provide removable flash storage expansion for photos, videos, and apps on compatible mobile devices."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user states that their Bluetooth headset will not pair with their smartphone. The headset works fine with another device. What should the technician do first?",
+      "options": [
+        "A) Ensure Bluetooth is enabled on the phone, the headset is in pairing mode, and clear any old conflicting pairings.",
+        "B) Replace the smartphone logic board.",
+        "C) Flash the phone's baseband firmware.",
+        "D) Reinstall the cellular carrier SIM card."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Bluetooth pairing failures are usually resolved by verifying pairing mode status, toggling Bluetooth adapters, and clearing stale device caches."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.3 Mobile Device Security",
+      "question": "Which of the following describes the practice of 'jailbreaking' (iOS) or 'rooting' (Android)?",
+      "options": [
+        "A) Gaining administrative root privileges to bypass manufacturer and carrier software restrictions.",
+        "B) Encrypting local device storage partitions.",
+        "C) Backing up user contacts to an enterprise cloud server.",
+        "D) Upgrading the cellular modem firmware."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Jailbreaking and rooting remove manufacturer software restrictions to grant full root access, though it compromises device security."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A smartphone user reports that their device's battery percentage indicator jumps erratically (e.g., dropping from 60% to 10% instantly) and the phone shuts down unexpectedly. What procedure can help recalibrate the battery reporting?",
+      "options": [
+        "A) Performing a full charge cycle (charging to 100%, fully discharging to 0% until shutdown, then recharging uninterrupted).",
+        "B) Placing the phone in a refrigerator.",
+        "C) Scrubbing the USB-C charging port with water.",
+        "D) Removing the screen protector."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Full charge/discharge cycles help recalibrate the battery percentage state-of-charge tracking circuit in mobile operating systems."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.2 Hardware and Data Configuration",
+      "question": "Which mobile connection standard is designed for low-power, short-range communication between fitness trackers, smartwatches, and smartphones?",
+      "options": [
+        "A) Bluetooth Low Energy (BLE)",
+        "B) Cellular 5G mmWave",
+        "C) 802.11ac Wi-Fi",
+        "D) Satellite broadband"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Bluetooth Low Energy (BLE) minimizes power consumption for wearable devices that transmit small packets of telemetry data."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user complains that their smartphone will not charge when plugged into a computer's USB port, but charges fine using a wall adapter. What is the most likely cause?",
+      "options": [
+        "A) Computer USB ports supply lower electrical current output compared to dedicated wall charging bricks.",
+        "B) The phone's screen glass is cracked.",
+        "C) The cellular carrier profile is corrupt.",
+        "D) Bluetooth is turned on."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Standard PC USB ports deliver lower amperage (typically 0.5A to 0.9A), which may be insufficient to charge modern power-hungry smartphones quickly."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.3 Mobile Device Security",
+      "question": "What is the primary purpose of containerization in Enterprise Mobility Management (EMM)?",
+      "options": [
+        "A) To logically separate and encrypt corporate data and apps from personal user data on the same mobile device.",
+        "B) To physically box up mobile phones during meetings.",
+        "C) To increase battery life.",
+        "D) To boost cellular download speeds."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Containerization creates a secure, encrypted sandbox on BYOD devices to protect corporate data without invading personal privacy."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A technician notices that a mobile phone's micro-USB or USB-C port is packed with pocket lint and debris, preventing the charging cable from seating fully. What tool should be used to clean it safely?",
+      "options": [
+        "A) A non-conductive wooden or plastic pick (like a toothpick)",
+        "B) A metal sewing needle",
+        "C) A high-voltage power drill",
+        "D) Water hose sprayer"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Non-conductive wooden or plastic tools prevent scratching pin contacts or short-circuiting battery terminals inside charging ports."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.2 Hardware and Data Configuration",
+      "question": "What protocol is used to synchronize personal data (contacts, calendar, mail) wirelessly between mobile devices and an enterprise Microsoft Exchange server?",
+      "options": [
+        "A) Exchange ActiveSync (EAS)",
+        "B) Telnet",
+        "C) FTP",
+        "D) SNMP"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Exchange ActiveSync provides push-based synchronization for email, calendar, and contacts on mobile platforms."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user reports that their smartphone's touchscreen registers touches in completely wrong locations or registers phantom touches without anyone touching the glass. What is the most likely cause?",
+      "options": [
+        "A) Defective or damaged digitizer glass, or a poorly applied thick screen protector with trapped static/debris.",
+        "B) Empty battery.",
+        "C) Corrupt cellular APN settings.",
+        "D) Disconnected Wi-Fi antenna."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Digitizer hardware defects or interference from damaged glass and poor screen protectors cause erratic touch registration."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.3 Mobile Device Security",
+      "question": "What security policy should be enforced on all corporate mobile devices to ensure that if a device is left unattended, it locks automatically after a short period of inactivity?",
+      "options": [
+        "A) Screen timeout / auto-lock policy",
+        "B) Disabling Wi-Fi",
+        "C) Enabling airplane mode",
+        "D) Removing the SIM card"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Screen timeout and auto-lock policies safeguard unattended mobile devices from unauthorized physical access."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user traveling abroad finds they can make phone calls and send SMS text messages, but mobile data (web browsing, apps) does not work at all. Which cellular setting should the technician check and configure?",
+      "options": [
+        "A) APN (Access Point Name) settings",
+        "B) Bluetooth pairing",
+        "C) Screen rotation lock",
+        "D) Volume level"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "APN settings define the network path for cellular data connectivity; incorrect APN details prevent data traffic even if voice/SMS works."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.2 Hardware and Data Configuration",
+      "question": "Which type of physical SIM card is the smallest removable standard card used in modern smartphones prior to the widespread adoption of eSIM?",
+      "options": [
+        "A) Nano-SIM",
+        "B) Micro-SIM",
+        "C) Full-size credit card SIM",
+        "D) Mini-SIM"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Nano-SIM is the smallest physical subscriber identity module card format used extensively in modern mobile hardware."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user complains that their smartphone speaker emits a muffled, extremely quiet sound during speakerphone calls. Upon inspection, the speaker grille is caked in grime. How should a technician clean it?",
+      "options": [
+        "A) Gently brush the grille using a soft, dry anti-static brush.",
+        "B) Pour liquid soap directly into the speaker port.",
+        "C) Insert a metal paperclip deep into the speaker grille.",
+        "D) Submerge the phone in boiling water."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Soft anti-static brushes dislodge debris from speaker grilles safely without puncturing internal acoustic mesh membranes."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.3 Mobile Device Security",
+      "question": "What is the security risk of allowing users to sideload unverified apps from third-party websites onto mobile devices?",
+      "options": [
+        "A) Increased exposure to malware, spyware, and trojans that bypass official app store security reviews.",
+        "B) Faster processor speeds.",
+        "C) Improved battery efficiency.",
+        "D) Enhanced GPS accuracy."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Sideloading bypasses the vetted security checks of official app stores, significantly increasing malware infection risks."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user reports that their smartphone's camera app crashes immediately upon opening, though all other apps work fine. What troubleshooting steps should the technician try first?",
+      "options": [
+        "A) Clear the camera app cache and data, or check for pending OS updates.",
+        "B) Replace the motherboard.",
+        "C) Cut the cellular antenna wire.",
+        "D) Format the SIM card."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Clearing app cache/data resolves corrupted local application states causing immediate crashes."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.2 Hardware and Data Configuration",
+      "question": "What wireless technology allows mobile devices to share files and pair instantly by tapping them together or bringing them within a couple of inches of each other?",
+      "options": [
+        "A) NFC (Near Field Communication)",
+        "B) Long-range Wi-Fi mesh",
+        "C) Satellite GPS",
+        "D) Cellular CDMA"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "NFC facilitates instant peer-to-peer data sharing and pairing when devices are touched together."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user reports that their phone battery percentage drops rapidly while the phone sits idle in an area with extremely weak cellular signal. What is the cause?",
+      "options": [
+        "A) The cellular baseband radio increases transmission power significantly to maintain contact with distant cell towers, consuming excess power.",
+        "B) The screen backlight is set to 100% while idle in a pocket.",
+        "C) The Bluetooth mouse is connected.",
+        "D) The user is playing offline games."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Weak cellular reception forces mobile transmitters to boost RF output power, leading to rapid battery drain during standby."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.3 Mobile Device Security",
+      "question": "Which authentication method combines a user password with a temporary time-based numeric code sent via SMS or generated by an authenticator app?",
+      "options": [
+        "A) MFA (Multi-Factor Authentication)",
+        "B) Single sign-on federation",
+        "C) WEP open authentication",
+        "D) Guest network access"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Multi-Factor Authentication (MFA) requires two or more verification factors (something you know + something you have) to grant access."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A technician replaces a broken smartphone screen. Upon reassembling the phone, the display lights up, but touch input does not work at all. What is the most likely cause?",
+      "options": [
+        "A) The digitizer flex cable is unseated or damaged.",
+        "B) The battery is fully charged.",
+        "C) The cellular APN is wrong.",
+        "D) The Wi-Fi password was forgotten."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "An unseated or damaged digitizer ribbon cable prevents touch signals from reaching the logic board after a screen repair."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.2 Hardware and Data Configuration",
+      "question": "Which synchronization connection type allows a mobile device to back up local media and sync directly with a desktop computer via a physical cable interface?",
+      "options": [
+        "A) USB data cable synchronization",
+        "B) Infrared serial sync",
+        "C) Dial-up modem sync",
+        "D) Parallel port link"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Physical USB connections allow direct host computer synchronization and local device backups."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user reports that their smartphone storage is completely full, preventing app updates. The user has already deleted large videos. What should the technician check next to free up internal storage?",
+      "options": [
+        "A) Clear cached data and temporary files accumulated by web browsers and social media apps.",
+        "B) Replace the screen protector.",
+        "C) Change the cellular network carrier.",
+        "D) Toggle Bluetooth off."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "App caches and temporary downloaded files accumulate gigabytes of hidden storage data, which can be cleared to free space."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.3 Mobile Device Security",
+      "question": "What enterprise security feature allows IT administrators to wipe corporate data from a lost or stolen mobile device while leaving the owner's personal photos and apps intact?",
+      "options": [
+        "A) Selective wipe / corporate data wipe",
+        "B) Complete factory reset",
+        "C) Hardware destruction",
+        "D) BIOS password flash"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Selective wipes remove only corporate managed applications and containerized data on BYOD devices without deleting personal user content."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user reports that their smartphone's screen auto-rotate feature is not working when they turn the phone sideways. What sensor or setting should the technician check first?",
+      "options": [
+        "A) Check if rotation lock is enabled in the quick settings menu, or test the internal accelerometer/gyroscope.",
+        "B) Check the fuser assembly temperature.",
+        "C) Inspect the SIM card tray.",
+        "D) Verify the printer spooler service."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Accidental activation of rotation lock or a failing accelerometer/gyroscope prevents automatic screen orientation switching."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.2 Hardware and Data Configuration",
+      "question": "What is the primary function of a VPN (Virtual Private Network) client app installed on a mobile device?",
+      "options": [
+        "A) To encrypt all mobile data traffic traversing public or untrusted Wi-Fi networks back to the corporate network.",
+        "B) To increase cellular data speeds by 100 Mbps.",
+        "C) To boost battery life during travel.",
+        "D) To act as a hardware camera lens."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Mobile VPN clients encapsulate and encrypt data traffic inside a secure tunnel over public networks."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user's smartphone connects to office Wi-Fi, but all web pages time out and fail to load. Other employees on the same Wi-Fi network have normal internet access. What should the technician check on this specific phone?",
+      "options": [
+        "A) Verify static IP/DNS settings or check for incorrect proxy configurations on the wireless adapter.",
+        "B) Replace the screen digitizer.",
+        "C) Install a new battery.",
+        "D) Update the device's camera firmware."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Incorrect static IP parameters or rogue proxy configurations confined to a single mobile device will break its internet connectivity while others work."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.3 Mobile Device Security",
+      "question": "What is 'geofencing' in the context of mobile device management (MDM)?",
+      "options": [
+        "A) A virtual perimeter around a physical geographic location that triggers security policies or alerts when a mobile device crosses it.",
+        "B) A physical wire fence built around a data center.",
+        "C) A Wi-Fi encryption standard.",
+        "D) A method of charging phone batteries wirelessly."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Geofencing uses GPS location boundaries to enforce automated security rules (such as disabling cameras inside secure zones)."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user states that their mobile phone's microphone does not pick up their voice during phone calls, but audio plays fine through the earpiece. What is the most likely cause?",
+      "options": [
+        "A) The microphone hole is obstructed by dust/debris or the audio driver is malfunctioning.",
+        "B) The screen brightness is too low.",
+        "C) The Wi-Fi router is offline.",
+        "D) The battery is unseated."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Blocked microphone ports or damaged internal mic flex assemblies prevent voice transmission during calls."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.2 Hardware and Data Configuration",
+      "question": "Which connection technology allows two mobile devices to establish a direct ad-hoc peer-to-peer Wi-Fi connection for high-speed file sharing without needing a wireless router?",
+      "options": [
+        "A) Wi-Fi Direct",
+        "B) Bluetooth 2.0",
+        "C) Cellular 3G",
+        "D) Infrared IrDA"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Wi-Fi Direct enables devices to connect directly to each other peer-to-peer over Wi-Fi without an intermediate access point."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A technician is troubleshooting a mobile device that will not boot past the vendor logo screen (boot loop). What troubleshooting step should be performed next?",
+      "options": [
+        "A) Boot the device into recovery mode to clear the cache partition or perform a factory reset.",
+        "B) Replace the screen protector.",
+        "C) Clean the charging port with a toothpick.",
+        "D) Unplug the SIM card."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Boot loops caused by corrupt OS files or bad updates can often be diagnosed and repaired by booting into recovery mode."
+    }
+  ]
+}

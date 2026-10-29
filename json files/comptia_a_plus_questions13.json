@@ -1,0 +1,89 @@
+{
+  "questions": [
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.1 Mobile Devices",
+      "question": "A remote employee traveling internationally contacts the help desk because their corporate smartphone completely lost cellular connectivity upon landing. The device does not have a physical SIM tray. Which of the following is the FIRST step the technician should take to restore cellular service?",
+      "options": [
+        "A) Perform a hard factory reset of the smartphone.",
+        "B) Instruct the user to purchase a local nano-SIM card.",
+        "C) Push a new profile over Wi-Fi to update the device's eSIM configuration.",
+        "D) Re-seat the internal baseband processor chip."
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "eSIM profiles are loaded over the air via network data profiles; no physical tray exists[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Cloud Computing",
+      "objective": "4.3 Cloud Concepts",
+      "question": "A system administrator needs to configure a cloud computing environment where the company owns and manages the physical underlying hardware, hypervisors, and data center space, but restricts access solely to internal business units. Which cloud deployment model does this describe?",
+      "options": [
+        "A) Public Cloud",
+        "B) Hybrid Cloud",
+        "C) Private Cloud",
+        "D) Community Cloud"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Private cloud environments are dedicated strictly to a single organization[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.4 Common Protocols and Services",
+      "question": "Users on a local network segment report they can access an internal file server via its IP address (10.1.10.50), but they cannot connect to it using its fully qualified domain name (fs01.corp.local). Which network service protocol is most likely failing or misconfigured?",
+      "options": [
+        "A) DHCP",
+        "B) DNS",
+        "C) LDAP",
+        "D) SNMP"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "DNS converts domain names to IP addresses. Failure to resolve means DNS is down or misconfigured[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 Displays and Laptops",
+      "question": "A technician is troubleshooting a premium laptop that suddenly displays a completely dark screen. When the technician shines a bright smartphone flashlight directly at the laptop screen from an angle, the Windows desktop icons become faintly visible. Which component needs to be replaced?",
+      "options": [
+        "A) The OLED panel assembly",
+        "B) The video graphics card",
+        "C) The display inverter or backlight supply",
+        "D) The digitizer glass layer"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "If an image is faintly visible under direct external light, the LCD panel backlight or its power supply (inverter) has failed[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Peripherals and Connectors",
+      "question": "A corporate laptop user wants to connect multiple external monitors, a wired gigabit ethernet cable, a mouse, a keyboard, and a headset to their laptop using a single high-speed cable connection that also supplies power to charge the laptop. Which interface standard should the laptop port support?",
+      "options": [
+        "A) USB 2.0 Type-A",
+        "B) Thunderbolt 4",
+        "C) HDMI 2.0",
+        "D) eSATA"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Thunderbolt 4 supports power delivery, multi-display outputs, and high-speed PCIe/Ethernet data over a single Type-C connector[cite: 90]."
+    }
+  ]
+}

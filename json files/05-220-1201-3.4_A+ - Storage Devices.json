@@ -1,0 +1,886 @@
+{
+  "questions": [
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following are key advantages of Solid-State Drives (SSDs) compared to traditional mechanical hard drives? (Choose two)",
+      "options": [
+        "A) Faster data access speeds",
+        "B) Lower cost per gigabyte of storage capacity",
+        "C) Resistance to physical shocks and drops",
+        "D) Reliance on rapid spinning magnetic metal platters"
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "SSDs feature no moving mechanical parts, providing drastically faster data access speeds and high resistance to physical shocks or drops compared to traditional mechanical hard drives[cite: 66]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following RAID levels provide fault tolerance or redundancy? (Choose two)",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 5",
+        "D) RAID 10"
+      ],
+      "answer": [
+        "B",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "RAID 1 (mirroring/duplexing), RAID 5 (distributed parity), and RAID 10 (striped mirrors) all provide redundancy and fault tolerance, whereas RAID 0 offers zero redundancy[cite: 99, 101, 102, 104, 106]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following storage interfaces connect internal magnetic hard drives (HDDs), solid-state drives (SSDs), and optical disc drives? (Choose two)",
+      "options": [
+        "A) SATA",
+        "B) PATA",
+        "C) Serial ATA",
+        "D) Serial Port COM1"
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "SATA stands for Serial Advanced Technology Attachment (often referred to simply as Serial ATA) and is used to connect internal HDDs, SSDs, and optical disc drives[cite: 42]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "To interface completely with a computer system, a standard internal 2.5-inch or 3.5-inch SATA drive utilizes which two physical connections?",
+      "options": [
+        "A) 7-pin data port",
+        "B) 15-pin power connector",
+        "C) 24-pin main motherboard power connector",
+        "D) 4-pin Berg connector"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "A standard internal SATA drive utilizes a 7-pin data port to connect to the motherboard and a 15-pin power connector to connect to the power supply unit[cite: 43]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following describe valid form factor widths for standard storage drives and media? (Choose two)",
+      "options": [
+        "A) 2.5-inch",
+        "B) 3.5-inch",
+        "C) 4.0-inch",
+        "D) 10.0-inch"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Standard storage form factor widths include 2.5-inch (optimized for laptops and standard SATA SSDs) and 3.5-inch (the mechanical standard for desktop HDDs)[cite: 52, 60]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "What are the primary benefits of serial communication over legacy parallel buses in storage design? (Choose two)",
+      "options": [
+        "A) Fewer physical I/O lines and narrower cables that improve internal airflow",
+        "B) Higher susceptibility to electromagnetic crosstalk",
+        "C) High resistance to signal degradation enabling longer distances",
+        "D) Requirement of dozens of parallel wires per data channel"
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "Serial communication requires far fewer I/O pins and wires, improves airflow, resists electromagnetic interference/crosstalk, and supports longer physical distances[cite: 41]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following are valid spindle rotational speeds for mechanical hard drives? (Choose two)",
+      "options": [
+        "A) 7,200 RPM",
+        "B) 15,000 RPM",
+        "C) 25,000 RPM",
+        "D) 50,000 RPM"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Common consumer and enterprise mechanical HDD speeds include 5,400 RPM, 7,200 RPM, 10,000 RPM, and 15,000 RPM[cite: 53]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following actions are recommended or required when handling external USB flash drives? (Choose two)",
+      "options": [
+        "A) Always use the operating system's safe remove/eject utility before unplugging",
+        "B) Pull the drive out immediately while write-caching operations are active",
+        "C) Protect data integrity by avoiding premature disconnection",
+        "D) Run a full mechanical disk defragmentation utility on the flash drive monthly"
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "Users and technicians must always use the OS safe remove/eject utility before unplugging external USB drives to protect data integrity and avoid corrupting write-cached background operations[cite: 87]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following statements regarding Solid-State Hybrid Drives (SSHDs) are correct? (Choose two)",
+      "options": [
+        "A) They combine a traditional mechanical HDD with a built-in solid-state flash memory cache.",
+        "B) An internal controller automatically caches frequently accessed files into flash memory.",
+        "C) They rely entirely on flash memory chips with zero mechanical platters.",
+        "D) They require manual user intervention to move files into the flash cache."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "SSHDs combine a mechanical hard disk drive with a small flash memory cache, and an internal controller automatically monitors and copies frequently accessed files into the fast cache[cite: 79, 80]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following statements about NVMe (Non-Volatile Memory Express) are true? (Choose two)",
+      "options": [
+        "A) It is an ultra-low latency protocol designed for non-volatile flash storage.",
+        "B) It is bottlenecked by legacy SATA controller limits of 600 MB/s.",
+        "C) It connects directly to the system's PCI Express (PCIe) bus.",
+        "D) It requires a 15-pin SATA power connector to operate."
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "NVMe is an ultra-low latency storage communication protocol designed for flash storage that connects directly to the PCIe bus, bypassing legacy SATA bottlenecks[cite: 76, 77]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following characteristics apply to RAID 0? (Choose two)",
+      "options": [
+        "A) Requires a minimum of two drives",
+        "B) Provides high performance through disk striping",
+        "C) Provides built-in data redundancy and fault tolerance",
+        "D) Automatically rebuilds lost data if a disk fails"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "RAID 0 requires at least two drives, splits file blocks across disks for high performance, but offers zero redundancy[cite: 99]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following are true regarding SD card specifications and standards? (Choose two)",
+      "options": [
+        "A) SDXC stands for SD eXtended Capacity and supports up to 2 TB.",
+        "B) Standard SD cards measure 32 mm x 24 mm.",
+        "C) microSD cards are larger than standard SD cards.",
+        "D) SD cards cannot be write-protected under any circumstances."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "SDXC supports up to 2 TB capacity, and standard SD cards have physical dimensions of 32 mm x 24 mm[cite: 120, 121]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following are valid guidelines when implementing a hardware RAID array? (Choose two)",
+      "options": [
+        "A) Build arrays using identical drives (same capacity, model, and speed) for optimal performance.",
+        "B) If mixed capacities are used, the controller truncates larger drives to match the smallest disk.",
+        "C) RAID arrays completely eliminate the need for external backups.",
+        "D) Hardware RAID is always managed directly by the operating system software."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Optimal performance requires matching drives, and mixing capacities causes the RAID controller to truncate larger drives down to the smallest disk size[cite: 95]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "What are the primary functions of the TRIM command and SSD maintenance practices? (Choose two)",
+      "options": [
+        "A) TRIM tells the SSD controller which deleted data blocks are no longer needed for background wiping.",
+        "B) Traditional defragmentation utilities should never be run on SSDs because they cause unnecessary write wear.",
+        "C) Defragmentation should be run daily on SSDs to maximize flash cell lifespan.",
+        "D) TRIM forces the SSD to convert back into magnetic mechanical platters."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "TRIM lets the SSD wipe deleted blocks in the background, and running traditional defrag on an SSD causes unnecessary write wear without performance benefit[cite: 73, 75]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following are physical internal geometry terms associated with mechanical Hard Disk Drives? (Choose two)",
+      "options": [
+        "A) Platter",
+        "B) Spindle",
+        "C) Flash cell block",
+        "D) TRIM controller"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Platters (magnetic circular disks) and spindles (central axis motor holding/spinning platters) are core physical geometry components of mechanical HDDs[cite: 55, 56]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which SATA standard revisions correspond to the correct maximum data transfer rates? (Choose two)",
+      "options": [
+        "A) SATA Revision 3.0 supports 6 Gb/s (600 MB/s)",
+        "B) SATA Revision 3.2 supports 16 Gb/s (1969 MB/s)",
+        "C) SATA Revision 3.0 supports 16 Gb/s",
+        "D) SATA Revision 3.2 supports 1.5 Gb/s"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "SATA Revision 3.0 specifies 6 Gb/s (600 MB/s), while SATA Revision 3.2 reaches 16 Gb/s (1969 MB/s) by leveraging PCIe bus signaling[cite: 48, 49]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following describe features of RAID 5? (Choose two)",
+      "options": [
+        "A) Requires a minimum of 3 drives",
+        "B) Distributes data and parity information across all drives",
+        "C) Requires a minimum of 2 drives with no parity",
+        "D) Cannot sustain any drive failures without total data loss"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "RAID 5 requires a minimum of 3 drives and distributes both data and parity across all disks in the array[cite: 102]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "What steps are involved when configuring hardware RAID before installing an operating system? (Choose two)",
+      "options": [
+        "A) Enable the storage controller and change mode from AHCI to RAID in BIOS/UEFI",
+        "B) Reboot and press the manufacturer hotkey combination to enter the RAID configuration utility",
+        "C) Format all drives to FAT16 from within Windows Device Manager",
+        "D) Disconnect all SATA cables from the motherboard permanently"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Configuring hardware RAID requires changing the SATA mode to RAID in BIOS/UEFI and using the controller hotkey utility during startup to define the array[cite: 108, 110]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following are common SSD form factors? (Choose two)",
+      "options": [
+        "A) 2.5-inch SATA",
+        "B) M.2",
+        "C) 5.25-inch optical tray",
+        "D) PATA ribbon card"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Common SSD form factors include 2.5-inch SATA drives and slim M.2 expansion cards[cite: 67, 69]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following statements about file recovery and management on storage drives are accurate? (Choose two)",
+      "options": [
+        "A) Accidentally deleted files can often be restored directly from the Recycle Bin.",
+        "B) If files bypass the Recycle Bin, technicians can deploy specialized third-party data recovery software to search unallocated space.",
+        "C) Windows built-in GUI tools can always recover permanently wiped sectors on damaged flash chips.",
+        "D) Formatting a drive restores permanently deleted files instantly without software."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Standard recovery involves checking the Recycle Bin or using specialized third-party data recovery software to search unallocated drive space if the bin was bypassed[cite: 65]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following describe RAID 10 (RAID 1+0)? (Choose two)",
+      "options": [
+        "A) It is a nested RAID level often described as a \"stripe of mirrors\".",
+        "B) It requires a minimum of four physical drives.",
+        "C) It provides zero redundancy and high failure vulnerability.",
+        "D) It distributes single parity blocks across two disks."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "RAID 10 is a nested configuration combining striping and mirroring ('stripe of mirrors') requiring a minimum of four drives[cite: 104]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "What are the characteristics of flash memory media? (Choose two)",
+      "options": [
+        "A) Non-volatile electronic storage that retains data without power",
+        "B) Solid-state technology that can be electronically erased and reprogrammed",
+        "C) Volatile memory that requires constant electricity like RAM",
+        "D) Magnetic storage relying on spinning metal platters"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Flash memory is solid-state, non-volatile electronic storage that retains data securely without requiring a constant power source[cite: 114]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following are true regarding mechanical hard drive geometry and structure? (Choose two)",
+      "options": [
+        "A) Actuator arms move read/write heads across spinning platters.",
+        "B) Tracks, sectors, and cylinders define the physical layout of data on platters.",
+        "C) Hard drives utilize laser diodes to read pits and lands on optical polycarbonate layers.",
+        "D) Mechanical drives store data exclusively in electronic flash cells."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Mechanical hard drives use actuator arms with read/write heads moving across platters organized into tracks, sectors, and cylinders[cite: 57, 58]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following interfaces support native hot-swapping in mainstream operating systems? (Choose two)",
+      "options": [
+        "A) USB",
+        "B) eSATA",
+        "C) Legacy PATA ribbon cables",
+        "D) Internal motherboard parallel printer ports"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Modern mainstream operating systems natively support hot-swapping for USB drives and eSATA external enclosures[cite: 83]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "What is the distinction between disk and disc terminology according to CompTIA guidelines? (Choose two)",
+      "options": [
+        "A) \"Disk\" refers to magnetic media storage such as an HDD.",
+        "B) \"Disc\" refers to optical media storage such as CDs, DVDs, and Blu-Ray.",
+        "C) \"Disk\" and \"disc\" are completely interchangeable terms with no technical distinction.",
+        "D) \"Disc\" refers exclusively to solid-state flash memory chips."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "CompTIA specifies that 'disk' refers to magnetic media (HDD) while 'disc' refers to optical media (CD, DVD, Blu-Ray)[cite: 59]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following are valid SD card capacity classifications? (Choose two)",
+      "options": [
+        "A) SDHC (SD High Capacity)",
+        "B) SDXC (SD eXtended Capacity)",
+        "C) SDVC (SD Video Capacity)",
+        "D) SDRAM (SD Random Access Memory)"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "SD card capacity standards include SDHC (High Capacity) and SDXC (eXtended Capacity)[cite: 121]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following factors explain why higher spindle rotational speeds improve mechanical HDD performance? (Choose two)",
+      "options": [
+        "A) They drastically reduce rotational latency.",
+        "B) They help the read/write head reach target sectors on platters faster.",
+        "C) They convert magnetic storage into electronic flash memory.",
+        "D) They eliminate the need for actuator arms."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Higher RPM speeds reduce rotational latency, which is the physical delay in time it takes for the drive head to reach a specific target sector[cite: 53, 54]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following statements about RAID redundancy and backups are correct? (Choose two)",
+      "options": [
+        "A) RAID IS NOT A BACKUP SOLUTION.",
+        "B) RAID protects against immediate physical drive hardware failures.",
+        "C) RAID protects against malware infection, file corruption, and accidental file deletion.",
+        "D) RAID eliminates the need for any disaster recovery planning."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "RAID guards only against immediate physical drive failures and is not a backup solution against file corruption, malware, or accidental deletions[cite: 92]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following describe software-based RAID versus hardware-based RAID? (Choose two)",
+      "options": [
+        "A) Software RAID is managed directly by the computer's operating system.",
+        "B) Hardware RAID is managed by a dedicated controller card or chipset.",
+        "C) Software RAID requires specialized PCIe controller cards with dedicated processors.",
+        "D) Hardware RAID consumes host CPU resources to calculate parity."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Software-based RAID is managed by the OS using system resources, whereas hardware-based RAID uses a dedicated controller card or chipset independently[cite: 93]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "What are the primary roles of USB flash drives in IT environments? (Choose two)",
+      "options": [
+        "A) Quick data transfer between systems",
+        "B) Booting systems for operating system installation purposes",
+        "C) Long-term archival storage of enterprise databases",
+        "D) Acting as internal RAID 5 parity controllers"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "USB flash drives are quick, efficient tools meant for transferring data and booting systems for installation, not for long-term storage[cite: 118]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following are true regarding mechanical hard drive fragmentation? (Choose two)",
+      "options": [
+        "A) It occurs when individual files are broken into pieces and stored in non-contiguous clusters.",
+        "B) It slows down system performance during hard drive reads and writes.",
+        "C) It benefits SSDs by cleaning up flash memory blocks.",
+        "D) It is caused by running the TRIM command too often."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Fragmentation happens when file pieces are stored across non-contiguous clusters, which slows down system performance during reads and writes[cite: 63]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following describe NVMe architectural advantages over SATA SSDs? (Choose two)",
+      "options": [
+        "A) Bypasses legacy SATA controller limits of 600 MB/s",
+        "B) Connects directly to the high-speed PCIe bus",
+        "C) Relies on mechanical platters to reduce manufacturing costs",
+        "D) Mandates the use of PATA ribbon cables"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "NVMe overcomes the 600 MB/s SATA bottleneck by connecting directly to the high-speed PCIe bus[cite: 77]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "What are the benefits of using a Solid-State Hybrid Drive (SSHD)? (Choose two)",
+      "options": [
+        "A) Near-SSD boot speeds and responsiveness for core files",
+        "B) Massive traditional mechanical storage capacity at a cost-effective price point",
+        "C) Complete elimination of mechanical components",
+        "D) Requiring no internal controller logic"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "SSHDs offer a middle-ground compromise providing near-SSD boot speeds alongside the cheap, massive capacity of a traditional hard drive[cite: 81]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following are valid SD card physical size classifications? (Choose two)",
+      "options": [
+        "A) Standard SD",
+        "B) microSD",
+        "C) megaSD",
+        "D) ultraSD"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Valid SD card sizes include Standard SD, miniSD, and microSD[cite: 120]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following statements about RAID 1 are correct? (Choose two)",
+      "options": [
+        "A) It performs disk mirroring or duplexing.",
+        "B) It requires a minimum of two hard drives.",
+        "C) It stripes data across four drives with distributed parity.",
+        "D) It provides zero redundancy."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "RAID 1 involves mirroring or duplexing across at least two hard drives for high redundancy[cite: 101, 106]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "What are the roles of parity bits and error checking in data storage? (Choose two)",
+      "options": [
+        "A) Parity is an extra bit that indicates whether information is missing or corrupted.",
+        "B) Parity helps determine if data bits sum to odd or even totals.",
+        "C) Parity doubles the physical storage capacity of an SSD.",
+        "D) Parity replaces the need for a file system."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "A parity bit tells the computer if information is missing by checking if data bit sums are odd (parity 1) or even (parity 0)[cite: 88]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following steps are part of installing a desktop 2.5-inch SSD? (Choose two)",
+      "options": [
+        "A) Mount the SSD into an adapter bracket and secure it into a spare drive bay.",
+        "B) Attach the SATA data cable from the SSD to the motherboard and connect power from the PSU.",
+        "C) Run low-level magnetic formatting on the platters.",
+        "D) Solder the SSD pins directly to the CPU socket."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Desktop 2.5-inch SSD installation involves mounting the drive in an adapter bracket within a bay, then connecting the SATA data cable and power connector[cite: 71]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following describe enterprise storage server practices? (Choose two)",
+      "options": [
+        "A) Utilizing hot-swappable internal SATA and SAS bays",
+        "B) Replacing failed storage disks on the fly without system downtime",
+        "C) Shutting down the entire data center to replace a single failed drive",
+        "D) Relying exclusively on unformatted USB flash drives for core virtualization"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Enterprise storage servers use hot-swappable internal SATA and SAS bays to replace failed disks on the fly without causing downtime[cite: 84]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following are true about SSD flash memory behavior? (Choose two)",
+      "options": [
+        "A) Flash cells cannot overwrite data directly and must erase entire blocks before writing new data.",
+        "B) Automated TRIM commands help wipe deleted blocks clean in the background.",
+        "C) SSDs suffer severe performance degradation from file fragmentation across physical chips.",
+        "D) SSDs require mechanical read heads to locate sectors on flash chips."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "SSD flash cells cannot overwrite directly and require block erasure; TRIM assists by clearing deleted blocks in the background to maintain full write speed[cite: 74, 75]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following are valid characteristics of serial communication? (Choose two)",
+      "options": [
+        "A) Sends one bit at a time",
+        "B) Sends data in the form of binary voltage pulses",
+        "C) Sends entire bytes simultaneously across 8 or more parallel wires",
+        "D) Requires high-voltage multi-pin parallel ribbon cables"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Serial communication sends one bit at a time using fewer I/O lines via binary voltage pulses (high/low states)[cite: 40]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "What are the primary functions of SD card speed class ratings? (Choose two)",
+      "options": [
+        "A) Indicating minimum sustained write speeds, such as V30 for 30 MB/s",
+        "B) Helping users choose cards capable of handling sustained video recording",
+        "C) Measuring the exact physical weight of the card in grams",
+        "D) Determining the motherboard CPU socket compatibility"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "SD cards are labeled with video speed class ratings (e.g., V30) to indicate minimum write speeds required for reliable video recording[cite: 122]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following describe potential consequences of pulling out an external USB drive without using the OS eject utility? (Choose two)",
+      "options": [
+        "A) Severe data corruption",
+        "B) Breaking the drive's file system completely",
+        "C) Automatically upgrading the USB controller firmware",
+        "D) Formatting the drive into an optimized RAID 5 array"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Pulling an external drive out before cached background write operations finish can easily cause severe data corruption or break the file system[cite: 87]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following are true regarding M.2 and PCIe storage solutions? (Choose two)",
+      "options": [
+        "A) M.2 is a slim, rectangular expansion card form factor mounting flat on motherboards.",
+        "B) PCIe expansion cards plug directly into motherboard slots for high-speed storage.",
+        "C) M.2 drives require traditional 5.25-inch optical drive bays.",
+        "D) PCIe storage cards operate exclusively via legacy PATA controllers."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "M.2 drives mount flat on supported motherboards, and PCIe expansion cards plug directly into motherboard slots for high-speed storage[cite: 69, 70]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which RAID levels require a minimum of four hard drives? (Choose two)",
+      "options": [
+        "A) RAID 10 (RAID 1+0)",
+        "B) RAID 0 (under specific multi-channel controller configurations)",
+        "C) RAID 1",
+        "D) RAID 5"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "RAID 10 strictly requires a minimum of four drives[cite: 104, 106], and striped array setups like RAID 0 can utilize four or more drives."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following are valid characteristics of eSATA storage connections? (Choose two)",
+      "options": [
+        "A) Provides external SATA connectivity",
+        "B) Features shielded cabling ports designed for external enclosures",
+        "C) Operates exclusively inside sealed hard drive chassis",
+        "D) Replaces internal power supplies with optical lasers"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "eSATA provides external SATA connectivity using specialized shielded cabling ports for external enclosures[cite: 83]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following statements about disk fragmentation maintenance tools are true? (Choose two)",
+      "options": [
+        "A) Windows utilities like Disk Defragmenter and Optimize Drives help rearrange fragmented files on HDDs.",
+        "B) Running defragmentation utilities on mechanical HDDs improves read and write efficiency.",
+        "C) Defragmentation tools should be run on SSDs daily to clear flash cells.",
+        "D) Defragmentation tools convert mechanical HDDs into solid-state hybrid drives."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Programs like Disk Defragmenter and Optimize Drives rearrange files on mechanical HDDs to improve read/write efficiency[cite: 63]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following describe potential drive failure tolerances across different RAID levels? (Choose two)",
+      "options": [
+        "A) RAID 1 can sustain the failure of 1 drive.",
+        "B) RAID 5 can sustain the failure of 1 drive.",
+        "C) RAID 0 can sustain the failure of up to 2 drives without data loss.",
+        "D) RAID 1 can sustain zero failures."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Both RAID 1 and RAID 5 can sustain 1 functional drive failure without losing data[cite: 106]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following are true regarding mSATA storage devices? (Choose two)",
+      "options": [
+        "A) It is a legacy, miniaturized form factor card.",
+        "B) It was commonly used in older thin laptops.",
+        "C) It is identical in physical dimensions to a 3.5-inch desktop HDD.",
+        "D) It connects exclusively via 5.25-inch optical ribbon cables."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "mSATA is a legacy, miniaturized form factor card used in older thin laptops[cite: 68]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 Storage Devices",
+      "question": "Which of the following actions correctly prepare a system for building a hardware RAID array in BIOS/UEFI? (Choose two)",
+      "options": [
+        "A) Ensure target hard drives are securely connected to motherboard SATA RAID storage ports.",
+        "B) Change the onboard storage interface mode from standard AHCI to RAID.",
+        "C) Set the system boot order to 3.5-inch floppy disks only.",
+        "D) Disable all motherboard storage controllers permanently."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Setting up hardware RAID requires verifying drive connections to RAID ports and changing the storage mode from AHCI to RAID in BIOS/UEFI[cite: 107, 108]."
+    }
+  ]
+}

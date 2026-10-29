@@ -1,0 +1,336 @@
+{
+  "questions": [
+    {
+      "exam": "220-1202",
+      "domain": "Mobile Devices",
+      "objective": "1.3 Mobile Device Security",
+      "question": "A user enabled a mobile device's screen lock function with pattern unlock. The user is concerned someone could access the mobile device by repeatedly attempting random patterns to unlock the device. Which of the following features BEST addresses the user's concern?",
+      "options": [
+        "A) Remote wipe",
+        "B) Anti-malware",
+        "C) Device encryption",
+        "D) Failed login restrictions"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Failed login restrictions (account lockout policies) specifically limit the number of consecutive incorrect unlock attempts to prevent brute-force guessing."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operational Procedures",
+      "objective": "4.1 Ticketing and Documentation",
+      "question": "When a user calls in to report an issue, a technician submits a ticket on the user's behalf. Which of the following practices should the technician use to make sure the ticket is associated with the correct user?",
+      "options": [
+        "A) Have the user provide a callback phone number to be added to the ticket",
+        "B) Assign the ticket to the department's power user",
+        "C) Register the ticket with a unique user identifier",
+        "D) Provide the user with a unique ticket number that can be referenced on subsequent calls."
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Providing the user with a unique ticket number ensures referenceability and accurate tracking on subsequent follow-up calls."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operating Systems",
+      "objective": "1.1 Operating System Features and Editions",
+      "question": "Which of the following is the MOST cost-effective version of Windows 10 that allows remote access through Remote Desktop?",
+      "options": [
+        "A) Home",
+        "B) Pro for Workstations",
+        "C) Enterprise",
+        "D) Pro"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Windows Pro supports incoming Remote Desktop connections, whereas the Home edition does not."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A technician at a customer site is troubleshooting a laptop. A software update needs to be downloaded but the company's proxy is blocking traffic to the update site. Which of the following should the technician perform?",
+      "options": [
+        "A) Change the DNS address to 1.1.1.1",
+        "B) Update Group Policy",
+        "C) Add the site to the client's exceptions list",
+        "D) Verify the software license is current."
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Adding a blocked URL or domain to the client's or proxy's exceptions/bypass list permits traffic to that specific update site."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operational Procedures",
+      "objective": "4.4 Environmental Safety and Procedures",
+      "question": "Which of the following is the MOST important environmental concern inside a data center?",
+      "options": [
+        "A) Battery disposal",
+        "B) Electrostatic discharge mats",
+        "C) Toner disposal",
+        "D) Humidity levels"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Maintaining correct humidity levels inside a data center is critical to prevent static electricity build-up and condensation."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.1 Security Best Practices",
+      "question": "The Chief Executive Officer at a bank recently saw a news report about a high-profile cybercrime where a remote-access tool that the bank uses for support was also used in this crime. The report stated that attackers were able to brute force passwords to access systems. Which of the following would BEST limit the bank's risk? (Select TWO)",
+      "options": [
+        "A) Enable multifactor authentication for each support account",
+        "B) Limit remote access to destinations inside the corporate network",
+        "C) Block all support accounts from logging in from foreign countries",
+        "D) Configure a replacement remote-access tool for support cases.",
+        "E) Purchase a password manager for remote-access tool users",
+        "F) Enforce account lockouts after five bad password attempts"
+      ],
+      "answer": [
+        "A",
+        "F"
+      ],
+      "multi_select": true,
+      "explanation": "Enabling MFA prevents unauthorized access even if passwords are guessed, and account lockouts mitigate brute-force attempts."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operating Systems",
+      "objective": "1.2 Operating System Features and Tools",
+      "question": "A technician is asked to resize a partition on the internal storage drive of a computer running macOS. Which of the following tools should the technician use to accomplish this task?",
+      "options": [
+        "A) Console",
+        "B) Disk Utility",
+        "C) Time Machine",
+        "D) FileVault"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Disk Utility is the built-in macOS application used for managing disks, volumes, and resizing partitions."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operational Procedures",
+      "objective": "4.1 Professionalism and Communication",
+      "question": "A call center technician receives a call from a user asking how to update Windows. Which of the following describes what the technician should do?",
+      "options": [
+        "A) Have the user consider using an iPad if the user is unable to complete updates",
+        "B) Have the user text the user's password to the technician.",
+        "C) Ask the user to click in the Search field, type Check for Updates, and then press the Enter key",
+        "D) Advise the user to wait for an upcoming, automatic patch"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Providing clear and patient step-by-step instructions assists the user effectively."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operational Procedures",
+      "objective": "4.1 Professionalism and Communication",
+      "question": "A technician is troubleshooting a customer's PC and receives a phone call. The technician does not take the call and sets the phone to silent. Which of the following BEST describes the technician's actions?",
+      "options": [
+        "A) Avoid distractions",
+        "B) Deal appropriately with customer's confidential material",
+        "C) Adhere to user privacy policy",
+        "D) Set and meet timelines"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Silencing personal phone calls while assisting a customer demonstrates avoiding distractions and maintaining focus."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operational Procedures",
+      "objective": "4.2 Backup and Recovery",
+      "question": "A company installed a new backup and recovery system. Which of the following types of backups should be completed FIRST?",
+      "options": [
+        "A) Differential",
+        "B) Incremental",
+        "C) Non-parity",
+        "D) Full"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "A full backup must always be performed first as a baseline before any differential or incremental backups can be executed."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.1 Security Best Practices",
+      "question": "A technician has been tasked with installing a workstation that will be used for point-of-sale transactions. The point-of-sale system will process credit cards and loyalty cards. Which of the following encryption technologies should be used to secure the workstation in case of theft?",
+      "options": [
+        "A) Data-in-transit encryption",
+        "B) Disk encryption",
+        "C) USB drive encryption",
+        "D) File encryption"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Full disk encryption protects all data on the storage drive if the hardware is physically stolen."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Hardware",
+      "objective": "Safety and Best Practices",
+      "question": "A technician is replacing the processor in a desktop computer. Prior to opening the computer, the technician wants to ensure the internal components are protected. Which of the following safety procedures would BEST protect the components in the PC? (Choose two.)",
+      "options": [
+        "A) Utilizing an ESD strap.",
+        "B) Disconnecting the computer from the power source.",
+        "C) Placing the PSU in an antistatic bag.",
+        "D) Ensuring proper ventilation.",
+        "E) Removing dust from the ventilation fans.",
+        "F) Ensuring equipment is grounded."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Using an ESD strap protects against electrostatic discharge, and disconnecting from power ensures personal and component electrical safety."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A technician is investigating an employee's smartphone that has the following symptoms: The device is hot even when it is not in use, applications crash, and certain applications are in portrait mode when they should be in landscape mode. Which of the following can the technician do to MOST likely resolve these issues with minimal impact? (Choose two.)",
+      "options": [
+        "A) Turn on autorotation.",
+        "B) Activate airplane mode.",
+        "C) Close unnecessary applications.",
+        "D) Perform a factory reset.",
+        "E) Update the device's operating system.",
+        "F) Reinstall the applications that have crashed."
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "Closing unnecessary applications relieves processor strain/heat, and enabling autorotation corrects orientation display issues."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Networking",
+      "objective": "Wireless Security",
+      "question": "Which of the following Wi-Fi protocols is the MOST secure?",
+      "options": [
+        "A) WPA3",
+        "B) WPA-AES",
+        "C) WEP",
+        "D) WPA-TKIP"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "WPA3 is the current generation Wi-Fi security protocol offering enhanced encryption and protection over WPA2, WEP, and TKIP."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operational Procedures",
+      "objective": "Policies and Documentation",
+      "question": "A technician found that an employee is mining cryptocurrency on a work desktop. The company has decided that this action violates its guidelines. Which of the following should be updated to reflect this new requirement?",
+      "options": [
+        "A) MDM",
+        "B) EULA",
+        "C) IRP",
+        "D) AUP"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "An Acceptable Use Policy (AUP) defines what employees may and may not do using company computing equipment and network resources."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Software Troubleshooting",
+      "objective": "3.1 Troubleshooting OS Issues",
+      "question": "A user reports a computer is running slow. Which of the following tools will help a technician identify the issue?",
+      "options": [
+        "A) Disk Cleanup",
+        "B) Group Policy Editor",
+        "C) Disk Management",
+        "D) Resource Monitor"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Resource Monitor provides detailed, real-time tracking of CPU, disk, network, and memory usage to identify performance bottlenecks."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "Physical Security",
+      "question": "Which of the following could be used to implement secure physical access to a data center?",
+      "options": [
+        "A) Geofence",
+        "B) Alarm system",
+        "C) Badge reader",
+        "D) Motion sensor"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "A badge reader (or smart card reader) provides controlled physical entry to restricted areas like data centers."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.5 Incident Response and Forensics",
+      "question": "An incident handler needs to preserve evidence for possible litigation. Which of the following will the incident handler MOST likely do to preserve the evidence?",
+      "options": [
+        "A) Encrypt the files",
+        "B) Clone any impacted hard drives",
+        "C) Contact the cyber insurance company",
+        "D) Inform law enforcement"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Cloning impacted hard drives ensures a bit-level forensic copy is maintained for legal compliance and chain of custody."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Software Troubleshooting",
+      "objective": "3.1 Troubleshooting OS Issues",
+      "question": "A technician needs to exclude an application folder from being cataloged by a Windows 10 search. Which of the following utilities should be used?",
+      "options": [
+        "A) Privacy",
+        "B) Indexing Options",
+        "C) System",
+        "D) Device Manager"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Indexing Options in Windows control which folders and files are included in or excluded from search indexing."
+    }
+  ]
+}

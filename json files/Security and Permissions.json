@@ -1,0 +1,862 @@
+{
+  "questions": [
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "A standard user in a Windows environment attempts to install a third-party application. A User Account Control (UAC) dialog appears on the screen. What is required for the installation to proceed?",
+      "options": [
+        "A) The standard user must enter their own user password.",
+        "B) An administrator must provide administrative credentials.",
+        "C) The user must restart the system in Safe Mode.",
+        "D) The application must be moved to the Program Files directory."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "When a standard user attempts an action requiring elevated privileges, UAC prompts for administrative credentials (credential prompt)."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "A user moves a folder from C:\\Reports to C:\\Archive on the same NTFS volume. Which statement correctly describes the NTFS permissions of the moved folder?",
+      "options": [
+        "A) The folder inherits the permissions of C:\\Archive.",
+        "B) The folder retains its original permissions from C:\\Reports.",
+        "C) The folder loses all permissions and becomes accessible to Everyone.",
+        "D) The folder permissions revert to default administrative read-only."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Moving a file or folder within the same NTFS volume retains its original permissions. (Copying or moving across volumes causes it to inherit target folder permissions)."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "A technician copies a file from an NTFS partition on Disk 0 to an NTFS partition on Disk 1. What happens to the file's NTFS permissions?",
+      "options": [
+        "A) The file retains its original explicit permissions.",
+        "B) The file inherits the permissions of the destination folder on Disk 1.",
+        "C) The file becomes read-only and unencrypted.",
+        "D) The file permissions are stripped entirely."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Copying a file to any location (same or different partition) causes the copy to inherit the target folder's permissions."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "A share permission grants a user 'Full Control', but the NTFS permission on the same folder grants 'Read' access. When accessing the folder over the network, what is the user's effective permission?",
+      "options": [
+        "A) Full Control",
+        "B) Read",
+        "C) Change",
+        "D) Access Denied"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "When Share permissions and NTFS permissions combine for network access, the most restrictive permission applies. Read is more restrictive than Full Control."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which MMC console utility snap-in is used to edit Local Group Policies on a standalone Windows Professional or Enterprise machine?",
+      "options": [
+        "A) secpol.msc",
+        "B) gpedit.msc",
+        "C) lusrmgr.msc",
+        "D) services.msc"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "gpedit.msc opens the Local Group Policy Editor."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "An administrator wants to hide a shared folder named Confidential from appearing in network browsing lists while keeping it accessible to users who type the exact path. How should the share name be configured?",
+      "options": [
+        "A) Confidential#",
+        "B) Confidential$",
+        "C) _Confidential",
+        "D) Hidden\\Confidential"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Appending a dollar sign ($) to the end of a share name creates an administrative/hidden share that does not appear in network browsing."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "A user is explicitly granted 'Full Control' NTFS permissions to a folder via their user account. However, they are also a member of a group that has an explicit 'Deny Read' permission set on the same folder. What is the user's effective access?",
+      "options": [
+        "A) Full Control",
+        "B) Read-Only",
+        "C) No access (Deny overrides Allow)",
+        "D) Write-Only"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "In NTFS permissions, an explicit Deny permission always overrides explicit or inherited Allow permissions."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which level of User Account Control (UAC) notification darkens the desktop and prompts for confirmation only when apps make changes, but NOT when the user makes Windows settings changes?",
+      "options": [
+        "A) Always notify",
+        "B) Notify me only when apps try to make changes to my computer (default)",
+        "C) Notify me only when apps try to make changes (do not dim my desktop)",
+        "D) Never notify"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The default UAC setting notifies only when applications attempt to make changes to the system while dimming the desktop (Secure Desktop)."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which of the following NTFS permissions allows a user to open files, read content, view attributes, but prevents them from modifying or deleting files? (Select TWO)",
+      "options": [
+        "A) Read",
+        "B) Read & Execute",
+        "C) Write",
+        "D) Modify",
+        "E) Full Control"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Both Read and Read & Execute permit viewing file contents and attributes without allowing edits, writes, or deletions."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "A user accesses a file locally by logging directly into a Windows machine. Which permissions determine their actual file system access?",
+      "options": [
+        "A) Share permissions only",
+        "B) NTFS permissions only",
+        "C) The most restrictive combination of Share and NTFS permissions",
+        "D) User Account Control elevation permissions only"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Share permissions only apply when accessing resources across a network connection. Local access relies solely on NTFS permissions."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "An administrator wants to force local account lockout policies after 5 failed login attempts. Which tool should be used on a standalone Windows 11 workstation?",
+      "options": [
+        "A) Local Security Policy (secpol.msc)",
+        "B) System Configuration (msconfig)",
+        "C) Computer Management (compmgmt.msc)",
+        "D) Task Manager"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "secpol.msc (Local Security Policy) is used to configure Account Lockout Policies and Password Policies on non-domain Windows systems."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which Command Prompt utility forces an immediate refresh and re-application of Local Group Policy settings without restarting the computer?",
+      "options": [
+        "A) gpresult /r",
+        "B) gpupdate /force",
+        "C) sfc /scannow",
+        "D) netsh advfirewall reset"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "gpupdate /force updates and refreshes Group Policy settings immediately."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which standard administrative shared folder path allows access to the root of drive C: across a local network for system administrators?",
+      "options": [
+        "A) \\\\computername\\C$",
+        "B) \\\\computername\\Admin$",
+        "C) \\\\computername\\IPC$",
+        "D) \\\\computername\\Root$"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "\\\\computername\\C$ is the default hidden administrative share pointing to the root of the C drive."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "What is the primary function of the Secure Desktop feature in Windows User Account Control (UAC)?",
+      "options": [
+        "A) It prevents untrusted background software from manipulating the UAC prompt.",
+        "B) It encrypts the user's hard drive using BitLocker.",
+        "C) It enforces complex password criteria.",
+        "D) It blocks network traffic on port 445."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The Secure Desktop dims the background and isolates the UAC dialog so malicious code cannot simulate user mouse clicks or keystrokes."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "A user belongs to Group A (NTFS Read) and Group B (NTFS Write) for the same folder. What is the user's effective local NTFS permission on that folder?",
+      "options": [
+        "A) Read & Write (Cumulative)",
+        "B) Read Only",
+        "C) Access Denied",
+        "D) Write Only"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "NTFS Allow permissions are cumulative. Belonging to multiple groups combines their allowed rights (Read + Write = Read & Write)."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which permission level is available under Share Permissions in Windows? (Select THREE)",
+      "options": [
+        "A) Read",
+        "B) Change",
+        "C) Full Control",
+        "D) Modify",
+        "E) List Folder Contents",
+        "F) Write"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "Share permissions only have three permission options: Read, Change, and Full Control."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "An administrator wants to prevent child folders from inheriting permissions from their parent folder. Where in Windows File Explorer can this option be disabled?",
+      "options": [
+        "A) Folder Properties -> Security tab -> Advanced -> Disable Inheritance",
+        "B) Folder Properties -> General tab -> Advanced Attributes",
+        "C) Folder Properties -> Sharing tab -> Advanced Sharing",
+        "D) Control Panel -> User Accounts -> Turn off Inheritance"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Permission inheritance is configured under the Security tab -> Advanced Security Settings -> Disable Inheritance."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which command-line utility displays the summary of applied Group Policy settings (Resultant Set of Policy) for a logged-in user and computer?",
+      "options": [
+        "A) gpresult",
+        "B) gpelevate",
+        "C) net share",
+        "D) icacls"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "gpresult displays the Resultant Set of Policy (RSoP) information for a user or computer."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "What difference distinguishes the NTFS 'Modify' permission from the NTFS 'Full Control' permission?",
+      "options": [
+        "A) Modify allows editing files but does not allow changing permissions or taking ownership.",
+        "B) Modify allows deleting files, whereas Full Control does not.",
+        "C) Full Control is only available over the network.",
+        "D) Modify prevents users from reading subdirectories."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Modify permits creating, editing, and deleting files, but only Full Control allows changing file permissions and taking file ownership."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "A technician moves a file from D:\\Data (NTFS) to E:\\Data (NTFS). What happens to the file's NTFS permissions?",
+      "options": [
+        "A) The file inherits the permissions of E:\\Data.",
+        "B) The file retains its original permissions from D:\\Data.",
+        "C) The file requires administrator elevation to open.",
+        "D) The file permissions revert to default system read-only."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Moving a file across different NTFS volumes acts like a copy/delete operation, so the file inherits the destination folder's permissions."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which command-line tool allows users and administrators to view and modify NTFS Access Control Lists (ACLs) on files and folders?",
+      "options": [
+        "A) icacls",
+        "B) robocopy",
+        "C) netstat",
+        "D) nslookup"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "icacls (and legacy cacls) is the command-line utility used to view and modify NTFS permissions."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "What occurs when a file is moved from an NTFS drive volume to a FAT32 USB drive?",
+      "options": [
+        "A) All NTFS permissions are lost because FAT32 does not support file permissions.",
+        "B) The NTFS permissions are preserved inside a hidden FAT32 header.",
+        "C) The move fails because FAT32 cannot accept files from NTFS volumes.",
+        "D) UAC prompts for an administrative password."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "FAT32 does not support security access control lists (ACLs) or NTFS permissions, so moving files to FAT32 strips all permissions."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which Administrative Share points directly to the default Windows installation system folder (e.g., C:\\Windows)?",
+      "options": [
+        "A) Admin$",
+        "B) System$",
+        "C) C$",
+        "D) WinDir$"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The ADMIN$ share points directly to the system root directory (typically C:\\Windows)."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "An administrator wants to disable UAC entirely on a workstation for testing. Which UAC slider position turns off UAC prompts?",
+      "options": [
+        "A) Never notify",
+        "B) Always notify",
+        "C) Low notification",
+        "D) Secure prompt only"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Setting the UAC slider to 'Never notify' disables UAC prompt elevations."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "A share has Share Permissions of 'Read' for Everyone, and NTFS permissions of 'Modify' for Users. When connected remotely, what can a user in the Users group do?",
+      "options": [
+        "A) Read files only",
+        "B) Modify files",
+        "C) Delete files",
+        "D) Take ownership of files"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Effective remote permission is the most restrictive between Share and NTFS permissions. Share (Read) is more restrictive than NTFS (Modify), restricting access to Read-only."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which command-line command lists all active shared resources on a local Windows computer?",
+      "options": [
+        "A) net share",
+        "B) net use",
+        "C) net session",
+        "D) net group"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "net share displays all shares configured on the local system."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which command connects a client machine to a remote network share \\\\Server\\Data using drive letter Z:?",
+      "options": [
+        "A) net use Z: \\\\Server\\Data",
+        "B) net share Z: \\\\Server\\Data",
+        "C) map drive Z: \\\\Server\\Data",
+        "D) mount Z: \\\\Server\\Data"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "net use Z: \\\\Server\\Data maps a network share to drive letter Z:."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which local group policy folder allows administrators to configure password age, complexity, and account lockout thresholds?",
+      "options": [
+        "A) Computer Configuration -> Windows Settings -> Security Settings -> Account Policies",
+        "B) User Configuration -> Administrative Templates -> Desktop",
+        "C) Computer Configuration -> System -> User Profiles",
+        "D) User Configuration -> Windows Settings -> Account Lockout"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Account Policies (Password Policy and Account Lockout Policy) are located under Computer Configuration -> Windows Settings -> Security Settings."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "A user needs to grant permission for another user to view and run executable programs in a folder without granting write access. Which NTFS permission should be assigned?",
+      "options": [
+        "A) Read & Execute",
+        "B) Write",
+        "C) Modify",
+        "D) Full Control"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "'Read & Execute' allows reading file contents and executing applications while preventing file modification."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "What is the result of assigning 'Deny Write' explicit NTFS permissions to a folder for a specific user?",
+      "options": [
+        "A) The user cannot write to or modify files in the folder regardless of group Allow permissions.",
+        "B) The user can write to files if they belong to the Administrators group.",
+        "C) The user can write to files over the network if share permissions allow it.",
+        "D) The user is granted read-only access to parent folders only."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Explicit Deny rules take precedence over all Allow rules, blocking write capability entirely."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which tab in a shared folder's Properties dialog box is used to configure NTFS permissions?",
+      "options": [
+        "A) Security",
+        "B) Sharing",
+        "C) Customize",
+        "D) General"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "NTFS permissions are managed on the 'Security' tab, while network share permissions are managed on the 'Sharing' tab."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which tab in a folder's Properties dialog box is used to set up basic network share permissions?",
+      "options": [
+        "A) Sharing",
+        "B) Security",
+        "C) Previous Versions",
+        "D) Details"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Network sharing settings and Share permissions are configured on the 'Sharing' tab."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "When an administrator creates a new folder within an existing directory, what NTFS permissions does the new folder initially receive?",
+      "options": [
+        "A) It inherits permissions from its parent directory.",
+        "B) It receives Full Control for Everyone.",
+        "C) It has no permissions assigned until specified.",
+        "D) It receives Read-only access for Administrators."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "By default, new subfolders inherit permissions from their parent folder."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "What occurs when a standard user logs into Windows and launches an application that does NOT require elevation?",
+      "options": [
+        "A) The application runs with standard user rights without a UAC prompt.",
+        "B) UAC prompts for the user's standard password.",
+        "C) UAC prompts for administrator credentials.",
+        "D) The app runs with full administrative privileges automatically."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Applications that do not perform system-wide changes run directly under the standard user's limited token without triggering UAC."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which windows tool enables technicians to audit logon failures and success events via Local Security Policy?",
+      "options": [
+        "A) secpol.msc (Local Policies -> Audit Policy)",
+        "B) taskmgr.exe",
+        "C) resmon.exe",
+        "D) devmgmt.msc"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Audit Policies in secpol.msc allow logging successful and failed logon attempts to the Windows Security Event Log."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "An administrator wants to ensure that share permissions do not limit NTFS permissions for remote network users. Which share permission setting should be applied?",
+      "options": [
+        "A) Grant Full Control to Everyone at the share level, then secure files using NTFS permissions.",
+        "B) Grant Read-only share permissions to Everyone.",
+        "C) Disable NTFS permissions and use Share permissions exclusively.",
+        "D) Remove the Everyone group from the share permission list."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Best practice is to grant Full Control at the share level, allowing granular NTFS permissions to control effective access."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "What UAC behavior occurs when an administrative user executes a task requiring elevated privileges under default UAC settings?",
+      "options": [
+        "A) A consent prompt asks the administrator to click 'Yes' to proceed.",
+        "B) A credential prompt requires re-entering the admin password.",
+        "C) The action is silently blocked without notification.",
+        "D) Windows automatically reboots into Safe Mode."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Administrators operate with a split token; when elevating, UAC displays a Consent prompt ('Yes'/'No') rather than requiring a password."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which default share permission is assigned when creating a basic shared folder via Advanced Sharing in Windows?",
+      "options": [
+        "A) Everyone: Read",
+        "B) Everyone: Full Control",
+        "C) Administrators: Full Control",
+        "D) Guests: Read"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "When using Advanced Sharing in Windows, the default share permission granted is Read access to the Everyone group."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which of the following describes the effect of explicit NTFS permissions vs. inherited NTFS permissions?",
+      "options": [
+        "A) Explicit permissions applied directly to an object take precedence over inherited permissions from a parent folder.",
+        "B) Inherited permissions always override explicit permissions.",
+        "C) Explicit permissions are deleted when a folder is renamed.",
+        "D) Inherited permissions only apply to administrative users."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Explicit permissions assigned directly on a file or folder take precedence over permissions inherited from higher-level folders."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "An administrator wants to restrict local users from running specific Control Panel applets using Local Group Policy. Which policy node should be edited?",
+      "options": [
+        "A) User Configuration -> Administrative Templates -> Control Panel",
+        "B) Computer Configuration -> Windows Settings -> Security Settings -> System Services",
+        "C) User Configuration -> Software Settings -> Network Shares",
+        "D) Computer Configuration -> Administrative Templates -> Network Connections"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "User-specific interface restrictions like Control Panel access are governed under User Configuration -> Administrative Templates."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which share permission allows users to read, execute, create, edit, and delete files inside a network share, but does NOT allow changing share permissions?",
+      "options": [
+        "A) Change",
+        "B) Read",
+        "C) Full Control",
+        "D) Modify"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The 'Change' share permission allows reading, editing, adding, and deleting files, but not modifying permissions."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "A technician needs to give a user the ability to traverse subfolders, list contents, and run apps, but NOT modify file contents. Which NTFS permission is best suited?",
+      "options": [
+        "A) Read & Execute",
+        "B) Write",
+        "C) Full Control",
+        "D) Modify"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Read & Execute permits traversing folders, reading contents, and executing applications."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which security setting in Local Security Policy (secpol.msc) locks an account after a specified number of incorrect password attempts?",
+      "options": [
+        "A) Account lockout threshold",
+        "B) Minimum password length",
+        "C) Maximum password age",
+        "D) Account lockout duration reset"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The 'Account lockout threshold' defines how many failed login attempts trigger an account lockout."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "If a user is granted Share 'Change' permission and NTFS 'Full Control' permission, what actions can they perform over the network? (Select TWO)",
+      "options": [
+        "A) Modify existing files",
+        "B) Delete existing files",
+        "C) Modify NTFS security permissions",
+        "D) Take ownership of the file",
+        "E) Change Share permissions"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Because Share permissions limit access to 'Change', remote users can modify and delete files, but cannot take ownership or alter security permissions (which require Share Full Control)."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "What happens when an explicit Allow permission conflicts with an inherited Deny permission on an NTFS folder?",
+      "options": [
+        "A) The explicit Allow permission takes precedence.",
+        "B) The inherited Deny permission takes precedence.",
+        "C) The permissions cancel out, denying access.",
+        "D) Windows forces the folder to convert to FAT32."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Explicit permissions (whether Allow or Deny) take precedence over inherited permissions."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "What is the purpose of the PRINT$ administrative share in a Windows networking environment?",
+      "options": [
+        "A) To share printer drivers automatically across the network for connecting clients",
+        "B) To log all printed documents to an encrypted text file",
+        "C) To store temporary print queues during network outages",
+        "D) To restrict unauthorized users from printing color documents"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The PRINT$ administrative share holds printer drivers that are automatically downloaded when client computers connect to shared printers."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which User Account Control (UAC) setting notifies users only when applications attempt to make changes, but does NOT dim the desktop?",
+      "options": [
+        "A) Notify me only when apps try to make changes (do not dim my desktop)",
+        "B) Always notify",
+        "C) Notify me only when I make changes to Windows settings",
+        "D) Never notify"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The third UAC slider setting presents elevation prompts without switching to the dim secure desktop."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "A technician needs to grant write permissions to a folder while ensuring the user cannot delete the folder or alter permissions. Which NTFS permission level is most appropriate?",
+      "options": [
+        "A) Write",
+        "B) Modify",
+        "C) Full Control",
+        "D) Read & Execute"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The Write permission allows creating and writing to files, whereas Modify adds deletion rights and Full Control adds permission management."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "Which MMC console snap-in manages local user accounts and local groups on Windows Professional and Enterprise editions?",
+      "options": [
+        "A) lusrmgr.msc",
+        "B) secpol.msc",
+        "C) devmgmt.msc",
+        "D) diskmgmt.msc"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "lusrmgr.msc opens Local Users and Groups."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.2 Local Security Settings and OS Security",
+      "question": "A folder has explicit NTFS permissions assigned. If an administrator checks 'Replace all child object permission entries with inheritable permission entries from this object', what happens to subfolders?",
+      "options": [
+        "A) All explicit permissions on subfolders are overwritten by the parent folder's permissions.",
+        "B) Subfolders maintain their custom permissions alongside inherited ones.",
+        "C) The subfolders are automatically encrypted.",
+        "D) The subfolders become hidden administrative shares."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Checking this option replaces explicit permissions on all child objects with inherited permissions from the parent object."
+    }
+  ]
+}

@@ -1,0 +1,864 @@
+{
+  "questions": [
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What is the primary function of a computer's Power Supply Unit (PSU)?",
+      "options": [
+        "A) It transforms AC power from the wall outlet into precise DC voltages required by internal PC components.",
+        "B) It converts internal DC battery power into high-voltage AC current for external monitors.",
+        "C) It regulates network packet flow between the motherboard and peripheral storage devices.",
+        "D) It provides long-term backup power during grid blackouts."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The power supply unit (PSU) takes alternating current (AC) power from the wall outlet and transforms it into direct current (DC) electricity to power the PC[cite: 211]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "In the standard garden hose analogy used to explain electrical principles, what does electrical voltage represent?",
+      "options": [
+        "A) The diameter of the hose, defining the volume capacity",
+        "B) The pressure or force of the water coming from the faucet",
+        "C) The total amount of work done per second",
+        "D) The physical resistance inside the hose walls"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Voltage measures the pressure or force of electricity, comparable to how far open the water faucet is in a garden hose analogy[cite: 208, 209]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "Which electrical unit measures current, defined as the amount of electrons moving past a given point in a wire?",
+      "options": [
+        "A) Volts (V)",
+        "B) Amperes (A)",
+        "C) Watts (W)",
+        "D) Ohms (\u03a9)"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Current or amperage is the amount of electrons moving past a point in a wire, measured in amperes (A)[cite: 208]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What formula expresses the fundamental correlation between voltage (V), current in amperes (A), and wattage (W)?",
+      "options": [
+        "A) W = V / A",
+        "B) W = V \u00d7 A",
+        "C) W = A / V",
+        "D) W = V + A"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The relationship is expressed as W = V \u00d7 A, where wattage measures the work that electricity does per second[cite: 208]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What unit is used to measure electrical resistance, which is the opposition to the flow of electrons in a wire?",
+      "options": [
+        "A) Amperes (\u00c5)",
+        "B) Volts (V)",
+        "C) Ohms (\u03a9)",
+        "D) Watts (W)"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Resistance is the opposition to the flow of electrons, measured in ohms (\u03a9)[cite: 210]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What happens to a wire if its maximum amperage rating is exceeded?",
+      "options": [
+        "A) It automatically doubles its voltage output.",
+        "B) It converts AC power to DC power more efficiently.",
+        "C) It will heat up and break.",
+        "D) It switches to passive cooling mode."
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Wires have amperage ratings defining how much current they can handle; if exceeded, wires will heat up and break[cite: 210]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "Which component category does a power supply unit (PSU) fall under when servicing desktop computer hardware?",
+      "options": [
+        "A) Field Replaceable Unit (FRU)",
+        "B) Proprietary Integrated Chipset (PIC)",
+        "C) Non-volatile Firmware Module (NFM)",
+        "D) Read-Only Memory Component (ROM)"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "A power supply unit (PSU) falls into the category of a field replaceable unit (FRU)[cite: 211]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "When sizing a PSU for a new system build, what does the '50% Rule' recommend for optimal energy efficiency and component longevity? (Choose two)",
+      "options": [
+        "A) Aim for a PSU rated for roughly double your system's expected total wattage draw.",
+        "B) Keep the PSU running near the peak of its efficiency curve.",
+        "C) Ensure the PSU operates at exactly 100% load capacity at all times.",
+        "D) Restrict the PSU output to 50 volts maximum."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "The 50% rule recommends aiming for a PSU rated for roughly double your system's expected draw to keep it running in its 'sweet spot' at the peak of the efficiency curve[cite: 214]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What is the standard AC input voltage range commonly used in North America versus Europe/Asia for dual-voltage power supplies?",
+      "options": [
+        "A) North America: 115V-120V; Europe/Asia: 220V-240V",
+        "B) North America: 220V-240V; Europe/Asia: 115V-120V",
+        "C) North America: 12V; Europe/Asia: 5V",
+        "D) North America: 500V; Europe/Asia: 100V"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "North American standard input is 115V-120V, while the rest of the world (Europe/Asia) commonly uses 220V-240V[cite: 207, 215]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "A user brings a desktop computer from North America (115V) to Europe (230V) and forgets to adjust the power supply settings before plugging it in, causing the computer to fail to turn on or smoke. What feature on older or cheaper PSUs is responsible for this issue?",
+      "options": [
+        "A) Manual voltage selector switch (red slider switch)",
+        "B) Automatic thermal throttling jumper",
+        "C) Active Power Factor Correction (PFC) bridge",
+        "D) C14 IEC fuse breaker"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Older or cheaper PSUs feature a manual red slider voltage selector switch on the back that must be toggled correctly between 115V and 230V[cite: 216]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What is the most common motherboard power form factor used in modern desktop computers, featuring a main power connector with 24 pins?",
+      "options": [
+        "A) ATX (Advanced Technology Extended)",
+        "B) ITX (Information Technology Extended)",
+        "C) NLX (Low Profile Extended)",
+        "D) BTX (Balanced Technology Extended)"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "ATX (Advanced Technology Extended) is the most common form factor, featuring a main power connector usually configured as 24 pins (20+4)[cite: 217]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What is the designation of the dedicated 4-pin or 8-pin power connector supplied by modern PSUs to power the CPU on the motherboard?",
+      "options": [
+        "A) EATX12V",
+        "B) PCIe 12VHPWR",
+        "C) Molex IDE",
+        "D) SATA 15-pin"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Most of today's motherboards have a 4-pin or 8-pin 12V port for the CPU called EATX12V[cite: 217]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "Which modern power connector, defined under the ATX 3.0 specification, delivers up to 600W over a single cable to high-end graphics cards like the Nvidia RTX 40-series?",
+      "options": [
+        "A) 12VHPWR (12+4 pin / 16-pin)",
+        "B) Standard 24-pin ATX",
+        "C) Dual 4-pin Molex adapter",
+        "D) 3-pin fan header"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The 12VHPWR (12+4 pin / 16-pin) connector defined under ATX 3.0 can deliver up to 600W over a single cable and includes sideband data signals for GPU communication[cite: 220]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "Which power supply rail voltages are required by the standard ATX specification? (Choose two)",
+      "options": [
+        "A) +3.3V",
+        "B) +5V",
+        "C) +24V",
+        "D) +48V"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "The ATX specification requires the power supply to produce +3.3V, +5V, +12V rails, and a +5V standby output[cite: 222]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What components typically rely on the +5V power rail versus the +12V power rail? (Choose two)",
+      "options": [
+        "A) Mechanical hard drives and optical drives use +5V.",
+        "B) Processors and graphics cards use +12V.",
+        "C) Processors and graphics cards use +5V exclusively.",
+        "D) System cooling fans rely solely on +3.3V."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Output 5V is used by mechanical hard drives, optical drives, and some expansion cards, while 12V powers processors, graphics cards, and fans[cite: 207]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "According to standard ATX wire color coding, what voltage does a red wire represent?",
+      "options": [
+        "A) +5V",
+        "B) +12V",
+        "C) +3.3V",
+        "D) -12V"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Red wires carry +5v power, while yellow wires carry +12v and orange wires carry +3.3v[cite: 224]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "In ATX power supply wiring, what color represents the ground (earth) connection?",
+      "options": [
+        "A) Black",
+        "B) Green",
+        "C) Gray",
+        "D) Blue"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Black wires represent ground (earth) in ATX power supplies[cite: 224]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "Which wire color on the main ATX power connector designates the PS-On (Power Signal On) wire used to signal the PSU to turn on?",
+      "options": [
+        "A) Green",
+        "B) Purple",
+        "C) Gray",
+        "D) Blue"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Green represents the PS-On signal wire, purple is +5V standby, and gray is Power Good[cite: 224]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What is the pin count and voltage output configuration of a standard SATA power connector?",
+      "options": [
+        "A) 15-pin connector supplying 3.3V, 5V, and 12V",
+        "B) 4-pin connector supplying 5V and 12V",
+        "C) 6-pin connector supplying 12V only",
+        "D) 24-pin connector supplying all motherboard rails"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "A SATA power connector has 15 pins and supplies 3.3 V, 5 V, and 12 V for storage drives[cite: 229]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What voltages are supplied by a standard 4-pin Molex power connector? (Choose two)",
+      "options": [
+        "A) +5V (red wire)",
+        "B) +12V (yellow wire)",
+        "C) +3.3V (orange wire)",
+        "D) -12V (blue wire)"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Molex power connectors are 4-pin connectors supplying +5V (red) and +12V (yellow) along with two ground wires, commonly used for case fans and older IDE devices[cite: 229, 252]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What are the common pin configurations for PCIe video card power connectors?",
+      "options": [
+        "A) 6-pin (12V) or 8-pin (12V)",
+        "B) 4-pin and 15-pin",
+        "C) 20-pin and 24-pin",
+        "D) 2-pin and 3-pin"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "PCIe power connectors for video cards come as 6-pin (ATX12V v2.1) or 8-pin (ATX12V v2.2 and higher), supplying 12V[cite: 229]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What is the primary advantage of using a modular power supply over a non-modular power supply?",
+      "options": [
+        "A) It allows you to plug in only the specific power cables you need, reducing clutter and improving airflow.",
+        "B) It automatically steps down AC wall voltage without generating heat.",
+        "C) It provides built-in battery backup for up to 30 minutes.",
+        "D) It eliminates the need for any motherboard power connections."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "A modular PSU features ports to plug in power cables as needed, adding flexibility and reducing cable clutter inside the case[cite: 232]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "Where are redundant power supplies most commonly utilized to ensure continuous uptime and fault tolerance?",
+      "options": [
+        "A) Enterprise servers and high-end critical systems",
+        "B) Budget home office laptops",
+        "C) Mobile tablets and smartphones",
+        "D) Entry-level POS receipt printers"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Redundant PSUs are very common on servers and high-end systems to allow true redundancy without downtime[cite: 234]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "Which of the following statements correctly describe the operation of redundant power supplies? (Choose two)",
+      "options": [
+        "A) Both power supplies are powered on simultaneously.",
+        "B) If one PSU fails, the other takes over immediately without downtime.",
+        "C) The backup PSU remains completely unpowered until the primary PSU experiences a total catastrophic fire.",
+        "D) Redundant PSUs require manual jumper rewiring during failure."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Both PSUs are powered on all the time, and if one fails, the other takes over without downtime. Some are even hot-swappable[cite: 235]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What is the purpose of the hard on/off switch located on the back of a power supply unit?",
+      "options": [
+        "A) It acts as a master kill switch, which is helpful during troubleshooting and emergencies.",
+        "B) It switches the system between 115V and 230V automatically.",
+        "C) It controls the RGB lighting on case fans.",
+        "D) It resets the motherboard CMOS memory."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The hard on/off switch acts as a kill switch, which is very helpful when troubleshooting and great in emergencies[cite: 237]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What type of power cable inlet is standard on the back of a PC power supply?",
+      "options": [
+        "A) C14 inlet for an IEC cable",
+        "B) RJ-45 Ethernet port",
+        "C) USB Type-C receptacle",
+        "D) HDMI video connector"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "PSUs feature a C14 inlet to attach an IEC power cord (International Electrotechnical Commission)[cite: 241]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What does the 80 Plus voluntary certification program rate on a power supply unit?",
+      "options": [
+        "A) How efficiently a PSU converts AC power from the wall into DC power for the computer",
+        "B) The maximum physical weight of the power supply in kilograms",
+        "C) The total number of SATA connectors bundled with the unit",
+        "D) The decibel noise level of the internal cooling fan"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The 80 Plus rating system rates how efficiently a PSU converts AC power from the wall into DC power, requiring at least 80% efficiency at specified loads[cite: 244]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What are the certification tiers of the 80 Plus rating system, ordered from least to most efficient?",
+      "options": [
+        "A) 80 Plus (White), Bronze, Silver, Gold, Platinum, Titanium",
+        "B) Titanium, Platinum, Gold, Silver, Bronze, 80 Plus (White)",
+        "C) Bronze, Silver, Gold, Diamond, Ruby",
+        "D) Standard, Advanced, Enterprise, Ultimate"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The tiers from least to most efficient are 80 Plus (White), Bronze, Silver, Gold, Platinum, and Titanium[cite: 244]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What is the relationship between power supply efficiency and heat generation?",
+      "options": [
+        "A) Higher efficiency means less electricity is wasted as heat inside the case.",
+        "B) Higher efficiency causes the power supply to generate significantly more heat.",
+        "C) Efficiency has no impact on thermal output.",
+        "D) Lower efficiency results in zero heat waste."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Higher efficiency means less electricity is wasted as heat, leading to lower energy bills and increased component longevity[cite: 244]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "At what percentage load does efficiency typically peak for most 80 Plus rating tiers (except Titanium)?",
+      "options": [
+        "A) 50% load",
+        "B) 10% load",
+        "C) 20% load",
+        "D) 100% load"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "For most ratings (except Titanium), efficiency peaks at the 50% load mark, which is why technicians recommend buying a PSU with double the system's expected draw[cite: 246]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "Which 80 Plus certification tier is unique because it requires a specific efficiency rating (90%) at a very low load of 10%?",
+      "options": [
+        "A) Titanium",
+        "B) Bronze",
+        "C) Silver",
+        "D) Gold"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Titanium is unique as the only certification requiring a specific efficiency rating (90%) at a 10% load, important for systems that idle frequently[cite: 246]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What government-backed program set by the EPA establishes energy-efficiency requirements for hardware by enforcing power consumption limits in 'off', 'sleep', and 'idle' modes?",
+      "options": [
+        "A) ENERGY STAR",
+        "B) ATX 3.0 Standard",
+        "C) IEEE 802.3",
+        "D) CompTIA GreenIT"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Energy Star is a government-backed program (EPA) that sets energy-efficiency requirements for hardware in off, sleep, and idle modes[cite: 247]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What is the difference between active cooling and passive cooling in a computer system? (Choose two)",
+      "options": [
+        "A) Active cooling (fans, liquid cooling) uses power to move heat.",
+        "B) Passive cooling (heat sinks) uses no power.",
+        "C) Passive cooling requires active electrical fan motors to operate.",
+        "D) Active cooling relies solely on unpowered metal fins."
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Active cooling uses power (fans, pumps), while passive cooling (heat sinks) uses no power[cite: 248]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What metric do modern CPUs and GPUs use to signify their thermal and power characteristics, where lower ratings generally indicate more energy-efficient components?",
+      "options": [
+        "A) Thermal Design Power (TDP)",
+        "B) Total Disk Performance (TDP)",
+        "C) Transient Data Protocol (TDP)",
+        "D) Total Diode Potential (TDP)"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Modern CPUs and GPUs use Thermal Design Power (TDP) as a metric; lower TDP signifies a more energy-efficient component requiring less robust cooling[cite: 249]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "Which power connector should be used to provide power to a SATA storage device?",
+      "options": [
+        "A) 15-pin power connector",
+        "B) 4-pin Molex connector",
+        "C) 6-pin PCIe connector",
+        "D) 24-pin ATX connector"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "SATA storage drives are powered by a 15-pin SATA power connector[cite: 195, 229]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "Which tools and references can help a builder purchase the correct wattage power supply for a custom gaming PC? (Choose three)",
+      "options": [
+        "A) Power supply calculator",
+        "B) Manufacturer's website component specifications",
+        "C) Component wattage ratings (TDP sum)",
+        "D) Physical hard drive defragmentation logs"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "Calculating total draw (TDP), consulting manufacturer websites, and using power supply calculators help gamers purchase the correct PSU[cite: 202, 214]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "Which of the following connector types can feature 8 pins? (Select all that apply)",
+      "options": [
+        "A) PCIe power connector",
+        "B) CPU power connector (EATX12V)",
+        "C) SATA power connector",
+        "D) ATX main motherboard power connector"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "PCIe and CPU power connectors can have 8 pins (PCIe can be 6 or 8 pins; CPU can be 4 or 8 pins), whereas SATA has 15 pins and ATX main power has 24 pins[cite: 201]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What is the primary purpose of the exhaust fan located on the back of a power supply unit?",
+      "options": [
+        "A) To exhaust heat generated by internal PSU components and help cool the overall computer system",
+        "B) To pull cool air directly into the CPU socket",
+        "C) To generate auxiliary AC power for external monitors",
+        "D) To filter dust from incoming network cables"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The fan in the power supply converts high voltage to precise low voltages and helps cool the system by exhausting heat[cite: 156, 186]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What does a PSU wattage rating signify according to CompTIA exam guidelines?",
+      "options": [
+        "A) The maximum amount of power the PSU can output under 100% load capacity",
+        "B) The minimum continuous power drawn when the computer is turned off",
+        "C) The exact thermal dissipation of the computer case in BTU",
+        "D) The voltage supplied across USB expansion ports"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "PSU wattage rating refers to the maximum amount of power the PSU can output under 100% load capacity[cite: 171]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "Which of the following devices or components typically require a +12V power rail feed? (Choose two)",
+      "options": [
+        "A) Processor (CPU)",
+        "B) Graphics card (GPU)",
+        "C) Mechanical hard drive spindle motors (legacy)",
+        "D) System cooling fans"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Processors, graphics cards, and fans rely on the +12V rail output[cite: 207]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What is a key requirement when planning power supply connections for a new build?",
+      "options": [
+        "A) Ensuring the PSU provides the correct number and types of power connectors required by all devices",
+        "B) Ensuring the PSU has zero cables for wireless power transfer",
+        "C) Matching the power supply color to the CPU socket pins",
+        "D) Connecting all devices to a single 3-pin fan header"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "When planning, make sure you know how many of each type of power connector you need when selecting which power supply to use[cite: 172, 213]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What does Power Factor Correction (PFC) do in higher-tier 80 Plus power supplies (such as Platinum and Titanium)?",
+      "options": [
+        "A) Ensures electrical power is used effectively, requiring a Power Factor >= 0.95 at 50% load",
+        "B) Automatically toggles the input voltage between 115V and 230V via a mechanical relay",
+        "C) Converts DC electricity back into AC current for battery backup",
+        "D) Multiplies the output voltage to the CPU by a factor of two"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Higher-tier 80 Plus units require a higher Power Factor (usually >= 0.95 at 50% load) to ensure power is used effectively[cite: 190]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "If a technician is troubleshooting a PC that will not turn on after being moved internationally, what is the most logical initial inspection step?",
+      "options": [
+        "A) Check the voltage selector switch setting on the back of the PSU.",
+        "B) Replace the motherboard CMOS battery.",
+        "C) Reinstall the operating system drivers.",
+        "D) Upgrade the RAM modules to DDR5."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "If a computer is moved internationally and won't turn on, always check if the voltage switch was set correctly[cite: 216]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "Which wire color on a 20-pin or 24-pin ATX connector represents the -12V rail?",
+      "options": [
+        "A) Blue",
+        "B) Orange",
+        "C) Red",
+        "D) Purple"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Blue represents the -12V rail, orange represents +3.3V, red represents +5V, and purple represents +5V standby[cite: 224]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What is the primary function of the Power Good signal wire (gray wire) coming from the PSU?",
+      "options": [
+        "A) It signals to the motherboard that the PSU voltages have stabilized and are safe for operation.",
+        "B) It turns off the computer when the power button is pressed.",
+        "C) It provides continuous 5V standby power to USB ports.",
+        "D) It measures room temperature inside the computer case."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The gray wire carries the Power Good signal, which indicates that output voltages are stable and ready[cite: 224]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What does a +5V standby (purple wire) power supply output provide when the computer is in a shutdown or sleep state?",
+      "options": [
+        "A) Trickle power to maintain wake-on-LAN, USB charging, and power button responsiveness",
+        "B) Maximum 600W power to overclock the graphics card",
+        "C) Alternating current to power external speakers",
+        "D) High-voltage pulses to spin up mechanical drives"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The +5V standby output (purple wire) maintains minimal power for standby and wakeup features while the main system rails are off[cite: 222, 224]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "Why are dual-voltage power supplies marked with '100-240V input' advantageous for modern electronics?",
+      "options": [
+        "A) They automatically adapt to varying AC wall voltages worldwide without manual slider switches.",
+        "B) They eliminate the need for any DC output conversion.",
+        "C) They can operate without being plugged into a wall outlet.",
+        "D) They step down wall voltage to 5V instantly."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Dual-voltage or auto-sensing power supplies supporting 100-240V input automatically detect and adapt to input voltages[cite: 184, 216]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "What safety precaution should always be taken before changing the voltage selector switch on a power supply?",
+      "options": [
+        "A) Shut down the computer and disconnect the power cable completely.",
+        "B) Leave the power cord plugged in to keep the capacitors grounded.",
+        "C) Increase the CPU overclock settings to maximum.",
+        "D) Remove all internal RAM sticks."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Always shut down and disconnect the power cable before changing the voltage selector switch[cite: 238]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "Which of the following devices or components typically use a 4-pin Molex power connector?",
+      "options": [
+        "A) Case fans and older IDE storage drives",
+        "B) Modern M.2 NVMe SSDs",
+        "C) High-end PCIe 5.0 graphics cards",
+        "D) 24-pin motherboard ATX headers"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Molex power connectors are used for case fans and older IDE storage drives[cite: 229]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Power Supplies",
+      "question": "When calculating total system power draw to select a PSU, what should a technician sum up?",
+      "options": [
+        "A) The Thermal Design Power (TDP) or power consumption of all internal components",
+        "B) The physical dimensions of each component in millimeters",
+        "C) The total storage capacity of all hard drives in gigabytes",
+        "D) The maximum frequency of the RAM modules"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Total draw is calculated by summing the wattage/TDP of all system components[cite: 214]."
+    }
+  ]
+}

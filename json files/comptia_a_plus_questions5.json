@@ -1,0 +1,181 @@
+{
+  "questions": [
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "A technician is troubleshooting an old desktop system that randomly shows a Windows BSOD or powers off unexpectedly. All system temperatures are within normal limits. Which of the following should the technician do NEXT?",
+      "options": [
+        "A) Visually inspect the motherboard capacitors.",
+        "B) Verify all case fans are operational.",
+        "C) Check that the BIOS version supports the installed CPU.",
+        "D) Compare the software requirements with the installed RAM."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Visual inspection of motherboard capacitors helps identify blown or leaking capacitors which can cause sudden power-offs and BSoDs[cite: 27]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.2 Troubleshooting Storage",
+      "question": "Upon booting a workstation, a technician hears a distinct clicking sound after power is applied to the motherboard. Which of the following would MOST likely be the cause?",
+      "options": [
+        "A) RAID",
+        "B) SSD",
+        "C) S.M.A.R.T",
+        "D) HDD"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "A clicking sound upon booting typically indicates mechanical failure or damaged disk heads in an HDD[cite: 27]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.7 Cables and Tools",
+      "question": "A network technician has been tasked with creating a patch cable. The RJ45 connectors will not stay attached to the cable. Which of the following tools is needed to fix this issue?",
+      "options": [
+        "A) Cable tester",
+        "B) Crimper",
+        "C) Punchdown tool",
+        "D) Loopback plug"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A crimper secures the RJ45 connector permanently onto the end of a patch cable[cite: 27]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A desktop support technician is tasked with upgrading a laptop so that it has the fastest data access possible. Which of the following BEST satisfies this requirement?",
+      "options": [
+        "A) mSATA SSD",
+        "B) M.2 NVMe SSD",
+        "C) 2.5 SATA SSD",
+        "D) 2.5 SAS HHD"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "An M.2 NVMe SSD provides the highest data transfer speeds and lowest latency compared to SATA alternatives[cite: 27]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user reports a cell phone is getting hot. Which of the following are MOST likely to be possible causes? (Select THREE).",
+      "options": [
+        "A) Using the device as a Wi-Fi hotspot",
+        "B) A cracked screen",
+        "C) A failing battery",
+        "D) Less than 15% free storage space on the phone",
+        "E) Privileged control",
+        "F) Recurring prompts to install OS updates",
+        "G) Granting too many application camera permissions",
+        "H) Too many open applications"
+      ],
+      "answer": [
+        "A",
+        "C",
+        "H"
+      ],
+      "multi_select": true,
+      "explanation": "Using a device as a hotspot, having a failing battery, or running too many open applications all heavily tax the system processor and power management, leading to overheating[cite: 27]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 Displays",
+      "question": "A user wants a second monitor installed on a laptop. The VGA/DVI or HDMI cables have already been connected. Which of the following should the technician do to configure the laptop to show both screens?",
+      "options": [
+        "A) Power cycle the laptop.",
+        "B) Plug in the monitor to the USB port.",
+        "C) Adjust the monitor display settings.",
+        "D) Power cycle the monitor."
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Display settings must be adjusted within the operating system to extend or duplicate screens across multiple monitors[cite: 27, 28]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 RAM",
+      "question": "A technician is tasked with installing additional RAM in a desktop computer. Which of the following types of RAM is MOST likely to be used?",
+      "options": [
+        "A) SODIMM",
+        "B) DDR3",
+        "C) ECC",
+        "D) VRAM"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Standard desktop computers use DIMMs like DDR3, DDR4, or DDR5, whereas laptops use SODIMMs[cite: 28]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "Vertical streaks are appearing on the output of a laser printer. Which of the following items is the MOST likely cause?",
+      "options": [
+        "A) Roller",
+        "B) Drum",
+        "C) Transfer belt",
+        "D) Ribbon"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Vertical or repetitive lines are frequently caused by a damaged or dirty photosensitive drum[cite: 28]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A thermal printer that is used to print order buckets in a factory has been experiencing issues following the failure of the air conditioner during the summer. Each ticket has blank spots or is missing text. Which of the following would MOST likely solve these issues?",
+      "options": [
+        "A) Restore function to the air conditioner.",
+        "B) Clean the heating element.",
+        "C) Replace the paper rolls.",
+        "D) Install new toner."
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Maintaining correct thermal printer operation and addressing missing elements can involve appropriate thermal components or cartridge/ribbon checks depending on specific multi-part options, though thermal elements respond to heat/cleaning or ribbon/paper replacements[cite: 28]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "A company has a dot matrix printer that uses carbon paper. The company reports that the first page is printing too light, although the following pages are still legible. Which of the following MOST likely needs to be fixed?",
+      "options": [
+        "A) The print drum is worn and loose causing the printing to be light in places",
+        "B) The ribbon is low on ink or missing and must be replaced to get proper output",
+        "C) The heating element has failed, and a new one needs to be installed for proper transfer",
+        "D) The wrong type of filament is loaded, preventing it from sticking correctly",
+        "E) The fuser assembly is not calibrated properly, causing it to impact the paper too hard"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Dot matrix printers strike an inked ribbon to print the first copy, so a light first page indicates a low or worn ribbon[cite: 28]."
+    }
+  ]
+}

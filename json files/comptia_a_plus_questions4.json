@@ -1,0 +1,242 @@
+{
+  "questions": [
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Cables and Connectors",
+      "question": "A customer reports that a computer is never able to reach more than a 100Mbps transfer data rate, even when using a Gigabit LAN card. While troubleshooting, the technician notices the network cable needs to be replaced. Which of the following cable categories is limiting the transfer speed?",
+      "options": [
+        "A) Cat 5",
+        "B) Cat 5e",
+        "C) Cat 6",
+        "D) Cat 6a"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Cat 5 limits network speeds to 100Mbps[cite: 22]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.1 Virtualization",
+      "question": "A technician is configuring a workstation to be used as a VM host. After installing the necessary software, the technician is unable to create any VMs. Which of the following actions should be performed?",
+      "options": [
+        "A) Disable the BIOS password.",
+        "B) Enable TPM.",
+        "C) Enable multithreading.",
+        "D) Enable Fast Startup."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Enabling TPM or hardware security features is necessary for certain VM host operations[cite: 22]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Cables and Connectors",
+      "question": "A technician installed a Cat 5 UTP cable approximately 275ft (84m) from a network switch in an office to a workstation located on a factory floor The technician sees both a flashing green LED and a flashing orange LED on the workstation's NIC. Which of the following should the technician do FIRST?",
+      "options": [
+        "A) Check for loose connections, pinched bends, and physical damage.",
+        "B) Install a powered hub as close as possible to the halfway point in the Cat 5 UTP cable run.",
+        "C) Replace the entire run of Cat 5 UTP cable with Cat 5 STP cable.",
+        "D) Upgrade the entire cable run to multimode fiber."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Physical inspection for loose connections or damage is the first troubleshooting step[cite: 22]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Power Supplies",
+      "question": "An engineer is experiencing unexpected reboots on a graphics workstation when rendering complex 3-D models. The workstation is configured with a 115V power supply that is rated at 200W and connected to a UPS. The central processing unit contains 16 hyperthreaded cores, and a discrete graphics solution utilizing an 8-pin power connector is installed in a PCI Express x16 slot. Which of the following indicates where the technician should begin troubleshooting?",
+      "options": [
+        "A) The UPS, as 115V is insufficient for the configuration and should be increased to 220V",
+        "B) The power supply, as 200W is insufficient when the GPU is heavily tasked",
+        "C) The graphics card, as it is the component that triggers the unexpected reboots",
+        "D) The motherboard, as only standard PCI slots should be used for high-end graphics cards, not PCI Express slots"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A 200W power supply is insufficient for a heavy GPU load[cite: 22]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Motherboards and BIOS",
+      "question": "An end user reports that the time and date on a desktop resets after shutdown, and subsequently, the device reboots. The next day, the desktop does not load the OS and is stuck at a black screen with the following message: Which of the following would be the BEST action to take next?",
+      "options": [
+        "A) Change the motherboard.",
+        "B) Reseat the motherboard power connections.",
+        "C) Replace the CMOS battery.",
+        "D) Restore the BIOS to factory default settings."
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Replacing the CMOS battery resolves issues with resetting date/time and lost BIOS settings[cite: 22]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A technician needs to add storage to a workstation. The workstation does not have room to add any internal storage, so the technician plans to add an external storage device. Which of the following connection types should the technician MOST likely use?",
+      "options": [
+        "A) SCSI",
+        "B) eSATA",
+        "C) PCIe",
+        "D) NVMe"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "eSATA is used for external storage connections[cite: 22]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.2 Troubleshooting Storage",
+      "question": "A laptop PC user is reporting issues with the hard drive. A filesystem check shows that all files are accessible and the filesystem is clean. After the check, the PC still issues a hard drive error message. Which of the following is the MOST likely cause of the error?",
+      "options": [
+        "A) S.M.A.R.T failure",
+        "B) IOPS failure",
+        "C) DIMM failure",
+        "D) RAID failure"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "S.M.A.R.T. failures flag hardware degradation even if files are currently accessible[cite: 22, 23]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 Displays",
+      "question": "A technician powers on a PC and its monitor and sees the following error message: No input signal detected The display lights on the computer are on. Which of the following is a possible solution?",
+      "options": [
+        "A) Changing the BIOS settings",
+        "B) Changing the connector setting on the monitor",
+        "C) Checking the power plug on the monitor",
+        "D) Checking the power plug on the PC"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Changing the connector setting on the monitor matches the active input source[cite: 23]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "4.2 Client-side Virtualization",
+      "question": "Client-side virtualization guest machines have security requirements similar to physical machines, but they also need to ensure separation from other guest machines. Which of the following BEST describes this client-side guest security requirement?",
+      "options": [
+        "A) Isolation",
+        "B) Authentication",
+        "C) Hardening",
+        "D) Authorization"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Isolation provides separation between virtual guest machines[cite: 23]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Peripherals and Devices",
+      "question": "Which of the following would MOST likely be used to obtain electronic images of a large number of printed documents?",
+      "options": [
+        "A) NFC device",
+        "B) ADF/flatbed scanner",
+        "C) Camera/webcam",
+        "D) QR scanner"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "An ADF/flatbed scanner is used for digitizing large batches of printed documents[cite: 23]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 CPUs and Motherboards",
+      "question": "A technician is upgrading a faulty motherboard that was ordered by an end user for an old, high-end desktop computer. However, the technician is unable to install the CPU into the socket. Upon closer inspection, the technician notices the pins on the CPU do not line up with the socket. Which of the following would be the best course of action for the technician to take NEXT?",
+      "options": [
+        "A) Try to set as many pins as possible.",
+        "B) Install an adaptor to create a universal socket.",
+        "C) Verify the socket type and manufacturer.",
+        "D) Find a compatible motherboard for the CPU."
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "A compatible motherboard must be found if the CPU pins do not align with the socket[cite: 23]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Security",
+      "objective": "Operational Security",
+      "question": "A technician is setting up a device to use two-factor authentication. Which of the following meets this requirement?",
+      "options": [
+        "A) Thumbprint/retinal scan",
+        "B) Password/password",
+        "C) Password/thumbprint",
+        "D) Password/PIN"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Two-factor authentication requires two distinct factors, such as a password (something you know) and a thumbprint (something you are)[cite: 23]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.4 Common Protocols and Services",
+      "question": "Which of the following BEST describes the main function of a web server?",
+      "options": [
+        "A) Storing files and controlling user access",
+        "B) Setting up personal mailboxes and calendars",
+        "C) Providing IP addresses and printing services",
+        "D) Hosting home pages and business portals"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Web servers host home pages and business portals[cite: 23]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 Displays and Laptops",
+      "question": "A laptop has been returned for a screen repair. The owner insists the screen is broken, but occasionally a faded image is able to be seen in very bright settings on the desktop. Which of the following steps should the repair technician take FIRST?",
+      "options": [
+        "A) Replace the graphics card.",
+        "B) Replace the screen, as the customer insists.",
+        "C) Recommend the usage of an external display instead.",
+        "D) Ensure the backlight is functioning as expected."
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Ensuring the backlight functions correctly is the first step when an image is faintly visible[cite: 23, 24]."
+    }
+  ]
+}

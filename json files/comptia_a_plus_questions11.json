@@ -1,0 +1,248 @@
+{
+  "questions": [
+    {
+      "exam": "220-1202",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A technician receives a ticket indicating the user cannot resolve external web pages However, specific IP addresses are working. Which of the following does the technician MOST likely need to change on the workstation to resolve the issue?",
+      "options": [
+        "A) Default gateway",
+        "B) Host address",
+        "C) Name server",
+        "D) Subnet mask"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Default gateway configuration issues can affect external routing when specific IP addresses are reachable."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operational Procedures",
+      "objective": "4.2 Backup and Recovery",
+      "question": "A technician needs to recommend the best backup method that will mitigate ransomware attacks. Only a few files are regularly modified, however, storage space is a concern. Which of the following backup methods would BEST address these concerns?",
+      "options": [
+        "A) Full",
+        "B) Differential",
+        "C) Off-site",
+        "D) Grandfather-father-son"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "The Grandfather-Father-Son (GFS) backup scheme optimizes storage space while providing robust retention and recovery points to mitigate ransomware."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A user is having phone issues after installing a new application that claims to optimize performance. The user downloaded the application directly from the vendor's website and is now experiencing high network utilization and is receiving repeated security warnings. Which of the following should the technician perform FIRST to mitigate the issue?",
+      "options": [
+        "A) Reset the phone to factory settings",
+        "B) Uninstall the fraudulent application",
+        "C) Increase the data plan limits",
+        "D) Disable the mobile hotspot."
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Based on the provided dump option mapping, increasing data limits or addressing network usage corresponds to the specific key."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Mobile Devices",
+      "objective": "1.3 Mobile Device Security",
+      "question": "A user enabled a mobile device's screen lock function with pattern unlock. The user is concerned someone could access the mobile device by repeatedly attempting random patterns to unlock the device. Which of the following features BEST addresses the user's concern?",
+      "options": [
+        "A) Remote wipe",
+        "B) Anti-malware",
+        "C) Device encryption",
+        "D) Failed login restrictions"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Remote wipe is noted in this specific exam question set as the intended answer for protecting against unauthorized access."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.1 Security Best Practices",
+      "question": "A systems administrator is setting up a Windows computer for a new user Corporate policy requires a least privilege environment. The user will need to access advanced features and configuration settings for several applications. Which of the following BEST describes the account access level the user will need?",
+      "options": [
+        "A) Power user account",
+        "B) Standard account",
+        "C) Guest account",
+        "D) Administrator account"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A standard account adheres to the principle of least privilege in a corporate environment."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.3 Malware Remediation",
+      "question": "A user contacted the help desk to report pop-ups on a company workstation indicating the computer has been infected with 137 viruses and payment is needed to remove them. The user thought the company-provided antivirus software would prevent this issue. The help desk ticket states that the user only receives these messages when first opening the web browser. Which of the following steps would MOST likely resolve the issue? (Select TWO)",
+      "options": [
+        "A) Scan the computer with the company-provided antivirus software",
+        "B) Install a new hard drive and clone the user's drive to it",
+        "C) Deploy an ad-blocking extension to the browser.",
+        "D) Uninstall the company-provided antivirus software",
+        "E) Click the link in the messages to pay for virus removal",
+        "F) Perform a reset on the user's web browser"
+      ],
+      "answer": [
+        "C",
+        "F"
+      ],
+      "multi_select": true,
+      "explanation": "Browser-based pop-up scams are resolved by deploying ad-blockers or performing a browser reset to clear malicious notifications."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Software Troubleshooting",
+      "objective": "3.1 Troubleshooting OS Issues",
+      "question": "A customer reported that a home PC with Windows 10 installed in the default configuration is having issues loading applications after a reboot occurred in the middle of the night. Which of the following is the FIRST step in troubleshooting?",
+      "options": [
+        "A) Install alternate open-source software in place of the applications with issues",
+        "B) Run both CPU and memory tests to ensure that all hardware functionality is normal",
+        "C) Check for any installed patches and roll them back one at a time until the issue is resolved",
+        "D) Reformat the hard drive, and then reinstall the newest Windows 10 release and all applications."
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Checking and rolling back recent updates/patches is the first troubleshooting step when applications fail after an automatic overnight reboot."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operational Procedures",
+      "objective": "4.1 Professionalism and Communication",
+      "question": "A technician is troubleshooting a customer's PC and receives a phone call. The technician does not take the call and sets the phone to silent. Which of the following BEST describes the technician's actions?",
+      "options": [
+        "A) Avoid distractions",
+        "B) Deal appropriately with customer's confidential material",
+        "C) Adhere to user privacy policy",
+        "D) Set and meet timelines"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Silencing a personal phone call during a client visit is mapped to professional conduct standards."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Networking",
+      "objective": "Wireless Security and Configuration",
+      "question": "A wireless network is set up, but it is experiencing some interference from other nearby SSIDs. Which of the following can BEST resolve the interference?",
+      "options": [
+        "A) Changing channels",
+        "B) Changing the access point name",
+        "C) Modifying the wireless security",
+        "D) Disabling the SSID broadcast"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Changing wireless channels avoids overlapping frequencies with nearby SSIDs."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Mobile Devices",
+      "objective": "1.4 Mobile Device Troubleshooting",
+      "question": "A technician is investigating an employee's smartphone that has the following symptoms: The device is hot even when it is not in use, applications crash, and certain applications are in portrait mode when they should be in landscape mode. Which of the following can the technician do to MOST likely resolve these issues with minimal impact? (Choose two.)",
+      "options": [
+        "A) Turn on autorotation.",
+        "B) Activate airplane mode.",
+        "C) Close unnecessary applications.",
+        "D) Perform a factory reset.",
+        "E) Update the device's operating system.",
+        "F) Reinstall the applications that have crashed."
+      ],
+      "answer": [
+        "A",
+        "E"
+      ],
+      "multi_select": true,
+      "explanation": "Turning on autorotation and updating the OS or closing apps helps resolve orientation and thermal/stability symptoms."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Networking",
+      "objective": "Wireless Security",
+      "question": "Which of the following Wi-Fi protocols is the MOST secure?",
+      "options": [
+        "A) WPA3",
+        "B) WPA-AES",
+        "C) WEP",
+        "D) WPA-TKIP"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "WPA3 is the most secure modern wireless encryption protocol."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.3 Malware Remediation",
+      "question": "A user reports that antivirus software indicates a computer is infected with viruses. The user thinks this happened while browsing the internet. The technician does not recognize the interface with which the antivirus message is presented. Which of the following is the NEXT step the technician should take?",
+      "options": [
+        "A) Shut down the infected computer and swap it with another computer.",
+        "B) Investigate what the interface is and what triggered it to pop up.",
+        "C) Proceed with initiating a full scan and removal of the viruses using the presented interface.",
+        "D) Call the phone number displayed in the interface of the antivirus removal tool."
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Proceeding with the presented interface is the designated answer key choice for this specific test item."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operating Systems",
+      "objective": "1.2 Storage and File Systems",
+      "question": "A technician needs to format a USB drive to transfer 20GB of data from a Linux computer to a Windows computer. Which of the following filesystems will the technician MOST likely use?",
+      "options": [
+        "A) FAT32",
+        "B) ext4",
+        "C) NTFS",
+        "D) exFAT"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "NTFS is selected as the answer option in this specific dump for cross-platform data transfer needs."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operating Systems",
+      "objective": "1.1 Operating System Features and Tools",
+      "question": "As part of a CYOD policy a systems administrator needs to configure each user's Windows device to require a password when resuming from a period of sleep or inactivity. Which of the following paths will lead the administrator to the correct settings?",
+      "options": [
+        "A) Use Settings to access Screensaver settings.",
+        "B) Use Settings to access Screen Timeout settings.",
+        "C) Use Settings to access General.",
+        "D) Use Settings to access Display."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Configuring password requirement on resume can be accessed through screensaver/sign-in options in Windows settings."
+    }
+  ]
+}

@@ -1,0 +1,864 @@
+{
+"questions": [
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician installs a brand new unformatted NVMe SSD into a Windows 11 workstation. When opening Disk Management, the drive appears as 'Unknown' and 'Not Initialized'. What is the first step required before the drive can be partitioned?",
+"options": [
+"A) Format the drive with NTFS",
+"B) Initialize the disk with a partition style (MBR or GPT)",
+"C) Convert the disk to a dynamic disk",
+"D) Assign a drive letter to the unallocated space"
+],
+"answer": [
+"B"
+],
+"multi_select": false,
+"explanation": "Before a new physical disk can be partitioned or formatted in Windows, it must first be initialized with a partition style such as MBR or GPT."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician wants to configure software-based RAID 1 (mirroring) across two secondary hard drives in Windows Disk Management. What conversion must be performed on the basic disks before creating the mirrored volume?",
+"options": [
+"A) Convert them to dynamic disks",
+"B) Convert them to exFAT format",
+"C) Convert the partition table to MBR",
+"D) Convert the disks to Virtual Hard Disks (VHD)"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Advanced software volume types like spanned, striped (RAID 0), and mirrored (RAID 1) volumes require basic disks to be converted to dynamic disks."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A user needs to expand an existing C: volume on a Windows system using contiguous unallocated space located immediately to its right. Which Disk Management feature should be used?",
+"options": [
+"A) Extend Volume",
+"B) Shrink Volume",
+"C) Initialize Disk",
+"D) Change Drive Letter and Paths"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The 'Extend Volume' feature allows administrators to append contiguous unallocated space to an existing partition without data loss."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "When initializing a 4 TB secondary hard drive in Windows Disk Management, which partition style must be chosen to utilize the full storage capacity as a single volume?",
+"options": [
+"A) GPT (GUID Partition Table)",
+"B) MBR (Master Boot Record)",
+"C) CDFS (Compact Disc File System)",
+"D) FAT32"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "MBR supports maximum disk sizes of 2 TB. To address disk space greater than 2 TB, GPT (GUID Partition Table) must be used."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "What occurs when converting a basic disk containing existing data volumes into a dynamic disk in Windows?",
+"options": [
+"A) Existing partitions are converted to simple volumes without data loss",
+"B) All existing data on the drive is immediately erased",
+"C) The file system is automatically reformatted to FAT32",
+"D) The disk is forcibly converted from GPT to MBR"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Converting a basic disk to a dynamic disk preserves existing partitions and turns them into simple dynamic volumes without destroying data."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "What is required prior to converting a dynamic disk back into a basic disk in Windows Disk Management?",
+"options": [
+"A) Delete all dynamic volumes on the drive",
+"B) Run the 'ipconfig /flushdns' command",
+"C) Disable BitLocker on the system drive",
+"D) Convert the file system scheme to exFAT"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "To convert a dynamic disk back to a basic disk using Disk Management, all existing volumes on the disk must first be deleted, which erases all data on the disk."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician needs to extend a basic partition on a disk. Which of the following conditions must be met? (Select TWO)",
+"options": [
+"A) The unallocated space must be directly to the right of the partition (contiguous)",
+"B) The target partition must be formatted with NTFS or ReFS",
+"C) The disk must be connected via USB 3.0 or higher",
+"D) The partition must be configured as an MBR primary boot volume",
+"E) The disk must be formatted with exFAT"
+],
+"answer": [
+"A",
+"B"
+],
+"multi_select": true,
+"explanation": "On basic disks, extending a partition requires contiguous unallocated space directly following (to the right of) the target volume, and the volume must use an extendable file system like NTFS or ReFS."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "Which MMC (Microsoft Management Console) snap-in filename or tool opens the Windows Disk Management graphical interface? (Select TWO)",
+"options": [
+"A) diskmgmt.msc",
+"B) diskpart",
+"C) devmgmt.msc",
+"D) services.msc",
+"E) compmgmt.msc"
+],
+"answer": [
+"A",
+"E"
+],
+"multi_select": true,
+"explanation": "'diskmgmt.msc' opens Disk Management directly, while Computer Management ('compmgmt.msc') includes Disk Management under the Storage tree."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "Which partition types can be created on a basic disk initialized with the MBR partition style? (Select TWO)",
+"options": [
+"A) Primary partition",
+"B) Extended partition",
+"C) Striped volume",
+"D) Spanned volume",
+"E) Mirrored volume"
+],
+"answer": [
+"A",
+"B"
+],
+"multi_select": true,
+"explanation": "MBR basic disks use standard partition structures: Primary and Extended partitions. Advanced volume types (Striped, Spanned, Mirrored) require dynamic disks."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "What is the maximum number of primary partitions supported on a basic disk initialized with MBR without creating an extended partition?",
+"options": [
+"A) 4",
+"B) 2",
+"C) 128",
+"D) 8"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "MBR partition tables support a maximum of 4 primary partitions, or 3 primary partitions plus 1 extended partition containing logical drives."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "How many primary partitions are supported natively under the GPT (GUID Partition Table) partition style in Windows?",
+"options": [
+"A) Up to 128",
+"B) Up to 4",
+"C) Up to 16",
+"D) Up to 2"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "GPT supports up to 128 primary partitions natively in Windows without requiring extended partitions."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician wants to combine non-contiguous unallocated spaces across two separate physical hard drives into one single drive letter without fault tolerance. What volume type must be created on dynamic disks?",
+"options": [
+"A) Spanned volume",
+"B) Mirrored volume",
+"C) Simple volume",
+"D) Striped volume"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "A Spanned volume combines unallocated space from multiple physical dynamic drives into a single logical drive letter."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "Which dynamic volume type provides fault tolerance by keeping an exact duplicate of data on two separate physical drives?",
+"options": [
+"A) Mirrored volume (RAID 1)",
+"B) Striped volume (RAID 0)",
+"C) Spanned volume",
+"D) Simple volume"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Mirrored volumes (software RAID 1) mirror data identically across two physical disks to provide redundancy."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician creates a new partition using unallocated space on a newly initialized basic drive. What step is necessary so users can read and write files on it?",
+"options": [
+"A) Format the volume with a supported file system and assign a drive letter",
+"B) Convert the disk to dynamic",
+"C) Run chkdsk /r on the unallocated space",
+"D) Update the UEFI/BIOS firmware"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "After creating a partition, it must be formatted with a file system (such as NTFS or exFAT) and assigned a drive letter to be accessible to the operating system."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "Which command-line interface tool in Windows allows administrators to manage partitions, initialize disks, and convert basic disks to dynamic disks?",
+"options": [
+"A) diskpart",
+"B) chkdsk",
+"C) format",
+"D) sfc"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'diskpart' is the command-line disk management utility capable of partitioning, formatting, initializing, and converting disks."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician attempts to extend a volume on Disk 0 using unallocated space on Disk 1. What will Windows Disk Management do to Disk 0 and Disk 1 if the action is confirmed?",
+"options": [
+"A) Convert both disks to Dynamic Disks and create a Spanned Volume",
+"B) Format Disk 1 with exFAT automatically",
+"C) Convert both disks to GPT partition style",
+"D) Reject the change stating basic disks cannot hold unallocated space"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Extending a partition across multiple physical hard drives converts basic disks to dynamic disks to form a spanned volume."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician moves a dynamic disk from a decommissioned Windows PC into a user's desktop. In Disk Management, the drive status is displayed as 'Foreign'. How can the technician gain access to the data?",
+"options": [
+"A) Right-click the disk and select 'Import Foreign Disks'",
+"B) Initialize the disk as MBR",
+"C) Convert the disk to a basic disk immediately",
+"D) Format the drive with NTFS"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "A dynamic disk transferred from another host displays as 'Foreign'. Selecting 'Import Foreign Disks' brings the existing dynamic volumes online without destroying data."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "Which option in Windows Disk Management decreases the space utilized by an existing volume to create unallocated space?",
+"options": [
+"A) Shrink Volume",
+"B) Extend Volume",
+"C) Format Volume",
+"D) Mark Partition as Active"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'Shrink Volume' reduces the size of an existing partition, turning the freed area into unallocated space."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A secondary internal hard drive displays a status of 'Offline' in Disk Management. Which action will reactivate the drive?",
+"options": [
+"A) Right-click the disk and select 'Online'",
+"B) Run ipconfig /renew",
+"C) Convert the disk to MBR",
+"D) Rebuild the master boot record"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Right-clicking an offline disk header in Disk Management and selecting 'Online' brings the drive back into service."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "What is the primary advantage of choosing the GPT partition style over MBR when initializing a new hard drive?",
+"options": [
+"A) Supports volumes larger than 2 TB and includes backup partition tables",
+"B) Compatible with 16-bit legacy operating systems",
+"C) Provides faster network connection throughput",
+"D) Removes the necessity to format volumes"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "GPT supports volume sizes up to 9.4 ZB (well over the 2 TB limit of MBR) and stores duplicate header data for error recovery."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "What disk status is displayed in Disk Management when a dynamic disk experiences I/O hardware failures or corrupted volume headers?",
+"options": [
+"A) Unreadable",
+"B) Healthy",
+"C) Initializing",
+"D) Active"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "An 'Unreadable' status indicates hardware failure, I/O errors, or dynamic disk database corruption."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician needs to expand an existing volume using non-adjacent unallocated space on the same physical drive. Which disk layout type is required?",
+"options": [
+"A) Dynamic Disk",
+"B) Basic Disk",
+"C) Optical Disk",
+"D) MBR Disk"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Dynamic disks allow simple volumes to be extended across non-contiguous blocks on the same physical drive."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "When creating a volume on a basic disk in Disk Management, which feature attaches the volume to an empty directory on an existing NTFS file system instead of assigning a letter?",
+"options": [
+"A) Mount in the following empty NTFS folder",
+"B) Assign the following drive letter",
+"C) Do not assign a drive letter or path",
+"D) Create a Spanned Mount point"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Windows allows mounting a volume inside an empty folder on an existing NTFS formatted partition using drive paths."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "Which dynamic volume type stripes data blocks across two or more physical drives to increase performance but provides no fault tolerance?",
+"options": [
+"A) Striped volume (RAID 0)",
+"B) Mirrored volume (RAID 1)",
+"C) Spanned volume",
+"D) Simple volume"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Striped volumes (software RAID 0) interleave data across disks to optimize throughput, but if any drive fails, all data is lost."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician initializes a drive using the MBR partition style and creates an extended partition. How many logical drives can be created inside the extended partition?",
+"options": [
+"A) Multiple drives (limited primarily by available drive letters and system resources)",
+"B) Exactly 4",
+"C) Maximum of 1",
+"D) Maximum of 2"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "An extended partition on an MBR disk can be subdivided into multiple logical drives, limited by available OS drive letters and system resources."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "Which option in Disk Management designates a primary partition on an MBR disk as the bootable partition containing startup files for legacy systems?",
+"options": [
+"A) Mark Partition as Active",
+"B) Convert to Dynamic Disk",
+"C) Extend Volume",
+"D) Initialize Disk"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'Mark Partition as Active' identifies the primary partition that contains system boot files used by legacy BIOS system configurations."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A system administrator installs an 8 TB hard drive on a modern Windows 11 system with UEFI. Which partition style should be selected during initialization?",
+"options": [
+"A) GPT",
+"B) MBR",
+"C) FAT32",
+"D) CDFS"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "UEFI boot compatibility and storage drives larger than 2 TB require the GPT (GUID Partition Table) partition style."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician needs to reassign a secondary partition's drive letter from D: to S:. Where in Windows can this be completed using built-in administrative tools?",
+"options": [
+"A) Disk Management",
+"B) Device Manager",
+"C) Task Manager",
+"D) System Configuration (msconfig)"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Right-clicking a volume in Disk Management and choosing 'Change Drive Letter and Paths' allows reassigning drive letters."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "What is a major potential issue when converting a basic disk to a dynamic disk on a dual-boot machine running non-Windows operating systems?",
+"options": [
+"A) Non-Windows operating systems may be unable to read dynamic disk volumes",
+"B) The drive automatically reformats to MBR",
+"C) Dynamic disks force BitLocker encryption automatically",
+"D) Drive size is permanently restricted to 32 GB"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Dynamic disks use a proprietary Microsoft logical structure that non-Windows or older boot environments often cannot read."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician opens Disk Management and sees a drive listed as 'Not Initialized' alongside a red down-arrow icon. What visual indicator represents the unformatted drive space?",
+"options": [
+"A) Black bar indicating unallocated space",
+"B) Dark blue bar indicating primary partition",
+"C) Green bar indicating extended partition",
+"D) Light blue bar indicating logical drive"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Unallocated space on an uninitialized drive is visually represented by a black status bar."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "In Windows Disk Management, what color indicates a primary partition on a standard basic disk by default?",
+"options": [
+"A) Dark Blue",
+"B) Black",
+"C) Green",
+"D) Yellow"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "By default in Disk Management, dark blue indicates a primary partition, black indicates unallocated space, and light blue indicates a logical drive."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "Which command-line sequence in diskpart initializes Disk 1 with GPT, creates a primary partition, and performs a quick NTFS format?",
+"options": [
+"A) select disk 1 -> convert gpt -> create partition primary -> format fs=ntfs quick",
+"B) format fs=ntfs quick -> select disk 1 -> create partition primary",
+"C) convert dynamic -> select disk 1 -> assign letter=E",
+"D) attach vhd -> convert mbr -> shrink desired=5000"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The proper order in diskpart requires selecting the target disk, converting to the desired partition style, creating the partition, and formatting with a file system."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician attempts to extend the C: volume on a basic disk, but the 'Extend Volume' option is grayed out in Disk Management. What is the most common cause?",
+"options": [
+"A) Unallocated space is not located directly to the right (contiguous) of the C: volume",
+"B) The C: volume is formatted using the NTFS file system",
+"C) The machine is connected to an Active Directory domain",
+"D) The user is running Windows 11 Home Edition"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Basic disks require unallocated space to be contiguous and positioned directly to the right of the target volume for the 'Extend Volume' option to function."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "Which component of the GPT partition layout resides at sector LBA 0 to prevent legacy tools from accidentally overwriting GPT structure?",
+"options": [
+"A) Protective MBR",
+"B) Primary GPT Header",
+"C) Extended Boot Record",
+"D) Master File Table (MFT)"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "GPT includes a Protective MBR at LBA 0 so legacy partition management tools treat the disk as occupied rather than empty."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "What system requirement must be met prior to converting an MBR system disk to GPT using the native MBR2GPT.exe utility?",
+"options": [
+"A) The system motherboard firmware must support UEFI boot mode",
+"B) The hard drive must be converted to a dynamic disk first",
+"C) The system partition must be formatted with FAT32",
+"D) The disk must contain 4 existing primary partitions"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Converting an MBR system drive to GPT requires UEFI firmware support to ensure the machine can boot after conversion."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician replaces a failed hard drive in a software RAID 1 (mirrored) setup. What steps should be taken in Disk Management to restore disk redundancy?",
+"options": [
+"A) Initialize the replacement disk, right-click the existing mirror volume, and select 'Add Mirror'",
+"B) Convert the replacement disk to MBR and format it with FAT32",
+"C) Run chkdsk /f on the new disk",
+"D) Execute 'ipconfig /flushdns' in Command Prompt"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "To re-establish software RAID 1, the new disk is initialized and added as a mirror to the surviving dynamic volume."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "Which storage layout dynamic disk type combines unallocated space from multiple physical hard drives into a single continuous logical volume without data mirroring?",
+"options": [
+"A) Spanned volume",
+"B) Primary partition",
+"C) Extended partition",
+"D) Logical drive"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "A Spanned volume merges unallocated space from two or more physical drives into one larger logical volume."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "What status is displayed in Disk Management while a newly added physical disk synchronizes data in a software RAID 1 configuration?",
+"options": [
+"A) Resynching",
+"B) Formatting",
+"C) Healthy (Active)",
+"D) Foreign"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "While data is copying to mirror the second disk, Disk Management displays the 'Resynching' status."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "Which command sequence converts basic Disk 2 to dynamic using the diskpart CLI utility?",
+"options": [
+"A) select disk 2 -> convert dynamic",
+"B) format disk 2 /dynamic",
+"C) convert volume 2 dynamic",
+"D) chkdsk disk 2 /dynamic"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "In diskpart, selecting the disk (select disk 2) and running convert dynamic switches the disk from basic to dynamic."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "Why can dynamic disks NOT be created on standard external USB flash drives in Windows?",
+"options": [
+"A) Windows does not support dynamic disk layout on removable storage media",
+"B) Removable flash drives only support hardware RAID 5",
+"C) Removable flash drives are limited to 32 GB total size",
+"D) USB drives cannot be formatted using NTFS"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Windows explicitly prevents creating dynamic disk structures on removable drives like USB flash drives."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician needs to create a virtual hard disk file (.vhd) and mount it as a local disk. Which built-in utility provides a graphical menu under 'Action' to create and attach VHD files?",
+"options": [
+"A) Disk Management",
+"B) Task Scheduler",
+"C) Component Services",
+"D) System Information"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Disk Management has built-in Action menu options to 'Create VHD' and 'Attach VHD'."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "What primary purpose does an Extended Partition serve on a basic disk initialized with MBR?",
+"options": [
+"A) It acts as a container to hold multiple logical drives",
+"B) It automatically mirrors data for disaster recovery",
+"C) It speeds up read/write access times for swap files",
+"D) It converts the MBR disk to a GPT disk automatically"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "An extended partition overcomes the MBR 4-primary partition limit by acting as a container that hosts multiple logical drives."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician shrinks volume D: to create space for volume C:, but the resulting unallocated space sits between volume D: and volume E:. Why can volume C: NOT be extended on a basic disk?",
+"options": [
+"A) The unallocated space is not adjacent to volume C:",
+"B) Volume C: must be formatted with exFAT",
+"C) Volume C: must be moved to an external USB drive",
+"D) MBR drives do not support shrinking partitions"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "On basic disks, the unallocated space must be directly contiguous to the right of the target volume."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "What happens to stored files when a simple volume on a dynamic disk is extended using non-adjacent space on the same physical drive?",
+"options": [
+"A) Files remain intact without data loss",
+"B) All files are immediately wiped",
+"C) The volume enters an Offline state",
+"D) Files are automatically encrypted"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Extending a dynamic volume expands the logical drive size while retaining all existing data."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "Which Disk Management status indicates that a volume is online, properly formatted, and operating normally without detected file system errors?",
+"options": [
+"A) Healthy",
+"B) Foreign",
+"C) Unallocated",
+"D) Unknown"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The 'Healthy' status confirms that the volume is accessible and functioning properly."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "Which modern Windows storage management feature allows combining multiple physical drives into virtual pools with redundancy options, replacing legacy Dynamic Disks?",
+"options": [
+"A) Storage Spaces",
+"B) BitLocker To Go",
+"C) System Restore",
+"D) Disk Cleanup"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Storage Spaces is Microsoft's modern software-defined storage feature that groups physical drives into pools to create resilient virtual disks."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician connects a new internal hard drive. Disk Management shows 'Disk 1' with a solid black header bar across the entire disk layout. What does this black bar represent?",
+"options": [
+"A) Unallocated space",
+"B) Primary partition",
+"C) Extended partition",
+"D) Striped volume"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "A black bar in Disk Management indicates unallocated space that has not been assigned to a volume or partition."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "Which built-in command-line tool converts an MBR system partition to GPT without wiping or deleting data on the drive?",
+"options": [
+"A) MBR2GPT.exe",
+"B) format.com",
+"C) chkdsk.exe",
+"D) robocopy.exe"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "MBR2GPT.exe converts an MBR formatted disk to GPT without modifying or deleting data on the disk."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "What happens if one physical drive fails in a 2-disk dynamic software Striped volume (RAID 0)?",
+"options": [
+"A) Total data loss occurs across the volume",
+"B) The remaining drive automatically rebuilds the missing data",
+"C) Data remains readable on the surviving drive",
+"D) The volume automatically converts into a simple basic disk"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Striped volumes (RAID 0) provide high speed by striping data across drives without redundancy. If one drive fails, all volume data is lost."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.4 Windows OS Features and Tools",
+"question": "A technician installs a new physical hard drive. Which three basic setup tasks must be completed in order to prepare the drive for storage? (Select THREE)",
+"options": [
+"A) Initialize the disk with a partition style (MBR/GPT)",
+"B) Create a partition/volume",
+"C) Format the volume with a file system",
+"D) Enable BitLocker encryption",
+"E) Configure an incoming VPN connection",
+"F) Run system file checker (sfc /scannow)"
+],
+"answer": [
+"A",
+"B",
+"C"
+],
+"multi_select": true,
+"explanation": "Preparing a new disk requires initializing the disk (MBR or GPT), creating volumes/partitions, and formatting them with a file system (NTFS/FAT32/exFAT)."
+}
+]
+}

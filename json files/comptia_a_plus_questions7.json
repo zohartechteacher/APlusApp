@@ -1,0 +1,123 @@
+{
+  "questions": [
+    {
+      "exam": "220-1202",
+      "domain": "Operational Procedures",
+      "objective": "4.3 Change Management",
+      "question": "A change advisory board did not approve a requested change due to the lack of alternative actions if implementation failed. Which of the following should be updated before requesting approval again?",
+      "options": [
+        "A) Scope of change",
+        "B) Risk level",
+        "C) Rollback plan",
+        "D) End user acceptance"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "A rollback plan outlines alternative actions and steps to revert changes if an implementation fails[cite: 52]."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operational Procedures",
+      "objective": "4.1 Ticketing and Documentation",
+      "question": "When a user calls in to report an issue, a technician submits a ticket on the user's behalf. Which of the following practices should the technician use to make sure the ticket is associated with the correct user?",
+      "options": [
+        "A) Have the user provide a callback phone number to be added to the ticket",
+        "B) Assign the ticket to the department's power user",
+        "C) Register the ticket with a unique user identifier",
+        "D) Provide the user with a unique ticket number that can be referenced on subsequent calls."
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Providing a unique ticket number ensures users can correctly reference their specific ticket on subsequent calls[cite: 52]."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operating Systems",
+      "objective": "1.2 Operating System Features and Tools",
+      "question": "Once weekly a user needs Linux to run a specific open-source application that is not available for the currently installed Windows platform. The user has limited bandwidth throughout the day. Which of the following solutions would be the MOST efficient, allowing for parallel execution of the Linux application and Windows applications?",
+      "options": [
+        "A) Install and run Linux and the required application in a PaaS cloud environment",
+        "B) Install and run Linux and the required application as a virtual machine installed under the Windows OS",
+        "C) Use a swappable drive bay for the boot drive and install each OS with applications on its own drive Swap the drives as needed",
+        "D) Set up a dual boot system by selecting the option to install Linux alongside Windows"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Running Linux as a virtual machine under Windows allows parallel execution without requiring constant rebooting or excessive bandwidth[cite: 52]."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.1 Security Best Practices",
+      "question": "A systems administrator is setting up a Windows computer for a new user. Corporate policy requires a least privilege environment. The user will need to access advanced features and configuration settings for several applications. Which of the following BEST describes the account access level the user will need?",
+      "options": [
+        "A) Power user account",
+        "B) Standard account",
+        "C) Guest account",
+        "D) Administrator account"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Under the principle of least privilege, users operate with a standard user account rather than full administrative privileges[cite: 52]."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Operational Procedures",
+      "objective": "4.3 Change Management",
+      "question": "A change advisory board just approved a change request. Which of the following is the MOST likely next step in the change process?",
+      "options": [
+        "A) End user acceptance",
+        "B) Perform risk analysis",
+        "C) Communicate to stakeholders",
+        "D) Sandbox testing"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Sandbox testing is typically performed after approval before deploying changes to a production environment[cite: 52]."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Software Troubleshooting",
+      "objective": "3.1 Troubleshooting OS Issues",
+      "question": "A user reports that the hard drive activity light on a Windows 10 desktop computer has been steadily lit for more than an hour, and performance is severely degraded. Which of the following tabs in Task Manager would contain the information a technician would use to identify the cause of this issue?",
+      "options": [
+        "A) Services",
+        "B) Processes",
+        "C) Performance",
+        "D) Startup"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The Processes tab in Task Manager displays active resource utilization by individual applications and background processes[cite: 52]."
+    },
+    {
+      "exam": "220-1202",
+      "domain": "Security",
+      "objective": "2.4 Malware Removal",
+      "question": "A technician suspects a rootkit has been installed and needs to be removed. Which of the following would BEST resolve the issue?",
+      "options": [
+        "A) Application updates",
+        "B) Anti-malware software",
+        "C) OS reinstallation",
+        "D) File restore"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Rootkits embed deep into the operating system kernel, making a complete OS reinstallation the most reliable resolution[cite: 52, 53]."
+    }
+  ]
+}

@@ -1,0 +1,351 @@
+{
+  "questions": [
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "An enterprise user requires a workstation capable of rendering complex 3D architectural models and running Computer-Aided Design (CAD) software. Which combination of hardware components is most critical for this build?",
+      "options": [
+        "A) High-end discrete workstation GPU (e.g., NVIDIA RTX Professional), multi-core CPU, and ECC RAM",
+        "B) Integrated graphics, single-core 2.0 GHz CPU, and 4GB DDR3 RAM",
+        "C) Low-power ARM processor, 5400 RPM HDD, and passive cooling",
+        "D) Integrated RAID 0 controller with mechanical disks and no discrete GPU"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "CAD and 3D rendering workstations require specialized workstation-class GPUs (with certified drivers for rendering accuracy), robust multi-core processors, and high-capacity RAM (often Error-Correcting Code RAM) to handle intensive modeling tasks."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "A developer needs to build a local virtualization host capable of running 6 distinct virtual machines concurrently for software testing. Which hardware specifications are most important? (Select TWO)",
+      "options": [
+        "A) Maximum possible system RAM (32GB to 128GB+)",
+        "B) High core-count CPU supporting hardware virtualization (VT-x / AMD-V)",
+        "C) Low-end integrated optical disc drive",
+        "D) High-speed multi-gigabit network interface cards and fast NVMe SSD storage",
+        "E) Basic 300W non-modular power supply"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "multi_select": true,
+      "explanation": "Virtualization hosts require massive RAM allocation to support multiple guest OS instances, multi-core processors with hardware virtualization extensions to allocate threads, and fast storage/networking to handle disk I/O and VM traffic."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "An administrator is designing a Network Attached Storage (NAS) server for small office file sharing and backups. Which drive type and features are best suited for this build?",
+      "options": [
+        "A) High-capacity NAS-rated mechanical hard drives (e.g., WD Red / Seagate IronWolf) configured in RAID",
+        "B) High-performance RGB gaming RAM and extreme overclocked CPU",
+        "C) Single high-speed NVMe drive with no backup redundancy",
+        "D) External USB flash drives connected via USB 2.0 hubs"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "NAS servers prioritize continuous uptime, large storage capacity, and reliability, utilizing NAS-rated HDDs optimized for vibration resistance in multi-drive enclosures alongside hardware or software RAID."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "A user is assembling a high-performance gaming PC. Which components should be prioritized to maximize frame rates and smooth graphical rendering? (Select THREE)",
+      "options": [
+        "A) High-end discrete gaming graphics card (GPU)",
+        "B) High single-core clock speed CPU with robust cooling",
+        "C) Fast NVMe M.2 SSD for rapid game loading",
+        "D) Low-speed IDE optical disk drive",
+        "E) Basic 200W power supply unit"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "Gaming PCs require a powerful discrete GPU for rendering, a high clock-speed CPU to prevent bottlenecks, and fast solid-state storage to load game assets quickly."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "An audio and video editing professional is assembling a workstation for 4K video rendering and multi-track audio production. Which components are essential? (Select TWO)",
+      "options": [
+        "A) Fast, high-capacity NVMe scratch disks for video rendering",
+        "B) Specialized multi-channel audio interface / sound card and high RAM capacity",
+        "C) Basic 5400 RPM laptop hard drive",
+        "D) Low-profile passive graphics card with VGA output only"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Video editing requires fast scratch drives to read/write large media streams quickly, large amounts of RAM, and professional audio interfaces for clean signal routing and low-latency tracking."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "Which of the following best describes the hardware profile of a standard 'Thick Client' desktop computer deployed in a corporate office environment?",
+      "options": [
+        "A) A fully functioning standalone PC with its own OS, local storage, CPU, and RAM capable of running applications locally",
+        "B) A diskless terminal relying entirely on a remote server for all processing and storage",
+        "C) A mobile smartphone docked to an external display",
+        "D) A dedicated network switch routing data packets"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "A thick client (standard fat client) operates independently, running local applications and processing data using its own installed hardware resources."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "What is the primary characteristic of a 'Thin Client' desktop deployment?",
+      "options": [
+        "A) Minimal local hardware, running applications and processing workloads remotely via virtual desktop infrastructure (VDI)",
+        "B) Dual liquid-cooled CPUs with 128GB RAM for local CAD rendering",
+        "C) High-end triple-SLI graphics cards for extreme gaming",
+        "D) Massive internal RAID array storing local corporate databases"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Thin clients feature minimal local processing power and storage, depending on network connections to a central server or cloud environment to execute applications."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "An IT technician is building a specialized NAS server that handles continuous database transactions and multi-user file access where data corruption must be strictly prevented. Which type of RAM should be selected?",
+      "options": [
+        "A) ECC (Error-Correcting Code) RAM",
+        "B) Unbuffered RGB Gaming RAM",
+        "C) Low-power mobile SODIMM RAM",
+        "D) Single-channel DDR2 RAM"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "ECC RAM detects and corrects single-bit memory errors on the fly, making it vital for servers, virtualization hosts, and NAS systems where data integrity is paramount."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "When designing a Home Theater PC (HTPC) for a living room environment, which form factor and acoustic considerations are most important?",
+      "options": [
+        "A) Small form factor (SFF) case with quiet or passive cooling fans and low power consumption",
+        "B) Full Tower E-ATX case with 12 screaming high-RPM industrial fans",
+        "C) Open-air test bench with water-cooling pumps running at max voltage",
+        "D) Heavy enterprise rackmount chassis with redundant 2000W power supplies"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "HTPCs are meant to integrate cleanly into media centers, requiring compact form factors (SFF/Mini-ITX), low power draw, and silent operation to avoid distracting viewers."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "A graphic designer requests a dual-monitor workstation configuration with color-calibrated displays. What hardware component must be present on the computer to support this requirement?",
+      "options": [
+        "A) A discrete graphics card with multiple video output ports (e.g., DisplayPort / HDMI)",
+        "B) An internal optical Blu-ray burner drive",
+        "C) A mechanical floppy disk drive controller",
+        "D) A hardware RAID 5 controller card"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Connecting multiple high-resolution displays requires sufficient physical video outputs on a dedicated graphics card or multi-output integrated GPU."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "Which of the following workstation builds would benefit the most from a high-wattage (850W+) modular 80 Plus Gold certified Power Supply Unit (PSU)?",
+      "options": [
+        "A) High-end gaming PC with power-hungry multi-core CPU and flagship GPU",
+        "B) Basic corporate email and document word-processing client",
+        "C) Low-power home router and firewall appliance",
+        "D) Standalone receipt printer terminal"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "High-end gaming PCs draw significant amperage under full load across 12V rails, requiring robust, certified high-wattage power supplies with clean power delivery."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "An enterprise virtualization server requires high-speed internal data transfer rates and low latency for database virtual machines. Which storage interface should be chosen over traditional SATA SSDs?",
+      "options": [
+        "A) NVMe M.2 PCIe Gen 4 / Gen 5 storage",
+        "B) IDE parallel ATA ribbon cables",
+        "C) USB 1.1 external flash storage",
+        "D) Magnetic floppy diskettes"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "NVMe (Non-Volatile Memory Express) utilizes the PCIe bus directly, delivering drastically higher throughput and lower latency than traditional SATA-limited drives, ideal for enterprise workloads."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "When configuring a hardware RAID array for a local file server needing both speed and fault tolerance against a single drive failure, which RAID level should be selected?",
+      "options": [
+        "A) RAID 5",
+        "B) RAID 0",
+        "C) RAID JBOD",
+        "D) RAID Linear"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 5 provides striping with distributed parity across a minimum of 3 drives, offering balanced read performance and fault tolerance for a single disk failure."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "Which custom build configuration requires a motherboard with maximum PCIe slot expandability and multi-GPU support?",
+      "options": [
+        "A) Deep learning / machine learning training workstation",
+        "B) Standard web browsing thin client",
+        "C) Compact living room HTPC media player",
+        "D) Basic home office document printing station"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Machine learning and deep learning training rigs heavily leverage multiple high-performance GPUs working in parallel, requiring robust motherboards with wide PCIe lane availability."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "An IT administrator is selecting a motherboard and CPU for a NAS build that will stream media files to multiple household users simultaneously. Which factor is most important for the CPU selection?",
+      "options": [
+        "A) Adequate core count and hardware transcoding support (e.g., Intel QuickSync)",
+        "B) Extreme single-core overclocking frequency above 5.5 GHz",
+        "C) Absence of any integrated graphics capabilities",
+        "D) Support for triple-channel ECC registered server memory only"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "NAS units frequently handle file serving and real-time media transcoding (Plex/Emby), making multi-core efficiency and hardware-accelerated transcoding features highly beneficial."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "A user building a custom workstation wants to ensure maximum data security on a NAS by mirroring two identical drives so that if one fails, all data remains intact. Which RAID level should they use?",
+      "options": [
+        "A) RAID 1",
+        "B) RAID 0",
+        "C) RAID 5",
+        "D) RAID 6"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 1 implements disk mirroring, duplicating data across two drives to provide complete redundancy if one drive fails."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "Which of the following components is least critical when building a budget-friendly office productivity desktop used solely for typing documents and sending emails?",
+      "options": [
+        "A) High-end enthusiast discrete graphics card (GPU) with ray tracing",
+        "B) Reliable multi-core CPU with integrated graphics",
+        "C) Standard 8GB or 16GB DDR4/DDR5 system RAM",
+        "D) Fast boot SSD for operating system responsiveness"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Basic office productivity applications do not require expensive discrete graphics cards, as integrated CPU graphics handle standard 2D user interfaces effortlessly."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "A video production studio needs a storage solution that offers maximum write speed for capturing uncompressed multi-stream video without worrying about redundancy on the capture node. Which RAID level provides maximum disk write performance and uses full disk capacity without parity overhead?",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 5",
+        "D) RAID 6"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 0 stripes data across multiple disks for maximum speed and 100% storage efficiency, but offers zero fault tolerance."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "When designing a specialized workstation for financial stock trading that requires ultra-low network latency and maximum uptime across dual network connections, which component choice is most appropriate?",
+      "options": [
+        "A) Dual server-grade network interface cards (NICs) with teaming/aggregation support",
+        "B) Standard Wi-Fi 4 USB wireless dongle",
+        "C) Dial-up 56k internal telephone modem",
+        "D) Unmanaged 5-port 10/100 hub"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Financial trading workstations require high-reliability wired network connections with redundancy (NIC teaming) to prevent dropped packets and ensure sub-millisecond execution speeds."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Custom PC Configurations",
+      "question": "An engineering firm needs a workstation that can simulate complex fluid dynamics and finite element analysis. Beyond a powerful CPU and ample RAM, what specialized hardware feature is often required on the motherboard?",
+      "options": [
+        "A) Support for multi-channel memory architecture and high bandwidth PCIe lanes",
+        "B) Built-in legacy PS/2 ports for vintage mice",
+        "C) Integrated AM/FM radio receiver tuner",
+        "D) Single-channel memory slots restricted to 4GB total"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Simulation workloads transfer massive data sets between system memory and processors, heavily benefiting from multi-channel memory configurations and wide PCIe bandwidth."
+    }
+  ]
+}

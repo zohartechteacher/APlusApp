@@ -1,0 +1,860 @@
+{
+"questions": [
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A technician suspects that a workstation is resolving an incorrect IP address for a internal web server due to a stale DNS resolution cache. Which command should be executed on the Windows machine to clear this cache?",
+"options": [
+"A) ipconfig /release",
+"B) ipconfig /flushdns",
+"C) netstat -a",
+"D) nslookup /clear"
+],
+"answer": [
+"B"
+],
+"multi_select": false,
+"explanation": "The 'ipconfig /flushdns' command clears the local DNS resolver cache on Windows systems, forcing the system to query DNS servers for updated record information."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A user on a Windows system has lost network access. The technician wants to discard the current APIPA IP address and request a fresh configuration from the local DHCP server. Which combination of commands should be executed? (Select TWO)",
+"options": [
+"A) ipconfig /release",
+"B) ipconfig /renew",
+"C) ipconfig /flushdns",
+"D) ipconfig /all",
+"E) netstat -r"
+],
+"answer": [
+"A",
+"B"
+],
+"multi_select": true,
+"explanation": "Executing 'ipconfig /release' drops the active IP address leased from DHCP (or APIPA allocation), and 'ipconfig /renew' sends a new DHCP request to acquire fresh network settings."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A Linux workstation cannot reach local network resources. Which command displays all active network interfaces along with their assigned IPv4/IPv6 addresses on a modern Linux system?",
+"options": [
+"A) ip addr show",
+"B) ipconfig /all",
+"C) nslookup",
+"D) traceroute -l"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The 'ip addr show' (or 'ip a') command in modern Linux distributions displays all network interface details and their associated IP addresses."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A technician needs to test basic layer 3 connectivity to the default gateway address 192.168.1.1. Which utility sends ICMP Echo Request packets to verify host reachability?",
+"options": [
+"A) ping",
+"B) tracert",
+"C) netstat",
+"D) dig"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The 'ping' command sends ICMP Echo Request messages to test IP reachability and round-trip time between network nodes."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "An administrator wants to determine the exact router hop where latency or packet loss is occurring between a local Windows client and a remote website. Which utility should be used?",
+"options": [
+"A) nslookup",
+"B) tracert",
+"C) ipconfig",
+"D) route print"
+],
+"answer": [
+"B"
+],
+"multi_select": false,
+"explanation": "'tracert' (traceroute on Linux) traces the path to a destination host, displaying each router hop along with delay metrics."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A technician is troubleshooting domain name resolution issues on a macOS/Linux computer. Which command provides detailed DNS lookup info, including record types, TTL, and authoritative answer headers?",
+"options": [
+"A) dig",
+"B) ipconfig",
+"C) netstat",
+"D) ping -a"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The 'dig' (Domain Information Groper) command is a powerful CLI DNS lookup tool standard on Linux/Unix platforms."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A Windows workstation can access servers by IP address but fails to connect when using hostnames. Which tool allows the technician to query the configured DNS server interactively?",
+"options": [
+"A) nslookup",
+"B) arp",
+"C) route",
+"D) pathping"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'nslookup' queries DNS servers to diagnose name resolution issues and verify IP-to-hostname mappings."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which Windows Command Prompt utility provides active TCP connection details, listening ports, and protocol statistics?",
+"options": [
+"A) netstat",
+"B) ipconfig",
+"C) tracert",
+"D) hostname"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The 'netstat' (Network Statistics) command shows incoming and outgoing network connections, listening ports, and routing statistics."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A technician needs to map an IP address to a physical MAC address on a local segment. Which command displays the local Address Resolution Protocol cache?",
+"options": [
+"A) arp -a",
+"B) ipconfig /all",
+"C) netstat -r",
+"D) nslookup"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The 'arp -a' command displays current entries in the system's ARP table, showing IP addresses mapped to MAC addresses."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which Windows command displays the computer's MAC address, DHCP server IP, DNS server IP, and lease expiration dates?",
+"options": [
+"A) ipconfig /all",
+"B) ipconfig /renew",
+"C) ping -t",
+"D) netstat -e"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'ipconfig /all' displays comprehensive IP configuration parameters, including MAC (Physical) address, DHCP server, DNS servers, and lease details."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A technician wants to continuously ping a server address 10.0.0.5 until manually stopped in Windows Command Prompt. Which syntax should be used?",
+"options": [
+"A) ping -t 10.0.0.5",
+"B) ping -a 10.0.0.5",
+"C) ping -n 10.0.0.5",
+"D) ping -l 10.0.0.5"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The '-t' flag in Windows ping commands directs the system to ping the destination continuously until interrupted with Ctrl+C."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which Linux terminal utility is equivalent to the Windows 'tracert' tool for tracking network path hops?",
+"options": [
+"A) traceroute",
+"B) tracert",
+"C) ipconfig",
+"D) winipcfg"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'traceroute' is the standard Linux command line utility for identifying hops along a packet path."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A technician is using PowerShell to test if port 80 (HTTP) is open and responding on remote web server 'web.corp.local'. Which cmdlet should be used?",
+"options": [
+"A) Test-NetConnection -ComputerName web.corp.local -Port 80",
+"B) Ping-Host web.corp.local -Port 80",
+"C) Get-NetIPAddress web.corp.local",
+"D) Resolve-DnsName web.corp.local -Port 80"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "PowerShell's 'Test-NetConnection' cmdlet (alias tnc) allows technicians to test TCP port connectivity to targeted remote endpoints."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A Windows workstation displays a local IP address of 169.254.12.88. What command sequence will attempt to release this self-assigned APIPA address and request a new address from a DHCP server? (Select TWO)",
+"options": [
+"A) ipconfig /release",
+"B) ipconfig /renew",
+"C) nslookup 169.254.12.88",
+"D) netstat -n",
+"E) arp -d"
+],
+"answer": [
+"A",
+"B"
+],
+"multi_select": true,
+"explanation": "APIPA addresses (169.254.x.x) occur when DHCP fails. Executing 'ipconfig /release' followed by 'ipconfig /renew' forces the OS to send a new DHCPDISCOVER packet."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A Windows client machine is having issues connecting to resources on a remote subnet. Which command displays the local IP routing table?",
+"options": [
+"A) route print",
+"B) ipconfig /displaydns",
+"C) nslookup /route",
+"D) ping -r"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'route print' (or 'netstat -r') displays the Windows IP routing table, including the active default gateway and static routes."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which Linux command updates or requests a new DHCP lease on an interface named eth0?",
+"options": [
+"A) dhclient eth0",
+"B) ipconfig /renew eth0",
+"C) netstat -dhcp eth0",
+"D) route add eth0"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The 'dhclient' utility in Linux manages DHCP client leases. Running 'dhclient eth0' (or 'dhclient -r eth0' followed by 'dhclient eth0') releases and renews the interface lease."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A technician suspects a duplicate IP address conflict on the local subnet. Which command displays IP-to-MAC mappings to verify which MAC address responds to an IP address?",
+"options": [
+"A) arp -a",
+"B) ipconfig /all",
+"C) nslookup",
+"D) pathping"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The ARP cache ('arp -a') lists known IP-to-MAC hardware address pairs operating on the local network."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which Windows tool combines features of 'ping' and 'tracert' by measuring packet loss statistics per hop over a designated duration?",
+"options": [
+"A) pathping",
+"B) netstat",
+"C) nslookup",
+"D) nbtstat"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'pathping' traces the path to a destination host and calculates latency and packet loss rates across intermediate routers."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A technician wants to view all DNS records currently stored in the Windows local DNS resolver cache. Which command should be used?",
+"options": [
+"A) ipconfig /displaydns",
+"B) ipconfig /showdns",
+"C) nslookup /cache",
+"D) netstat -dns"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'ipconfig /displaydns' outputs the contents of the local Windows DNS resolver cache."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which command on a Linux system is traditionally used to view legacy network interface configurations (though largely superseded by 'ip')?",
+"options": [
+"A) ifconfig",
+"B) ipconfig",
+"C) netconfig",
+"D) winipcfg"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'ifconfig' is the legacy network configuration command on Linux systems."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "To resolve an IP hostname into an IP address using ICMP, a technician uses 'ping hostname'. What flag performs a reverse lookup to find a hostname given an IP address in Windows ping?",
+"options": [
+"A) ping -a IP_Address",
+"B) ping -r IP_Address",
+"C) ping -n IP_Address",
+"D) ping -f IP_Address"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The '-a' parameter in Windows ping attempts a reverse DNS lookup to resolve an IP address to a hostname."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A technician needs to check executable programs associated with active open network listening ports on a Windows server. Which netstat command option displays the associated process IDs (PIDs) and process names?",
+"options": [
+"A) netstat -ano",
+"B) netstat -r",
+"C) netstat -s",
+"D) netstat -f"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'netstat -ano' displays all active connections and listening ports numerically, along with the owning process ID (PID)."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which PowerShell cmdlet is used to query DNS resource records, acting as a modern replacement for nslookup?",
+"options": [
+"A) Resolve-DnsName",
+"B) Get-DnsClientCache",
+"C) Test-Connection",
+"D) Get-NetRoute"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "PowerShell's 'Resolve-DnsName' cmdlet performs DNS lookup resolution queries for specified names and record types."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A network client cannot reach external internet sites, but can ping other machines on the same local subnet. Which diagnostic check should be performed first using command line tools?",
+"options": [
+"A) Ping the default gateway IP address",
+"B) Flush the local ARP cache",
+"C) Run netstat -e",
+"D) Run nbtstat -R"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Pinging the default gateway verifies local router reachability, which is required to forward packets to external subnets."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which parameter for the 'ipconfig' command forces a Windows host to re-register its host name and IP address with configured DNS servers?",
+"options": [
+"A) ipconfig /registerdns",
+"B) ipconfig /renewdns",
+"C) ipconfig /flushdns",
+"D) ipconfig /setdns"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'ipconfig /registerdns' initiates manual dynamic registration for DNS names and IP addresses configured on the client."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A user is experiencing poor performance on a Linux system. The technician wants to display real-time active socket connections and listening ports. Which modern Linux command replaces netstat?",
+"options": [
+"A) ss",
+"B) ip",
+"C) dig",
+"D) nmap"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The 'ss' utility (socket statistics) is the modern replacement for 'netstat' in Linux distributions."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which command clears all static and dynamic entries stored in the Windows ARP cache?",
+"options": [
+"A) arp -d *",
+"B) ipconfig /flusharp",
+"C) netstat -d",
+"D) route clear"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The command 'arp -d *' (or 'arp -d' in administrative prompt) flushes dynamic IP-to-MAC address entries from the ARP table."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A computer receives ICMP time-exceeded messages during path discovery. Which command relies on incremental Time To Live (TTL) adjustments to trace path hops?",
+"options": [
+"A) tracert",
+"B) ping",
+"C) arp",
+"D) nslookup"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'tracert' sends packets with incrementing TTL values starting at 1, capturing ICMP 'Time Exceeded' messages from routers along the path."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A technician needs to check basic ICMP echo connectivity in Linux. By default, how does the Linux 'ping' command behave differently from Windows ping?",
+"options": [
+"A) Linux ping continues sending packets infinitely until stopped manually (Ctrl+C)",
+"B) Linux ping defaults to 4 packets only",
+"C) Linux ping requires root privileges to execute",
+"D) Linux ping uses UDP port 53 by default"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Unlike Windows ping (which sends 4 echo requests by default), Linux ping runs continuously until interrupted unless specified with the '-c' count flag."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which command options in nslookup allow a technician to explicitly specify a server target such as 8.8.8.8 to test name resolution?",
+"options": [
+"A) nslookup hostname 8.8.8.8",
+"B) nslookup -target 8.8.8.8",
+"C) nslookup /server 8.8.8.8",
+"D) nslookup -use 8.8.8.8"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Executing 'nslookup [domain_name] [DNS_server_IP]' directs the query to a specific DNS server (e.g., 'nslookup company.com 8.8.8.8')."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A technician suspects that a workstation has a bad default gateway configuration. Which command output on a Windows machine displays the default gateway IP?",
+"options": [
+"A) ipconfig",
+"B) nslookup",
+"C) netstat -s",
+"D) arp -g"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'ipconfig' displays IPv4/IPv6 addresses, subnet masks, and the Default Gateway assigned to active network adapters."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which diagnostic command tests local loopback functionality on an IP host without sending traffic over physical wire?",
+"options": [
+"A) ping 127.0.0.1",
+"B) ping 0.0.0.0",
+"C) ping 255.255.255.255",
+"D) ping 192.168.1.255"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Pinging 127.0.0.1 (IPv4 loopback) or ::1 (IPv6 loopback) verifies that the local TCP/IP protocol stack is installed and functioning."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which netstat switch displays network statistics organized by protocol (e.g., IP, ICMP, TCP, UDP)?",
+"options": [
+"A) netstat -s",
+"B) netstat -a",
+"C) netstat -r",
+"D) netstat -e"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The '-s' option displays per-protocol statistics for TCP, UDP, ICMP, and IP protocols."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A network admin needs to trace path hops on a Linux server using ICMP instead of the default UDP packets. Which parameter should be used with traceroute?",
+"options": [
+"A) traceroute -I",
+"B) traceroute -U",
+"C) traceroute -T",
+"D) traceroute -P"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The '-I' switch forces Linux traceroute to use ICMP ECHO requests instead of default UDP probes."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which Windows command can be used to display or alter NetBIOS over TCP/IP (NBT) name resolution tables?",
+"options": [
+"A) nbtstat",
+"B) netstat",
+"C) route",
+"D) hostname"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'nbtstat' displays NetBIOS over TCP/IP statistics and name tables."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A technician wants to query a specific mail server record (MX) using nslookup. What sequence of commands should be entered into the interactive nslookup prompt?",
+"options": [
+"A) set type=MX followed by domain name entry",
+"B) set record=mail",
+"C) lookup MX domain.com",
+"D) querytype=MX"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Inside the nslookup interactive shell, 'set type=MX' instructs the utility to query Mail Exchanger records for subsequent domain lookups."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which Linux command displays modern default gateway routes and network path information?",
+"options": [
+"A) ip route show",
+"B) ipconfig /route",
+"C) nslookup /gateway",
+"D) netstat -gateway"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'ip route show' (or 'ip route') displays routing table entries on Linux."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A user's host is sending traffic to an incorrect next-hop router. Which utility can add a static route directly to the host routing table?",
+"options": [
+"A) route",
+"B) ipconfig",
+"C) pathping",
+"D) arp"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The 'route' command (e.g., 'route add') is used to view and modify network routing tables."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which command line utility displays the host name of the current computer operating system session?",
+"options": [
+"A) hostname",
+"B) whoami",
+"C) systeminfo",
+"D) net config"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The 'hostname' command prints the configured name of the local computer system."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A technician executes 'ping -f -l 1472 192.168.1.1' on Windows. What purpose do these parameters serve?",
+"options": [
+"A) Test for Maximum Transmission Unit (MTU) packet fragmentation limits",
+"B) Send fast ICMP loops with 1472 retries",
+"C) Flood the gateway with 1472 small packets",
+"D) Force a 1472-byte DNS lookup"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The '-f' flag sets the 'Don't Fragment' bit, and '-l 1472' sets payload buffer size. This combination tests MTU threshold size without allowing packet fragmentation."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which Linux DNS lookup tool is simpler than 'dig' and outputs basic IP address mappings by default?",
+"options": [
+"A) host",
+"B) ipconfig",
+"C) traceroute",
+"D) netstat"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The 'host' command in Linux provides quick domain-to-IP lookups in a concise format."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "What does a ping response showing 'Destination Host Unreachable' indicate?",
+"options": [
+"A) The local system or local router cannot discover an IP route or ARP entry to the target host",
+"B) The target host answered but refused TCP connection",
+"C) DNS resolution completed, but port 80 is blocked",
+"D) The local physical cable is disconnected"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'Destination Host Unreachable' indicates that the default gateway or local host could not find a path or resolve the MAC address (via ARP) for the destination IP."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "What does a ping result showing 'Request Timed Out' typically imply?",
+"options": [
+"A) The target host did not respond within the default timeout period (often dropped by firewall or powered off)",
+"B) The local IP address is missing",
+"C) The DNS server is misconfigured",
+"D) The network cable has high voltage"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'Request Timed Out' indicates echo requests were sent, but no echo reply arrived within the timeout interval, commonly due to strict host firewalls blocking ICMP or an offline device."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which command forces a Windows network adapter to release its active IPv6 address configuration back to the network router/DHCPv6 server?",
+"options": [
+"A) ipconfig /release6",
+"B) ipconfig /renew6",
+"C) ipconfig /flush6",
+"D) netstat -v6"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'ipconfig /release6' specifically releases IPv6 address leases obtained via DHCPv6."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which command renews IPv6 network leases on Windows?",
+"options": [
+"A) ipconfig /renew6",
+"B) ipconfig /release6",
+"C) ipconfig /flushdns",
+"D) netstat -r6"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'ipconfig /renew6' requests a new IPv6 configuration from a DHCPv6 server."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A technician needs to find the process ID (PID) associated with a rogue port listening on a Linux machine. Which command combination displays listening ports with process names and PIDs?",
+"options": [
+"A) ss -tulpn",
+"B) ip link show",
+"C) traceroute -p",
+"D) dig +short"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'ss -tulpn' (TCP, UDP, Listening, Processes, Numeric) displays listening sockets along with process names and PIDs on Linux."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A Windows user cannot resolve hostnames. The technician runs 'nslookup server1' and receives 'DNS request timed out.' Which commands can help diagnose or fix the issue? (Select TWO)",
+"options": [
+"A) ping [DNS_Server_IP]",
+"B) ipconfig /flushdns",
+"C) route print",
+"D) netstat -e",
+"E) hostname"
+],
+"answer": [
+"A",
+"B"
+],
+"multi_select": true,
+"explanation": "Pinging the DNS server IP checks basic network connectivity to the server, and flushing the DNS cache removes invalid or stale entries."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which Linux terminal tool is commonly used to perform real-time continuous path tracing combining ping and traceroute statistics into an interactive view?",
+"options": [
+"A) mtr",
+"B) pathping",
+"C) nslookup",
+"D) ifconfig"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'mtr' (My TraceRoute) is a popular Linux tool that continuously tracks network path hops and live packet loss stats."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "A technician wants to view detailed system information, including OS version, network card details, hotfixes, and domain membership via Windows CLI. Which command should be run?",
+"options": [
+"A) systeminfo",
+"B) ipconfig /all",
+"C) netstat -a",
+"D) winver"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The 'systeminfo' command outputs detailed operating system configurations, hardware specifications, and network interface properties."
+},
+{
+"exam": "220-1201",
+"domain": "Network Troubleshooting",
+"objective": "5.3 Troubleshooting Networks",
+"question": "Which command line sequence in PowerShell resets all TCP/IP stack configurations to default state on a malfunctioning Windows computer?",
+"options": [
+"A) netsh int ip reset",
+"B) ipconfig /resetip",
+"C) route -reset",
+"D) Test-NetConnection -Reset"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'netsh int ip reset' resets the Windows TCP/IP stack registry keys back to default factory states, resolving corrupt protocol issues."
+}
+]
+}

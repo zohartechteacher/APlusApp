@@ -1,0 +1,856 @@
+{
+"questions": [
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A network technician is setting up a new SOHO wireless router. What primary encryption standard should be selected to provide the strongest authentication and protection against dictionary attacks?",
+"options": [
+"A) WPA3-Personal (SAE)",
+"B) WPA2-Personal (TKIP)",
+"C) WEP-128",
+"D) WPA-Enterprise (RC4)"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "WPA3 uses Simultaneous Authentication of Equals (SAE) to replace WPA2's Pre-Shared Key (PSK) exchange, offering far greater resilience against offline dictionary attacks."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "An administrator wants to secure the web management console of a SOHO router against unauthorized access originating from the internet. Which setting should be disabled?",
+"options": [
+"A) Remote Management / WAN Management",
+"B) DHCP Server",
+"C) SSID Broadcasting",
+"D) NAT Loopback"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Disabling Remote Management (or WAN Administration) restricts router management access exclusively to clients directly connected to the local network (LAN)."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A small business requires isolated internet connectivity for visiting clients without permitting access to corporate servers and printers on the primary LAN. What feature should be configured on the SOHO router?",
+"options": [
+"A) Guest Network",
+"B) DMZ Host",
+"C) Dynamic DNS",
+"D) UPnP"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Enabling a Guest Network creates a secondary isolated wireless network that provides public internet access while blocking access to local intranet resources."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A technician needs to restrict wireless network access to a set of company-issued laptops by referencing their physical network card addresses. What security mechanism should be implemented?",
+"options": [
+"A) MAC Filtering",
+"B) IP Address Scope Exclusion",
+"C) Port Forwarding",
+"D) Static Routing"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "MAC Filtering maintains an Allow or Deny list of physical MAC addresses to control which wireless devices are allowed to associate with the WAP."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A technician is configuring the DHCP server settings on a SOHO router. The network has 30 workstation devices, but the administrator wants to prevent rogue devices from obtaining IP addresses once those 30 addresses are assigned. What parameter should be adjusted?",
+"options": [
+"A) DHCP Pool / Scope Range",
+"B) Default Gateway IP",
+"C) Subnet Mask bit length",
+"D) DNS Server Primary Address"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Limiting the DHCP pool/scope range restricts the number of dynamic IP addresses allocated by the router's DHCP server."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "Which of the following default configurations on a newly unboxed SOHO router should be changed immediately during initial setup? (Select TWO)",
+"options": [
+"A) Default administrator password",
+"B) Default Network Name (SSID)",
+"C) Ethernet port speed settings",
+"D) MAC address table timeout",
+"E) Internal LAN loopback address"
+],
+"answer": [
+"A",
+"B"
+],
+"multi_select": true,
+"explanation": "Changing default admin credentials prevents unauthorized takeover, and changing default SSIDs prevents attackers from easily identifying the router model and default vulnerabilities."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "An administrator wants to assign a fixed IP address to a specific network printer while keeping the printer configured to obtain IP settings dynamically via DHCP. Which router setting should be configured?",
+"options": [
+"A) DHCP Reservation / Static Lease",
+"B) Port Triggering",
+"C) DMZ Host Mapping",
+"D) Dynamic DNS (DDNS)"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "A DHCP Reservation binds a device's MAC address to a specific IP address within the DHCP server scope, ensuring it always receives the same IP address dynamically."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A network engineer wants to reduce co-channel interference for a 2.4 GHz 802.11n Wi-Fi deployment. Which non-overlapping channels should be selected?",
+"options": [
+"A) Channels 1, 6, and 11",
+"B) Channels 2, 7, and 12",
+"C) Channels 1, 3, and 5",
+"D) Channels 6, 8, and 10"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "In North America, 2.4 GHz Wi-Fi offers 11 channels, but only channels 1, 6, and 11 do not overlap with each other."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "Which wireless security protocol uses Simultaneous Authentication of Equals (SAE) to protect against brute-force password guessing attacks?",
+"options": [
+"A) WPA3",
+"B) WPA2",
+"C) WPA",
+"D) WEP"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "SAE is a key exchange protocol utilized by WPA3 that establishes a secure handshake resistant to offline dictionary attacks."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A technician is setting up a web server inside a private local network that needs to accept web traffic on TCP port 80 from external internet users. Which feature on the SOHO router must be configured?",
+"options": [
+"A) Port Forwarding",
+"B) MAC Address Filtering",
+"C) DHCP Relay",
+"D) Quality of Service (QoS)"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Port Forwarding redirects inbound external traffic sent to a specific WAN port to a specific internal private IP address and LAN port."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "What happens when an administrator disables SSID Broadcasting on a SOHO wireless access point?",
+"options": [
+"A) The wireless network name is hidden from automated beacon discovery lists",
+"B) Wireless traffic is automatically encrypted using AES-256",
+"C) All connected clients are disconnected and assigned APIPA addresses",
+"D) The WAP stops accepting connections from 5 GHz client devices"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Disabling SSID broadcast stops the WAP from advertising its network name in beacon frames, requiring users to manually enter the exact SSID to connect."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A small business uses VoIP phones that experience audio stuttering during peak internet download hours. Which router setting should be configured to prioritize real-time voice packets over normal web browsing traffic?",
+"options": [
+"A) Quality of Service (QoS)",
+"B) Universal Plug and Play (UPnP)",
+"C) Demilitarized Zone (DMZ)",
+"D) Dynamic Host Configuration Protocol (DHCP)"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Quality of Service (QoS) allows administrators to prioritize specific network traffic types (such as VoIP or video streaming) over less time-sensitive bandwidth traffic."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "An enterprise environment uses an external RADIUS server for wireless client authentication. Which wireless security mode must be configured on the access point?",
+"options": [
+"A) WPA3-Enterprise",
+"B) WPA3-Personal",
+"C) WPA2-PSK",
+"D) WEP-64"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "WPA/WPA2/WPA3 Enterprise modes rely on 802.1X authentication using an external RADIUS server to authenticate individual user accounts."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A user wants to allow gaming consoles to open inbound communications ports dynamically as needed without manually creating static port forwarding rules. What SOHO router protocol facilitates this, despite security risks?",
+"options": [
+"A) Universal Plug and Play (UPnP)",
+"B) Dynamic DNS (DDNS)",
+"C) Simple Network Management Protocol (SNMP)",
+"D) Domain Name System (DNS)"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "UPnP allows local applications and devices to automatically discover and configure port mappings on the gateway router."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A technician is replacing an older WAP. Which legacy wireless security protocol should be completely avoided due to weak RC4 encryption that can be cracked in minutes?",
+"options": [
+"A) WEP",
+"B) WPA3",
+"C) WPA2-AES",
+"D) 802.1X"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Wired Equivalent Privacy (WEP) uses a weak 24-bit Initialization Vector (IV) and RC4 stream cipher, making it severely vulnerable and obsolete."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A small office SOHO router is configured with a public IP address on its WAN port that changes periodically from the ISP. The office hosts an internal FTP server that needs a consistent domain name mapping. What feature should be enabled?",
+"options": [
+"A) Dynamic DNS (DDNS)",
+"B) Static IP Route",
+"C) MAC Address Cloning",
+"D) NAT Loopback"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Dynamic DNS (DDNS) monitors changes to a router's dynamic public IP address and automatically updates domain name registry entries."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "An administrator wants to place a publicly accessible honeypot server outside of the internal stateful firewall on a SOHO router. Which configuration option achieves this?",
+"options": [
+"A) DMZ (Demilitarized Zone)",
+"B) SSID Suppression",
+"C) Port Triggering",
+"D) DHCP Scope Exclusion"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Configuring a DMZ host exposes a designated internal local IP address completely to all incoming WAN traffic outside the router's firewall."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A technician wants to configure a SOHO router to assign local IP addresses within the range 192.168.1.100 through 192.168.1.150 while keeping addresses 192.168.1.1 through 192.168.1.99 available for servers. What is this process called?",
+"options": [
+"A) Setting DHCP Pool and Exclusions",
+"B) Configuring Static NAT Translation",
+"C) Enabling Classless Inter-Domain Routing",
+"D) Configuring MAC Address Binding"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Defining the start and end IP bounds configures the DHCP pool, while withholding lower addresses creates exclusions for static network devices."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A user wants to establish a secure connection back to their home network while traveling in order to access home file shares securely. Which feature on the home router supports this?",
+"options": [
+"A) VPN Server / Passthrough",
+"B) Dynamic DNS",
+"C) Port Triggering",
+"D) UPnP"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "A router hosting a VPN server allows remote clients to create encrypted tunnels back into the local home network."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "Which wireless frequency band provides higher total throughput and more non-overlapping channels, but has a shorter coverage range and lower wall penetration capability?",
+"options": [
+"A) 5 GHz",
+"B) 2.4 GHz",
+"C) 900 MHz",
+"D) 4.9 GHz"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The 5 GHz frequency band offers higher data transfer speeds and broader bandwidth channels, but experiences greater signal attenuation through solid walls compared to 2.4 GHz."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A network technician needs to change the administration access port on a SOHO router from standard HTTP (Port 80) to HTTPS (Port 443). Why is HTTPS preferred for administration?",
+"options": [
+"A) It encrypts management console traffic and credential transmissions",
+"B) It bypasses MAC address filtering rules",
+"C) It increases wireless signal propagation distance",
+"D) It automatically updates router firmware"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "HTTPS provides SSL/TLS encryption, preventing attackers on the network from capturing plain-text administrative passwords during login."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "An installer is positioning a SOHO wireless access point in an office building. To maximize omnidirectional coverage across a single floor plan, where should the access point be placed?",
+"options": [
+"A) In the central area of the floor, mounted high on a wall or ceiling",
+"B) Near an outer window in the corner of the basement",
+"C) Inside a metal server cabinet on the ground floor",
+"D) Direct on the floor behind a concrete support pillar"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Central ceiling-mounted placement maximizes omnidirectional radio wave propagation while minimizing obstructions and exterior signal leakage."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A technician is configuring a dual-band router. What option allows a single wireless network name to automatically steer client devices between 2.4 GHz and 5 GHz bands based on signal strength?",
+"options": [
+"A) Band Steering",
+"B) MAC Filtering",
+"C) Channel Bonding",
+"D) Port Triggering"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Band Steering encourages dual-band capable devices to connect to the faster 5 GHz frequency while falling back to 2.4 GHz when range drops."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "Which field in a SOHO router configuration sets the IP address of the upstream gateway provided by an Internet Service Provider on the WAN interface?",
+"options": [
+"A) Default Gateway",
+"B) Subnet Mask",
+"C) Loopback Address",
+"D) Broadcast Address"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The WAN Default Gateway address specifies the next-hop router at the ISP to which all external traffic is forwarded."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A technician is setting up a SOHO router for an office that requires specific outbound applications to dynamically open inbound ports only when an outbound connection is initiated on a designated trigger port. What feature should be used?",
+"options": [
+"A) Port Triggering",
+"B) Port Forwarding",
+"C) DMZ Host",
+"D) Static Routing"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Port Triggering dynamically opens incoming ports to an internal host only after that host initiates traffic outbound on a specified trigger port."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "An administrator wants to secure a SOHO wireless access point using a PIN printed on a sticker on the back of the device. Why is Wi-Fi Protected Setup (WPS) discouraged for secure networks?",
+"options": [
+"A) WPS PINs are vulnerable to brute-force automated cracking attacks",
+"B) WPS forces all connections to use WEP encryption",
+"C) WPS disables NAT translation on the router",
+"D) WPS limits maximum wireless throughput to 11 Mbps"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "WPS uses an 8-digit PIN split into two 4-digit halves that can easily be brute-forced within a few hours using automated penetration tools."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "Which wireless security mode is best suited for a home network where users share a single pre-shared passphrase across all home devices?",
+"options": [
+"A) WPA3-Personal",
+"B) WPA3-Enterprise",
+"C) 802.1X / EAP-TLS",
+"D) RADIUS Mode"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Personal (PSK) security modes utilize a single shared passphrase across all connected clients, ideal for home environments."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A technician needs to replace a SOHO router that was connected to a cable modem. The ISP locks connections to the original router's hardware MAC address. Which feature on the new router allows it to work without calling the ISP?",
+"options": [
+"A) MAC Cloning",
+"B) MAC Filtering",
+"C) Port Forwarding",
+"D) IP Spoofing"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "MAC Address Cloning overrides the new router's physical WAN MAC address with the MAC address of the old registered gateway."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "Which parameter in a SOHO router's DHCP settings determines how long a client device can retain its assigned IP address before requesting a renewal?",
+"options": [
+"A) DHCP Lease Time",
+"B) Scope Reservation",
+"C) TTL (Time to Live)",
+"D) Keepalive Interval"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "DHCP Lease Time controls the duration for which a client holds an IP lease before requiring a renewal handshake with the DHCP server."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "An administrator wants to prevent users on the guest Wi-Fi network from accessing the administrative web GUI of the router. Which configuration setting ensures this restriction?",
+"options": [
+"A) Disable 'Allow Guest Access to Router Management / LAN'",
+"B) Enable WPS",
+"C) Enable UPnP",
+"D) Disable WPA3 Encryption"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Disabling guest access to LAN/management isolates the guest subnet from reaching the local administration interface."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "Which feature on a SOHO router translates multiple private local IP addresses into a single public IP address for internet communications?",
+"options": [
+"A) NAT (Network Address Translation)",
+"B) DHCP (Dynamic Host Configuration Protocol)",
+"C) DNS (Domain Name System)",
+"D) QoS (Quality of Service)"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "NAT maps internal private IPv4 addresses to a single public IPv4 address on the WAN interface using port address translation (PAT)."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A technician needs to configure a wireless access point in a high-density apartment complex where the 2.4 GHz spectrum is overcrowded. What adjustment will reduce wireless channel overlap and interference?",
+"options": [
+"A) Migrate clients to the 5 GHz or 6 GHz frequency bands",
+"B) Increase 2.4 GHz channel width to 40 MHz",
+"C) Change security mode to WEP",
+"D) Enable SSID Broadcasting"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Moving clients to 5 GHz or 6 GHz provides access to significantly more non-overlapping channels, reducing congestion in crowded areas."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "Which component of WPA3 provides forward secrecy, ensuring that even if an attacker discovers the network password in the future, they cannot decrypt previously recorded wireless traffic?",
+"options": [
+"A) SAE (Simultaneous Authentication of Equals)",
+"B) TKIP (Temporal Key Integrity Protocol)",
+"C) WEP Initialization Vectors",
+"D) Pre-Shared Keys"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "SAE provides forward secrecy by generating unique ephemeral session keys for every transmission pair."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "An administrator wants to configure content filtering on a SOHO router to block malicious websites across all connected client devices automatically. Which configuration on the router achieves this?",
+"options": [
+"A) Configure custom DNS server addresses to point to a secure DNS provider (e.g., 1.1.1.2 or 9.9.9.9)",
+"B) Enable DMZ Host mode",
+"C) Disable MAC filtering",
+"D) Reduce DHCP lease duration"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Configuring protective DNS servers at the router level ensures all local clients receiving dynamic DNS configurations automatically route domain queries through threat-filtering resolvers."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A network technician is setting up two standalone wireless access points to cover a large hallway under a single SSID. What channel configuration should be used on the 2.4 GHz band to prevent interference between the adjacent WAPs?",
+"options": [
+"A) Set WAP 1 to Channel 1 and WAP 2 to Channel 6",
+"B) Set both WAP 1 and WAP 2 to Channel 1",
+"C) Set WAP 1 to Channel 2 and WAP 2 to Channel 3",
+"D) Set both WAPs to Auto-Channel on Channel 11"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Adjacent access points sharing coverage areas must use non-overlapping channels (such as 1 and 6) to avoid co-channel interference while broadcasting the same SSID."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "What is the primary risk of leaving Universal Plug and Play (UPnP) enabled on a SOHO router?",
+"options": [
+"A) Malware on an internal host can open inbound ports without user knowledge",
+"B) Wireless traffic encryption drops to WEP standards",
+"C) The router stops leasing dynamic IP addresses",
+"D) Remote management is automatically exposed to the internet"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "UPnP lacks authentication checks, allowing malicious software running on internal client computers to reconfigure firewall rules and open inbound listening ports."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "Which option in a SOHO router's firewall settings blocks external ping requests sent to the public WAN interface address?",
+"options": [
+"A) Disable ICMP / WAN Ping Response",
+"B) Enable Port Forwarding",
+"C) Enable UPnP",
+"D) Disable DHCP Server"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Disabling ICMP echo/ping responses on the WAN port makes the router invisible to automated internet ping sweeps."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A technician needs to connect a legacy IoT device that only supports 2.4 GHz Wi-Fi and WPA2-TKIP to a modern WAP. What configuration must be enabled on the WAP to support this device?",
+"options": [
+"A) Enable WPA2/WPA3 Mixed Mode / Legacy Compatibility",
+"B) Enable WPA3-Enterprise only",
+"C) Disable 2.4 GHz Radio band",
+"D) Enable 802.1X EAP-TLS Authentication"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Mixed compatibility modes allow access points to support older legacy standards (like WPA2-TKIP) alongside newer protocols on the 2.4 GHz band."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "What is the main function of the SSID (Service Set Identifier) on a wireless router?",
+"options": [
+"A) It serves as the human-readable network name of the wireless network",
+"B) It specifies the physical MAC address of the access point antenna",
+"C) It defines the symmetric encryption key length for WPA3",
+"D) It calculates the IP address scope for guest clients"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The SSID is the unique 32-character technical name assigned to a wireless network to identify it to connecting users."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A network administrator wants to ensure that a corporate SOHO router updates its system clock automatically to ensure accurate log timestamps. Which protocol setting should be configured?",
+"options": [
+"A) NTP (Network Time Protocol)",
+"B) SNMP (Simple Network Management Protocol)",
+"C) SMTP (Simple Mail Transfer Protocol)",
+"D) DHCP (Dynamic Host Configuration Protocol)"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "NTP synchronizes device system clocks across a network with precise central time servers."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "An administrator wants to prevent unauthorized users from physically connecting an Ethernet cable to an unused wall outlet in the office lobby. What switch configuration or physical security step should be taken?",
+"options": [
+"A) Disable unused physical switch ports",
+"B) Disable SSID Broadcasting",
+"C) Enable Dynamic DNS",
+"D) Change the router Wi-Fi channel"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Shutting down or disabling unused physical RJ45 ports on switches and SOHO routers prevents unauthorized physical network insertion."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "Which of the following standards introduces support for the 6 GHz frequency spectrum to offer ultra-wide channels and reduced signal interference?",
+"options": [
+"A) Wi-Fi 6E (802.11ax extended)",
+"B) Wi-Fi 5 (802.11ac)",
+"C) Wi-Fi 4 (802.11n)",
+"D) 802.11g"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Wi-Fi 6E extends Wi-Fi 6 (802.11ax) capabilities into the newly opened 6 GHz radio spectrum."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A small business owner wants to prevent employee laptops from accessing adult content and streaming video websites during work hours. Which router feature provides this control?",
+"options": [
+"A) Content Filtering / Parental Controls",
+"B) MAC Address Cloning",
+"C) Band Steering",
+"D) WPA3-Enterprise"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Content Filtering/Parental Controls inspect domain names or URL categories to restrict access to non-work-related sites based on schedule or policy."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "Which wireless security protocol combination relies on CCMP (Counter Mode Cipher Block Chaining Message Authentication Code Protocol) using AES encryption?",
+"options": [
+"A) WPA2-Personal",
+"B) WEP-64",
+"C) WPA-TKIP",
+"D) Open Authentication"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "WPA2 uses CCMP and Advanced Encryption Standard (AES) cipher algorithms for data privacy and payload integrity."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A technician is installing a wireless network in an office surrounded by brick walls. Users report that 5 GHz Wi-Fi drops connection when moving into adjacent rooms, but 2.4 GHz remains stable. Why does this occur?",
+"options": [
+"A) Lower frequency radio waves (2.4 GHz) penetrate solid obstacles better than higher frequency waves (5 GHz)",
+"B) 5 GHz networks do not support AES encryption through brick",
+"C) 2.4 GHz networks use more power bandwidth than 5 GHz networks",
+"D) 5 GHz networks only work when line-of-sight is maintained"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Lower frequency signals (2.4 GHz) pass through dense physical barriers (like brick, glass, and wood) with less attenuation than higher frequency signals (5 GHz)."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "Where should a technician look in a SOHO router web management GUI to identify all currently connected wired and wireless devices along with their assigned IP and MAC addresses?",
+"options": [
+"A) DHCP Client Table / Attached Devices List",
+"B) Static Routing Table",
+"C) Port Forwarding Rules",
+"D) DMZ Configuration Page"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The DHCP Client Table lists all active LAN devices that have received IP address leases from the router."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "An administrator wants to secure a WAP by disabling physical management access over unencrypted HTTP. What setting should be forced for browser management?",
+"options": [
+"A) Force HTTPS Management (Port 443)",
+"B) Enable Telnet Access (Port 23)",
+"C) Enable WPS Push Button",
+"D) Set SSID to Default"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Enforcing HTTPS management protects router configuration logins by encrypting browser communication using SSL/TLS."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "What is the primary function of a SOHO router's WAN (Wide Area Network) port?",
+"options": [
+"A) To connect the router to an external ISP modem or internet connection",
+"B) To connect local desktop PCs on the internal LAN",
+"C) To connect local network printers directly",
+"D) To manage the router via console serial cable"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "The WAN port connects the SOHO gateway to an external network source, such as a broadband cable, fiber, or DSL modem."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "A technician needs to configure a wireless router to support legacy 802.11b devices alongside modern 802.11n devices. What setting must be enabled on the 2.4 GHz radio?",
+"options": [
+"A) Mixed Mode / Legacy Mode",
+"B) 802.11n Only Mode",
+"C) Greenfields Mode",
+"D) 5 GHz Spectrum Mode"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Enabling Mixed Mode allows access points to transmit preamble signals that maintain backwards compatibility with older Wi-Fi standards."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.2 Wireless Networking Concepts and Configuration",
+"question": "Which of the following describes a key vulnerability of MAC Filtering as a standalone wireless security measure?",
+"options": [
+"A) Attackers can easily spoof authorized MAC addresses captured over the air using packet sniffers",
+"B) MAC filtering disables WPA3 encryption",
+"C) MAC filtering requires an external RADIUS server",
+"D) MAC filtering limits total Wi-Fi throughput to 54 Mbps"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "MAC addresses are transmitted unencrypted in 802.11 frame headers. Attackers can sniff legitimate MAC addresses and spoof their network card to bypass MAC filtering."
+}
+]
+}

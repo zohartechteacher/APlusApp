@@ -1,0 +1,246 @@
+{
+  "questions": [
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "1.1 Mobile Devices",
+      "question": "Which of the following is true regarding eSIM profiles?",
+      "options": [
+        "A) They require a physical SIM tray.",
+        "B) They are loaded over the air via network data profiles.",
+        "C) They use legacy DB-25 connectors."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "eSIM profiles are loaded over the air via network data profiles; no physical tray exists[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Cloud Computing",
+      "objective": "4.3 Cloud Concepts",
+      "question": "Which of the following describes private cloud environments?",
+      "options": [
+        "A) Shared with businesses in the same industry.",
+        "B) Dedicated strictly to a single organization.",
+        "C) Maintained via public network connections."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Private cloud environments are dedicated strictly to a single organization[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.4 Common Protocols and Services",
+      "question": "What is the primary function of DNS?",
+      "options": [
+        "A) Assign dynamic IP addresses to clients.",
+        "B) Converts domain names to IP addresses.",
+        "C) Encrypt administrative web sessions."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "DNS converts domain names to IP addresses. Failure to resolve means DNS is down or misconfigured[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.3 Displays and Laptops",
+      "question": "A laptop screen shows a faintly visible image only under direct external light. Which component has failed?",
+      "options": [
+        "A) The graphics card GPU",
+        "B) The LCD panel backlight or inverter",
+        "C) The internal RAM module"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "If an image is faintly visible under direct external light, the LCD panel backlight or its power supply (inverter) has failed[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.5 Peripherals and Connectors",
+      "question": "Which of the following features are supported by Thunderbolt 4 over a single Type-C connector?",
+      "options": [
+        "A) Power delivery",
+        "B) Multi-display outputs",
+        "C) High-speed PCIe/Ethernet data"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "Thunderbolt 4 supports power delivery, multi-display outputs, and high-speed PCIe/Ethernet data over a single Type-C connector[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.4 Common Protocols and Services",
+      "question": "Which port does SSH (Secure Shell) use?",
+      "options": [
+        "A) Port 21",
+        "B) Port 22",
+        "C) Port 23"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "SSH (Secure Shell) runs securely over Port 22[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.4 RAM",
+      "question": "What is the primary purpose of Error-Correcting Code (ECC) memory?",
+      "options": [
+        "A) Increases core clock speeds for gaming.",
+        "B) Detects and corrects single-bit memory corruption errors.",
+        "C) Boosts virtual machine graphical rendering."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Error-Correcting Code (ECC) memory detects and corrects single-bit memory corruption errors, vital for heavy virtualization stability[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "What does a hard reboot primarily achieve during localized input freezing?",
+      "options": [
+        "A) Replaces damaged storage sectors.",
+        "B) Clears software locks causing localized input freezing before assuming hardware failure.",
+        "C) Flashes the motherboard UEFI firmware."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A hard reboot clears software locks causing localized input freezing before assuming hardware component failure[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.3 Network Services",
+      "question": "What is the function of a DHCP Reservation?",
+      "options": [
+        "A) Maps a device's physical MAC address to a specific permanent IP address within the automated pool.",
+        "B) Blocks unauthorized MAC addresses from connecting to the switch.",
+        "C) Assigns random external IP addresses via NAT."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "A DHCP Reservation maps a target device's physical MAC address to a specific permanent IP address within the automated pool[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Why do high-performance M.2 NVMe drives include pre-installed motherboard blocks?",
+      "options": [
+        "A) To secure the drive physically against shock.",
+        "B) To act as a passive cooling heatsink for thermal output.",
+        "C) To supply auxiliary power."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "High-performance M.2 NVMe drives generate intense thermal output; the pre-installed motherboard block acts as a passive cooling heatsink[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "5.1 Hardware Troubleshooting",
+      "question": "What does a swollen, bowing battery chassis indicate?",
+      "options": [
+        "A) Normal discharge behavior",
+        "B) Localized gas buildup and imminent thermal runaway/fire risk",
+        "C) Fully charged status indicator"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A swollen, bowing battery chassis indicates localized gas buildup and poses an imminent thermal runaway/fire risk; it requires immediate isolated disposal[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.5 Routing and Switching",
+      "question": "What is the purpose of Quality of Service (QoS)?",
+      "options": [
+        "A) Compresses data packets to save bandwidth.",
+        "B) Prioritizes latency-sensitive traffic over bulk data transfers.",
+        "C) Encrypts network traffic across routers."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Quality of Service (QoS) prioritizes latency-sensitive traffic (like VoIP) over bulk data transfers[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.1 Power Supplies",
+      "question": "What is the main function of the Power Supply Unit (PSU)?",
+      "options": [
+        "A) Converts DC power to high-voltage AC.",
+        "B) Handles AC-to-DC rectification for computer motherboards.",
+        "C) Regulates CPU clock frequencies."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The Power Supply Unit (PSU) handles AC-to-DC rectification for computer motherboards[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.6 Printers",
+      "question": "How do print memory errors on complex graphic files get resolved permanently?",
+      "options": [
+        "A) By clearing the print queue.",
+        "B) By upgrading internal memory modules to scale capacity.",
+        "C) By replacing the fuser assembly."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Print memory errors on complex graphic files mean the printer's physical onboard RAM has been exceeded; upgrading internal memory modules scales capacity permanently[cite: 90]."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Cables and Connectors",
+      "question": "What is the purpose of Shielded Twisted Pair (STP) cabling?",
+      "options": [
+        "A) Features protective foil braiding to protect signaling wires from adjacent Electro-Magnetic Interference (EMI).",
+        "B) Uses fiber optics to completely eliminate attenuation.",
+        "C) Allows distances up to 500 meters without a repeater."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Shielded Twisted Pair (STP) features protective foil braiding to protect signaling wires from adjacent Electro-Magnetic Interference (EMI)[cite: 90]."
+    }
+  ]
+}

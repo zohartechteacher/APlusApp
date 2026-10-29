@@ -1,0 +1,863 @@
+{
+  "questions": [
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A system administrator needs to configure a storage volume for temporary video editing scratch files where maximum read and write performance is required, and data loss is acceptable. Which RAID configuration should be implemented?",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 5",
+        "D) RAID 10"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 0 (Disk Striping) distributes data across two or more disks without parity or mirroring, providing maximum read/write performance and 100% usable capacity, but zero fault tolerance."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A small business client wants to configure a two-disk boot array for a critical server. The setup must ensure the system remains operational even if one drive experiences a complete physical failure. Which RAID level meets this requirement using the minimum number of drives?",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 5",
+        "D) RAID 10"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 1 (Disk Mirroring) duplicates data across a minimum of two disks, providing full redundancy against a single drive failure with a 50% storage overhead."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "An IT technician is building a Network Attached Storage (NAS) device using four 4TB hard drives. The user wants a balance between fault tolerance and usable storage capacity. If configured as RAID 5, what is the total usable storage capacity?",
+      "options": [
+        "A) 8TB",
+        "B) 12TB",
+        "C) 16TB",
+        "D) 4TB"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 5 uses distributed parity and reserves the capacity equivalent of one drive for fault tolerance. Usable capacity formula is (N - 1) * Drive Capacity = (4 - 1) * 4TB = 12TB."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A database server requires high fault tolerance and maximum I/O performance for heavy database read/write operations. Which RAID array type combines mirroring and striping to achieve this?",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 5",
+        "D) RAID 10"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 10 (RAID 1+0) combines disk mirroring (RAID 1) and disk striping (RAID 0), delivering high read/write speed alongside robust fault tolerance."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What is the absolute minimum number of physical disks required to construct a RAID 10 array?",
+      "options": [
+        "A) 2",
+        "B) 3",
+        "C) 4",
+        "D) 5"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 10 requires a minimum of four disks (two striped pairs of mirrored disks)."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What is the minimum number of hard drives required to build a functional RAID 5 storage volume?",
+      "options": [
+        "A) 2",
+        "B) 3",
+        "C) 4",
+        "D) 5"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 5 requires a minimum of three disks to distribute data striping and parity information across all member drives."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A company server utilizes four 2TB hard drives configured in a RAID 10 array. How much total usable storage capacity is available on this volume?",
+      "options": [
+        "A) 2TB",
+        "B) 4TB",
+        "C) 6TB",
+        "D) 8TB"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 10 mirrors data across pairs of drives, resulting in 50% capacity efficiency. Four 2TB drives total 8TB raw capacity, yielding 4TB of usable storage."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What happens to the data on a RAID 0 array if a single hard drive fails?",
+      "options": [
+        "A) The array continues running in a degraded state without data loss.",
+        "B) Data on the failed drive is lost, but data on remaining drives is accessible.",
+        "C) All data across the entire array is lost.",
+        "D) Parity data automatically rebuilds the lost data on a hot spare."
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Because RAID 0 lacks parity or mirroring, the failure of any single drive results in complete array failure and total loss of all stored data."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A network administrator installs three 1TB SSDs in a RAID 0 configuration. What is the usable capacity of this array?",
+      "options": [
+        "A) 1TB",
+        "B) 2TB",
+        "C) 3TB",
+        "D) 1.5TB"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 0 has 100% storage efficiency with no parity or redundancy overhead. Three 1TB drives yield 3TB of usable space."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "An administrator receives a notification that one drive in a 4-disk RAID 5 array has failed. What is the current operational state of the array?",
+      "options": [
+        "A) Offline and unrecoverable",
+        "B) Operational in a degraded state",
+        "C) Fully redundant with no performance impact",
+        "D) Automatically converted to RAID 0"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "When one drive fails in a RAID 5 array, the array remains operational in a degraded state by dynamically calculating missing data using parity blocks."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which RAID level provides double distributed parity, allowing the storage array to survive up to two simultaneous disk failures?",
+      "options": [
+        "A) RAID 1",
+        "B) RAID 5",
+        "C) RAID 6",
+        "D) RAID 10"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 6 extends RAID 5 by adding a second distributed parity block, enabling the array to withstand up to two concurrent drive failures."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What is the minimum number of physical hard drives required to construct a RAID 6 array?",
+      "options": [
+        "A) 2",
+        "B) 3",
+        "C) 4",
+        "D) 5"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 6 requires a minimum of four disks to hold data striping alongside its dual distributed parity calculations."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "An enterprise server hardware RAID controller incorporates a Battery Backup Unit (BBU) or flash-backed cache module. What is the primary purpose of this component?",
+      "options": [
+        "A) To power the hard drives during an extended power outage",
+        "B) To protect unwritten data in the controller write cache during sudden power failure",
+        "C) To increase the spin speed of mechanical SATA hard drives",
+        "D) To perform automated daily data backups to cloud storage"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A RAID controller BBU or flash cache protects pending data in the volatile RAM cache (Write-Back cache) from corruption or loss if main server power fails."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A storage array is configured with a 'Hot Spare' drive. What is the function of this drive?",
+      "options": [
+        "A) It actively speeds up read operations by caching hot data blocks.",
+        "B) It sits idle and automatically replaces a failed drive to begin an automatic array rebuild.",
+        "C) It acts as a dedicated external backup drive connected via USB.",
+        "D) It duplicates parity data to double array write performance."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A hot spare is an idle disk pre-installed in the enclosure that automatically takes over for a degraded or failed disk in a redundant RAID array to restore full tolerance without delay."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which of the following RAID levels utilizes distributed parity across all active member disks?",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 5",
+        "D) RAID 10"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 5 distributes parity information across all drives in the array rather than maintaining a single dedicated parity disk."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A technician installs two 2TB drives into a system and configures them as RAID 1. What is the total usable storage space?",
+      "options": [
+        "A) 1TB",
+        "B) 2TB",
+        "C) 4TB",
+        "D) 500GB"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "In RAID 1 mirroring, data is mirrored identically between drives, so usable capacity equals the size of one drive (2TB)."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A server administrator needs to replace a failed drive in a mission-critical RAID 5 array without powering down the host OS. Which feature must both the server chassis backplane and storage controller support?",
+      "options": [
+        "A) Hot-swapping",
+        "B) Cold-plugging",
+        "C) Flash memory caching",
+        "D) NVMe Over Fabrics"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Hot-swapping allows removing and replacing hardware components (like hard drives) while the machine remains fully powered and operational."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "An administrator creates a RAID 5 array using three 2TB drives and one 1TB drive. What will the storage controller default the usable individual drive capacity to for constructing the array?",
+      "options": [
+        "A) 2TB per drive",
+        "B) 1TB per drive",
+        "C) 1.5TB per drive",
+        "D) The array setup will fail and cannot be created"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "When mixing disk capacities in a hardware or software RAID volume, the array scales down to match the capacity of the smallest disk in the set (1TB per drive)."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which statement accurately describes a key difference between Hardware RAID and Software RAID?",
+      "options": [
+        "A) Software RAID requires a dedicated PCI Express expansion card with onboard RAM.",
+        "B) Hardware RAID handles array processing via a dedicated controller card, reducing host CPU overhead.",
+        "C) Software RAID offers faster write speeds than Hardware RAID in all cases.",
+        "D) Hardware RAID can only be configured inside the Windows OS Control Panel."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Hardware RAID uses a dedicated storage controller processor and cache memory to manage RAID calculations, freeing host system CPU resources."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which of the following RAID levels does NOT provide any fault tolerance or data redundancy? (Select TWO)",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 5",
+        "D) RAID JBOD (Just a Bunch of Disks)",
+        "E) RAID 10"
+      ],
+      "answer": [
+        "A",
+        "D"
+      ],
+      "multi_select": true,
+      "explanation": "Both RAID 0 (striping) and JBOD (spanning) lack parity or mirroring features; losing a single disk leads to total or partial volume data loss without redundancy."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "An IT manager wants to configure a file server storage array that maximizes cost per gigabyte, provides fault tolerance for 1 drive failure, and requires 5 drives. Which RAID option is best?",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 5",
+        "D) RAID 10"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 5 across 5 drives provides 80% usable storage efficiency while maintaining single-drive fault tolerance via distributed parity."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A workstation has four 1TB drives configured in RAID 0. How much total usable storage capacity does this array provide?",
+      "options": [
+        "A) 1TB",
+        "B) 2TB",
+        "C) 3TB",
+        "D) 4TB"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "In RAID 0, capacity equals the sum of all member drives: 4 * 1TB = 4TB."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A system administrator notices a degraded RAID 5 array on a server. What happens to read performance on the array while it is in this degraded state?",
+      "options": [
+        "A) Read performance increases due to disabled parity checking.",
+        "B) Read performance drops because missing data must be calculated on-the-fly using parity.",
+        "C) Read operations are blocked until the failed disk is replaced.",
+        "D) Read performance remains completely unaffected."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "In a degraded RAID 5 array, reading blocks from the missing drive requires real-time mathematical calculations using data and parity from surviving disks, causing a performance drop."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which tool in Windows 11 allows administrators to build software RAID 0, RAID 1, or RAID 5 volumes without purchasing a physical RAID expansion card?",
+      "options": [
+        "A) Device Manager",
+        "B) Disk Management (or Storage Spaces)",
+        "C) Task Manager",
+        "D) Windows Defender Firewall"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Windows Disk Management (via dynamic disks) and Windows Storage Spaces enable creating software-based RAID volumes natively in the OS."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A server administrator configures six 2TB hard drives into a RAID 6 volume. What is the net usable storage capacity of this array?",
+      "options": [
+        "A) 4TB",
+        "B) 6TB",
+        "C) 8TB",
+        "D) 12TB"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 6 reserves the capacity equivalent of two drives for dual parity. Usable space = (N - 2) * Drive Size = (6 - 2) * 2TB = 8TB."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "During server startup, which key combination or method is typically used to enter a hardware RAID controller's Option ROM / BIOS configuration utility?",
+      "options": [
+        "A) Pressing a specific key prompt during POST (e.g., Ctrl+R, Ctrl+I, or F8)",
+        "B) Holding the power button for 10 seconds",
+        "C) Executing 'netsh winsock reset' in Command Prompt",
+        "D) Booting into Safe Mode"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Hardware RAID controllers display a banner during POST prompting key combinations (such as Ctrl+R, Ctrl+I, Ctrl+A, or F8) to enter firmware setup."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A client requests a 4-disk storage array setup that prioritizes maximum write rebuild speed following a drive failure, alongside high write performance. Why is RAID 10 preferred over RAID 5 for this requirement?",
+      "options": [
+        "A) RAID 10 uses complex dual-parity calculations that run faster.",
+        "B) RAID 10 simply copies data blocks during a rebuild without heavy parity calculation overhead.",
+        "C) RAID 10 provides 100% storage capacity efficiency.",
+        "D) RAID 10 allows using drives of completely different storage interfaces."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Rebuilding a RAID 10 array involves copying data directly from its mirrored partner, avoiding the high CPU and disk I/O calculations required for RAID 5 parity rebuilds."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which RAID levels require an EVEN number of total disks to function properly? (Select TWO)",
+      "options": [
+        "A) RAID 0 (with 2 disks minimum)",
+        "B) RAID 1",
+        "C) RAID 5",
+        "D) RAID 10",
+        "E) RAID 6"
+      ],
+      "answer": [
+        "B",
+        "D"
+      ],
+      "multi_select": true,
+      "explanation": "RAID 1 operates on drive pairs (2 disks). RAID 10 operates on striped sets of mirrored pairs, requiring an even number of disks (4, 6, 8, etc.)."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Why is a RAID array alone NOT considered a substitute for a comprehensive data backup plan?",
+      "options": [
+        "A) RAID arrays cannot store files larger than 4GB.",
+        "B) RAID protects against physical drive failure, but does not protect against accidental deletion, ransomware, or fire.",
+        "C) RAID controllers fail every 30 days automatically.",
+        "D) RAID only functions when connected to cloud servers."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "RAID provides high availability and drive hardware redundancy, but file corruption, user error, malware, or physical disasters will replicate across array disks or destroy the system."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A user replaces a failing drive in a RAID 1 set. What process must occur before full redundancy is restored?",
+      "options": [
+        "A) Defragmentation",
+        "B) Re-striping with distributed parity",
+        "C) Resynchronization / Mirror Rebuild",
+        "D) Formatting to exFAT"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "In RAID 1, replacing a drive requires resynchronizing (rebuilding) the mirror by copying all data from the active drive to the new drive."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "An engineer needs to set up a SAN array with 8 disks that can survive up to two disk failures while maintaining maximum usable space over a pure mirrored setup. Which RAID configuration fits best?",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 6",
+        "D) RAID 10"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 6 tolerates two drive failures while reserving only 2 disks worth of capacity for dual parity (yielding 6/8 or 75% capacity efficiency in an 8-drive array, higher than RAID 10's 50%)."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which term describes the individual block of data written sequentially across multiple drives in a RAID 0, RAID 5, or RAID 10 configuration?",
+      "options": [
+        "A) Mirror block",
+        "B) Stripe width / Stripe size",
+        "C) Parity sector",
+        "D) Volume shadow"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Stripe size (or block size) specifies the chunk size of data written across array disks during striping operations."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A server administrator configures a hardware RAID controller cache policy to 'Write-Back'. What is a major risk if the server suffers an unexpected power cut without a functional BBU?",
+      "options": [
+        "A) Unwritten data in controller memory cache will be lost or corrupted.",
+        "B) Hard drives will physically unmount permanently.",
+        "C) System RAM will be wiped.",
+        "D) Hard drive firmware will be cleared."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Write-Back caching acknowledges write completion to the OS as soon as data hits the controller RAM. Without a Battery Backup Unit (BBU), power loss before flushing RAM to disk causes data loss."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "In contrast to Write-Back caching, how does 'Write-Through' cache policy on a RAID controller operate?",
+      "options": [
+        "A) Writes are cached in system RAM indefinitely.",
+        "B) Writes are committed directly to physical disk before acknowledging completion to the OS.",
+        "C) Writes are discarded if disk temperature rises above 40C.",
+        "D) Writes are compressed twice before being sent to the drive."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Write-Through caching writes data directly to physical disks before notifying the OS that write completion occurred, making it safer against power failure but slower."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which LED indicator state on a server hot-swap disk tray typically signifies that a drive has experienced a hardware failure?",
+      "options": [
+        "A) Solid Green",
+        "B) Blinking Green",
+        "C) Solid or Blinking Amber / Yellow",
+        "D) Off completely during heavy drive read activity"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "A solid or blinking amber/yellow LED on a server drive bay backplane indicates a disk fault, failure, or degraded status needing attention."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "If two drives in the SAME mirrored pair fail in a RAID 10 array, what is the impact on the volume?",
+      "options": [
+        "A) The volume remains operational in a degraded state.",
+        "B) The array fails completely and data becomes unavailable.",
+        "C) Parity rebuilds the data automatically on the remaining drives.",
+        "D) The array converts automatically to RAID 5."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 10 can survive multiple drive failures ONLY IF they occur in separate mirrored sets. Losing both drives in a single mirrored pair destroys the array."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A technician wants to configure motherboard-integrated NVMe RAID on a workstation. Where is this setting configured before installing the OS?",
+      "options": [
+        "A) Windows Device Manager",
+        "B) Motherboard UEFI/BIOS Setup (or VROC/RAID Utility)",
+        "C) Disk Defragmenter",
+        "D) Local Group Policy Editor"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Onboard motherboard RAID (firmware/fake RAID) for SATA or NVMe SSDs is configured in UEFI/BIOS setup prior to OS installation."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which parameter must match across all drives selected for a hardware RAID array to avoid performance bottlenecks?",
+      "options": [
+        "A) Drive spindle speed (RPM) or interface standard (e.g., matching SAS/SATA/NVMe speeds)",
+        "B) Drive serial number prefix",
+        "C) Partition drive letter",
+        "D) File system allocation unit size"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Mixing different disk speeds (e.g., 5400 RPM with 10,000 RPM, or HDD with SSD) forces the RAID controller to operate at the speed of the slowest disk."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What is the primary trade-off when selecting RAID 1 over RAID 0 for a pair of 2TB drives?",
+      "options": [
+        "A) Loss of 50% storage capacity in exchange for fault tolerance",
+        "B) Complete inability to read files larger than 1GB",
+        "C) Higher vulnerability to drive failure",
+        "D) Increased system RAM requirements"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 1 trades half its raw capacity (2TB usable from 4TB total) to provide mirroring redundancy, whereas RAID 0 gives 100% capacity (4TB usable) with zero redundancy."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "An administrator adds a fifth 2TB hard drive to an existing 4-disk RAID 5 array using the RAID manager software. What procedure redistributes existing data and parity across all five drives?",
+      "options": [
+        "A) Online Capacity Expansion / Re-striping",
+        "B) Formatting to NTFS",
+        "C) Disk Defragmentation",
+        "D) File System Conversion"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Online Capacity Expansion (OCE) / Re-striping allows expanding an existing hardware RAID volume by recalculating and spreading parity and data across the new drive."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which RAID level is also commonly referred to as 'Striped with Parity'?",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 5",
+        "D) RAID 10"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 5 is standardly known as block-level striping with distributed parity."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which RAID level is commonly called 'Striping of Mirrors' or 'Nested RAID'?",
+      "options": [
+        "A) RAID 10",
+        "B) RAID 5",
+        "C) RAID 0",
+        "D) RAID 6"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 10 combines RAID 1 (mirroring) nested inside a RAID 0 (striping) layout."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A web hosting company wants to deploy 10 web servers. Each server requires fast read operations for static site files and must stay online if a boot drive fails. Cost efficiency is important. Which RAID level is best for a 2-drive setup per server?",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 5",
+        "D) RAID 6"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 1 uses two drives to mirror the OS and web files, offering excellent read speeds and single-drive fault tolerance."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "What happens if a second drive fails in a RAID 5 array while the array is still actively rebuilding a previously replaced failed drive?",
+      "options": [
+        "A) The array continues rebuilding successfully.",
+        "B) The entire array fails and all data is lost.",
+        "C) The array converts automatically to RAID 1.",
+        "D) The second failed drive is ignored until rebuild finishes."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 5 can only tolerate ONE drive failure. If a second drive fails before the rebuild finishes, parity calculations fail and the array collapses."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A workstation motherboard does not support hot-swappable drives. What must a technician do before replacing a failed hard drive in a RAID 1 array on this system?",
+      "options": [
+        "A) Perform a warm restart into Safe Mode.",
+        "B) Completely shut down and power off the PC (cold swap).",
+        "C) Disconnect the network cable.",
+        "D) Reinstall the motherboard chipset drivers."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "On non-hot-swappable hardware, replacing a drive requires shutting down the host system completely (cold swapping)."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which of the following RAID levels requires at least THREE physical drives to configure? (Select TWO)",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 5",
+        "D) RAID 6",
+        "E) RAID 10"
+      ],
+      "answer": [
+        "C",
+        "D"
+      ],
+      "multi_select": true,
+      "explanation": "RAID 5 requires a minimum of 3 drives. RAID 6 requires a minimum of 4 drives (which meets the 'at least 3' criteria). RAID 10 requires at least 4 drives."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "An administrator receives a S.M.A.R.T. warning indicating imminent disk failure on Drive 2 of a 4-disk RAID 5 array. What is the best proactive step?",
+      "options": [
+        "A) Wait for the drive to crash completely before taking action.",
+        "B) Assign a hot spare or manually initiate a drive replacement/rebuild before complete drive death.",
+        "C) Convert the array to RAID 0 immediately.",
+        "D) Format Drive 2 to clear S.M.A.R.T. logs."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Proactively swapping out a drive showing S.M.A.R.T. degradation prevents unexpected degraded array states and reduces stress on remaining disks."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "In a hardware RAID array, if the PCIe hardware RAID controller card itself fails completely, how can the administrator recover access to the array data?",
+      "options": [
+        "A) Connect the drives directly to standard SATA ports on any consumer PC.",
+        "B) Replace the failed RAID controller card with an identical or compatible controller model running matching firmware.",
+        "C) Run Windows Update on the server.",
+        "D) Format the hard drives in Disk Management."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Hardware RAID metadata is written in proprietary controller formats. Recovering the volume requires replacing the controller with an identical or compatible model and importing disk metadata."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "A computer user has two 1TB SSDs. They want to create a single 2TB logical drive volume that maximizes disk space and write speed without needing fault tolerance. Which RAID level should they pick?",
+      "options": [
+        "A) RAID 0",
+        "B) RAID 1",
+        "C) RAID 5",
+        "D) RAID 10"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "RAID 0 stripes across both 1TB SSDs to create a single 2TB volume focused strictly on maximum capacity and speed."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "3.2 Storage",
+      "question": "Which of the following actions are necessary when replacing a failed hot-swappable hard drive in an enterprise server RAID 5 volume? (Select THREE)",
+      "options": [
+        "A) Identify the correct failed drive bay using the amber fault LED indicator",
+        "B) Unlatch and remove the failed physical drive tray",
+        "C) Insert the new replacement drive of equal or greater capacity",
+        "D) Reinstall the Windows operating system from installation media",
+        "E) Format all surviving healthy drives"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "Replacing a failed drive in a hot-swappable hardware RAID 5 setup involves identifying the bay via LED, swapping the drive with one of equal/greater size, and allowing the array to rebuild."
+    }
+  ]
+}

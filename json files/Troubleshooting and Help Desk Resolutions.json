@@ -1,0 +1,854 @@
+{
+"questions": [
+{
+"exam": "220-1202",
+"domain": "Security",
+"objective": "2.3 Supporting Web Browsers and OS Security",
+"question": "Ticket Note: Multiple end users report receiving 'NET::ERR_CERT_DATE_INVALID' warnings when accessing internal web applications. Inspection shows the local system clocks are offset by 3 hours due to a failed domain synchronization. What is the precise resolution?",
+"options": [
+"A) Resync local system time with the NTP server",
+"B) Export and import the root CA certificate into Trusted Root Store",
+"C) Disable HTTPS scanning in the local host firewall",
+"D) Clear the web browser SSL slate and cache"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Invalid certificate date errors across multiple users caused by local clock skew are resolved by resynchronizing the client time with the Network Time Protocol (NTP) domain server."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.5 Troubleshooting Printers",
+"question": "Ticket Note: An office worker reports that printing print jobs results in blank pages coming out of an network laser printer. The toner cartridge was recently replaced. What is the precise resolution?",
+"options": [
+"A) Remove the protective sealing tape from the toner cartridge",
+"B) Restart the Print Spooler service on the local workstation",
+"C) Calibrate the fuser assembly temperature in printer settings",
+"D) Replace the duplexing unit"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Blank pages from a newly replaced laser toner cartridge typically occur when the protective sealing tape covering the toner roller was not pulled out prior to installation."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.6 Windows OS Troubleshooting",
+"question": "Ticket Note: An administrator reviews a BSOD crash dump using WinDbg. The bugcheck analysis highlights 'DRIVER_IRQL_NOT_LESS_OR_EQUAL' pointing directly to 'nvlddmkm.sys'. What is the precise resolution?",
+"options": [
+"A) Roll back or update the graphics card driver",
+"B) Replace the system motherboard",
+"C) Execute chkdsk /f /r on the primary boot volume",
+"D) Increase virtual memory paging file size"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'nvlddmkm.sys' is the Nvidia display driver. DRIVER_IRQL errors associated with a specific driver file require updating, rolling back, or clean re-installing that display driver."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.5 Troubleshooting Printers",
+"question": "Ticket Note: Print jobs sent to a shared network printer sit in the queue with status 'Printing' indefinitely, blocking all subsequent user jobs. What is the precise resolution?",
+"options": [
+"A) Stop the Print Spooler service, clear %systemroot%\\System32\\Spool\\PRINTERS, and restart Spooler",
+"B) Replace the network Ethernet patch cable attached to the printer",
+"C) Reinstall the printer driver using generic Windows drivers",
+"D) Factory reset the printer network card via web management console"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Stuck print spooler queues are resolved by stopping the Print Spooler service, purging corrupt pending spool files from the PRINTERS folder, and restarting the service."
+},
+{
+"exam": "220-1202",
+"domain": "Security",
+"objective": "2.4 Malware Detection and Removal",
+"question": "Ticket Note: User reports pop-up advertisements appearing on the desktop even when browser windows are closed. Task Manager reveals a process running from 'C:\\Users\\User\\AppData\\Local\\Temp\\adrun.exe'. What is the precise resolution?",
+"options": [
+"A) Isolate the workstation from the network and run an anti-malware scan",
+"B) Clear the browser cookies and browsing history",
+"C) Block inbound TCP port 80 on the host firewall",
+"D) Run sfc /scannow in elevated command prompt"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Adware running executable processes out of user temp folders requires immediate network isolation to prevent lateral spread, followed by full malware remediation."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.3 Network Troubleshooting",
+"question": "Ticket Note: End user cannot connect to internal shares. IPConfig shows IP address 169.254.43.12 with subnet mask 255.255.0.0. What is the precise resolution?",
+"options": [
+"A) Troubleshoot connectivity to the DHCP server or verify IP scope exhaustion",
+"B) Configure static DNS server addresses on the workstation interface",
+"C) Replace the network interface card (NIC)",
+"D) Enable netbios over TCP/IP in IPv4 properties"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "An APIPA address (169.254.x.x) indicates the client failed to contact a DHCP server or the server pool is out of available IP addresses."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.6 Windows OS Troubleshooting",
+"question": "Ticket Note: User reports system slowdown and crash dumps with 'CRITICAL_PROCESS_DIED'. System File Checker reports corrupt files that could not be repaired. What is the precise resolution?",
+"options": [
+"A) Execute DISM /Online /Cleanup-Image /RestoreHealth",
+"B) Run bootrec /fixmbr from Recovery Console",
+"C) Disable Windows Defender Firewall",
+"D) Re-register DLL files using regsvr32"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "When SFC fails to fix corrupt system files, DISM (Deployment Image Servicing and Management) repairs the underlying Windows component store using Windows Update or source images."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.5 Troubleshooting Printers",
+"question": "Ticket Note: Printed pages from a laser printer exhibit dark vertical black streaks running down the entire page. What is the precise resolution?",
+"options": [
+"A) Replace the drum unit or clean the primary corona wire",
+"B) Replace the pickup rollers",
+"C) Lower the print resolution setting in print preferences",
+"D) Clean the printer ink cartridges with alcohol"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Continuous vertical lines or streaks on laser printouts are caused by scratches on the photosensitive drum unit or a dirty corona wire."
+},
+{
+"exam": "220-1202",
+"domain": "Security",
+"objective": "2.3 Supporting Web Browsers and OS Security",
+"question": "Ticket Note: User gets a 'Certificate Name Mismatch' error when navigating to 'https://mail.company.com'. The certificate subject name lists 'legacy-mail.company.com'. What is the precise resolution?",
+"options": [
+"A) Update the SSL/TLS certificate on the server to include the current domain name/SAN",
+"B) Change the client DNS setting to point to 8.8.8.8",
+"C) Add an inbound rule in Windows Defender Firewall for TCP port 443",
+"D) Flush the local DNS cache using ipconfig /flushdns"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "A certificate name mismatch occurs when the URL accessed does not match the Subject Name or Subject Alternative Name (SAN) configured on the server SSL certificate."
+},
+{
+"exam": "220-1201",
+"domain": "Mobile Devices",
+"objective": "1.4 Mobile Device Troubleshooting",
+"question": "Ticket Note: Mobile user states smartphone battery drains rapidly and device gets warm to touch even when idle. Diagnostic logs show constant background location requests. What is the precise resolution?",
+"options": [
+"A) Review location permissions and revoke access for unnecessary background apps",
+"B) Perform a factory hard reset of the smartphone operating system",
+"C) Replace the device SIM card",
+"D) Calibrate the device screen brightness"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Rapid battery drain and thermal issues caused by constant location monitoring are resolved by restricting background location privileges for rogue or misconfigured apps."
+},
+{
+"exam": "220-1202",
+"domain": "Software Troubleshooting",
+"objective": "3.1 OS & Application Troubleshooting",
+"question": "Ticket Note: User reports error 'The operational system could not be loaded because a required file is missing or contains errors: \\Windows\\System32\\winload.efi'. What is the precise resolution?",
+"options": [
+"A) Boot to Windows Recovery Environment and run bootrec /rebuildbcd",
+"B) Replace the primary RAM modules",
+"C) Convert the disk partition structure from GPT to MBR",
+"D) Restore the BIOS configuration to default settings"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Missing winload.efi or BCD corruption during boot requires launching WinRE command prompt and executing bootrec /rebuildbcd to restore boot configuration data."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.5 Troubleshooting Printers",
+"question": "Ticket Note: Paper jams occur frequently at the tray feeder of an office laser printer. Physical inspection shows worn and smooth rubber rollers. What is the precise resolution?",
+"options": [
+"A) Replace the paper pickup rollers / maintenance kit",
+"B) Adjust the printer fuser temperature",
+"C) Replace the transfer belt assembly",
+"D) Reinstall the print queue driver on the server"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Smooth, worn rubber pickup rollers lose traction, causing persistent paper feed misfeeds and jams; replacing the pickup/feed rollers resolves the issue."
+},
+{
+"exam": "220-1202",
+"domain": "Security",
+"objective": "2.2 Local Security Settings",
+"question": "Ticket Note: A developer cannot connect via SSH (Port 22) to a remote Linux instance from their Windows host, receiving connection timeouts. Local network ping works. What is the precise resolution?",
+"options": [
+"A) Create an Outbound rule allowing TCP Port 22 in Windows Defender Firewall",
+"B) Run netsh winsock reset on the local PC",
+"C) Change the Ethernet cable connecting the computer",
+"D) Disable Network Discovery on the Windows PC"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Timeout on specific application protocols while ping succeeds points to local or host firewall blocking outbound communication on that port (TCP 22)."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "Ticket Note: Server OS logs show S.M.A.R.T Error: 'Reallocated Sectors Count exceeding threshold'. User experiences intermittent system freezes. What is the precise resolution?",
+"options": [
+"A) Immediately back up data and replace the hard drive",
+"B) Run defragmenter on the affected drive volume",
+"C) Reformat the drive using exFAT file system",
+"D) Reseat the SATA power and data cables"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "S.M.A.R.T reallocated sector warnings signal impending hardware failure of the disk drive. The immediate resolution is data backup and drive replacement."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.6 Windows OS Troubleshooting",
+"question": "Ticket Note: Windows workstation experiences crash dumps with code 'PAGE_FAULT_IN_NONPAGED_AREA'. Testing reveals memory address corruption. What is the precise resolution?",
+"options": [
+"A) Run Windows Memory Diagnostic and replace failing RAM stick",
+"B) Increase disk space allocation on C: drive",
+"C) Update the system BIOS graphics settings",
+"D) Reinstall the motherboard chipset drivers"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "PAGE_FAULT_IN_NONPAGED_AREA typically indicates defective physical RAM or severe driver fault referencing invalid memory locations. Testing/replacing RAM is the required resolution."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.3 Network Troubleshooting",
+"question": "Ticket Note: User can access websites using IP addresses (e.g., 1.1.1.1), but cannot navigate to site URLs (e.g., www.comptia.org). What is the precise resolution?",
+"options": [
+"A) Update workstation DNS server settings to a valid address",
+"B) Reset the local IPv4 Default Gateway address",
+"C) Renew the DHCP IP address lease using ipconfig /renew",
+"D) Replace the patch cable with a Crossover cable"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Successful navigation by IP address paired with failure by hostname confirms a DNS resolution failure."
+},
+{
+"exam": "220-1202",
+"domain": "Security",
+"objective": "2.4 Malware Detection and Removal",
+"question": "Ticket Note: Ransomware alert triggered on a Finance computer. User files are acquiring '.locked' extensions and ransom notes are generating. What is the precise resolution?",
+"options": [
+"A) Immediately disconnect the Ethernet network cable and disable Wi-Fi",
+"B) Pay the requested cryptocurrency ransom",
+"C) Run System Restore to revert back 2 days",
+"D) Execute chkdsk /f to fix damaged sectors"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "According to the CompTIA 7-step malware removal procedure, the immediate first step upon discovering active ransomware is isolating the infected system from the network."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.5 Troubleshooting Printers",
+"question": "Ticket Note: Thermal receipt printer outputs paper, but printed receipts are completely blank. The roll was recently replaced by staff. What is the precise resolution?",
+"options": [
+"A) Flip or reload the thermal paper roll to face the correct side toward the printhead",
+"B) Replace the thermal printer ribbon",
+"C) Increase the thermal heating element voltage in properties",
+"D) Clean the corona wire with isopropyl alcohol"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Thermal paper is coated with chemical dye on one side only. Installing the paper roll backwards results in totally blank receipts."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.6 Windows OS Troubleshooting",
+"question": "Ticket Note: Workstation displays 'Operating System Not Found' at boot. BIOS/UEFI utility indicates boot order prioritizes USB external drive before internal SSD. USB flash drive is attached. What is the precise resolution?",
+"options": [
+"A) Remove the USB drive and adjust boot order priority in BIOS",
+"B) Reinstall Windows OS on the SSD",
+"C) Replace the internal SSD disk drive",
+"D) Run diskpart clean on the internal SSD"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'OS Not Found' when non-bootable USB drives are attached is resolved by removing the USB device and setting the primary internal storage drive first in boot sequence."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power & Display",
+"question": "Ticket Note: Desktop PC turns off unexpectedly after 10 minutes of high CPU usage. System logs show CPU temperature reaching 105C prior to shutdown. What is the precise resolution?",
+"options": [
+"A) Clean dust from heatsink, apply fresh thermal paste, and verify cooler mounting",
+"B) Replace the power supply unit (PSU)",
+"C) Upgrade system RAM to higher frequency",
+"D) Flash system BIOS to newest firmware"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Thermal shutdowns caused by CPU overheating require thermal management: clearing dust, re-applying thermal paste, and ensuring the heatsink fan functions."
+},
+{
+"exam": "220-1202",
+"domain": "Security",
+"objective": "2.3 Supporting Web Browsers and OS Security",
+"question": "Ticket Note: Users report 'Untrusted Root Certificate' warnings when opening company HTTPS intranet sites. Local certificates are issued by internal enterprise CA. What is the precise resolution?",
+"options": [
+"A) Deploy the Internal Root CA Certificate to client Trusted Root Certification Authorities store",
+"B) Disable TLS 1.3 in internet options",
+"C) Add site IP to the local hosts file",
+"D) Change web server port from 443 to 80"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Browsers flag untrusted root warnings for internal PKI certificates if the Enterprise Root CA certificate hasn't been imported into the client's Trusted Root store."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.5 Troubleshooting Printers",
+"question": "Ticket Note: Printouts from an inkjet printer have missing horizontal lines and faded colors despite full ink tanks. What is the precise resolution?",
+"options": [
+"A) Perform a printhead cleaning utility routine from printer maintenance menu",
+"B) Replace the fuser assembly",
+"C) Clear the Windows print spooler",
+"D) Calibrate the scanner bed"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Faded colors and missing horizontal lines in inkjet output indicate clogged nozzles in the printhead, resolved by executing automated printhead cleaning routines."
+},
+{
+"exam": "220-1202",
+"domain": "Software Troubleshooting",
+"objective": "3.2 Mobile OS & App Troubleshooting",
+"question": "Ticket Note: Mobile user reports corporate email app crashes immediately upon opening. Other apps work normally. App update was installed last night. What is the precise resolution?",
+"options": [
+"A) Clear application cache/data or reinstall the application",
+"B) Reset smartphone network settings",
+"C) Perform factory data reset on mobile device",
+"D) Replace the device battery"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Isolated app crashes following an update are fixed by clearing app data/cache or performing a clean uninstallation and reinstallation of the application."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.3 Network Troubleshooting",
+"question": "Ticket Note: User reports intermittent network connectivity. Cable tester reveals wire pairs 1 and 3 are swapped on an RJ45 termination. What is the precise resolution?",
+"options": [
+"A) Re-terminate the cable ends using standard T568B wiring pinout on both ends",
+"B) Enable auto-MDIX on the desktop network adapter settings",
+"C) Replace the network switch with a managed switch",
+"D) Change IP configuration from DHCP to static"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Miswired pins (wire swaps) cause crosstalk and link instability. Re-terminating connectors correctly to T568B standard resolves physical layer defects."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.6 Windows OS Troubleshooting",
+"question": "Ticket Note: Windows updates repeatedly fail to install with error 0x800f081f. Windows Update Troubleshooter failed to fix the problem. What is the precise resolution?",
+"options": [
+"A) Reset Windows Update components and clear %systemroot%\\SoftwareDistribution folder",
+"B) Format the primary hard drive",
+"C) Run bootrec /fixboot",
+"D) Disable Windows Defender Antivirus permanently"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Persistent Windows Update failure codes are commonly solved by stopping update services and clearing corrupted update download caches in SoftwareDistribution."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.5 Troubleshooting Printers",
+"question": "Ticket Note: Laser printer output smudges easily when touched; black toner wipes off the paper easily. What is the precise resolution?",
+"options": [
+"A) Replace the fuser assembly",
+"B) Replace the primary charge roller",
+"C) Re-align printheads",
+"D) Decrease paper weight setting in driver"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Unfused toner that smudges off paper indicates the fuser assembly is not reaching adequate heat/pressure to permanently melt toner to paper fibers."
+},
+{
+"exam": "220-1202",
+"domain": "Security",
+"objective": "2.4 Malware Detection and Removal",
+"question": "Ticket Note: System infected with persistent rootkit malware. Antivirus scanning in standard mode fails to clean hidden files. System restore point is compromised. What is the precise resolution?",
+"options": [
+"A) Boot system from clean external recovery media and perform offline scan / OS rebuild",
+"B) Run taskkill /f /im explorer.exe in standard desktop environment",
+"C) Change user account password in Active Directory",
+"D) Block port 443 outbound on host firewall"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Rootkits modify OS kernel binaries. Removal requires booting from a trusted offline recovery environment or performing a clean OS reinstall."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power & Display",
+"question": "Ticket Note: Monitor connected via DisplayPort displays 'No Signal'. Computer lights turn on and fans spin. Testing monitor on another PC works fine. What is the precise resolution?",
+"options": [
+"A) Reseat or replace the dedicated graphics card and verify power connections",
+"B) Replace the display monitor backlight",
+"C) Update the monitor firmware",
+"D) Reinstall Windows OS"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "When the monitor is verified functional but receives no signal from PC host, the root cause is local display adapter (GPU) seating or failure."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.6 Windows OS Troubleshooting",
+"question": "Ticket Note: User logs into Windows 11 PC and receives error: 'You've been logged in with a temporary profile'. Files on desktop are missing. What is the precise resolution?",
+"options": [
+"A) Fix profile SID key registry pointers under HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\ProfileList",
+"B) Delete the user account folder from C:\\Users",
+"C) Re-join computer to local Workgroup",
+"D) Replace system hard drive"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Temporary profile errors stem from profile corruption in the Windows Registry. Removing the .bak extension on the profile SID key in ProfileList restores the main profile."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "Ticket Note: A RAID 5 array shows status 'Degraded' after a single hard drive failure indicator light turns amber. What is the precise resolution?",
+"options": [
+"A) Replace the failed drive and initiate array rebuild",
+"B) Back up data, delete RAID volume, and recreate array",
+"C) Format the remaining drives using NTFS",
+"D) Replace the RAID controller card immediately"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "RAID 5 can tolerate a single disk failure. To restore redundancy from a degraded state, hot-swap/replace the failed disk and trigger a parity rebuild."
+},
+{
+"exam": "220-1202",
+"domain": "Security",
+"objective": "2.3 Supporting Web Browsers and OS Security",
+"question": "Ticket Note: Browser warning 'Your Connection is Not Private: SEC_ERROR_UNKNOWN_ISSUER' appears on all workstations after installing a new edge proxy/firewall inspection appliance. What is the precise resolution?",
+"options": [
+"A) Install the Proxy SSL Inspection CA certificate on all client machines",
+"B) Disable local firewall inbound rules",
+"C) Change browser proxy settings to manual configuration",
+"D) Flush client local DNS cache"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Forward-proxy SSL inspection decrypts and re-encrypts HTTPS traffic using its own certificate. Clients must trust the Proxy's CA certificate to resolve unknown issuer errors."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.3 Network Troubleshooting",
+"question": "Ticket Note: Wireless laptop user experiences frequent disconnects while moving between office rooms. Signal strength drops drastically when roaming between access points. What is the precise resolution?",
+"options": [
+"A) Adjust Wi-Fi AP channel overlap and roaming aggressiveness on wireless adapter properties",
+"B) Switch wireless authentication to WPA2-Personal",
+"C) Change the laptop Wi-Fi card IP address to static",
+"D) Disable 5GHz band on the wireless router"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Roaming dropouts occur when AP coverage overlaps incorrectly or client adapter roaming aggressiveness settings are too conservative to trigger handoffs."
+},
+{
+"exam": "220-1202",
+"domain": "Software Troubleshooting",
+"objective": "3.1 OS & Application Troubleshooting",
+"question": "Ticket Note: Legacy accounting software crashes on launch on Windows 11 with DLL incompatibility errors. It functioned on Windows 7. What is the precise resolution?",
+"options": [
+"A) Configure executable properties to run in Windows 7 Compatibility Mode",
+"B) Execute sfc /scannow",
+"C) Upgrade the computer CPU",
+"D) Disable User Account Control (UAC)"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Legacy software application crashes on modern Windows OS versions are resolved by configuring application properties to run in Compatibility Mode for the supported OS."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.5 Troubleshooting Printers",
+"question": "Ticket Note: Laser printer printouts show repeating horizontal dots or marks every 3 inches down the page. What is the precise resolution?",
+"options": [
+"A) Inspect and clean or replace the toner drum roller",
+"B) Replace the paper tray assembly",
+"C) Re-install printer port driver",
+"D) Perform printhead alignment routine"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Repetitive defects occurring at equal interval distances down a page indicate debris or a pinhole defect on a cylindrical roller (like the drum)."
+},
+{
+"exam": "220-1202",
+"domain": "Security",
+"objective": "2.4 Malware Detection and Removal",
+"question": "Ticket Note: Malicious process keeps restarting itself automatically immediately after being terminated in Task Manager. What is the precise resolution?",
+"options": [
+"A) Boot system into Safe Mode to stop persistence services, then isolate and remove malware",
+"B) Run chkdsk /r in standard command prompt",
+"C) Change user screen saver timeout settings",
+"D) Open host firewall port 8080"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Self-respawning malware uses background helper services or watchdogs. Booting into Safe Mode prevents non-essential services/watchdogs from executing during removal."
+},
+{
+"exam": "220-1201",
+"domain": "Mobile Devices",
+"objective": "1.4 Mobile Device Troubleshooting",
+"question": "Ticket Note: Mobile tablet screen does not respond to touch input in specific corner regions after being dropped. No glass cracks are visible. What is the precise resolution?",
+"options": [
+"A) Replace the digitizer display assembly",
+"B) Update the tablet operating system",
+"C) Calibrate battery management software",
+"D) Perform soft restart using hardware keys"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Touchscreen unresponsiveness to physical touch indicates hardware failure of the touch digitizer component."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.6 Windows OS Troubleshooting",
+"question": "Ticket Note: Computer displays error 'BOOTMGR is missing. Press Ctrl+Alt+Del to restart'. What is the precise resolution?",
+"options": [
+"A) Boot to Windows installation media, open command prompt, and run bootrec /fixboot",
+"B) Replace system CMOS battery",
+"C) Run defrag C: /O",
+"D) Clear browser temporary internet files"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "'BOOTMGR is missing' indicates corrupted boot loader files, fixed via WinRE command prompt using bootrec /fixboot and bootrec /rebuildbcd."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.3 Troubleshooting Laptops",
+"question": "Ticket Note: Laptop user states built-in display screen is extremely dim; image is faintly visible when shining a flashlight directly at the screen. What is the precise resolution?",
+"options": [
+"A) Replace the screen backlight inverter or LCD assembly",
+"B) Reinstall Windows graphics adapter drivers",
+"C) Replace system BIOS chip",
+"D) Adjust Windows display resolution settings"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "A screen image visible only under external light indicates a failed backlight or CCFL display inverter board."
+},
+{
+"exam": "220-1202",
+"domain": "Security",
+"objective": "2.2 Local Security Settings",
+"question": "Ticket Note: User reports web server hosting local files cannot be accessed by external branch office PCs. Firewall logs show dropped inbound TCP packets on port 80. What is the precise resolution?",
+"options": [
+"A) Create an Inbound Rule allowing TCP Port 80 on Windows Defender Firewall",
+"B) Reset workstation network interface using ipconfig /release",
+"C) Enable public network discovery on the client host",
+"D) Re-index Windows search service"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Dropped inbound web traffic (Port 80) requires configuring host firewall inbound rules to allow TCP Port 80 traffic."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power & Display",
+"question": "Ticket Note: A desktop PC powers on, fans spin at maximum speed, but no video display appears and motherboard emits 3 long audible beeps. What is the precise resolution?",
+"options": [
+"A) Reseat or replace the system RAM modules",
+"B) Replace the hard drive SATA cable",
+"C) Replace the monitor power cord",
+"D) Reinstall OS audio drivers"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "POST beep codes (e.g., 3 long beeps) prior to video initialization indicate hardware POST failures, typically memory (RAM) misseating or failure."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.6 Windows OS Troubleshooting",
+"question": "Ticket Note: A system crashes with BSOD error 'INACCESSIBLE_BOOT_DEVICE' after an administrator changed Storage Controller Mode in BIOS from IDE to AHCI. What is the precise resolution?",
+"options": [
+"A) Revert BIOS Storage Mode back to IDE or install appropriate AHCI storage drivers",
+"B) Replace motherboard power supply cables",
+"C) Run chkdsk /f on system drive",
+"D) Re-seat system expansion cards"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Changing storage controller modes (IDE to AHCI/RAID) without loaded Windows drivers prevents OS boot, causing 'INACCESSIBLE_BOOT_DEVICE'."
+},
+{
+"exam": "220-1201",
+"domain": "Networking",
+"objective": "2.3 Network Troubleshooting",
+"question": "Ticket Note: User reports extremely slow network speeds. Switch port status shows duplex mismatch (Half-Duplex on PC, Full-Duplex on Switch). What is the precise resolution?",
+"options": [
+"A) Configure Ethernet adapter and switch port speed/duplex settings to Auto-Negotiation",
+"B) Replace patch panel with punchdown block",
+"C) Change network adapter MAC address",
+"D) Assign static IP configuration to client workstation"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Duplex mismatches cause late collisions and excessive frame errors. Setting both ends to Auto-Negotiation resolves speed/duplex conflicts."
+},
+{
+"exam": "220-1202",
+"domain": "Software Troubleshooting",
+"objective": "3.1 OS & Application Troubleshooting",
+"question": "Ticket Note: Users report slow system startup performance. Task Manager shows third-party application 'AppSync.exe' high startup impact. What is the precise resolution?",
+"options": [
+"A) Disable 'AppSync.exe' under Task Manager Startup Apps tab",
+"B) End process tree in Task Manager Details tab",
+"C) Run disk cleanup utility",
+"D) Uninstall network card drivers"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Non-essential startup applications causing boot delays are disabled in Task Manager under the Startup Apps tab."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.5 Troubleshooting Printers",
+"question": "Ticket Note: Shared network printer goes offline periodically for all users. Ping tests show intermittent packet loss to printer IP. Ethernet cable is verified good. What is the precise resolution?",
+"options": [
+"A) Upgrade printer network interface firmware or replace internal NIC",
+"B) Replace paper tray assembly",
+"C) Set printer driver spooling to 'Print directly to printer'",
+"D) Clean printer corona wires"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Intermittent packet loss to a network printer on verified cabling points to an internal network interface card (NIC) hardware failure or firmware corruption."
+},
+{
+"exam": "220-1202",
+"domain": "Security",
+"objective": "2.4 Malware Detection and Removal",
+"question": "Ticket Note: Browser home page is forcibly redirected to 'search-malicious-site.com' and settings are locked by administrative policy on a non-domain PC. What is the precise resolution?",
+"options": [
+"A) Quarantine host, remove malicious browser extension / policy registry entries, and scan system",
+"B) Flush system DNS resolver cache",
+"C) Clear local host ARP table",
+"D) Disable Windows Remote Assistance"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Browser hijackers enforce persistence via browser extensions or policy registry keys. Resolution requires quarantine, policy cleanup, and malware removal."
+},
+{
+"exam": "220-1201",
+"domain": "Mobile Devices",
+"objective": "1.4 Mobile Device Troubleshooting",
+"question": "Ticket Note: Mobile phone user states device cannot send or receive cellular calls or SMS texts. Wi-Fi works. Status bar shows an icon of an airplane. What is the precise resolution?",
+"options": [
+"A) Disable Airplane Mode in quick settings",
+"B) Replace device SIM card",
+"C) Update cell tower PRL settings",
+"D) Perform factory reset of network settings"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Airplane mode disables all cellular transceivers (voice and SMS), while allowing independent re-enabling of Wi-Fi."
+},
+{
+"exam": "220-1202",
+"domain": "Operating Systems",
+"objective": "1.6 Windows OS Troubleshooting",
+"question": "Ticket Note: User reports system application errors 'MSVCR120.dll missing from your computer' when opening graphics editor. What is the precise resolution?",
+"options": [
+"A) Download and install official Microsoft Visual C++ Redistributable package",
+"B) Execute chkdsk /f C:",
+"C) Perform Windows system reset",
+"D) Re-register system kernel binaries"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Missing runtime DLL errors (like MSVCR/VCRUNTIME) are resolved by installing the corresponding Microsoft Visual C++ Redistributable library package."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.4 Troubleshooting Storage",
+"question": "Ticket Note: Newly installed internal SSD drive does not appear in File Explorer. Disk Management shows disk status as 'Unallocated / Not Initialized'. What is the precise resolution?",
+"options": [
+"A) Initialize the disk (GPT) and create a simple volume formatted with NTFS",
+"B) Replace SATA controller cabling",
+"C) Enable AHCI mode in BIOS",
+"D) Run sfc /scannow in command prompt"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "New uninitialized drives must be initialized with a partition style (GPT/MBR) and formatted with a file system before they appear in File Explorer."
+},
+{
+"exam": "220-1202",
+"domain": "Security",
+"objective": "2.2 Local Security Settings",
+"question": "Ticket Note: Remote worker cannot connect to corporate network via IPsec VPN client, receiving authentication error. User's password expired today. What is the precise resolution?",
+"options": [
+"A) Update user domain account password via web portal or Active Directory administrator",
+"B) Reset local host Windows Defender Firewall to defaults",
+"C) Reinstall VPN client software",
+"D) Flush local netbios cache using nbtstat -R"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "VPN authentication failure tied to expired credentials requires resetting/updating the domain user password."
+},
+{
+"exam": "220-1201",
+"domain": "Hardware",
+"objective": "5.2 Troubleshooting Power & Display",
+"question": "Ticket Note: Desktop PC powers on for 2 seconds, fan turns briefly, then system completely shuts off with a faint electrical click. What is the precise resolution?",
+"options": [
+"A) Test and replace the Power Supply Unit (PSU)",
+"B) Replace the monitor HDMI cable",
+"C) Reinstall display drivers",
+"D) Clear CMOS jumper settings"
+],
+"answer": [
+"A"
+],
+"multi_select": false,
+"explanation": "Immediate shutoff right after powering on indicates a power supply unit (PSU) overload protection trip or faulty internal PSU component."
+}
+]
+}

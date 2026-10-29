@@ -1,0 +1,828 @@
+{
+  "questions": [
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which TCP port is commonly used for Secure Shell (SSH) remote administrative access?",
+      "options": [
+        "A) Port 21",
+        "B) Port 22",
+        "C) Port 23",
+        "D) Port 80"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "SSH operates primarily on TCP port 22 to provide encrypted remote login and command-line execution."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "What is the standard TCP port number used for Hypertext Transfer Protocol Secure (HTTPS)?",
+      "options": [
+        "A) Port 80",
+        "B) Port 443",
+        "C) Port 8080",
+        "D) Port 3389"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "HTTPS uses TCP port 443 to secure web traffic using TLS/SSL encryption."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which port number is standard for Domain Name System (DNS) queries and name resolution?",
+      "options": [
+        "A) Port 53",
+        "B) Port 67",
+        "C) Port 123",
+        "D) Port 389"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "DNS uses port 53 for both TCP (zone transfers) and UDP (standard name resolution queries)."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which ports are used by Dynamic Host Configuration Protocol (DHCP) for server and client communications respectively?",
+      "options": [
+        "A) Ports 20 and 21",
+        "B) Ports 67 and 68",
+        "C) Ports 161 and 162",
+        "D) Ports 443 and 445"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "DHCP server listens on UDP port 67, and DHCP client listens on UDP port 68."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which TCP port is assigned to Remote Desktop Protocol (RDP) for connecting to Windows desktops?",
+      "options": [
+        "A) Port 22",
+        "B) Port 80",
+        "C) Port 443",
+        "D) Port 3389"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "RDP uses TCP port 3389 (and sometimes UDP 3389) for remote graphical desktop access."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "What is the standard TCP port for unencrypted web traffic using HTTP?",
+      "options": [
+        "A) Port 21",
+        "B) Port 80",
+        "C) Port 443",
+        "D) Port 8080"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "HTTP uses TCP port 80 for standard web page transmission in clear text."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which TCP port is used by FTP for control commands and session management?",
+      "options": [
+        "A) Port 20",
+        "B) Port 21",
+        "C) Port 22",
+        "D) Port 23"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "FTP control channel uses TCP port 21, whereas the data channel uses TCP port 20."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which TCP port is used for data transfer in traditional File Transfer Protocol (FTP)?",
+      "options": [
+        "A) Port 20",
+        "B) Port 21",
+        "C) Port 25",
+        "D) Port 69"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "FTP data transmission takes place over TCP port 20."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which protocol and port number are used for legacy, unencrypted remote terminal connections?",
+      "options": [
+        "A) SSH on port 22",
+        "B) Telnet on port 23",
+        "C) RDP on port 3389",
+        "D) SNMP on port 161"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Telnet uses TCP port 23 and transmits all data, including passwords, in clear text."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "What is the standard TCP port used for Simple Mail Transfer Protocol (SMTP) to send emails?",
+      "options": [
+        "A) Port 25",
+        "B) Port 110",
+        "C) Port 143",
+        "D) Port 443"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "SMTP uses TCP port 25 for mail routing and outgoing email transmissions."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which TCP port is used by Post Office Protocol version 3 (POP3) to download emails from a mail server?",
+      "options": [
+        "A) Port 25",
+        "B) Port 110",
+        "C) Port 143",
+        "D) Port 993"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "POP3 uses TCP port 110 for retrieving mail messages."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which TCP port is utilized by Internet Message Access Protocol (IMAP) for syncing emails?",
+      "options": [
+        "A) Port 110",
+        "B) Port 143",
+        "C) Port 389",
+        "D) Port 445"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "IMAP uses TCP port 143 to manage and sync mailboxes across devices."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "What is the primary TCP port used for Server Message Block (SMB) for Windows file and printer sharing?",
+      "options": [
+        "A) Port 137",
+        "B) Port 139",
+        "C) Port 445",
+        "D) Port 3389"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Modern SMB (without NetBIOS) operates directly over TCP port 445."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which UDP ports are standard for Simple Network Management Protocol (SNMP) agent queries and traps?",
+      "options": [
+        "A) Ports 67 and 68",
+        "B) Ports 137 and 138",
+        "C) Ports 161 and 162",
+        "D) Ports 5060 and 5061"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "SNMP queries use UDP port 161, and SNMP traps use UDP port 162."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which port is used for Lightweight Directory Access Protocol (LDAP) queries?",
+      "options": [
+        "A) Port 389",
+        "B) Port 443",
+        "C) Port 636",
+        "D) Port 3306"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "LDAP communicates over TCP/UDP port 389."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "What is the standard port for secure LDAP (LDAPS) running over TLS/SSL?",
+      "options": [
+        "A) Port 389",
+        "B) Port 443",
+        "C) Port 636",
+        "D) Port 995"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "LDAPS uses TCP/UDP port 636 for encrypted directory service communications."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which UDP port is used for Network Time Protocol (NTP) synchronization?",
+      "options": [
+        "A) Port 53",
+        "B) Port 69",
+        "C) Port 123",
+        "D) Port 161"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "NTP uses UDP port 123 to synchronize clocks across network devices."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which UDP port is standard for Trivial File Transfer Protocol (TFTP), often used for firmware updates?",
+      "options": [
+        "A) Port 20",
+        "B) Port 21",
+        "C) Port 69",
+        "D) Port 443"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "TFTP is a lightweight file transfer protocol running on UDP port 69 without session security or authentication."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "What protocol and port are used for secure email retrieval via IMAPS?",
+      "options": [
+        "A) IMAPS on TCP port 993",
+        "B) IMAPS on TCP port 995",
+        "C) IMAPS on TCP port 443",
+        "D) IMAPS on TCP port 143"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "IMAPS (IMAP over SSL/TLS) uses TCP port 993."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "What port is designated for secure email retrieval using POP3S?",
+      "options": [
+        "A) Port 110",
+        "B) Port 993",
+        "C) Port 995",
+        "D) Port 3389"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "POP3S (POP3 over SSL/TLS) operates on TCP port 995."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which TCP/UDP port is associated with the Kerberos authentication protocol?",
+      "options": [
+        "A) Port 88",
+        "B) Port 135",
+        "C) Port 389",
+        "D) Port 445"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Kerberos authentication utilizes TCP and UDP port 88."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which TCP port is commonly used for MySQL database connections?",
+      "options": [
+        "A) Port 1433",
+        "B) Port 1521",
+        "C) Port 3306",
+        "D) Port 5432"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "MySQL database communication uses TCP port 3306 by default."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "What is the standard TCP port for Microsoft SQL Server database engine?",
+      "options": [
+        "A) Port 1433",
+        "B) Port 3306",
+        "C) Port 5432",
+        "D) Port 1521"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Microsoft SQL Server listens on TCP port 1433 by default."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which ports are used by Session Initiation Protocol (SIP) for VoIP call setup and signaling?",
+      "options": [
+        "A) Ports 20 and 21",
+        "B) Ports 67 and 68",
+        "C) Ports 161 and 162",
+        "D) Ports 5060 and 5061"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "SIP uses port 5060 for cleartext and port 5061 for encrypted (TLS) VoIP signaling."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which TCP port is used for Apple Filing Protocol (AFP) file sharing?",
+      "options": [
+        "A) Port 427",
+        "B) Port 445",
+        "C) Port 548",
+        "D) Port 636"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Apple Filing Protocol (AFP) communicates over TCP port 548."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which port is used by Service Location Protocol (SLP) for discovering network services?",
+      "options": [
+        "A) Port 427",
+        "B) Port 445",
+        "C) Port 548",
+        "D) Port 389"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "SLP uses TCP/UDP port 427 for device and service discovery."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which NetBIOS service uses TCP port 139 for session management?",
+      "options": [
+        "A) NetBIOS Name Service",
+        "B) NetBIOS Datagram Service",
+        "C) NetBIOS Session Service",
+        "D) NetBIOS Master Browser"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "NetBIOS Session Service operates on TCP port 139."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which of the following protocols is used primarily to resolve domain names to IP addresses and operates on port 53?",
+      "options": [
+        "A) DHCP",
+        "B) DNS",
+        "C) NTP",
+        "D) SNMP"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "DNS (Domain Name System) handles name resolution on port 53."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "An administrator needs to securely manage a Linux server over the network without exposing credentials in plaintext. Which port should be allowed through the firewall?",
+      "options": [
+        "A) Port 21",
+        "B) Port 22",
+        "C) Port 23",
+        "D) Port 80"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "TCP port 22 is used for SSH, which provides secure, encrypted administrative access."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which of the following ports should be blocked at the network perimeter firewall to prevent unencrypted remote terminal access vulnerabilities?",
+      "options": [
+        "A) Port 22",
+        "B) Port 23",
+        "C) Port 80",
+        "D) Port 443"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Port 23 is Telnet, which transmits data unencrypted and should be disabled or blocked in favor of SSH."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which of the following protocols rely primarily on UDP rather than TCP? (Select all that apply)",
+      "options": [
+        "A) DNS",
+        "B) HTTP",
+        "C) DHCP",
+        "D) NTP"
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "multi_select": true,
+      "explanation": "DNS, DHCP, and NTP use UDP for fast, connectionless packet transmission (though DNS can use TCP for zone transfers)."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which of the following protocols use TCP for reliable, connection-oriented data delivery? (Select all that apply)",
+      "options": [
+        "A) HTTP",
+        "B) HTTPS",
+        "C) TFTP",
+        "D) SSH"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "multi_select": true,
+      "explanation": "HTTP (80), HTTPS (443), and SSH (22) all operate over TCP. TFTP operates over UDP."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "A technician troubleshooting an email delivery issue notes that outgoing mail isn't reaching the destination server. Which port should be checked on the mail server firewall?",
+      "options": [
+        "A) Port 25",
+        "B) Port 110",
+        "C) Port 143",
+        "D) Port 443"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Port 25 is used for SMTP, which handles outgoing email transmission between mail servers."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which port pairing correctly represents the control and data channels for traditional FTP?",
+      "options": [
+        "A) Port 20 (control), Port 21 (data)",
+        "B) Port 21 (control), Port 20 (data)",
+        "C) Port 22 (control), Port 23 (data)",
+        "D) Port 80 (control), Port 443 (data)"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "FTP uses port 21 for control commands and port 20 for data transfer."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "What is the primary function of TCP port 3389 in an enterprise IT environment?",
+      "options": [
+        "A) Secure web browsing",
+        "B) Remote desktop administration",
+        "C) Active Directory queries",
+        "D) Secure file transfers"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "TCP port 3389 is standard for Microsoft Remote Desktop Protocol (RDP)."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which protocol pairs with TCP port 445 to facilitate file and printer sharing in modern Windows networks?",
+      "options": [
+        "A) NFS",
+        "B) SMB",
+        "C) AFP",
+        "D) FTP"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Server Message Block (SMB) runs on TCP port 445 for Windows file sharing."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which of the following ports are associated with secure variants of web and directory services? (Select all that apply)",
+      "options": [
+        "A) Port 443",
+        "B) Port 636",
+        "C) Port 389",
+        "D) Port 80"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "Port 443 (HTTPS) and Port 636 (LDAPS) are secure versions of HTTP and LDAP respectively."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Why is UDP preferred over TCP for DHCP and DNS standard lookups?",
+      "options": [
+        "A) UDP provides encryption by default.",
+        "B) UDP offers faster, connectionless communication without overhead.",
+        "C) UDP guarantees packet delivery order.",
+        "D) UDP requires continuous handshakes."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "UDP is connectionless and lightweight, making it ideal for fast queries and address assignment where speed outweighs guaranteed reliability."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "An IT technician is configuring a firewall for a secure web server. Which port must be open to allow encrypted web traffic?",
+      "options": [
+        "A) Port 22",
+        "B) Port 80",
+        "C) Port 443",
+        "D) Port 3389"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Port 443 handles HTTPS traffic, which encrypts web data using TLS."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which of the following email protocols download messages and typically delete them from the server by default?",
+      "options": [
+        "A) IMAP on port 143",
+        "B) POP3 on port 110",
+        "C) SMTP on port 25",
+        "D) HTTPS on port 443"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "POP3 (Port 110) downloads emails locally, whereas IMAP syncs mail across multiple devices while keeping copies on the server."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which port number is utilized by LDAP for unencrypted directory lookups?",
+      "options": [
+        "A) Port 389",
+        "B) Port 443",
+        "C) Port 636",
+        "D) Port 1433"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "LDAP runs on TCP/UDP port 389 in cleartext."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which protocol uses UDP port 123 to ensure network devices have synchronized system clocks?",
+      "options": [
+        "A) SNMP",
+        "B) NTP",
+        "C) TFTP",
+        "D) DHCP"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "NTP (Network Time Protocol) operates on UDP port 123 for time synchronization."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which of the following ports are used for network device monitoring and management via SNMP? (Select all that apply)",
+      "options": [
+        "A) Port 161",
+        "B) Port 162",
+        "C) Port 389",
+        "D) Port 443"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "multi_select": true,
+      "explanation": "SNMP uses UDP port 161 for requests/responses and UDP port 162 for traps."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which TCP port is used by PostgreSQL database servers by default?",
+      "options": [
+        "A) Port 1433",
+        "B) Port 3306",
+        "C) Port 5432",
+        "D) Port 1521"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "PostgreSQL uses TCP port 5432."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "What is the standard TCP port for Oracle database communication?",
+      "options": [
+        "A) Port 1521",
+        "B) Port 3306",
+        "C) Port 1433",
+        "D) Port 5432"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Oracle databases typically listen on TCP port 1521."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which of the following protocols are categorized as remote terminal or desktop access tools? (Select all that apply)",
+      "options": [
+        "A) SSH",
+        "B) Telnet",
+        "C) RDP",
+        "D) SMTP"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "multi_select": true,
+      "explanation": "SSH, Telnet, and RDP are remote access protocols. SMTP is used for email."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "When configuring a firewall to allow secure remote management of a server via command line, which port should be opened?",
+      "options": [
+        "A) Port 22",
+        "B) Port 23",
+        "C) Port 80",
+        "D) Port 110"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Port 22 is SSH, which provides secure command-line remote management."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Ports and Protocols",
+      "question": "Which of the following secure mail protocols use TCP port 993 and TCP port 995 respectively?",
+      "options": [
+        "A) IMAPS and POP3S",
+        "B) SMTP and IMAP",
+        "C) POP3 and SMTP",
+        "D) HTTPS and LDAPS"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "IMAPS operates on TCP port 993, and POP3S operates on TCP port 995."
+    }
+  ]
+}

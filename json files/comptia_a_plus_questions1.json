@@ -1,0 +1,246 @@
+{
+  "questions": [
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "Printers and Multifunction Devices",
+      "question": "A user reports that printed receipts have black smudges over the entire image. The text is still present but is very dark and sometimes illegible. Which of the following are the MOST likely cause and solution for the printer issue?",
+      "options": [
+        "A) The ribbon is jammed and is rubbing on the paper",
+        "B) Clear the bad ribbon and feed it through properly.",
+        "C) The printhead is too hot",
+        "D) Adjust the temperature down and retry printing.",
+        "E) The printer is loaded with the wrong type of paper",
+        "F) Replace the receipt paper with carbon paper.",
+        "G) The blue ink cartridge was loaded with black ink",
+        "H) Put in the correct ink and clean the printhead."
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "The printhead being too hot causes smudges and dark/illegible text on thermal printers; adjusting the temperature down resolves it."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "Virtualization",
+      "question": "An organization has some computers running macOS and some computers running Windows. The computers running macOS also need to run a piece of software that is only available on Windows. Which of the following BEST describes the solution for running Windows software on a computer running macOS?",
+      "options": [
+        "A) Operating system spoofing",
+        "B) Remote software provisioning",
+        "C) Indirect software implementation",
+        "D) Cross-platform virtualization"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Cross-platform virtualization allows running a guest OS (like Windows) on a host OS of a different type (like macOS)."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "Motherboards, CPUs, and Add-on Cards",
+      "question": "A technician replaced a motherboard on a server, and now the 64-bit hypervisor is not loading correctly. Which of the following needs to be enabled for the hypervisor to run?",
+      "options": [
+        "A) Hardware prefetcher",
+        "B) Hyperthreading",
+        "C) vPro",
+        "D) VT-d"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Virtualization technology (such as Intel VT-x/VT-d or AMD-V) needs to be enabled in the BIOS/UEFI for 64-bit hypervisors to run properly."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "Hardware and Data Security",
+      "question": "A Microsoft Windows user is preparing to work in another country and needs to comply with corporate policy for data protection when copying files to portable media. Which of the following solutions would MOST likely satisfy this requirement?",
+      "options": [
+        "A) A USB 3.1 flash drive with BitLocker to Go installed",
+        "B) An SD memory card with NTFS",
+        "C) An xD memory card with ext3",
+        "D) A portable hard drive with FAT32"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "BitLocker to Go provides encryption for removable data drives to protect corporate data on portable media."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Mobile Devices",
+      "objective": "Mobile Device Management",
+      "question": "An administrator is configuring a corporate-owned smartphone for a new manager. The company requires the ability to wipe the phone's data remotely in the event of loss or theft and the capability to approve applications installed on the phone. Which of the following tools would BEST meet this need?",
+      "options": [
+        "A) Tethering to a corporate-owned laptop",
+        "B) WPA2-Enterpise wireless",
+        "C) Corporate enterprise email",
+        "D) Mobile device management"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Mobile Device Management (MDM) provides remote wipe capabilities and application management/approval."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "Printers and Projectors",
+      "question": "A technician goes to a classroom to troubleshoot a projector that occasionally powers off. The technician recreates the issue and notices the projector will not power back on until approximately 15 minutes have passed. After 15 minutes of being powered on, the projector shuts off again. Which of the following should the technician perform NEXT to resolve the issue?",
+      "options": [
+        "A) Clean the filter.",
+        "B) Adjust the standby timeout.",
+        "C) Check the power cable connection.",
+        "D) Replace the bulb."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Projectors overheat and shut down automatically when filters are clogged, requiring a cool-down period before restarting."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "Network Devices",
+      "question": "Which of the following network devices is used to separate broadcast domains?",
+      "options": [
+        "A) Switch",
+        "B) Wireless access point",
+        "C) Router",
+        "D) Hub"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Routers operate at Layer 3 and separate broadcast domains, unlike switches and hubs which operate at Layer 2/1 and forward broadcasts."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Virtualization and Cloud Computing",
+      "objective": "Client-side Virtualization",
+      "question": "Client-side virtualization guest machines have security requirements similar to physical machines, but they also need to ensure separation from other guest machines. Which of the following BEST describes this client-side guest security requirement?",
+      "options": [
+        "A) Isolation",
+        "B) Authentication",
+        "C) Hardening",
+        "D) Authorization"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Isolation ensures that virtual guest machines are separated securely from each other and the host system."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "Peripherals and Devices",
+      "question": "Which of the following would MOST likely be used to obtain electronic images of a large number of printed documents?",
+      "options": [
+        "A) NFC device",
+        "B) ADF/flatbed scanner",
+        "C) Camera/webcam",
+        "D) QR scanner"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "An ADF (Automatic Document Feeder) and flatbed scanner is designed to quickly scan large volumes of printed documents."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "CPUs and Motherboards",
+      "question": "A technician is upgrading a faulty motherboard that was ordered by an end user for an old, high-end desktop computer. However, the technician is unable to install the CPU into the socket. Upon closer inspection, the technician notices the pins on the CPU do not line up with the socket. Which of the following would be the best course of action for the technician to take NEXT?",
+      "options": [
+        "A) Try to set as many pins as possible.",
+        "B) Install an adaptor to create a universal socket.",
+        "C) Verify the socket type and manufacturer.",
+        "D) Find a compatible motherboard for the CPU."
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "If the CPU pins do not match the motherboard socket, a compatible motherboard (or matching CPU/socket combination) must be obtained."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "RAM",
+      "question": "A technician is tasked with installing additional RAM in a desktop computer. Which of the following types of RAM is MOST likely to be used?",
+      "options": [
+        "A) SODIMM",
+        "B) DDR3",
+        "C) ECC",
+        "D) VRAM"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Desktop computers typically use DIMMs (such as DDR3/DDR4/DDR5), whereas laptops use SODIMMs. Among the choices, DDR3 is a desktop/laptop RAM type (as opposed to SODIMM which is a form factor, though typically SODIMM is laptop-specific)."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Cloud Computing",
+      "objective": "Cloud Concepts",
+      "question": "Which of the following describes metered utilization of cloud resources?",
+      "options": [
+        "A) Resources provisioned instantly",
+        "B) Payments made only for resources that are used",
+        "C) Resources pooled to increase computing power",
+        "D) Implementation of rapid elasticity"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Metered utilization (measured service) means resources are tracked and users pay based on actual consumption."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware and Network Troubleshooting",
+      "objective": "Troubleshooting Storage",
+      "question": "A user reports that a PC occasionally fails to boot. The user reboots the PC, but the performance is degrading. The technician hears a strange, repetitive, ticking noise coming from the PC. Which of the following should the technician do FIRST?",
+      "options": [
+        "A) Try to extract data.",
+        "B) Reseat the RAM modules.",
+        "C) Inspect the fan.",
+        "D) Check the CD tray."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "A repetitive ticking noise from a PC typically indicates mechanical hard drive failure. The first priority is to attempt data extraction/backup before the drive fails completely."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Hardware",
+      "objective": "Displays and Laptops",
+      "question": "A laptop has been returned for a screen repair. The owner insists the screen is broken, but occasionally a faded image is able to be seen in very bright settings on the desktop. Which of the following steps should the repair technician take FIRST?",
+      "options": [
+        "A) Replace the graphics card.",
+        "B) Replace the screen, as the customer insists.",
+        "C) Recommend the usage of an external display instead.",
+        "D) Ensure the backlight is functioning as expected."
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "If an image is faintly visible under bright light, the LCD panel is working but the backlight or inverter has failed."
+    }
+  ]
+}

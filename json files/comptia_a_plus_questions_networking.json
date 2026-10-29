@@ -1,0 +1,854 @@
+{
+  "questions": [
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.2 Network Devices",
+      "question": "Which network device operates primarily at Layer 2 of the OSI model and uses MAC addresses to forward frames only to the port connected to the destination device?",
+      "options": [
+        "A) Hub",
+        "B) Switch",
+        "C) Router",
+        "D) Repeater"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A network switch operates at Layer 2 (Data Link layer), inspecting MAC addresses to intelligently forward frames, unlike hubs which broadcast traffic to all ports."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.5 Routing and Switching",
+      "question": "An administrator wants to segment a physical switch into multiple isolated virtual networks to separate departmental traffic without buying extra hardware. What feature should be configured?",
+      "options": [
+        "A) VLAN (Virtual Local Area Network)",
+        "B) Port Forwarding",
+        "C) NAT (Network Address Translation)",
+        "D) DHCP Scope"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "VLANs logically divide a single physical switch into multiple distinct broadcast domains."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.3 Network Addressing",
+      "question": "A user runs ipconfig and sees an IP address of 169.254.10.5 on their workstation, and they cannot reach the internet or local file shares. What does this address indicate?",
+      "options": [
+        "A) The computer has successfully connected to the default gateway.",
+        "B) The workstation is using APIPA because it cannot reach a DHCP server.",
+        "C) The network adapter has been assigned a static IPv6 global address.",
+        "D) The DNS server is actively resolving domain names."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "An IP address in the 169.254.0.0/16 range indicates APIPA (Automatic Private IP Addressing), assigned when a DHCP client fails to receive an IP lease from a DHCP server."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A technician receives a ticket stating that users can successfully ping external IP addresses like 8.8.8.8, but web browsers cannot load websites by domain name (e.g., www.comptia.org). Which troubleshooting step or tool should be used FIRST?",
+      "options": [
+        "A) Verify the default gateway configuration using ipconfig /all.",
+        "B) Check DNS server settings or test resolution using nslookup.",
+        "C) Replace the physical network patch cable.",
+        "D) Flush the local ARP cache."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Working direct IP communication combined with domain resolution failure points directly to a DNS configuration or server issue."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Cables and Connectors",
+      "question": "Which of the following UTP copper cable categories officially supports 10 Gbps speeds up to 100 meters while mitigating alien crosstalk?",
+      "options": [
+        "A) Cat 5",
+        "B) Cat 5e",
+        "C) Cat 6",
+        "D) Cat 6a"
+      ],
+      "answer": [
+        "D"
+      ],
+      "multi_select": false,
+      "explanation": "Cat 6a (Augmented Category 6) supports 10GBASE-T up to the full 100-meter limit with enhanced shielding/spacing against alien crosstalk."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Cables and Connectors",
+      "question": "What type of tool is required to permanently attach an RJ45 modular connector onto the end of a twisted-pair network cable?",
+      "options": [
+        "A) Punchdown tool",
+        "B) Crimper",
+        "C) Cable tester",
+        "D) Wire stripper"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A crimper tool deforms the RJ45 pins to bite into the copper wires and secure the plastic locking tab."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.3 Network Services",
+      "question": "Which network service automatically assigns IP addresses, subnet masks, default gateways, and DNS server addresses to client devices upon booting?",
+      "options": [
+        "A) DNS",
+        "B) DHCP",
+        "C) NTP",
+        "D) SNMP"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "DHCP (Dynamic Host Configuration Protocol) automates the allocation of IP configuration parameters to network hosts."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A technician needs to check the complete TCP/IP configuration details on a Windows workstation, including the physical MAC address, DHCP server IP, and DNS servers. Which command should be run?",
+      "options": [
+        "A) ping /all",
+        "B) ipconfig /all",
+        "C) tracert -a",
+        "D) netstat -b"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The 'ipconfig /all' command displays detailed configuration information for all network adapters on Windows."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.2 Network Devices",
+      "question": "Which networking device operates at Layer 3 (Network layer) of the OSI model to forward packets between different IP subnets?",
+      "options": [
+        "A) Layer 2 Switch",
+        "B) Router",
+        "C) Hub",
+        "D) Bridge"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Routers operate at Layer 3, using IP addresses to route packets across distinct logical networks."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.5 Routing and Switching",
+      "question": "What is the primary function of Network Address Translation (NAT) on a SOHO router?",
+      "options": [
+        "A) Translates private internal IP addresses into a single public IP address for internet access.",
+        "B) Dynamically assigns IP addresses to wireless clients.",
+        "C) Converts domain names into numeric IP addresses.",
+        "D) Encrypts all wireless packet transmissions."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "NAT maps private local IP addresses to a public routable IP address provided by the ISP."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A network administrator wants to view active network connections, listening ports, and protocol statistics on a Windows server. Which command-line utility should be used?",
+      "options": [
+        "A) netstat",
+        "B) nbtstat",
+        "C) nslookup",
+        "D) pathping"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The 'netstat' command displays active TCP/UDP connections, listening ports, and routing statistics."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.4 Wireless Networking",
+      "question": "A wireless network in an office building is experiencing severe interference because multiple nearby access points are broadcasting on overlapping channels. Which Wi-Fi channels on the 2.4 GHz band are completely non-overlapping?",
+      "options": [
+        "A) Channels 1, 6, and 11",
+        "B) Channels 1, 3, and 5",
+        "C) Channels 2, 7, and 12",
+        "D) Channels 1 through 14"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "On the 2.4 GHz spectrum, channels 1, 6, and 11 are the three standard non-overlapping channels."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A technician needs to trace the exact path and router hops a packet takes from a local computer to a remote destination across the internet. Which Windows command tool is designed for this?",
+      "options": [
+        "A) ping",
+        "B) tracert",
+        "C) arp",
+        "D) ipconfig"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The 'tracert' command traces packet routes and measures transit delays across network hops."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Cables and Connectors",
+      "question": "Which tool is used to punch down solid copper wire into 110-block wall jacks or patch panels while simultaneously trimming excess wire?",
+      "options": [
+        "A) Crimper",
+        "B) Punchdown tool",
+        "C) Multimeter",
+        "D) Cable tester"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A punchdown tool seats wires into displacement contact slots and clips off the tail end."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.4 Wireless Networking",
+      "question": "Which wireless security protocol introduced robust encryption via CCMP/AES and solved the critical vulnerabilities of legacy WEP?",
+      "options": [
+        "A) WEP",
+        "B) WPA2",
+        "C) WPA-TKIP",
+        "D) WPS"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "WPA2 implemented mandatory AES encryption, becoming the long-standing industry standard for secure Wi-Fi."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "An employee reports intermittent network drops and slow connection speeds. The technician suspects physical cable damage or excessive length within a drop-ceiling. Which specialized diagnostic tool can measure cable length and locate physical breaks or faults (TDR)?",
+      "options": [
+        "A) Tone generator and probe",
+        "B) Cable certifier / Time-Domain Reflectometer",
+        "C) Loopback plug",
+        "D) Standard continuity tester"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A TDR (Time-Domain Reflectometer) or cable certifier sends electrical pulses down a cable to calculate distance to breaks, shorts, or impedance mismatches."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Cables and Connectors",
+      "question": "What type of optical fiber connector features a push-pull latching mechanism and is widely used in modern high-density data center networking?",
+      "options": [
+        "A) SC",
+        "B) LC",
+        "C) ST",
+        "D) BNC"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "LC (Lucent Connector) is a small-form-factor fiber optic connector utilizing a convenient push-pull retention latch."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A technician is trying to locate an unidentified network cable drop running into a crowded patch panel in the telecommunications closet. Which tool combination should be used?",
+      "options": [
+        "A) Multimeter and loopback plug",
+        "B) Tone generator and probe (Fox and Hound)",
+        "C) Cable crimper and wire stripper",
+        "D) TDR and spectrum analyzer"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A tone generator (fox) injects an audio signal onto a cable wire, allowing an inductive probe (hound) to detect the tone at the other end."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.2 Network Types",
+      "question": "Which network topology connects all devices to a central switch or hub, such that if one cable fails, only that specific device is disconnected from the network?",
+      "options": [
+        "A) Bus topology",
+        "B) Ring topology",
+        "C) Star topology",
+        "D) Mesh topology"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "In a star topology, all nodes connect to a central connecting device (switch/hub), isolating single cable failures."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A computer's network interface card shows link lights, but the user cannot communicate with any other devices on the local subnet. The technician wants to check the local ARP table to see if the MAC address of the default gateway is resolved. Which command should be used?",
+      "options": [
+        "A) arp -a",
+        "B) ping /t",
+        "C) netstat -r",
+        "D) nbtstat -n"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "The 'arp -a' command displays the local Address Resolution Protocol cache mapping IP addresses to physical MAC addresses."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.4 Wireless Networking",
+      "question": "An enterprise wireless network needs to authenticate individual users against an Active Directory database using 802.1X instead of sharing a single pre-shared key (PSK). Which security mode should be configured?",
+      "options": [
+        "A) WPA2/WPA3-Personal",
+        "B) WPA2/WPA3-Enterprise",
+        "C) WEP Open Authentication",
+        "D) WPS Push-Button"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "WPA Enterprise modes use 802.1X authentication paired with a RADIUS server for individual user credentials."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Cables and Connectors",
+      "question": "Why is Shielded Twisted Pair (STP) cable used instead of Unshielded Twisted Pair (UTP) in industrial environments?",
+      "options": [
+        "A) STP supports significantly longer unrepeated distance limits.",
+        "B) STP includes foil wrapping and braiding to protect signals from Electro-Magnetic Interference (EMI).",
+        "C) STP uses optical pulses instead of electrical voltages.",
+        "D) STP connectors are smaller and easier to terminate."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Shielded Twisted Pair includes physical metallic shielding to prevent signal degradation caused by nearby high-voltage lines or heavy machinery (EMI)."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A technician needs to manually clear the local DNS resolver cache on a Windows workstation after updating server records. Which command should be executed?",
+      "options": [
+        "A) ipconfig /release",
+        "B) ipconfig /flushdns",
+        "C) netsh winsock reset",
+        "D) arp -d"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The 'ipconfig /flushdns' command purges and resets the contents of the Windows DNS client resolver cache."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.3 Network Services",
+      "question": "What is the primary purpose of a DNS (Domain Name System) server in an IP network?",
+      "options": [
+        "A) Translates human-readable domain names into numeric IP addresses.",
+        "B) Allocates dynamic IP leases to network clients.",
+        "C) Authenticates users against domain controllers.",
+        "D) Prioritizes real-time VoIP packets."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "DNS acts as the phone book of the internet, resolving FQDNs to corresponding IP addresses."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.2 Network Types",
+      "question": "Which networking architecture connects multiple computers and peripherals within a single room, home, or office building?",
+      "options": [
+        "A) WAN",
+        "B) MAN",
+        "C) LAN",
+        "D) CAN"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "A LAN (Local Area Network) covers a localized geographic area such as a home, office, or building."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A technician tests a newly terminated patch cable with a basic continuity cable tester and notices that the LED for Pin 3 does not light up on the remote end. What type of cable fault does this indicate?",
+      "options": [
+        "A) Short circuit",
+        "B) Open circuit / broken wire",
+        "C) Crossed pair",
+        "D) Split pair"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A missing continuity indicator on a specific pin means there is an open circuit (break) along that wire strand."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.4 Wireless Networking",
+      "question": "Which wireless antenna type focuses radio frequency energy into a tight, highly directional beam, making it ideal for point-to-point bridges between two buildings?",
+      "options": [
+        "A) Omnidirectional antenna",
+        "B) Yagi / Directional antenna",
+        "C) Dipole antenna",
+        "D) Patch antenna"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Yagi and directional antennas focus RF output in a specific direction for long-range point-to-point links."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.2 Network Devices",
+      "question": "Which networking device is used to connect completely different network architectures (such as linking a local Ethernet network to an ISP's fiber optic line)?",
+      "options": [
+        "A) Media converter",
+        "B) Hub",
+        "C) Network switch",
+        "D) Patch panel"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "A media converter translates signals from one medium type to another, such as copper twisted-pair to fiber optic."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A user complains that their workstation loses connection to the network whenever someone passes by a specific cable run. Upon inspection, the RJ45 plastic locking tab is broken off, causing the plug to wiggle loose. What is the best and most permanent fix?",
+      "options": [
+        "A) Secure the connector with electrical tape.",
+        "B) Cut off the old connector and crimp a new RJ45 modular plug onto the cable.",
+        "C) Change the switch port configuration.",
+        "D) Reinstall the network interface card driver."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A broken retaining clip prevents secure physical retention, requiring a new RJ45 connector crimped onto the cable end."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.3 Network Services",
+      "question": "Which protocol is used by network devices to synchronize their system clocks with a centralized time server over UDP Port 123?",
+      "options": [
+        "A) DHCP",
+        "B) NTP (Network Time Protocol)",
+        "C) SNMP",
+        "D) LDAP"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "NTP (Network Time Protocol) synchronizes computer clocks across a network infrastructure."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Cables and Connectors",
+      "question": "What is the primary advantage of single-mode fiber optic cable over multi-mode fiber optic cable?",
+      "options": [
+        "A) Single-mode uses cheaper LED transmitters.",
+        "B) Single-mode supports much longer transmission distances with minimal modal dispersion.",
+        "C) Single-mode cables have a wider core diameter making termination easier.",
+        "D) Single-mode does not require light sources."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Single-mode fiber has a tiny core that allows light to travel in a single path, supporting extreme distances and high bandwidth."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A technician needs to test continuous connectivity to a gateway IP address (192.168.1.1) from a Windows command prompt without stopping until manually interrupted. Which command switch should be used?",
+      "options": [
+        "A) ping -n 192.168.1.1",
+        "B) ping -t 192.168.1.1",
+        "C) ping -a 192.168.1.1",
+        "D) ping -l 192.168.1.1"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The '-t' switch in Windows ping instructs the utility to ping the target continuously until interrupted with Ctrl+C."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.5 Routing and Switching",
+      "question": "What network device feature allows an administrator to mirror all incoming and outgoing traffic from a specific switch port to a diagnostic port for packet analysis?",
+      "options": [
+        "A) Port Forwarding",
+        "B) Port Mirroring / SPAN",
+        "C) Port Security",
+        "D) PoE (Power over Ethernet)"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Port mirroring (or Switch Port Analyzer) copies traffic from one port to another for network monitoring and analysis."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.3 Network Services",
+      "question": "Which protocol is used by network management systems to monitor, configure, and gather statistics from network devices such as routers and switches?",
+      "options": [
+        "A) SNMP (Simple Network Management Protocol)",
+        "B) SMTP",
+        "C) FTP",
+        "D) DHCP"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "SNMP monitors network device health, performance metrics, and traps alerts back to management consoles."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A technician sets up a new SOHO wireless router, but wireless devices cannot connect to the internet. Wired computers connected to the router work fine. Upon checking the wireless settings, the technician notices that MAC filtering is enabled and only specific pre-registered devices are allowed. What troubleshooting step should be taken?",
+      "options": [
+        "A) Replace the wireless router antenna.",
+        "B) Add the new devices' MAC addresses to the router's allowed filter list or disable MAC filtering.",
+        "C) Change the ISP cable modem.",
+        "D) Update the computer's graphics card drivers."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "MAC filtering blocks any device whose physical address is not explicitly listed in the router's access control table."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Cables and Connectors",
+      "question": "Which networking standard defines Power over Ethernet (PoE), supplying electrical power alongside data over twisted-pair copper cabling to devices like IP cameras and access points?",
+      "options": [
+        "A) IEEE 802.3af / 802.3at",
+        "B) IEEE 802.11ax",
+        "C) IEEE 802.1Q",
+        "D) IEEE 802.3z"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "IEEE 802.11/802.3 standards for PoE (Power over Ethernet) supply DC power over standard Ethernet cables."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A user reports that their corporate laptop can access local file shares while docked in the office, but when they take the laptop home, web pages fail to load. The technician checks the IP settings and notes a static IP address and manual DNS server configured for the office subnet. What is the solution?",
+      "options": [
+        "A) Replace the home Wi-Fi router.",
+        "B) Configure the network adapter to obtain IP and DNS settings automatically (DHCP).",
+        "C) Flush the local ARP cache.",
+        "D) Reinstall Windows."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Static IP settings configured for a specific office subnet will fail on a foreign home network; switching to DHCP resolves roaming connectivity."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.2 Network Types",
+      "question": "Which expansive network type spans multiple cities, countries, or global regions, connecting disparate LANs together?",
+      "options": [
+        "A) LAN",
+        "B) PAN",
+        "C) WAN",
+        "D) CAN"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "A WAN (Wide Area Network) connects multiple LANs across large geographical distances, with the internet being the prime example."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A technician connects a network cable to a wall jack, but neither the link LED nor the activity LED on the PC's network card lights up at all. What should the technician check FIRST?",
+      "options": [
+        "A) Verify if both ends of the patch cable are securely plugged into the workstation and the active switch port.",
+        "B) Reinstall the TCP/IP protocol stack in Windows.",
+        "C) Check the DNS server configuration.",
+        "D) Run a virus scan."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Following the CompTIA troubleshooting methodology, physical layer checks (ensuring cables are securely plugged in) come first."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.4 Wireless Networking",
+      "question": "What is the primary function of a wireless access point (WAP) in a corporate network infrastructure?",
+      "options": [
+        "A) Bridges wireless clients onto the wired Ethernet local area network.",
+        "B) Assigns public IP addresses to internet traffic.",
+        "C) Encrypts data files stored on network drives.",
+        "D) Prevents physical theft of mobile laptops."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "A WAP connects wireless client devices to the wired network infrastructure."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "An administrator wants to query a specific DNS server to resolve a host record and troubleshoot name resolution problems interactively. Which command-line tool should be launched?",
+      "options": [
+        "A) ping",
+        "B) nslookup",
+        "C) tracert",
+        "D) netstat"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "The 'nslookup' tool queries DNS name servers interactively to diagnose name resolution failures."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Cables and Connectors",
+      "question": "Which coaxial cable type is commonly used for broadband cable internet and cable television (CATV) installations, terminating with F-type connectors?",
+      "options": [
+        "A) RG-58",
+        "B) RG-59",
+        "C) RG-6",
+        "D) RG-11"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "RG-6 coaxial cable is standard for modern digital cable, satellite, and broadband modem connections."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A user states that their internet connection is extremely slow and web pages time out frequently. The technician runs a ping test to 8.8.8.8 and notices high latency spikes and 30% packet loss. What is the most likely cause?",
+      "options": [
+        "A) Corrupt web browser cache.",
+        "B) Network congestion, failing hardware, or a bad physical connection causing packet drops.",
+        "C) Incorrect local computer display resolution.",
+        "D) Expired software license."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "High latency and packet loss during ping tests indicate network congestion, faulty cabling, or failing network hardware."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.2 Network Types",
+      "question": "Which personal-scale network technology connects wireless peripherals such as Bluetooth mice, keyboards, and headsets to a smartphone or laptop?",
+      "options": [
+        "A) LAN",
+        "B) PAN (Personal Area Network)",
+        "C) MAN",
+        "D) WAN"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "A PAN (Personal Area Network) centers around an individual's workspace, typically using Bluetooth technology."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A technician replaces a faulty network switch in a small office. After reconnection, computers cannot communicate with each other. The technician checks the switch and notices the link lights are off. What should the technician verify NEXT?",
+      "options": [
+        "A) Verify that the switch is powered on and the main uplink cable from the router is connected.",
+        "B) Reinstall Windows on all client workstations.",
+        "C) Change the subnet mask to 255.0.0.0.",
+        "D) Upgrade the switch firmware."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Unlit link lights point directly to power issues or disconnected/faulty physical links."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.5 Routing and Switching",
+      "question": "What is the primary purpose of configuring port security on an enterprise network switch?",
+      "options": [
+        "A) Restricts access on a switch port by limiting which MAC addresses are allowed to connect.",
+        "B) Encrypts all Ethernet frames passing through the port.",
+        "C) Automatically increases link speed to 10 Gbps.",
+        "D) Assigns static IP addresses to connected clients."
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Port security restricts physical switch port access based on registered MAC addresses to prevent unauthorized device hookups."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting NetworkIssues",
+      "question": "A user reports that they cannot access a shared printer on the network. Other users can print without issue. The technician verifies the printer is online and pings its IP address successfully. What is the most likely cause of the issue on this user's machine?",
+      "options": [
+        "A) The network switch is offline.",
+        "B) The printer share mapping is disconnected or the network printer driver is corrupt/missing.",
+        "C) The server room AC unit has failed.",
+        "D) The computer's CMOS battery is dead."
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "If the printer is reachable via ping and others can print, the local user's printer connection mapping or driver is at fault."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.1 Cables and Connectors",
+      "question": "When terminating a UTP Ethernet cable with RJ45 connectors according to standard TIA/568B, what are the exact pin 1 and pin 2 wire color standards?",
+      "options": [
+        "A) White/Orange, Orange",
+        "B) White/Green, Green",
+        "C) White/Blue, Blue",
+        "D) White/Brown, Brown"
+      ],
+      "answer": [
+        "A"
+      ],
+      "multi_select": false,
+      "explanation": "Under the T568B wiring standard, Pin 1 is White/Orange and Pin 2 is Orange."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Software Troubleshooting",
+      "objective": "3.2 Troubleshooting Network Issues",
+      "question": "A network administrator needs to release an old IP lease and request a fresh IP address from the DHCP server on a Windows computer. Which command sequence should be executed?",
+      "options": [
+        "A) ipconfig /flushdns then ipconfig /registerdns",
+        "B) ipconfig /release then ipconfig /renew",
+        "C) netsh int ip reset",
+        "D) arp -s"
+      ],
+      "answer": [
+        "B"
+      ],
+      "multi_select": false,
+      "explanation": "Executing 'ipconfig /release' drops the current lease, and 'ipconfig /renew' requests a new IP configuration from the DHCP server."
+    },
+    {
+      "exam": "220-1201",
+      "domain": "Networking",
+      "objective": "2.4 Wireless Networking",
+      "question": "Which wireless standard operates exclusively in the 6 GHz frequency band to deliver ultra-high throughput and minimal interference?",
+      "options": [
+        "A) 802.11n (Wi-Fi 4)",
+        "B) 802.11ac (Wi-Fi 5)",
+        "C) 802.11ax (Wi-Fi 6E/7)",
+        "D) 802.11g"
+      ],
+      "answer": [
+        "C"
+      ],
+      "multi_select": false,
+      "explanation": "Wi-Fi 6E and Wi-Fi 7 introduced support for the clean 6 GHz spectrum band."
+    }
+  ]
+}
